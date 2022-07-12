@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        app:cnb_iconColor="@color/white"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@android:color/white"
+        app:cnb_backgroundColor="@color/chip_nav_bg"/>
+    <item
+        android:id="@+id/menu_discover"
+        android:icon="@drawable/ic_discover"
+        android:title="@string/staff_picks"
+        app:cnb_textColor="@android:color/white"
+        app:cnb_iconColor="@color/white"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_backgroundColor="@color/chip_nav_bg"/>
+    <item
+        android:id="@+id/menu_games"
+        android:icon="@drawable/ic_games"
+        android:title="@string/games"
+        app:cnb_textColor="@android:color/white"
+        app:cnb_iconColor="@color/white"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_backgroundColor="@color/chip_nav_bg"/>
+    <item
+        android:id="@+id/menu_friends"
+        android:icon="@drawable/ic_friends"
+        android:title="@string/activity"
+        app:cnb_textColor="@android:color/white"
+        app:cnb_iconColor="@color/white"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_backgroundColor="@color/chip_nav_bg"/>
+    <item
+        android:id="@+id/menu_inbox"
+        android:icon="@drawable/ic_inbox"
+        android:title="@string/inbox"
+        app:cnb_textColor="@android:color/white"
+        app:cnb_iconColor="@color/white"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_backgroundColor="@color/chip_nav_bg"/>
+
+</menu>

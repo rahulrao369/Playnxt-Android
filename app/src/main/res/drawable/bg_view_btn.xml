@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/app_theme_btn_press">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="@color/app_theme"
+                android:endColor="@color/app_theme"/>
+            <corners android:topLeftRadius="10dp"
+                android:topRightRadius="10dp"
+                android:bottomRightRadius="15dp"
+                android:bottomLeftRadius="15dp"/>
+        </shape>
+    </item>
+</ripple>

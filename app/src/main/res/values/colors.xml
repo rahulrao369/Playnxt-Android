@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_theme">#E26B43</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_theme_black">#090C13</color>
+    <color name="app_theme_btn_press">#F14C13</color>
+    <color name="edt_text_bg">#21242A</color>
+    <color name="edt_text">#636569</color>
+    <color name="chip_nav_bg">#EB977B</color>
+    <color name="discover_top">#0E0F12</color>
+    <color name="btn_gray">#C4C4C4</color>
+    <color name="btn_gray_dark">#6E6A6A</color>
+    <color name="dark_gray">#1E1F27</color>
+    <color name="border">#22242B</color>
+    <color name="top_gray">#0D0D0D</color>
+    <color name="cp">#191818</color>
+    <color name="light_gray">#3B3940</color>
+    <color name="horizontal_line">#616161</color>
+    <color name="transparent">#D9000000</color>
+</resources>
