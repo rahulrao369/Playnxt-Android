@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize">
         <activity
+            android:name=".activity.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.ContactUsActivity"
             android:exported="true" />
         <activity
@@ -35,18 +38,18 @@
         <activity
             android:name=".activity.AddGameFromWishlistActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.WishlistGameInfoActivity"
             android:exported="true" />
         <activity
             android:name=".activity.AddGameFromBacklogListActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.AddGameActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.SuggestNewFeatureActivity"
             android:exported="true" />
@@ -56,7 +59,7 @@
         <activity
             android:name=".activity.AddCardActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.HomeSearchActivity"
             android:exported="true" />
@@ -108,11 +111,11 @@
         <activity
             android:name=".activity.SignupActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.LoginActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.LoginSignupButtonActivity"
             android:exported="true" />

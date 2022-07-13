@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tvSeeAll:
-              /*  startActivity(new Intent(context, MyProfileActivity.class)
+          /*      startActivity(new Intent(context, MyProfileActivity.class)
                         .putExtra("key","3")
                 );*/
 

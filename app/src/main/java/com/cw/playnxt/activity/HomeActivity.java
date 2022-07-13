@@ -66,7 +66,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.menu_friends:
-                        callFragment(new FriendsFragment());
+                       callFragment(new FriendsFragment());
+                       /* Fragment friendsfrgamnet = new FriendsFragment();
+                        FragmentTransaction transaction;
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frameContainer, friendsfrgamnet);
+                        transaction.addToBackStack(null);
+                        transaction.commit();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("key", "0");
+                        friendsfrgamnet.setArguments(bundle);*/
 
                         break;
 

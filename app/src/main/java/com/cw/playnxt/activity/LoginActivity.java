@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void onclicks() {
         binding.btnLogin.setOnClickListener(this);
         binding.llDontHaveAccount.setOnClickListener(this);
+        binding.lytForgotPassword.setOnClickListener(this);
     }
 
     public void init() {
@@ -140,7 +141,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Log.d("TAG", "   state     " + state);
 
             } catch (Exception e) {
-              //  Toast.makeText((AppCompatActivity) context, "Location >>"+e.toString(), Toast.LENGTH_LONG).show();
+                //  Toast.makeText((AppCompatActivity) context, "Location >>"+e.toString(), Toast.LENGTH_LONG).show();
             }
         } else {
             Log.d("TAG", "");
@@ -168,6 +169,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(context, SignupActivity.class));
                 break;
 
+            case R.id.lytForgotPassword:
+                startActivity(new Intent(context, ForgotPasswordActivity.class));
+                break;
+
         }
     }
 
@@ -184,7 +189,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginParaRes.setDeviceToken(device_id);
         loginParaRes.setFcmToken(fcm_token);
 
-        jsonPlaceHolderApi.loginAPI(Constants.CONTENT_TYPE,loginParaRes).enqueue(new Callback<LoginResponse>() {
+        jsonPlaceHolderApi.loginAPI(Constants.CONTENT_TYPE, loginParaRes).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful()) {
@@ -194,7 +199,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         mySharedPref.saveLogin(true);
                         mySharedPref.setSavedAccessToken(String.valueOf(response.body().getData().getToken()));
-                        Log.d("TAG","ACCESS_TOKEN"+mySharedPref.getSavedAccessToken());
+                        Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
                         Intent intent = new Intent(getBaseContext(), HomeActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
