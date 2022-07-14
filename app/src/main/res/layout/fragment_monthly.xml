@@ -144,8 +144,8 @@
         android:layout_marginTop="16dp">
 
         <LinearLayout
-            android:layout_width="180dp"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_height="42dp"
             android:background="@drawable/bg_button"
             android:orientation="horizontal">
 
@@ -154,12 +154,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:fontFamily="@font/nunitobold"
+                android:fontFamily="@font/nunito_semi_bold"
                 android:gravity="center"
                 android:text="Checkout"
                 android:textColor="@color/white"
                 android:textFontWeight="700"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 

@@ -3432,6 +3432,7 @@ int id test_checkbox_app_button_tint 0x7f0a0281
 int id test_radiobutton_android_button_tint 0x7f0a0282
 int id test_radiobutton_app_button_tint 0x7f0a0283
 int id text 0x7f0a0284
+int id text1 0x7f0a02fe
 int id text2 0x7f0a0285
 int id textEnd 0x7f0a0286
 int id textSpacerNoButtons 0x7f0a0287
@@ -3525,6 +3526,7 @@ int id txtBtn 0x7f0a02de
 int id txtChangePassword 0x7f0a02df
 int id txtDeleteAccount 0x7f0a02e0
 int id txtSend 0x7f0a02e1
+int id txt_ok 0x7f0a02ff
 int id unchecked 0x7f0a02e2
 int id uniform 0x7f0a02e3
 int id unlabeled 0x7f0a02e4
@@ -3670,6 +3672,7 @@ int layout activity_setting 0x7f0d0031
 int layout activity_setting_palynxt_premium 0x7f0d0032
 int layout activity_signup 0x7f0d0033
 int layout activity_splash 0x7f0d0034
+int layout activity_subscription 0x7f0d00df
 int layout activity_suggest_ne_feature 0x7f0d0035
 int layout activity_welcome 0x7f0d0036
 int layout activity_wishlist 0x7f0d0037
@@ -3715,6 +3718,7 @@ int layout design_text_input_start_icon 0x7f0d005e
 int layout dialog_big_profile_image 0x7f0d005f
 int layout dialog_change_password 0x7f0d0060
 int layout dialog_game_backlog_wishlist_type_list 0x7f0d0061
+int layout dialog_subscription 0x7f0d00e0
 int layout fragment_anuual 0x7f0d0062
 int layout fragment_discover 0x7f0d0063
 int layout fragment_first 0x7f0d0064
@@ -4056,6 +4060,7 @@ int string mtrl_picker_toggle_to_year_selection 0x7f1100cb
 int string mtrl_timepicker_confirm 0x7f1100cc
 int string my_profile 0x7f1100cd
 int string name 0x7f1100ce
+int string name_should_be_less_than_20_charactrs 0x7f1100f1
 int string name_should_be_more_than_or_equal_to_3_character 0x7f1100cf
 int string name_your_backlog_list 0x7f1100d0
 int string name_your_wishlist 0x7f1100d1

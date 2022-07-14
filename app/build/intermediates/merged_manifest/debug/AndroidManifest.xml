@@ -34,6 +34,12 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize" >
         <activity
+            android:name="com.cw.playnxt.activity.SubscriptionActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.cw.playnxt.activity.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
             android:name="com.cw.playnxt.activity.ContactUsActivity"
             android:exported="true" />
         <activity

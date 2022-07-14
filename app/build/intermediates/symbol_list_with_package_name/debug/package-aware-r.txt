@@ -2887,6 +2887,7 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id bindingHeader
+id binding_header
 id blocking
 id bottom
 id bounce
@@ -2919,6 +2920,7 @@ id btnOk
 id btnPayNow
 id btnPlaynxt
 id btnSave
+id btnSend
 id btnSetting
 id btnShare
 id btnSignup
@@ -3431,6 +3433,7 @@ id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
 id text
+id text1
 id text2
 id textEnd
 id textSpacerNoButtons
@@ -3523,6 +3526,8 @@ id tvnumber3
 id txtBtn
 id txtChangePassword
 id txtDeleteAccount
+id txtSend
+id txt_ok
 id unchecked
 id uniform
 id unlabeled
@@ -3654,6 +3659,7 @@ layout activity_calender
 layout activity_confirmation
 layout activity_contact_us
 layout activity_edit_profile
+layout activity_forgot_password
 layout activity_friends_profile
 layout activity_game_info
 layout activity_home
@@ -3667,6 +3673,7 @@ layout activity_setting
 layout activity_setting_palynxt_premium
 layout activity_signup
 layout activity_splash
+layout activity_subscription
 layout activity_suggest_ne_feature
 layout activity_welcome
 layout activity_wishlist
@@ -3712,6 +3719,7 @@ layout design_text_input_start_icon
 layout dialog_big_profile_image
 layout dialog_change_password
 layout dialog_game_backlog_wishlist_type_list
+layout dialog_subscription
 layout fragment_anuual
 layout fragment_discover
 layout fragment_first
@@ -4053,6 +4061,7 @@ string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
 string my_profile
 string name
+string name_should_be_less_than_20_charactrs
 string name_should_be_more_than_or_equal_to_3_character
 string name_your_backlog_list
 string name_your_wishlist

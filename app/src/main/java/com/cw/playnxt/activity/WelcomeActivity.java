@@ -95,7 +95,7 @@ public class WelcomeActivity extends FragmentActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, LoginSignupButtonActivity.class)
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));

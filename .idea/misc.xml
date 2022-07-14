@@ -64,6 +64,7 @@
         <entry key="app/src/main/res/layout/activity_setting_palynxt_premium.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/activity_subscription.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_suggest_ne_feature.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_suggest_new_features.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.19791666666666666" />
@@ -85,6 +86,7 @@
         <entry key="app/src/main/res/layout/dialog_big_profile_image.xml" value="0.19487179487179487" />
         <entry key="app/src/main/res/layout/dialog_change_password.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/dialog_game_backlog_wishlist_type_list.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/dialog_subscription.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_anuual.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.19791666666666666" />

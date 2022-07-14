@@ -122,12 +122,17 @@ public class WishlistActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View view) {
                 if(!etName.getText().toString().equals("")){
-                    bottomSheetDialog.dismiss();
-                    if (Constants.isInternetConnected(context)) {
-                        AddWishlistAPI();
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                    if(etName.getText().toString().length() < 20){
+                        bottomSheetDialog.dismiss();
+                        if (Constants.isInternetConnected(context)) {
+                            AddWishlistAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(context, getResources().getString(R.string.name_should_be_less_than_20_charactrs), Toast.LENGTH_SHORT).show();
                     }
+
                 }else{
                     Toast.makeText(context, "Please enter the name for your wishlist", Toast.LENGTH_SHORT).show();
                 }
@@ -186,14 +191,19 @@ public class WishlistActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View view) {
                 if(!etEditName.getText().toString().equals("")){
-                    bottomSheetDialog.dismiss();
-                    if(wishlist_ID != null){
-                        if (Constants.isInternetConnected(context)) {
-                            EditWishlistAPI();
-                        } else {
-                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                    if(etEditName.getText().toString().length() < 20){
+                        bottomSheetDialog.dismiss();
+                        if(wishlist_ID != null){
+                            if (Constants.isInternetConnected(context)) {
+                                EditWishlistAPI();
+                            } else {
+                                Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                            }
                         }
+                    }else{
+                        Toast.makeText(context, getResources().getString(R.string.name_should_be_less_than_20_charactrs), Toast.LENGTH_SHORT).show();
                     }
+
                 }else{
                     Toast.makeText(context, "Please enter the name for your backlog list", Toast.LENGTH_SHORT).show();
                 }

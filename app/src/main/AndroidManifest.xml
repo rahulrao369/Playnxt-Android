@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize">
         <activity
+            android:name=".activity.SubscriptionActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.ForgotPasswordActivity"
             android:exported="true" />
         <activity
