@@ -1,8 +1,5 @@
 package com.cw.playnxt.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -11,17 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.cw.playnxt.Interface.ItemClickGameInfoRecentList;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.cw.playnxt.R;
-import com.cw.playnxt.adapter.GameAdapters.RecentGamesAdapter;
-import com.cw.playnxt.adapter.SettingAdapters.PlaynextPremiumTabAdapter;
 import com.cw.playnxt.adapter.SubscriptionPlanListAdapterMain;
 import com.cw.playnxt.databinding.ActivitySubscriptionBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
-import com.cw.playnxt.model.ForgotPassword.ForgotPasswordParaRes;
-import com.cw.playnxt.model.GetRecentGame.GetRecentGameDataCapsul;
-import com.cw.playnxt.model.ResponseSatusMessage;
-import com.cw.playnxt.model.StaticModel.GameModel;
 import com.cw.playnxt.model.SubscriptionPlan.Plan;
 import com.cw.playnxt.model.SubscriptionPlan.SubscriptionPlanResponse;
 import com.cw.playnxt.server.ApiUtils;
@@ -29,21 +22,20 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
-import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SubscriptionActivity extends AppCompatActivity implements View.OnClickListener{
+public class SubscriptionActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
     private ActivitySubscriptionBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +45,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         init();
         onclicks();
     }
+
     public void init() {
         context = SubscriptionActivity.this;
         jsonPlaceHolderApi = ApiUtils.getAPIService();
@@ -72,6 +65,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
 
     public void onclicks() {
         headerBinding.btnBack.setOnClickListener(this);
+        binding.btnContinue.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceAsColor")
@@ -83,11 +77,16 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                 onBackPressed();
                 break;
 
+            case R.id.btnContinue:
+                startActivity(new Intent(context,AddCardActivity.class));
+                break;
+
         }
     }
+
     public void SubscriptionPlanAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.SubscriptionPlanAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<SubscriptionPlanResponse>() {
+        jsonPlaceHolderApi.SubscriptionPlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<SubscriptionPlanResponse>() {
             @Override
             public void onResponse(Call<SubscriptionPlanResponse> call, Response<SubscriptionPlanResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
@@ -95,13 +94,14 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                     //   Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                        //   Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                         SubscriptionPlanListDataSet(response.body().getData().getPlan());
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<SubscriptionPlanResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);

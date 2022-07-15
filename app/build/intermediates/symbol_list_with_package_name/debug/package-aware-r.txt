@@ -2716,6 +2716,7 @@ drawable ic_unlike
 drawable ic_user_round
 drawable ic_wishlist
 drawable ic_your_stats
+drawable image
 drawable img
 drawable img3
 drawable imgmain
@@ -2911,6 +2912,7 @@ id btnBack
 id btnChangePassword
 id btnCheckout
 id btnComplete
+id btnContinue
 id btnCreateList
 id btnEdit
 id btnEditCurrentStatus

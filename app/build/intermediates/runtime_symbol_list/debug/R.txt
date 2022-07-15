@@ -2715,6 +2715,7 @@ int drawable ic_unlike 0x7f0800f5
 int drawable ic_user_round 0x7f0800f6
 int drawable ic_wishlist 0x7f0800f7
 int drawable ic_your_stats 0x7f0800f8
+int drawable image 0x7f080137
 int drawable img 0x7f0800f9
 int drawable img3 0x7f0800fa
 int drawable imgmain 0x7f0800fb
@@ -2910,6 +2911,7 @@ int id btnBack 0x7f0a0072
 int id btnChangePassword 0x7f0a0073
 int id btnCheckout 0x7f0a0074
 int id btnComplete 0x7f0a0075
+int id btnContinue 0x7f0a030a
 int id btnCreateList 0x7f0a0076
 int id btnEdit 0x7f0a0077
 int id btnEditCurrentStatus 0x7f0a0078

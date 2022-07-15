@@ -25,7 +25,7 @@ public final class ActivitySubscriptionBinding implements ViewBinding {
   public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
-  public final LinearLayout btnAdd;
+  public final LinearLayout btnContinue;
 
   @NonNull
   public final RecyclerView rvSubscriptionPlan;
@@ -34,11 +34,11 @@ public final class ActivitySubscriptionBinding implements ViewBinding {
   public final TextView txtBtn;
 
   private ActivitySubscriptionBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAdd,
+      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnContinue,
       @NonNull RecyclerView rvSubscriptionPlan, @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
-    this.btnAdd = btnAdd;
+    this.btnContinue = btnContinue;
     this.rvSubscriptionPlan = rvSubscriptionPlan;
     this.txtBtn = txtBtn;
   }
@@ -77,9 +77,9 @@ public final class ActivitySubscriptionBinding implements ViewBinding {
       }
       HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
 
-      id = R.id.btnAdd;
-      LinearLayout btnAdd = ViewBindings.findChildViewById(rootView, id);
-      if (btnAdd == null) {
+      id = R.id.btnContinue;
+      LinearLayout btnContinue = ViewBindings.findChildViewById(rootView, id);
+      if (btnContinue == null) {
         break missingId;
       }
 
@@ -96,7 +96,7 @@ public final class ActivitySubscriptionBinding implements ViewBinding {
       }
 
       return new ActivitySubscriptionBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnAdd, rvSubscriptionPlan, txtBtn);
+          btnContinue, rvSubscriptionPlan, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
