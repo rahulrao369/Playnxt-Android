@@ -21,7 +21,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/ivRightFreeUser"
+                android:id="@+id/ivRight"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:src="@drawable/ic_right_green"
@@ -29,7 +29,7 @@
 
 
             <ImageView
-                android:id="@+id/ivCrossFreeUser"
+                android:id="@+id/ivCross"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:src="@drawable/ic_cross"
@@ -37,7 +37,7 @@
              />
 
             <ImageView
-                android:id="@+id/ivinfinityFreeUser"
+                android:id="@+id/ivinfinity"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:src="@drawable/ic_infinity"

@@ -3139,6 +3139,7 @@ id item3
 id item4
 id item_touch_helper_previous_elevation
 id ivAddNewList
+id ivCross
 id ivCrossFreeUser
 id ivCrossPremiumUser
 id ivDeleteEvent
@@ -3152,6 +3153,7 @@ id ivGame
 id ivGameIcon
 id ivImage
 id ivPlan
+id ivRight
 id ivRightFreeUser
 id ivRightPremiumUser
 id ivSearch
@@ -3159,7 +3161,7 @@ id ivStartDate
 id ivSubscribeNow
 id ivUnfav
 id iv_profile_image
-id ivinfinityFreeUser
+id ivinfinity
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3480,6 +3482,7 @@ id tvAboutUs
 id tvAddBtn
 id tvAddGame
 id tvAddToList
+id tvAmount
 id tvBtn
 id tvContactUs
 id tvCreateNewList
@@ -3510,6 +3513,7 @@ id tvName1
 id tvNoFriendsYet
 id tvNotes
 id tvNumber
+id tvPlan
 id tvPlanTitle
 id tvPlannedEnd
 id tvPlannedStart
@@ -3532,6 +3536,7 @@ id tvnum3
 id tvnumber1
 id tvnumber2
 id tvnumber3
+id tvplanForUser
 id txtBtn
 id txtChangePassword
 id txtDeleteAccount

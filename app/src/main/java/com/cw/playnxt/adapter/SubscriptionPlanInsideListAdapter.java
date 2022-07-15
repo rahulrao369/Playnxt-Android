@@ -13,15 +13,16 @@ import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ItemListSubscriptionPlanInsideListLayoutBinding;
 import com.cw.playnxt.model.StaticModel.AnnualPlanDataModel;
+import com.cw.playnxt.model.SubscriptionPlan.StatisSubscriptionPlansListWithSymbol;
 
 import java.util.List;
 
 public class SubscriptionPlanInsideListAdapter extends RecyclerView.Adapter<SubscriptionPlanInsideListAdapter.RecyclerViewHolder> {
     Context context;
-    List<AnnualPlanDataModel> list;
+    List<StatisSubscriptionPlansListWithSymbol> list;
     ItemClick itemClick;
 
-    public SubscriptionPlanInsideListAdapter(Context context, List<AnnualPlanDataModel> list,ItemClick itemClick) {
+    public SubscriptionPlanInsideListAdapter(Context context, List<StatisSubscriptionPlansListWithSymbol> list,ItemClick itemClick) {
         this.context = context;
         this.list = list;
         this.itemClick = itemClick;
@@ -37,72 +38,20 @@ public class SubscriptionPlanInsideListAdapter extends RecyclerView.Adapter<Subs
 
     @Override
     public void onBindViewHolder(@NonNull SubscriptionPlanInsideListAdapter.RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        if (position == 0){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else if (position == 1){
-            holder.binding.ivCrossFreeUser.setVisibility(View.GONE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.tvFreeUser.setText("1 Only");
-
-        }else if (position == 2){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else  if (position == 3){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else  if (position == 4){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else  if (position == 5){
-            holder.binding.ivCrossFreeUser.setVisibility(View.GONE);
-            holder.binding.ivRightFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else if (position == 6){
-            holder.binding.ivCrossFreeUser.setVisibility(View.GONE);
-            holder.binding.ivRightFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        } if (position == 7){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else  if (position == 8){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else  if (position == 9){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
-        }else  if (position ==10){
-            holder.binding.ivCrossFreeUser.setVisibility(View.VISIBLE);
-            holder.binding.ivRightFreeUser.setVisibility(View.GONE);
-            holder.binding.tvFreeUser.setVisibility(View.GONE);
-
+        if(list.get(position).getSymbol() == 0){
+            holder.binding.ivRight.setVisibility(View.GONE);
+            holder.binding.ivCross.setVisibility(View.VISIBLE);
+            holder.binding.ivinfinity.setVisibility(View.GONE);
+        }else if(list.get(position).getSymbol() == 1){
+            holder.binding.ivRight.setVisibility(View.VISIBLE);
+            holder.binding.ivCross.setVisibility(View.GONE);
+            holder.binding.ivinfinity.setVisibility(View.GONE);
+        }else if(list.get(position).getSymbol() == 2){
+            holder.binding.ivRight.setVisibility(View.GONE);
+            holder.binding.ivCross.setVisibility(View.GONE);
+            holder.binding.ivinfinity.setVisibility(View.VISIBLE);
         }
-
-        holder.binding.tvFeatures.setText(list.get(position).getFreatures());
-
-     /*   holder.binding.llMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                itemClick.onItemClick(position,"Setting");
-            }
-        });*/
+        holder.binding.tvFeatures.setText(list.get(position).getListName());
     }
 
     @Override

@@ -3138,6 +3138,7 @@ int id item3 0x7f0a0156
 int id item4 0x7f0a0157
 int id item_touch_helper_previous_elevation 0x7f0a0158
 int id ivAddNewList 0x7f0a0159
+int id ivCross 0x7f0a0305
 int id ivCrossFreeUser 0x7f0a015a
 int id ivCrossPremiumUser 0x7f0a015b
 int id ivDeleteEvent 0x7f0a015c
@@ -3151,6 +3152,7 @@ int id ivGame 0x7f0a0163
 int id ivGameIcon 0x7f0a0164
 int id ivImage 0x7f0a0165
 int id ivPlan 0x7f0a0303
+int id ivRight 0x7f0a0306
 int id ivRightFreeUser 0x7f0a0166
 int id ivRightPremiumUser 0x7f0a0167
 int id ivSearch 0x7f0a0168
@@ -3158,7 +3160,7 @@ int id ivStartDate 0x7f0a0169
 int id ivSubscribeNow 0x7f0a016a
 int id ivUnfav 0x7f0a016b
 int id iv_profile_image 0x7f0a016c
-int id ivinfinityFreeUser 0x7f0a0302
+int id ivinfinity 0x7f0a0307
 int id jumpToEnd 0x7f0a016d
 int id jumpToStart 0x7f0a016e
 int id labeled 0x7f0a016f
@@ -3479,6 +3481,7 @@ int id tvAboutUs 0x7f0a02a9
 int id tvAddBtn 0x7f0a02aa
 int id tvAddGame 0x7f0a02ab
 int id tvAddToList 0x7f0a02ac
+int id tvAmount 0x7f0a0308
 int id tvBtn 0x7f0a02ad
 int id tvContactUs 0x7f0a02ae
 int id tvCreateNewList 0x7f0a02af
@@ -3509,6 +3512,7 @@ int id tvName1 0x7f0a02c7
 int id tvNoFriendsYet 0x7f0a02c8
 int id tvNotes 0x7f0a02c9
 int id tvNumber 0x7f0a02ca
+int id tvPlan 0x7f0a0309
 int id tvPlanTitle 0x7f0a02cb
 int id tvPlannedEnd 0x7f0a02cc
 int id tvPlannedStart 0x7f0a02cd
@@ -3531,6 +3535,7 @@ int id tvnum3 0x7f0a02dd
 int id tvnumber1 0x7f0a02de
 int id tvnumber2 0x7f0a02df
 int id tvnumber3 0x7f0a02e0
+int id tvplanForUser 0x7f0a0304
 int id txtBtn 0x7f0a02e1
 int id txtChangePassword 0x7f0a02e2
 int id txtDeleteAccount 0x7f0a02e3

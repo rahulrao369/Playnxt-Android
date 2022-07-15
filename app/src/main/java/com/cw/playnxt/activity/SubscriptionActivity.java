@@ -95,7 +95,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                     //   Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                         SubscriptionPlanListDataSet(response.body().getData().getPlan());
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();

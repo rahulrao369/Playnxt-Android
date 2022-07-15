@@ -31,16 +31,33 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
   public final RecyclerView recyclerView;
 
   @NonNull
+  public final TextView tvAmount;
+
+  @NonNull
+  public final TextView tvBtn;
+
+  @NonNull
+  public final TextView tvPlan;
+
+  @NonNull
   public final TextView tvPlanTitle;
+
+  @NonNull
+  public final TextView tvplanForUser;
 
   private ItemListSubscriptionPlanListMainLayoutBinding(@NonNull RelativeLayout rootView,
       @NonNull ImageView ivPlan, @NonNull RelativeLayout layoutMain,
-      @NonNull RecyclerView recyclerView, @NonNull TextView tvPlanTitle) {
+      @NonNull RecyclerView recyclerView, @NonNull TextView tvAmount, @NonNull TextView tvBtn,
+      @NonNull TextView tvPlan, @NonNull TextView tvPlanTitle, @NonNull TextView tvplanForUser) {
     this.rootView = rootView;
     this.ivPlan = ivPlan;
     this.layoutMain = layoutMain;
     this.recyclerView = recyclerView;
+    this.tvAmount = tvAmount;
+    this.tvBtn = tvBtn;
+    this.tvPlan = tvPlan;
     this.tvPlanTitle = tvPlanTitle;
+    this.tvplanForUser = tvplanForUser;
   }
 
   @Override
@@ -85,14 +102,38 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
         break missingId;
       }
 
+      id = R.id.tvAmount;
+      TextView tvAmount = ViewBindings.findChildViewById(rootView, id);
+      if (tvAmount == null) {
+        break missingId;
+      }
+
+      id = R.id.tvBtn;
+      TextView tvBtn = ViewBindings.findChildViewById(rootView, id);
+      if (tvBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.tvPlan;
+      TextView tvPlan = ViewBindings.findChildViewById(rootView, id);
+      if (tvPlan == null) {
+        break missingId;
+      }
+
       id = R.id.tvPlanTitle;
       TextView tvPlanTitle = ViewBindings.findChildViewById(rootView, id);
       if (tvPlanTitle == null) {
         break missingId;
       }
 
+      id = R.id.tvplanForUser;
+      TextView tvplanForUser = ViewBindings.findChildViewById(rootView, id);
+      if (tvplanForUser == null) {
+        break missingId;
+      }
+
       return new ItemListSubscriptionPlanListMainLayoutBinding((RelativeLayout) rootView, ivPlan,
-          layoutMain, recyclerView, tvPlanTitle);
+          layoutMain, recyclerView, tvAmount, tvBtn, tvPlan, tvPlanTitle, tvplanForUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

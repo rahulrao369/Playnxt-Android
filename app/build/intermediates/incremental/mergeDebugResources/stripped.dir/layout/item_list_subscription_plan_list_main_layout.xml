@@ -66,6 +66,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tvplanForUser"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -105,6 +106,7 @@
             android:layout_marginBottom="8dp">
 
             <TextView
+                android:id="@+id/tvPlan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_extra_light"
@@ -113,6 +115,7 @@
                 android:textFontWeight="300"
                 android:textSize="14sp" />
             <TextView
+                android:id="@+id/tvAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunitobold"
@@ -120,16 +123,17 @@
                 android:textColor="@color/app_theme"
                 android:textFontWeight="400"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="2dp"/>
 
             <LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="30dp"
+                android:layout_width="75dp"
+                android:layout_height="28dp"
                 android:background="@drawable/bg_white_stroke"
                 android:orientation="horizontal"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="4dp">
 
                 <TextView
+                    android:id="@+id/tvBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

@@ -53,7 +53,7 @@ public class GameFragmentTopListAdapter extends RecyclerView.Adapter<GameFragmen
         }else if(list.get(position).getNumber().equals("0")){
             holder.binding.tvNumber.setText("");
         }else{
-            holder.binding.tvNumber.setText("("+list.get(position).getNumber()+")"+" Total Games");
+            holder.binding.tvNumber.setText("("+list.get(position).getNumber()+")"+"");
         }
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override

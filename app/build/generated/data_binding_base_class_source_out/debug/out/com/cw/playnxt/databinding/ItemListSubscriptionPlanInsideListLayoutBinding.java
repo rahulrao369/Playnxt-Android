@@ -21,13 +21,13 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
   private final RelativeLayout rootView;
 
   @NonNull
-  public final ImageView ivCrossFreeUser;
+  public final ImageView ivCross;
 
   @NonNull
-  public final ImageView ivRightFreeUser;
+  public final ImageView ivRight;
 
   @NonNull
-  public final ImageView ivinfinityFreeUser;
+  public final ImageView ivinfinity;
 
   @NonNull
   public final TextView tvFeatures;
@@ -36,13 +36,12 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
   public final TextView tvFreeUser;
 
   private ItemListSubscriptionPlanInsideListLayoutBinding(@NonNull RelativeLayout rootView,
-      @NonNull ImageView ivCrossFreeUser, @NonNull ImageView ivRightFreeUser,
-      @NonNull ImageView ivinfinityFreeUser, @NonNull TextView tvFeatures,
-      @NonNull TextView tvFreeUser) {
+      @NonNull ImageView ivCross, @NonNull ImageView ivRight, @NonNull ImageView ivinfinity,
+      @NonNull TextView tvFeatures, @NonNull TextView tvFreeUser) {
     this.rootView = rootView;
-    this.ivCrossFreeUser = ivCrossFreeUser;
-    this.ivRightFreeUser = ivRightFreeUser;
-    this.ivinfinityFreeUser = ivinfinityFreeUser;
+    this.ivCross = ivCross;
+    this.ivRight = ivRight;
+    this.ivinfinity = ivinfinity;
     this.tvFeatures = tvFeatures;
     this.tvFreeUser = tvFreeUser;
   }
@@ -75,21 +74,21 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.ivCrossFreeUser;
-      ImageView ivCrossFreeUser = ViewBindings.findChildViewById(rootView, id);
-      if (ivCrossFreeUser == null) {
+      id = R.id.ivCross;
+      ImageView ivCross = ViewBindings.findChildViewById(rootView, id);
+      if (ivCross == null) {
         break missingId;
       }
 
-      id = R.id.ivRightFreeUser;
-      ImageView ivRightFreeUser = ViewBindings.findChildViewById(rootView, id);
-      if (ivRightFreeUser == null) {
+      id = R.id.ivRight;
+      ImageView ivRight = ViewBindings.findChildViewById(rootView, id);
+      if (ivRight == null) {
         break missingId;
       }
 
-      id = R.id.ivinfinityFreeUser;
-      ImageView ivinfinityFreeUser = ViewBindings.findChildViewById(rootView, id);
-      if (ivinfinityFreeUser == null) {
+      id = R.id.ivinfinity;
+      ImageView ivinfinity = ViewBindings.findChildViewById(rootView, id);
+      if (ivinfinity == null) {
         break missingId;
       }
 
@@ -105,8 +104,8 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
         break missingId;
       }
 
-      return new ItemListSubscriptionPlanInsideListLayoutBinding((RelativeLayout) rootView,
-          ivCrossFreeUser, ivRightFreeUser, ivinfinityFreeUser, tvFeatures, tvFreeUser);
+      return new ItemListSubscriptionPlanInsideListLayoutBinding((RelativeLayout) rootView, ivCross,
+          ivRight, ivinfinity, tvFeatures, tvFreeUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

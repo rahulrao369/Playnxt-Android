@@ -18,6 +18,7 @@ import com.cw.playnxt.model.GetRecentGame.GetRecentGameDataCapsul;
 import com.cw.playnxt.model.StaticModel.AnnualPlanDataModel;
 import com.cw.playnxt.model.StaticModel.GameModel;
 import com.cw.playnxt.model.SubscriptionPlan.Plan;
+import com.cw.playnxt.model.SubscriptionPlan.StatisSubscriptionPlansListWithSymbol;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,27 +42,36 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
     @Override
     public void onBindViewHolder(@NonNull SubscriptionPlanListAdapterMain.RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.binding.tvPlanTitle.setText(list.get(position).getTitle());
+        holder.binding.tvplanForUser.setText(list.get(position).getTitle()+" For User");
+        String description = list.get(position).getDescription().substring(0, 1).toUpperCase() + list.get(position).getDescription().substring(1).toLowerCase();
+        holder.binding.tvPlan.setText(description);
+        holder.binding.tvAmount.setText(String.valueOf("$"+list.get(position).getAmount()));
+        if(!list.get(position).getDuration().equals("")){
+            String duration = list.get(position).getDuration().substring(0, 1).toUpperCase() + list.get(position).getDuration().substring(1).toLowerCase();
+            holder.binding.tvBtn.setText(duration);
+        }
         if(list.get(position).getTitle().equals("Free")){
             holder.binding.ivPlan.setImageResource(R.drawable.ic_free);
+            holder.binding.tvBtn.setText("Free");
         }else if(list.get(position).getTitle().equals("Silver Plan")){
             holder.binding.ivPlan.setImageResource(R.drawable.silver_medal);
         }else if(list.get(position).getTitle().equals("Premium Plan")){
             holder.binding.ivPlan.setImageResource(R.drawable.diamond);
         }
-        List<AnnualPlanDataModel> list = new ArrayList<>();
-        list.add(new AnnualPlanDataModel("Ad-Free Experience", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Manage Backlogs", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Manage Wishlists", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Calendar Tool ", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Personal Stats", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("View Community Activity", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Follow Friends", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("View Friend Backlog and Wishlists ", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Message Friends", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Barcode Scanning Tool (coming soon) ", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
-        list.add(new AnnualPlanDataModel("Early Access to New Features", R.drawable.ic_arrow_right, R.drawable.ic_arrow_left));
+        List<StatisSubscriptionPlansListWithSymbol> subList = new ArrayList<>();
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Ad-Free Experience",list.get(position).getAdFree()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Manage Backlogs",list.get(position).getBacklog()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Manage Wishlists",list.get(position).getWishlist()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Calendar Tool ",list.get(position).getCalender()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Personal Stats",list.get(position).getPersonalStats()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("View Community Activity",list.get(position).getCommActivity()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Follow Friends",list.get(position).getFollowFriends()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("View Friend Backlog and Wishlists ",list.get(position).getViewFriendBW()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Message Friends",list.get(position).getMessageFnd()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Barcode Scanning Tool (coming soon) ",list.get(position).getScanningTool()));
+        subList.add(new StatisSubscriptionPlansListWithSymbol("Early Access to New Features",list.get(position).getAccessNewFeatures()));
 
-        SubscriptionPlanInsideListAdapter adapter = new SubscriptionPlanInsideListAdapter(context, list, new ItemClick() {
+        SubscriptionPlanInsideListAdapter adapter = new SubscriptionPlanInsideListAdapter(context, subList, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
 
