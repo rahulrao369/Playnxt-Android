@@ -21,6 +21,7 @@
         <entry key="app/src/main/res/drawable/bg_rounded_corners.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bg_setting_tab.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bg_view_btn.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/bg_white_stroke.xml" value="0.1574074074074074" />
         <entry key="app/src/main/res/drawable/checkbox_selector.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/checkbox_selector_2.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/custom_rating_bar.xml" value="0.2140625" />
@@ -85,6 +86,7 @@
         <entry key="app/src/main/res/layout/custom_popup_header.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/dialog_big_profile_image.xml" value="0.19487179487179487" />
         <entry key="app/src/main/res/layout/dialog_change_password.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/dialog_forgot_password.xml" value="0.11296296296296296" />
         <entry key="app/src/main/res/layout/dialog_game_backlog_wishlist_type_list.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/dialog_subscription.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_anuual.xml" value="0.19791666666666666" />
@@ -123,6 +125,8 @@
         <entry key="app/src/main/res/layout/item_list_recent_games.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_search_games.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_search_users.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/item_list_subscription_plan_inside_list_layout.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/item_list_subscription_plan_list_main_layout.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_xbox_game_info.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_xbox_games_layout.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_your_stats.xml" value="0.19791666666666666" />

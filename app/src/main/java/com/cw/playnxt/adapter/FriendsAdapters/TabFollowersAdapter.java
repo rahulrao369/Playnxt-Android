@@ -44,6 +44,13 @@ public class TabFollowersAdapter extends RecyclerView.Adapter<TabFollowersAdapte
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.binding.btnMessage.setVisibility(View.GONE);
+        if(list.get(position).getIs_follow() == 0){
+            holder.binding.btnFollow.setVisibility(View.VISIBLE);
+            holder.binding.btnUnfollow.setVisibility(View.GONE);
+        }else if(list.get(position).getIs_follow() == 1){
+            holder.binding.btnFollow.setVisibility(View.GONE);
+            holder.binding.btnUnfollow.setVisibility(View.VISIBLE);
+        }
         Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.default_user).placeholder(R.drawable.default_user).into(holder.binding.cvFriendsProfile);
         String userName = list.get(position).getName().substring(0, 1).toUpperCase() +list.get(position).getName().substring(1).toLowerCase();
         holder.binding.tvName.setText(userName);
@@ -55,16 +62,12 @@ public class TabFollowersAdapter extends RecyclerView.Adapter<TabFollowersAdapte
         holder.binding.btnFollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.binding.btnFollow.setVisibility(View.GONE);
-                holder.binding.btnUnfollow.setVisibility(View.VISIBLE);
                 itemClick.onItemClick(position, Long.valueOf(list.get(position).getUserId()),"follow");
             }
         });
         holder.binding.btnUnfollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.binding.btnFollow.setVisibility(View.VISIBLE);
-                holder.binding.btnUnfollow.setVisibility(View.GONE);
                 itemClick.onItemClick(position, Long.valueOf(list.get(position).getUserId()),"unfollow");
             }
         });

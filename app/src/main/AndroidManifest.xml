@@ -28,7 +28,8 @@
             android:exported="true" />
         <activity
             android:name=".activity.ForgotPasswordActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activity.ContactUsActivity"
             android:exported="true" />

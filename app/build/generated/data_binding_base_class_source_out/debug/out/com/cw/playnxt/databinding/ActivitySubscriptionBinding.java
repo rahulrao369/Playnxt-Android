@@ -4,25 +4,48 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivitySubscriptionBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RelativeLayout rootView;
 
-  private ActivitySubscriptionBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final HeaderLayoutBinding bindingHeader;
+
+  @NonNull
+  public final LinearLayout btnAdd;
+
+  @NonNull
+  public final RecyclerView rvSubscriptionPlan;
+
+  @NonNull
+  public final TextView txtBtn;
+
+  private ActivitySubscriptionBinding(@NonNull RelativeLayout rootView,
+      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAdd,
+      @NonNull RecyclerView rvSubscriptionPlan, @NonNull TextView txtBtn) {
     this.rootView = rootView;
+    this.bindingHeader = bindingHeader;
+    this.btnAdd = btnAdd;
+    this.rvSubscriptionPlan = rvSubscriptionPlan;
+    this.txtBtn = txtBtn;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +66,39 @@ public final class ActivitySubscriptionBinding implements ViewBinding {
 
   @NonNull
   public static ActivitySubscriptionBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.bindingHeader;
+      View bindingHeader = ViewBindings.findChildViewById(rootView, id);
+      if (bindingHeader == null) {
+        break missingId;
+      }
+      HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
 
-    return new ActivitySubscriptionBinding((ConstraintLayout) rootView);
+      id = R.id.btnAdd;
+      LinearLayout btnAdd = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdd == null) {
+        break missingId;
+      }
+
+      id = R.id.rvSubscriptionPlan;
+      RecyclerView rvSubscriptionPlan = ViewBindings.findChildViewById(rootView, id);
+      if (rvSubscriptionPlan == null) {
+        break missingId;
+      }
+
+      id = R.id.txtBtn;
+      TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
+      if (txtBtn == null) {
+        break missingId;
+      }
+
+      return new ActivitySubscriptionBinding((RelativeLayout) rootView, binding_bindingHeader,
+          btnAdd, rvSubscriptionPlan, txtBtn);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

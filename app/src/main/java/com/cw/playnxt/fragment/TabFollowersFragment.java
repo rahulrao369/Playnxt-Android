@@ -164,7 +164,7 @@ public class TabFollowersFragment extends Fragment {
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                        //  Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         if (Constants.isInternetConnected(context)) {
                             GetMyFriendProfileAPI();
                         } else {
@@ -196,7 +196,7 @@ public class TabFollowersFragment extends Fragment {
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                        //  Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                          Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         if (Constants.isInternetConnected(context)) {
                             GetMyFriendProfileAPI();
                         } else {

@@ -15,10 +15,13 @@ public class GetMyFriendProfileData {
     private List<MyFriendProfileGame> games;
     @Expose
     private MyFriendProfile profile;
+
     @SerializedName("totel_follower")
     private Long totelFollower;
+
     @SerializedName("totel_following")
     private Long totelFollowing;
+
     @SerializedName("totel_game")
     private Long totelGame;
 

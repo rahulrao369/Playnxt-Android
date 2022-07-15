@@ -44,6 +44,13 @@ public class TabFollowingAdapter extends RecyclerView.Adapter<TabFollowingAdapte
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.binding.btnMessage.setVisibility(View.GONE);
+       /* if(list.get(position).getIs_follow() == 0){
+            holder.binding.btnFollow.setVisibility(View.VISIBLE);
+            holder.binding.btnUnfollow.setVisibility(View.GONE);
+        }else if(list.get(position).getIs_follow() == 1){
+            holder.binding.btnFollow.setVisibility(View.GONE);
+            holder.binding.btnUnfollow.setVisibility(View.VISIBLE);
+        }*/
         holder.binding.btnFollow.setVisibility(View.GONE);
         holder.binding.btnUnfollow.setVisibility(View.VISIBLE);
         holder.binding.btnUnfollow.getBackground().setTint(context.getResources().getColor(R.color.app_theme));

@@ -24,6 +24,7 @@ import com.cw.playnxt.model.EditGameNote.EditGameNoteParaRes;
 import com.cw.playnxt.model.EditWishlist.EditWishlistParaRes;
 import com.cw.playnxt.model.FollowFriend.FollowFriendParaRes;
 import com.cw.playnxt.model.FollowFriend.FollowFriendResponse;
+import com.cw.playnxt.model.ForgotPassword.ForgotPasswordParaRes;
 import com.cw.playnxt.model.GameInformation.GetGameInformationParaRes;
 import com.cw.playnxt.model.GameInformation.GetGameInformationResponse;
 import com.cw.playnxt.model.GetBacklogList.GetMyBacklogListResponse;
@@ -50,6 +51,7 @@ import com.cw.playnxt.model.LoginSignup.SignupParaRes;
 import com.cw.playnxt.model.LoginSignup.SignupResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaffPicks.StaffPicksResponse;
+import com.cw.playnxt.model.SubscriptionPlan.SubscriptionPlanResponse;
 import com.cw.playnxt.model.SuggestionData.SuggestionParaRes;
 import com.cw.playnxt.model.SuggestionData.SuggestionResponse;
 import com.cw.playnxt.model.UnfollowFriend.UnfollowFriendParaRes;
@@ -281,4 +283,14 @@ public interface JsonPlaceHolderApi {
     Call<AddFriendGameResponse> AddFriendGameAPI(@Header("Content-Type") String content_type,
                                                  @Header("Authorization") String token,
                                                  @Body AddFriendGameParaRes addFriendGameParaRes);
+
+    @POST("users/forget-password")
+    Call<ResponseSatusMessage> ForgotPasswordAPI(@Header("Content-Type") String content_type,
+                                                 @Header("Authorization") String token,
+                                                 @Body ForgotPasswordParaRes forgotPasswordParaRes);
+
+    @POST("users/plans")
+    Call<SubscriptionPlanResponse> SubscriptionPlanAPI(@Header("Content-Type") String content_type,
+                                                       @Header("Authorization") String token);
+
 }

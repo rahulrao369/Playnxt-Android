@@ -21,6 +21,7 @@ import com.cw.playnxt.activity.BacklogActivity;
 import com.cw.playnxt.activity.CalenderActivity;
 import com.cw.playnxt.activity.HomeActivity;
 import com.cw.playnxt.activity.MainGameInfoActivity;
+import com.cw.playnxt.activity.SubscriptionActivity;
 import com.cw.playnxt.activity.WishlistActivity;
 import com.cw.playnxt.activity.XboxGameInfoActivity;
 import com.cw.playnxt.activity.YourStatsActivity;
@@ -102,7 +103,8 @@ public class GameFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onItemClick(int position, String type) {
                 if(position == 0){
-                    startActivity(new Intent(context, BacklogActivity.class));
+                  //  startActivity(new Intent(context, BacklogActivity.class));
+                    startActivity(new Intent(context, SubscriptionActivity.class));
                 }else if(position == 1){
                     startActivity(new Intent(context, WishlistActivity.class));
                 }else if(position == 2){

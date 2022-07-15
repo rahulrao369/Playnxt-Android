@@ -2601,6 +2601,7 @@ drawable bg_rounded_btn_new
 drawable bg_rounded_corners
 drawable bg_setting_tab
 drawable bg_view_btn
+drawable bg_white_stroke
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2624,6 +2625,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable diamond
 drawable ic_add
 drawable ic_add_game
 drawable ic_add_theme
@@ -2654,6 +2656,7 @@ drawable ic_email
 drawable ic_fav
 drawable ic_filter
 drawable ic_follow
+drawable ic_free
 drawable ic_friends
 drawable ic_games
 drawable ic_hide_password
@@ -2663,6 +2666,7 @@ drawable ic_inbox
 drawable ic_indicator_one
 drawable ic_indicator_three
 drawable ic_indicator_two
+drawable ic_infinity
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
 drawable ic_like
@@ -2765,6 +2769,7 @@ drawable playnxtbtn_bg
 drawable popup_background
 drawable progress_animation
 drawable progress_image
+drawable silver_medal
 drawable start_off
 drawable start_on
 drawable test_custom_background
@@ -3146,6 +3151,7 @@ id ivFav
 id ivGame
 id ivGameIcon
 id ivImage
+id ivPlan
 id ivRightFreeUser
 id ivRightPremiumUser
 id ivSearch
@@ -3153,6 +3159,7 @@ id ivStartDate
 id ivSubscribeNow
 id ivUnfav
 id iv_profile_image
+id ivinfinityFreeUser
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3347,6 +3354,7 @@ id rvFollowersList
 id rvFollowingList
 id rvGames
 id rvRecentGames
+id rvSubscriptionPlan
 id rvUser
 id saturdayLabel
 id save_non_transition_alpha
@@ -3502,6 +3510,7 @@ id tvName1
 id tvNoFriendsYet
 id tvNotes
 id tvNumber
+id tvPlanTitle
 id tvPlannedEnd
 id tvPlannedStart
 id tvPlatform
@@ -3718,6 +3727,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_big_profile_image
 layout dialog_change_password
+layout dialog_forgot_password
 layout dialog_game_backlog_wishlist_type_list
 layout dialog_subscription
 layout fragment_anuual
@@ -3756,6 +3766,8 @@ layout item_list_new_tab_activity_layout
 layout item_list_recent_games
 layout item_list_search_games
 layout item_list_search_users
+layout item_list_subscription_plan_inside_list_layout
+layout item_list_subscription_plan_list_main_layout
 layout item_list_xbox_game_info
 layout item_list_xbox_games_layout
 layout item_list_your_stats
@@ -3873,11 +3885,13 @@ string Games
 string GetStarted
 string Inbox
 string Next
+string OK
 string Please_enter_your_name
 string Search
 string Settings
 string Stat
 string Suggestnewfeature
+string We_have_sent_a_reset_password_link_to_your_register_email_address
 string Wishlist
 string XboxGames
 string abc_action_bar_home_description
@@ -3955,6 +3969,7 @@ string events
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string forgot_password_link_send_successfully
 string forgot_your_password
 string friends
 string games
