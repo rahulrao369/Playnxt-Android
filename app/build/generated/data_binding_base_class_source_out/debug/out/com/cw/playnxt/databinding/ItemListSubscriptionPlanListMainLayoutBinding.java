@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,10 +23,16 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
   private final RelativeLayout rootView;
 
   @NonNull
+  public final LinearLayout btnPlan;
+
+  @NonNull
   public final ImageView ivPlan;
 
   @NonNull
   public final RelativeLayout layoutMain;
+
+  @NonNull
+  public final LinearLayout llUpper;
 
   @NonNull
   public final RecyclerView recyclerView;
@@ -46,12 +53,15 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
   public final TextView tvplanForUser;
 
   private ItemListSubscriptionPlanListMainLayoutBinding(@NonNull RelativeLayout rootView,
-      @NonNull ImageView ivPlan, @NonNull RelativeLayout layoutMain,
-      @NonNull RecyclerView recyclerView, @NonNull TextView tvAmount, @NonNull TextView tvBtn,
-      @NonNull TextView tvPlan, @NonNull TextView tvPlanTitle, @NonNull TextView tvplanForUser) {
+      @NonNull LinearLayout btnPlan, @NonNull ImageView ivPlan, @NonNull RelativeLayout layoutMain,
+      @NonNull LinearLayout llUpper, @NonNull RecyclerView recyclerView, @NonNull TextView tvAmount,
+      @NonNull TextView tvBtn, @NonNull TextView tvPlan, @NonNull TextView tvPlanTitle,
+      @NonNull TextView tvplanForUser) {
     this.rootView = rootView;
+    this.btnPlan = btnPlan;
     this.ivPlan = ivPlan;
     this.layoutMain = layoutMain;
+    this.llUpper = llUpper;
     this.recyclerView = recyclerView;
     this.tvAmount = tvAmount;
     this.tvBtn = tvBtn;
@@ -88,6 +98,12 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnPlan;
+      LinearLayout btnPlan = ViewBindings.findChildViewById(rootView, id);
+      if (btnPlan == null) {
+        break missingId;
+      }
+
       id = R.id.ivPlan;
       ImageView ivPlan = ViewBindings.findChildViewById(rootView, id);
       if (ivPlan == null) {
@@ -95,6 +111,12 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
       }
 
       RelativeLayout layoutMain = (RelativeLayout) rootView;
+
+      id = R.id.llUpper;
+      LinearLayout llUpper = ViewBindings.findChildViewById(rootView, id);
+      if (llUpper == null) {
+        break missingId;
+      }
 
       id = R.id.recyclerView;
       RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
@@ -132,8 +154,9 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
         break missingId;
       }
 
-      return new ItemListSubscriptionPlanListMainLayoutBinding((RelativeLayout) rootView, ivPlan,
-          layoutMain, recyclerView, tvAmount, tvBtn, tvPlan, tvPlanTitle, tvplanForUser);
+      return new ItemListSubscriptionPlanListMainLayoutBinding((RelativeLayout) rootView, btnPlan,
+          ivPlan, layoutMain, llUpper, recyclerView, tvAmount, tvBtn, tvPlan, tvPlanTitle,
+          tvplanForUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

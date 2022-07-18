@@ -18,4 +18,5 @@
     <color name="light_gray">#3B3940</color>
     <color name="horizontal_line">#616161</color>
     <color name="transparent">#D9000000</color>
+    <color name="selected">#061728</color>
 </resources>

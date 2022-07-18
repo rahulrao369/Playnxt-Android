@@ -36,9 +36,9 @@
 18-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:12:22-78
 19
 20    <application
-20-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-144:19
-21        android:allowBackup="false"
-21-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:15:9-36
+20-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-148:19
+21        android:allowBackup="true"
+21-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:15:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 22-->[androidx.core:core:1.7.0] /home/cw/.gradle/caches/transforms-3/5f5e792acd1d8373e906efd73c4b888f/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 23        android:debuggable="true"
@@ -299,36 +299,42 @@
 152-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:13-76
 153            android:theme="@style/Base.Theme.AppCompat" />
 153-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:143:13-56
-154
-155        <provider
-155-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
-156            android:name="com.squareup.picasso.PicassoProvider"
-156-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
-157            android:authorities="com.cw.playnxt.com.squareup.picasso"
-157-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
-158            android:exported="false" />
-158-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
-159        <provider
-159-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-160            android:name="androidx.startup.InitializationProvider"
-160-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-161            android:authorities="com.cw.playnxt.androidx-startup"
-161-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-162            android:exported="false" >
-162-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-163            <meta-data
-163-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-164                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-164-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-165                android:value="androidx.startup" />
-165-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+154        <activity
+154-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:145:9-147:15
+155            android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
+155-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:145:19-85
+156            android:screenOrientation="portrait" />
+156-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:146:13-49
+157
+158        <provider
+158-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+159            android:name="com.squareup.picasso.PicassoProvider"
+159-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
+160            android:authorities="com.cw.playnxt.com.squareup.picasso"
+160-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+161            android:exported="false" />
+161-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+162        <provider
+162-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+163            android:name="androidx.startup.InitializationProvider"
+163-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+164            android:authorities="com.cw.playnxt.androidx-startup"
+164-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+165            android:exported="false" >
+165-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
 166            <meta-data
-166-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-167                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-167-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+166-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+167                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+167-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
 168                android:value="androidx.startup" />
-168-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-169        </provider>
-170    </application>
-171
-172</manifest>
+168-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+169            <meta-data
+169-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+170                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+170-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+171                android:value="androidx.startup" />
+171-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+172        </provider>
+173    </application>
+174
+175</manifest>

@@ -66,4 +66,7 @@ dependencies {
 
     //Image Crop..
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+    //Payment Card View..
+    implementation 'com.github.sharish:CreditCardView:v1.0.4'
 }

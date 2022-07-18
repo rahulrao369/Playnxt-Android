@@ -24,12 +24,12 @@
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_s_logout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_xbox_games.xml.flat",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_xbox_games.xml"
-    },
-    {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_bg_recent_games.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/bg_recent_games.xml"
+    },
+    {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_xbox_games.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_xbox_games.xml"
     },
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/anim_slide_to_right.xml.flat",
@@ -406,6 +406,10 @@
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_ic_down_arrow.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/ic_down_arrow.xml"
+    },
+    {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_bg_selected_btn.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/bg_selected_btn.xml"
     },
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/font_nunito_extra_light.ttf.flat",

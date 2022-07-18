@@ -79,10 +79,12 @@
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.0" level="project" />
     <orderEntry type="library" name="Gradle: com.annimon:stream:1.2.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.9" level="project" />
+    <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.theartofdev.edmodo:android-image-cropper:2.8.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:viewbinding:7.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.material:material:1.6.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.applandeo:material-calendar-view:1.7.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.sharish:CreditCardView:v1.0.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat:1.4.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.picasso:picasso:2.71828@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.exifinterface:exifinterface:1.0.0@aar" level="project" />
@@ -127,5 +129,6 @@
     <orderEntry type="library" name="Gradle: com.github.ismaeldivita:chip-navigation-bar:1.4.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: de.hdodenhof:circleimageview:3.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.makeramen:roundedimageview:2.3.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.ozodrukh:CircularReveal:1.0.5@aar" level="project" />
   </component>
 </module>

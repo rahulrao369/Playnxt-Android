@@ -1,15 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.8.0] /home/cw/.gradle/caches/transforms-3/dd7d100d6c9f473334a40e625f5e13f2/transformed/jetified-android-image-cropper-2.8.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:viewbinding:7.0.1] /home/cw/.gradle/caches/transforms-3/ff5d982a54f36c84e4fced91462e97bb/transformed/jetified-viewbinding-7.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:17:1-26:12
 MERGED from [com.github.ismaeldivita:chip-navigation-bar:1.4.0] /home/cw/.gradle/caches/transforms-3/cfc8c4e264027644fff76df3ef9258a2/transformed/jetified-chip-navigation-bar-1.4.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches/transforms-3/124ee3f62a1261b99cdf0eddb06e39d5/transformed/jetified-material-calendar-view-1.7.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:2:1-17:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/3fa0fe92d846f5c8ae89ebc20cb4fd9e/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cw/.gradle/caches/transforms-3/55e311d705e7ca24b3efd8612e6caa41/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:2:1-14:12
@@ -57,20 +58,21 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/c
 MERGED from [androidx.print:print:1.0.0] /home/cw/.gradle/caches/transforms-3/364cd11e18b25eea3f64fd0a4b722373/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cw/.gradle/caches/transforms-3/2f8e445222e4e599ddd0550fcb0ff3e9/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/cw/.gradle/caches/transforms-3/990035cce6f8133573ea22ca7a8dd41c/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
 	package
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:3:5-29
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-146:12
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:11-69
@@ -107,11 +109,13 @@ ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app
 	android:name
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:12:22-78
 application
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-144:19
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-148:19
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
 MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
 MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/ae731995f260e8d6dff1013753f31d11/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:9:5-20
@@ -126,6 +130,8 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cw/.gradle/caches/transforms-3/f2ddf19c79908c67b5eb1233d0a75e03/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cw/.gradle/caches/transforms-3/f2ddf19c79908c67b5eb1233d0a75e03/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:10:5-20
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:10:5-20
 	android:requestLegacyExternalStorage
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:20:9-52
 	android:appComponentFactory
@@ -143,7 +149,7 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cw/.gradle/caches/tra
 	android:icon
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:17:9-43
 	android:allowBackup
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:15:9-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:15:9-35
 	android:theme
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:23:9-45
 	android:networkSecurityConfig
@@ -384,6 +390,12 @@ ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:143:13-56
 	android:name
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:13-76
+activity#com.cooltechworks.creditcarddesign.CardEditActivity
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:145:9-147:15
+	android:screenOrientation
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:146:13-49
+	android:name
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:145:19-85
 uses-sdk
 INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
@@ -400,6 +412,8 @@ MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches
 MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches/transforms-3/124ee3f62a1261b99cdf0eddb06e39d5/transformed/jetified-material-calendar-view-1.7.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/3fa0fe92d846f5c8ae89ebc20cb4fd9e/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/3fa0fe92d846f5c8ae89ebc20cb4fd9e/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cw/.gradle/caches/transforms-3/55e311d705e7ca24b3efd8612e6caa41/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
@@ -494,6 +508,8 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cw/.gradle/caches/t
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cw/.gradle/caches/transforms-3/2f8e445222e4e599ddd0550fcb0ff3e9/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/cw/.gradle/caches/transforms-3/990035cce6f8133573ea22ca7a8dd41c/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/cw/.gradle/caches/transforms-3/990035cce6f8133573ea22ca7a8dd41c/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:6:5-8:41
 INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

@@ -217,6 +217,10 @@ attr cardMaxElevation
 attr cardPreventCornerOverlap
 attr cardUseCompatPadding
 attr cardViewStyle
+attr card_expiration
+attr card_holder_name
+attr card_number
+attr card_side
 attr carousel_backwardTransition
 attr carousel_emptyViewsBehavior
 attr carousel_firstView
@@ -445,6 +449,7 @@ attr customNavigationLayout
 attr customPixelDimension
 attr customReference
 attr customStringValue
+attr cvv
 attr datePicker
 attr dayInvalidStyle
 attr daySelectedStyle
@@ -1306,6 +1311,8 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue_color
+color blue_color_gradient
 color border
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
@@ -1313,6 +1320,8 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color brown_color
+color brown_color_gradient
 color btn_gray
 color btn_gray_dark
 color button_material_dark
@@ -1322,7 +1331,11 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color checkbox_themeable_attribute_color
+color chip_color
+color chip_inner_color
 color chip_nav_bg
+color chip_yellow_color
+color chip_yellow_inner_color
 color cnb_default_badge_color
 color cnb_default_unselected_color
 color cp
@@ -1331,6 +1344,8 @@ color dark_gray
 color day_item_background_state_color
 color daysLabelColor
 color defaultColor
+color default_color
+color default_color_gradient
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1381,12 +1396,17 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color green_color
+color green_color_gradient
+color green_continue
+color grey_font
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color horizontal_line
 color ic_launcher_background
 color itemFocusedColor
 color itemHighlightColor
+color light_font
 color light_gray
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
@@ -1865,6 +1885,8 @@ color nextMonthDayColor
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color pink_color
+color pink_color_gradient
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1873,6 +1895,8 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_color
+color purple_color_gradient
 color radiobutton_themeable_attribute_color
 color ripple_material_dark
 color ripple_material_light
@@ -1880,6 +1904,8 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color selected
+color semi_white
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1889,6 +1915,8 @@ color switch_thumb_normal_material_light
 color test_color
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
+color text_shadow
+color text_shadow_white
 color tooltip_background_dark
 color tooltip_background_light
 color top_gray
@@ -1976,10 +2004,19 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
+dimen card_height_normal
+dimen card_radius
+dimen card_width_normal
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
+dimen center_image_height
+dimen center_image_width
+dimen chip_height_normal
+dimen chip_width_normal
 dimen clock_face_margin_start
 dimen cnb_badge_size
 dimen cnb_badge_size_numberless
@@ -2063,9 +2100,13 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen inner_chip_height_normal
+dimen inner_chip_width_normal
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen logo_height_normal
+dimen logo_width_normal
 dimen m3_alert_dialog_action_bottom_padding
 dimen m3_alert_dialog_action_top_padding
 dimen m3_alert_dialog_corner_size
@@ -2225,6 +2266,9 @@ dimen m3_sys_state_hover_state_layer_opacity
 dimen m3_sys_state_pressed_state_layer_opacity
 dimen m3_timepicker_display_stroke_width
 dimen m3_timepicker_window_elevation
+dimen margin_large
+dimen margin_small
+dimen margin_xlarge
 dimen material_bottom_sheet_max_width
 dimen material_clock_display_padding
 dimen material_clock_face_margin_top
@@ -2474,6 +2518,10 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen padding_large
+dimen padding_normal
+dimen padding_small
+dimen padding_xlarge
 dimen row_height
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
@@ -2492,6 +2540,10 @@ dimen test_navigation_bar_item_min_width
 dimen test_navigation_bar_label_padding
 dimen test_navigation_bar_shadow_height
 dimen test_navigation_bar_text_size
+dimen text_size_normal
+dimen text_size_normal_plus
+dimen text_size_normal_small
+dimen text_size_small
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -2599,6 +2651,7 @@ drawable bg_ring
 drawable bg_rounded_btn
 drawable bg_rounded_btn_new
 drawable bg_rounded_corners
+drawable bg_selected_btn
 drawable bg_setting_tab
 drawable bg_view_btn
 drawable bg_white_stroke
@@ -2611,8 +2664,18 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable card_color_round_rect_blue
+drawable card_color_round_rect_brown
+drawable card_color_round_rect_default
+drawable card_color_round_rect_green
+drawable card_color_round_rect_pink
+drawable card_color_round_rect_purple
 drawable checkbox_selector
 drawable checkbox_selector_2
+drawable chip
+drawable chip_inner
+drawable chip_yellow
+drawable chip_yellow_inner
 drawable crop_image_menu_flip
 drawable crop_image_menu_rotate_left
 drawable crop_image_menu_rotate_right
@@ -2636,6 +2699,10 @@ drawable ic_backlog
 drawable ic_bg_circle_theme
 drawable ic_bg_home_top
 drawable ic_bg_welcome_slider
+drawable ic_billing_amex_logo
+drawable ic_billing_amex_logo1
+drawable ic_billing_mastercard_logo
+drawable ic_billing_visa_logo
 drawable ic_btn_edit
 drawable ic_btn_edit_with_bg
 drawable ic_calender
@@ -2719,6 +2786,7 @@ drawable ic_your_stats
 drawable image
 drawable img
 drawable img3
+drawable img_amex_center_face
 drawable imgmain
 drawable login_signup_btn
 drawable m1
@@ -2732,6 +2800,8 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable master_back
+drawable mastercard_back_bg
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2770,6 +2840,8 @@ drawable playnxtbtn_bg
 drawable popup_background
 drawable progress_animation
 drawable progress_image
+drawable sign_strip
+drawable sign_strip_mod
 drawable silver_medal
 drawable start_off
 drawable start_on
@@ -2778,6 +2850,8 @@ drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable verticle_dashed_line
+drawable visacard_back
+drawable visacard_back_bg
 font nunit_medium
 font nunito_extra_bold
 font nunito_extra_bold_italic
@@ -2887,6 +2961,10 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back
+id back_card_container
+id back_card_cvv
+id back_card_outline
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2925,6 +3003,7 @@ id btnMessage
 id btnNext
 id btnOk
 id btnPayNow
+id btnPlan
 id btnPlaynxt
 id btnSave
 id btnSend
@@ -2945,6 +3024,15 @@ id calendarViewPager
 id callMeasure
 id cancel_action
 id cancel_button
+id card_container
+id card_cvv
+id card_expiry
+id card_expiry_label
+id card_field_container_pager
+id card_name
+id card_name_label
+id card_number_field
+id card_outline_container
 id carryVelocity
 id cb
 id cbGames
@@ -2969,7 +3057,9 @@ id chip1
 id chip2
 id chip3
 id chipNavigationBar
+id chip_container
 id chip_group
+id chip_inner_view
 id chronometer
 id circle_center
 id clamp
@@ -2993,6 +3083,7 @@ id continuousVelocity
 id coordinator
 id cos
 id counterclockwise
+id credit_card_view
 id cropImageView
 id crop_image_menu_crop
 id crop_image_menu_flip
@@ -3101,6 +3192,12 @@ id forwardButton
 id fragment_container_view_tag
 id frameContainer
 id fridayLabel
+id front
+id front_card_container
+id front_card_expiry
+id front_card_holder_name
+id front_card_number
+id front_card_outline
 id frost
 id fullscreen_header
 id gameImg
@@ -3210,8 +3307,11 @@ id llSelectEndDate
 id llSelectImage
 id llSelectStartDate
 id llTimeStamp
+id llUpper
 id llXboxGames
 id ll_bottom
+id logo_center_img
+id logo_img
 id lytCheckBox
 id lytForgotPassword
 id lytProfileImage
@@ -3297,6 +3397,7 @@ id never
 id neverCompleteToEnd
 id neverCompleteToStart
 id new_password_toggle_imageView
+id next
 id noScroll
 id noState
 id none
@@ -3331,6 +3432,7 @@ id pin
 id position
 id positive_button
 id postLayout
+id previous
 id previousButton
 id progressBar1
 id progress_circular
@@ -3509,6 +3611,7 @@ id tvHeading2
 id tvHeading3
 id tvLastUpdate
 id tvListName
+id tvMsg
 id tvMutualFriend
 id tvName
 id tvName1
@@ -3525,6 +3628,7 @@ id tvRating
 id tvSeeAll
 id tvStartDate
 id tvStatus
+id tvTime
 id tvTimeStamps
 id tvTimeStamps1
 id tvTotalGame
@@ -3672,6 +3776,7 @@ layout activity_add_game_from_backlog_list
 layout activity_add_game_from_wishlist
 layout activity_backlog
 layout activity_calender
+layout activity_card_edit
 layout activity_confirmation
 layout activity_contact_us
 layout activity_edit_profile
@@ -3698,6 +3803,7 @@ layout activity_wishlist_xbox_game
 layout activity_xbox_game_info
 layout activity_xbox_games
 layout activity_your_stats
+layout back_card
 layout bootom_sheet_edit_backloglist
 layout bottom_sheet_add_new_note
 layout bottom_sheet_add_new_wishlist
@@ -3755,6 +3861,8 @@ layout fragment_tab_followers
 layout fragment_tab_following
 layout fragment_tab_friends
 layout fragment_third
+layout front_card
+layout front_card_outline
 layout header_layout
 layout item_list_anuual_layout
 layout item_list_backlog_xbox_games
@@ -3780,6 +3888,10 @@ layout item_list_xbox_games_layout
 layout item_list_your_stats
 layout item_list_your_stats_inside_list
 layout list_item_setting_layout
+layout lyt_card_cvv
+layout lyt_card_expiry
+layout lyt_card_holder_name
+layout lyt_card_number
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3864,6 +3976,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout view_creditcard
 menu bottom_menu
 menu crop_image_menu
 menu edit_delete_menu
@@ -3928,6 +4041,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_settings
 string activity
 string add
 string add_game_title
@@ -3944,6 +4058,11 @@ string are_you_sure_you_want_to_exit
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
 string buy_now
+string card_expiry
+string card_holder
+string card_holder_name_sample
+string card_mm_yy
+string card_number
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3966,13 +4085,17 @@ string define_roundedimageview
 string delete
 string do_you_want_to_logout
 string don_t_have_an_account
+string done
 string edit_profile
 string email
 string email_me_about_special_pricing
 string enter_note
 string enter_note_here
+string error_card_expired
 string error_icon_content_description
+string error_invalid_month
 string events
+string expiry
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -3981,6 +4104,7 @@ string forgot_your_password
 string friends
 string games
 string hello_blank_fragment
+string hello_world
 string hide_bottom_view_on_scroll_behavior
 string home
 string icon_content_description
@@ -4045,6 +4169,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string mm_yy
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -4083,11 +4208,13 @@ string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
 string my_profile
 string name
+string name_on_card
 string name_should_be_less_than_20_charactrs
 string name_should_be_more_than_or_equal_to_3_character
 string name_your_backlog_list
 string name_your_wishlist
 string new_password
+string next
 string no
 string no_internet_connection
 string notes
@@ -4103,6 +4230,7 @@ string pick_image_intent_chooser_title
 string please_enter_valid_email
 string please_enter_your_email
 string please_enter_your_password
+string previous
 string save
 string save_list
 string search_menu_title
@@ -4126,6 +4254,7 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
+style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -5337,6 +5466,7 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
+styleable creditcard card_expiration card_holder_name card_number card_side cvv
 styleable include constraintSet
 xml network_security_config
 xml standalone_badge

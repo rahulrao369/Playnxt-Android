@@ -28,19 +28,23 @@ public final class ItemListInboxLayoutBinding implements ViewBinding {
   public final LinearLayout layoutMain;
 
   @NonNull
+  public final TextView tvMsg;
+
+  @NonNull
   public final TextView tvName;
 
   @NonNull
-  public final TextView tvaddtobacklog;
+  public final TextView tvTime;
 
   private ItemListInboxLayoutBinding(@NonNull RelativeLayout rootView,
       @NonNull CircleImageView cvFriendsProfile, @NonNull LinearLayout layoutMain,
-      @NonNull TextView tvName, @NonNull TextView tvaddtobacklog) {
+      @NonNull TextView tvMsg, @NonNull TextView tvName, @NonNull TextView tvTime) {
     this.rootView = rootView;
     this.cvFriendsProfile = cvFriendsProfile;
     this.layoutMain = layoutMain;
+    this.tvMsg = tvMsg;
     this.tvName = tvName;
-    this.tvaddtobacklog = tvaddtobacklog;
+    this.tvTime = tvTime;
   }
 
   @Override
@@ -82,20 +86,26 @@ public final class ItemListInboxLayoutBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvMsg;
+      TextView tvMsg = ViewBindings.findChildViewById(rootView, id);
+      if (tvMsg == null) {
+        break missingId;
+      }
+
       id = R.id.tvName;
       TextView tvName = ViewBindings.findChildViewById(rootView, id);
       if (tvName == null) {
         break missingId;
       }
 
-      id = R.id.tvaddtobacklog;
-      TextView tvaddtobacklog = ViewBindings.findChildViewById(rootView, id);
-      if (tvaddtobacklog == null) {
+      id = R.id.tvTime;
+      TextView tvTime = ViewBindings.findChildViewById(rootView, id);
+      if (tvTime == null) {
         break missingId;
       }
 
       return new ItemListInboxLayoutBinding((RelativeLayout) rootView, cvFriendsProfile, layoutMain,
-          tvName, tvaddtobacklog);
+          tvMsg, tvName, tvTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

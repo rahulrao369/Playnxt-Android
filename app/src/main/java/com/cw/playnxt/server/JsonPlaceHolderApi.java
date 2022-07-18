@@ -12,6 +12,7 @@ import com.cw.playnxt.model.CalenderDataModel.AddEvent.AddEventParaRes;
 import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventParaRes;
 import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventResponse;
 import com.cw.playnxt.model.ChangePassword.ChangePasswordParaRes;
+import com.cw.playnxt.model.ChatList.ChatListResponse;
 import com.cw.playnxt.model.CommunityData.GetCommunityListResponse;
 import com.cw.playnxt.model.ContactUs.ContactUsResponse;
 import com.cw.playnxt.model.DeleteBacklogList.DeleteBacklogListParaRes;
@@ -49,6 +50,8 @@ import com.cw.playnxt.model.LoginSignup.LoginParaRes;
 import com.cw.playnxt.model.LoginSignup.LoginResponse;
 import com.cw.playnxt.model.LoginSignup.SignupParaRes;
 import com.cw.playnxt.model.LoginSignup.SignupResponse;
+import com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes;
+import com.cw.playnxt.model.PurchasePlan.PurchasePlanResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaffPicks.StaffPicksResponse;
 import com.cw.playnxt.model.SubscriptionPlan.SubscriptionPlanResponse;
@@ -293,4 +296,12 @@ public interface JsonPlaceHolderApi {
     Call<SubscriptionPlanResponse> SubscriptionPlanAPI(@Header("Content-Type") String content_type,
                                                        @Header("Authorization") String token);
 
+    @POST("users/chatlist")
+    Call<ChatListResponse> ChatListAPI(@Header("Content-Type") String content_type,
+                                       @Header("Authorization") String token);
+
+    @POST("users/purchase-plan")
+    Call<PurchasePlanResponse> PurchasePlanAPI(@Header("Content-Type") String content_type,
+                                               @Header("Authorization") String token,
+                                               @Body PurchasePlanParaRes purchasePlanParaRes);
 }

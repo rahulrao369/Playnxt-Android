@@ -2,6 +2,8 @@ package com.cw.playnxt.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.Interface.ItemClickGameInfoRecentList;
+import com.cw.playnxt.Interface.ItemClickId;
 import com.cw.playnxt.R;
 import com.cw.playnxt.adapter.SettingAdapters.MonthlyPlanAdapter;
 import com.cw.playnxt.databinding.ItemListSubscriptionPlanListMainLayoutBinding;
@@ -26,9 +29,12 @@ import java.util.List;
 public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<SubscriptionPlanListAdapterMain.RecyclerViewHolder> {
     Context context;
     List<Plan> list;
-    public SubscriptionPlanListAdapterMain(Context context, List<Plan> list) {
+    int selectPosition = -1;
+    ItemClickId itemClick;
+    public SubscriptionPlanListAdapterMain(Context context, List<Plan> list,  ItemClickId itemClick) {
         this.context = context;
         this.list = list;
+        this.itemClick = itemClick;
     }
 
     @NonNull
@@ -41,6 +47,16 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
 
     @Override
     public void onBindViewHolder(@NonNull SubscriptionPlanListAdapterMain.RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
+        if (selectPosition == position){
+            holder.binding.llUpper.setBackgroundResource(R.color.selected);
+            holder.binding.btnPlan.setBackgroundResource(R.drawable.bg_selected_btn);
+        }
+        else{
+            holder.binding.llUpper.setBackgroundResource(R.color.border);
+            holder.binding.btnPlan.setBackgroundResource(R.drawable.bg_white_stroke);
+        }
+        Log.d("TAG","selectPosition"+selectPosition);
         holder.binding.tvPlanTitle.setText(list.get(position).getTitle());
         holder.binding.tvplanForUser.setText(list.get(position).getTitle()+" For User");
         String description = list.get(position).getDescription().substring(0, 1).toUpperCase() + list.get(position).getDescription().substring(1).toLowerCase();
@@ -84,7 +100,17 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                selectPosition = position;
+                itemClick.onItemClick(position,1l,"subscription");
+                notifyDataSetChanged();
+            }
+        });
+        holder.binding.llUpper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectPosition = position;
+                itemClick.onItemClick(position,1l,"subscription");
+                notifyDataSetChanged();
             }
         });
     }

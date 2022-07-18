@@ -22,7 +22,7 @@ import java.util.List;
 public class GameListAdapter extends RecyclerView.Adapter<GameListAdapter.RecyclerViewHolder> {
     Context context;
     List<Capsul> list;
-    ItemClickId itemClick; ;
+    ItemClickId itemClick;
 
     public GameListAdapter(Context context, List<Capsul> list,  ItemClickId itemClick) {
         this.context = context;

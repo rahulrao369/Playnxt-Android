@@ -1,21 +1,22 @@
 package com.cw.playnxt.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.cw.playnxt.R;
-import com.cw.playnxt.databinding.ActivityAddCardBinding;
 import com.cw.playnxt.databinding.ActivityConfirmationBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 
-public class ConfirmationActivity extends AppCompatActivity implements View.OnClickListener{
+public class ConfirmationActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
     private ActivityConfirmationBinding binding;
     private HeaderLayoutBinding headerBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,7 @@ public class ConfirmationActivity extends AppCompatActivity implements View.OnCl
         init();
         onclicks();
     }
+
     public void init() {
         context = ConfirmationActivity.this;
         headerBinding.tvHeading.setText(R.string.Confirmation);
@@ -36,6 +38,7 @@ public class ConfirmationActivity extends AppCompatActivity implements View.OnCl
 
     public void onclicks() {
         headerBinding.btnBack.setOnClickListener(this);
+        binding.btnOk.setOnClickListener(this);
 
     }
 
@@ -46,6 +49,10 @@ public class ConfirmationActivity extends AppCompatActivity implements View.OnCl
         switch (v.getId()) {
             case R.id.btnBack:
                 onBackPressed();
+                break;
+
+            case R.id.btnOk:
+               startActivity(new Intent(context,HomeActivity.class));
                 break;
         }
     }

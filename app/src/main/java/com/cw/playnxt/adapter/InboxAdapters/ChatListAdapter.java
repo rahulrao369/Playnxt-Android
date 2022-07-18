@@ -11,16 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ItemListInboxLayoutBinding;
+import com.cw.playnxt.model.ChatList.Inbox;
 import com.cw.playnxt.model.StaticModel.GameModel;
+import com.cw.playnxt.server.Allurls;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.RecyclerViewHolder> {
     Context context;
-    List<GameModel> list;
+    List<Inbox> list;
     ItemClick itemClick ;
 
-    public ChatListAdapter(Context context, List<GameModel> list, ItemClick itemClick) {
+    public ChatListAdapter(Context context, List<Inbox> list, ItemClick itemClick) {
         this.context = context;
         this.list = list;
         this.itemClick = itemClick;
@@ -36,8 +38,10 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.Recycl
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Picasso.get().load(list.get(position).getGame_img()).into(holder.binding.cvFriendsProfile);
-        holder.binding.tvName.setText(list.get(position).getGame_name());
+        Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.cvFriendsProfile);
+        holder.binding.tvName.setText(list.get(position).getName());
+        holder.binding.tvMsg.setText(list.get(position).getMessage());
+        holder.binding.tvTime.setText(list.get(position).getTime());
 
         holder.binding.cvFriendsProfile.setOnClickListener(new View.OnClickListener() {
             @Override
