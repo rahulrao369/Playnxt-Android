@@ -69,4 +69,7 @@ dependencies {
 
     //Payment Card View..
     implementation 'com.github.sharish:CreditCardView:v1.0.4'
+
+    //Theme Card View Payment..
+  //  api 'com.vinaygaba:creditcardview:1.0.4'
 }

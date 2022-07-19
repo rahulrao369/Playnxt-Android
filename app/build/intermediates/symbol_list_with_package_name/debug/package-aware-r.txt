@@ -3295,6 +3295,7 @@ id llMain
 id llMain1
 id llMain2
 id llMain3
+id llMainItem
 id llMyGameInfo
 id llMyProfile
 id llNoData

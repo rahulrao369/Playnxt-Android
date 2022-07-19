@@ -89,8 +89,12 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
 
         SubscriptionPlanInsideListAdapter adapter = new SubscriptionPlanInsideListAdapter(context, subList, new ItemClick() {
             @Override
-            public void onItemClick(int position, String type) {
-
+            public void onItemClick(int position_item, String type) {
+                Log.d("TAG","Clicked");
+                selectPosition = position;
+                Log.d("TAG","selectPosition item"+selectPosition);
+                itemClick.onItemClick(position,1l,"subscription");
+                notifyDataSetChanged();
             }
         });
         holder.binding.recyclerView.setHasFixedSize(true);
@@ -105,7 +109,7 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
                 notifyDataSetChanged();
             }
         });
-        holder.binding.llUpper.setOnClickListener(new View.OnClickListener() {
+           holder.binding.recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 selectPosition = position;
@@ -113,6 +117,7 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
                 notifyDataSetChanged();
             }
         });
+
     }
 
     @Override

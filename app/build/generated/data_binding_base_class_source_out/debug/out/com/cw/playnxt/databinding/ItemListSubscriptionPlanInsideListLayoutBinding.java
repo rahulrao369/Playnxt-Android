@@ -30,6 +30,9 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
   public final ImageView ivinfinity;
 
   @NonNull
+  public final RelativeLayout llMainItem;
+
+  @NonNull
   public final TextView tvFeatures;
 
   @NonNull
@@ -37,11 +40,13 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
 
   private ItemListSubscriptionPlanInsideListLayoutBinding(@NonNull RelativeLayout rootView,
       @NonNull ImageView ivCross, @NonNull ImageView ivRight, @NonNull ImageView ivinfinity,
-      @NonNull TextView tvFeatures, @NonNull TextView tvFreeUser) {
+      @NonNull RelativeLayout llMainItem, @NonNull TextView tvFeatures,
+      @NonNull TextView tvFreeUser) {
     this.rootView = rootView;
     this.ivCross = ivCross;
     this.ivRight = ivRight;
     this.ivinfinity = ivinfinity;
+    this.llMainItem = llMainItem;
     this.tvFeatures = tvFeatures;
     this.tvFreeUser = tvFreeUser;
   }
@@ -92,6 +97,8 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
         break missingId;
       }
 
+      RelativeLayout llMainItem = (RelativeLayout) rootView;
+
       id = R.id.tvFeatures;
       TextView tvFeatures = ViewBindings.findChildViewById(rootView, id);
       if (tvFeatures == null) {
@@ -105,7 +112,7 @@ public final class ItemListSubscriptionPlanInsideListLayoutBinding implements Vi
       }
 
       return new ItemListSubscriptionPlanInsideListLayoutBinding((RelativeLayout) rootView, ivCross,
-          ivRight, ivinfinity, tvFeatures, tvFreeUser);
+          ivRight, ivinfinity, llMainItem, tvFeatures, tvFreeUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

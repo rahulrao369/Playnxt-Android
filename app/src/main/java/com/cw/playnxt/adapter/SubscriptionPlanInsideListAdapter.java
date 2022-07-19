@@ -52,6 +52,12 @@ public class SubscriptionPlanInsideListAdapter extends RecyclerView.Adapter<Subs
             holder.binding.ivinfinity.setVisibility(View.VISIBLE);
         }
         holder.binding.tvFeatures.setText(list.get(position).getListName());
+        holder.binding.llMainItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemClick.onItemClick(position,"Item");
+            }
+        });
     }
 
     @Override

@@ -29,7 +29,7 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
   public final ImageView ivPlan;
 
   @NonNull
-  public final RelativeLayout layoutMain;
+  public final LinearLayout layoutMain;
 
   @NonNull
   public final LinearLayout llUpper;
@@ -53,7 +53,7 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
   public final TextView tvplanForUser;
 
   private ItemListSubscriptionPlanListMainLayoutBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btnPlan, @NonNull ImageView ivPlan, @NonNull RelativeLayout layoutMain,
+      @NonNull LinearLayout btnPlan, @NonNull ImageView ivPlan, @NonNull LinearLayout layoutMain,
       @NonNull LinearLayout llUpper, @NonNull RecyclerView recyclerView, @NonNull TextView tvAmount,
       @NonNull TextView tvBtn, @NonNull TextView tvPlan, @NonNull TextView tvPlanTitle,
       @NonNull TextView tvplanForUser) {
@@ -110,7 +110,11 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
         break missingId;
       }
 
-      RelativeLayout layoutMain = (RelativeLayout) rootView;
+      id = R.id.layoutMain;
+      LinearLayout layoutMain = ViewBindings.findChildViewById(rootView, id);
+      if (layoutMain == null) {
+        break missingId;
+      }
 
       id = R.id.llUpper;
       LinearLayout llUpper = ViewBindings.findChildViewById(rootView, id);

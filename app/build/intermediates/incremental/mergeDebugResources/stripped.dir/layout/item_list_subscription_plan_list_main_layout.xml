@@ -6,11 +6,12 @@
     android:paddingTop="12dp"
     android:paddingBottom="12dp"
     tools:context=".fragment.AnnualFragment"
-    android:id="@+id/layoutMain"
+
     android:paddingStart="12dp"
     android:paddingEnd="12dp">
 
     <LinearLayout
+        android:id="@+id/layoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
