@@ -130,5 +130,6 @@
     <orderEntry type="library" name="Gradle: de.hdodenhof:circleimageview:3.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.makeramen:roundedimageview:2.3.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ozodrukh:CircularReveal:1.0.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.androidwidgets:formatedittext:0.2.0@aar" level="project" />
   </component>
 </module>

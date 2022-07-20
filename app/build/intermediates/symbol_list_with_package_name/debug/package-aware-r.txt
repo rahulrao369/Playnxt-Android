@@ -3083,6 +3083,7 @@ id continuousVelocity
 id coordinator
 id cos
 id counterclockwise
+id creditCardView
 id credit_card_view
 id cropImageView
 id crop_image_menu_crop
@@ -3150,9 +3151,10 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id etAccountHolderName
+id etAccountNo
 id etAddNote
 id etCVV
-id etCardNo
 id etConfirmPassword
 id etEditName
 id etEmail
@@ -3162,7 +3164,6 @@ id etGameGenre
 id etGamePlatform
 id etGameTitle
 id etName
-id etNameofCard
 id etNewPassword
 id etNote
 id etOldPassword

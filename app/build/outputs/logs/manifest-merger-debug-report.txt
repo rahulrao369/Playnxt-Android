@@ -6,6 +6,7 @@ INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/
 INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-150:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.8.0] /home/cw/.gradle/caches/transforms-3/dd7d100d6c9f473334a40e625f5e13f2/transformed/jetified-android-image-cropper-2.8.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:viewbinding:7.0.1] /home/cw/.gradle/caches/transforms-3/ff5d982a54f36c84e4fced91462e97bb/transformed/jetified-viewbinding-7.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.androidwidgets:formatedittext:0.2.0] /home/cw/.gradle/caches/transforms-3/a40dba9647b19ba1ebc3c846a6084662/transformed/jetified-formatedittext-0.2.0/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:17:1-26:12
 MERGED from [com.github.ismaeldivita:chip-navigation-bar:1.4.0] /home/cw/.gradle/caches/transforms-3/cfc8c4e264027644fff76df3ef9258a2/transformed/jetified-chip-navigation-bar-1.4.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches/transforms-3/124ee3f62a1261b99cdf0eddb06e39d5/transformed/jetified-material-calendar-view-1.7.0/AndroidManifest.xml:2:1-11:12
@@ -404,6 +405,8 @@ MERGED from [com.theartofdev.edmodo:android-image-cropper:2.8.0] /home/cw/.gradl
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.8.0] /home/cw/.gradle/caches/transforms-3/dd7d100d6c9f473334a40e625f5e13f2/transformed/jetified-android-image-cropper-2.8.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.databinding:viewbinding:7.0.1] /home/cw/.gradle/caches/transforms-3/ff5d982a54f36c84e4fced91462e97bb/transformed/jetified-viewbinding-7.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.databinding:viewbinding:7.0.1] /home/cw/.gradle/caches/transforms-3/ff5d982a54f36c84e4fced91462e97bb/transformed/jetified-viewbinding-7.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.androidwidgets:formatedittext:0.2.0] /home/cw/.gradle/caches/transforms-3/a40dba9647b19ba1ebc3c846a6084662/transformed/jetified-formatedittext-0.2.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.androidwidgets:formatedittext:0.2.0] /home/cw/.gradle/caches/transforms-3/a40dba9647b19ba1ebc3c846a6084662/transformed/jetified-formatedittext-0.2.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.github.ismaeldivita:chip-navigation-bar:1.4.0] /home/cw/.gradle/caches/transforms-3/cfc8c4e264027644fff76df3ef9258a2/transformed/jetified-chip-navigation-bar-1.4.0/AndroidManifest.xml:5:5-7:41

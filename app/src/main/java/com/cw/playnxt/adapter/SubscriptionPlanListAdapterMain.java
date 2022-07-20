@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,10 +51,12 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
     public void onBindViewHolder(@NonNull SubscriptionPlanListAdapterMain.RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         if (selectPosition == position){
+            holder.binding.cb.setChecked(true);
             holder.binding.llUpper.setBackgroundResource(R.color.selected);
             holder.binding.btnPlan.setBackgroundResource(R.drawable.bg_selected_btn);
         }
         else{
+            holder.binding.cb.setChecked(false);
             holder.binding.llUpper.setBackgroundResource(R.color.border);
             holder.binding.btnPlan.setBackgroundResource(R.drawable.bg_white_stroke);
         }
@@ -115,6 +119,20 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
                 selectPosition = position;
                 itemClick.onItemClick(position,1l,"subscription");
                 notifyDataSetChanged();
+            }
+        });
+        holder.binding.cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(holder.binding.cb.isChecked()){
+                    selectPosition = position;
+                    itemClick.onItemClick(position,1l,"subscription");
+                    notifyDataSetChanged();
+                }else{
+                    selectPosition = -1;
+                    itemClick.onItemClick(position,1l,"not_selected");
+                    notifyDataSetChanged();
+                }
             }
         });
 

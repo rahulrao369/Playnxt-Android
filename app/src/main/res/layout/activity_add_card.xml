@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/top_gray"
     tools:context=".activity.AddCardActivity">
 
@@ -33,29 +34,36 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:orientation="vertical">
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:src="@drawable/image"
-                        android:layout_marginBottom="20dp"/>
+                    <com.cooltechworks.creditcarddesign.CreditCardView
+                        android:id="@+id/creditCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:card_number=""
+                        app:card_holder_name="  "
+                        app:cvv="000"
+                        app:card_expiration=""
+                       android:visibility="visible" />
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/bg_edit_text"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="visible">
 
                         <EditText
-                            android:id="@+id/etNameofCard"
+                            android:id="@+id/etAccountHolderName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             android:fontFamily="@font/nunito_regular"
-                            android:hint="Name of card"
+                            android:hint="Name on card"
                             android:inputType="text"
                             android:paddingStart="8dp"
                             android:paddingEnd="8dp"
@@ -69,11 +77,12 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="16dp"
                         android:background="@drawable/bg_edit_text"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="visible">
 
 
                         <EditText
-                            android:id="@+id/etCardNo"
+                            android:id="@+id/etAccountNo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -81,6 +90,7 @@
                             android:fontFamily="@font/nunito_regular"
                             android:hint="Card No"
                             android:inputType="number"
+                            android:maxLength="16"
                             android:paddingStart="8dp"
                             android:paddingEnd="8dp"
                             android:textColor="@color/white"
@@ -92,7 +102,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="visible">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -109,7 +120,8 @@
                                 android:background="@android:color/transparent"
                                 android:fontFamily="@font/nunito_regular"
                                 android:hint="Expring Date"
-                                android:inputType="text"
+                                android:inputType="number"
+                                android:maxLength="5"
                                 android:paddingStart="8dp"
                                 android:paddingEnd="8dp"
                                 android:textColor="@color/white"
@@ -132,7 +144,8 @@
                                 android:background="@android:color/transparent"
                                 android:fontFamily="@font/nunito_regular"
                                 android:hint="CVV"
-                                android:inputType="text"
+                                android:inputType="number"
+                                android:maxLength="3"
                                 android:paddingStart="8dp"
                                 android:paddingEnd="8dp"
                                 android:textColor="@color/white"
