@@ -92,7 +92,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(int position, String type) {
                 if (position == 0) {
-                    startActivity(new Intent(context,SettingPlaynextPremiumActivity.class));
+                    startActivity(new Intent(context,PlaynxtPremiumActivity.class));
                 } else if (position == 1) {
                     startActivity(new Intent(context,SuggestNewFeatureActivity.class));
                 }  else if (position == 2) {

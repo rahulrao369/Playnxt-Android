@@ -2638,6 +2638,7 @@ int drawable background_transparent 0x7f080075
 int drawable bg_app_rounded_corners 0x7f080076
 int drawable bg_bottom_sheet 0x7f080077
 int drawable bg_button 0x7f080078
+int drawable bg_button_1 0x7f08014e
 int drawable bg_chip_navigation 0x7f080079
 int drawable bg_circle 0x7f08007a
 int drawable bg_create_new 0x7f08007b
@@ -2713,6 +2714,7 @@ int drawable ic_clock_black_24dp 0x7f0800c0
 int drawable ic_confirm_image 0x7f0800c1
 int drawable ic_cross 0x7f0800c2
 int drawable ic_delete_theme 0x7f0800c3
+int drawable ic_diamond_1 0x7f08014f
 int drawable ic_discover 0x7f0800c4
 int drawable ic_down_arrow 0x7f0800c5
 int drawable ic_edit 0x7f0800c6
@@ -2753,6 +2755,7 @@ int drawable ic_rect 0x7f0800e8
 int drawable ic_right 0x7f0800e9
 int drawable ic_right_arrow 0x7f0800ea
 int drawable ic_right_green 0x7f0800eb
+int drawable ic_round_arrow 0x7f080150
 int drawable ic_s1 0x7f0800ec
 int drawable ic_s_about_us 0x7f0800ed
 int drawable ic_s_checked 0x7f0800ee
@@ -3593,7 +3596,9 @@ int id tvContactUs 0x7f0a02d2
 int id tvCreateNewList 0x7f0a02d3
 int id tvCreatedOn 0x7f0a02d4
 int id tvCurrentStatus 0x7f0a02d5
+int id tvDescription 0x7f0a032c
 int id tvEndDate 0x7f0a02d6
+int id tvExpiryDate 0x7f0a032a
 int id tvFav 0x7f0a02d7
 int id tvFav1 0x7f0a02d8
 int id tvFeatures 0x7f0a02d9
@@ -3625,6 +3630,8 @@ int id tvPlannedEnd 0x7f0a02f2
 int id tvPlannedStart 0x7f0a02f3
 int id tvPlatform 0x7f0a02f4
 int id tvPremiumUser 0x7f0a02f5
+int id tvPrice 0x7f0a032d
+int id tvPurchaseDate 0x7f0a032b
 int id tvRating 0x7f0a02f6
 int id tvSeeAll 0x7f0a02f7
 int id tvStartDate 0x7f0a02f8
@@ -3791,6 +3798,7 @@ int layout activity_login_signup_button 0x7f0d002e
 int layout activity_main 0x7f0d002f
 int layout activity_main_game_info 0x7f0d0030
 int layout activity_my_profile 0x7f0d0031
+int layout activity_playnxt_premium 0x7f0d00ed
 int layout activity_setting 0x7f0d0032
 int layout activity_setting_palynxt_premium 0x7f0d0033
 int layout activity_signup 0x7f0d0034
@@ -4084,6 +4092,7 @@ int string crop_image_menu_rotate_right 0x7f11005d
 int string current_status 0x7f11005e
 int string define_roundedimageview 0x7f11005f
 int string delete 0x7f110060
+int string description_price 0x7f110104
 int string do_you_want_to_logout 0x7f110061
 int string don_t_have_an_account 0x7f110062
 int string done 0x7f110063

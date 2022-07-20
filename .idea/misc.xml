@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/bg_app_rounded_corners.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bg_bottom_sheet.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bg_button.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/bg_button_1.xml" value="0.20092592592592592" />
         <entry key="app/src/main/res/drawable/bg_chip_navigation.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bg_create_new.xml" value="0.2140625" />
@@ -62,6 +63,7 @@
         <entry key="app/src/main/res/layout/activity_main_game_info.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_main_game_information.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_my_profile.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/activity_playnxt_premium.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_setting_palynxt_premium.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.18" />

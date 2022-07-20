@@ -4,6 +4,7 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -24,6 +25,9 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
 
   @NonNull
   public final LinearLayout btnPlan;
+
+  @NonNull
+  public final CheckBox cb;
 
   @NonNull
   public final ImageView ivPlan;
@@ -53,12 +57,13 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
   public final TextView tvplanForUser;
 
   private ItemListSubscriptionPlanListMainLayoutBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btnPlan, @NonNull ImageView ivPlan, @NonNull LinearLayout layoutMain,
-      @NonNull LinearLayout llUpper, @NonNull RecyclerView recyclerView, @NonNull TextView tvAmount,
-      @NonNull TextView tvBtn, @NonNull TextView tvPlan, @NonNull TextView tvPlanTitle,
-      @NonNull TextView tvplanForUser) {
+      @NonNull LinearLayout btnPlan, @NonNull CheckBox cb, @NonNull ImageView ivPlan,
+      @NonNull LinearLayout layoutMain, @NonNull LinearLayout llUpper,
+      @NonNull RecyclerView recyclerView, @NonNull TextView tvAmount, @NonNull TextView tvBtn,
+      @NonNull TextView tvPlan, @NonNull TextView tvPlanTitle, @NonNull TextView tvplanForUser) {
     this.rootView = rootView;
     this.btnPlan = btnPlan;
+    this.cb = cb;
     this.ivPlan = ivPlan;
     this.layoutMain = layoutMain;
     this.llUpper = llUpper;
@@ -101,6 +106,12 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
       id = R.id.btnPlan;
       LinearLayout btnPlan = ViewBindings.findChildViewById(rootView, id);
       if (btnPlan == null) {
+        break missingId;
+      }
+
+      id = R.id.cb;
+      CheckBox cb = ViewBindings.findChildViewById(rootView, id);
+      if (cb == null) {
         break missingId;
       }
 
@@ -159,7 +170,7 @@ public final class ItemListSubscriptionPlanListMainLayoutBinding implements View
       }
 
       return new ItemListSubscriptionPlanListMainLayoutBinding((RelativeLayout) rootView, btnPlan,
-          ivPlan, layoutMain, llUpper, recyclerView, tvAmount, tvBtn, tvPlan, tvPlanTitle,
+          cb, ivPlan, layoutMain, llUpper, recyclerView, tvAmount, tvBtn, tvPlan, tvPlanTitle,
           tvplanForUser);
     }
     String missingId = rootView.getResources().getResourceName(id);

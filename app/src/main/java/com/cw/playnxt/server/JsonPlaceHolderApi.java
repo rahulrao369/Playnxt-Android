@@ -50,6 +50,7 @@ import com.cw.playnxt.model.LoginSignup.LoginParaRes;
 import com.cw.playnxt.model.LoginSignup.LoginResponse;
 import com.cw.playnxt.model.LoginSignup.SignupParaRes;
 import com.cw.playnxt.model.LoginSignup.SignupResponse;
+import com.cw.playnxt.model.MyActivePlan.MyActivePlanResponse;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
@@ -304,4 +305,8 @@ public interface JsonPlaceHolderApi {
     Call<PurchasePlanResponse> PurchasePlanAPI(@Header("Content-Type") String content_type,
                                                @Header("Authorization") String token,
                                                @Body PurchasePlanParaRes purchasePlanParaRes);
+
+    @POST("users/myactiveplan")
+    Call<MyActivePlanResponse> MyActivePlanAPI(@Header("Content-Type") String content_type,
+                                               @Header("Authorization") String token);
 }
