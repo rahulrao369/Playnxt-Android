@@ -36,7 +36,7 @@
 18-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:12:22-78
 19
 20    <application
-20-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-148:19
+20-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-153:19
 21        android:allowBackup="true"
 21-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:15:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -66,275 +66,287 @@
 35-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:25:9-51
 36        <activity
 36-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:26:9-28:39
-37            android:name="com.cw.playnxt.activity.SubscriptionActivity"
-37-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:27:13-58
+37            android:name="com.cw.playnxt.activity.ChatActivity"
+37-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:27:13-50
 38            android:exported="true" />
 38-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:28:13-36
 39        <activity
-39-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:29:9-32:57
-40            android:name="com.cw.playnxt.activity.ForgotPasswordActivity"
+39-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:29:9-31:39
+40            android:name="com.cw.playnxt.activity.PlaynxtPremiumActivity"
 40-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:30:13-60
-41            android:exported="true"
+41            android:exported="true" />
 41-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:31:13-36
-42            android:windowSoftInputMode="adjustResize" />
-42-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:32:13-55
-43        <activity
-43-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:33:9-35:39
-44            android:name="com.cw.playnxt.activity.ContactUsActivity"
-44-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:34:13-55
-45            android:exported="true" />
-45-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:35:13-36
-46        <activity
-46-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:36:9-38:39
-47            android:name="com.cw.playnxt.activity.AboutUsActivity"
-47-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:37:13-53
-48            android:exported="true" />
-48-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:38:13-36
+42        <activity
+42-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:32:9-34:39
+43            android:name="com.cw.playnxt.activity.SubscriptionActivity"
+43-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:33:13-58
+44            android:exported="true" />
+44-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:34:13-36
+45        <activity
+45-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:35:9-38:58
+46            android:name="com.cw.playnxt.activity.ForgotPasswordActivity"
+46-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:36:13-60
+47            android:exported="true"
+47-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:37:13-36
+48            android:windowSoftInputMode="adjustResize" />
+48-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:38:13-55
 49        <activity
 49-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:39:9-41:39
-50            android:name="com.cw.playnxt.activity.MainGameInfoActivity"
-50-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:40:13-58
+50            android:name="com.cw.playnxt.activity.ContactUsActivity"
+50-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:40:13-55
 51            android:exported="true" />
 51-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:41:13-36
 52        <activity
-52-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:42:9-45:58
-53            android:name="com.cw.playnxt.activity.AddGameFromWishlistActivity"
-53-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:43:13-65
-54            android:exported="true"
+52-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:42:9-44:39
+53            android:name="com.cw.playnxt.activity.AboutUsActivity"
+53-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:43:13-53
+54            android:exported="true" />
 54-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:44:13-36
-55            android:windowSoftInputMode="adjustResize" />
-55-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:45:13-55
-56        <activity
-56-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:46:9-48:39
-57            android:name="com.cw.playnxt.activity.WishlistGameInfoActivity"
-57-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:47:13-62
-58            android:exported="true" />
-58-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:48:13-36
-59        <activity
-59-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:49:9-52:58
-60            android:name="com.cw.playnxt.activity.AddGameFromBacklogListActivity"
-60-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:50:13-68
-61            android:exported="true"
-61-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:51:13-36
-62            android:windowSoftInputMode="adjustResize" />
-62-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:52:13-55
-63        <activity
-63-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:53:9-56:58
-64            android:name="com.cw.playnxt.activity.AddGameActivity"
-64-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:54:13-53
-65            android:exported="true"
-65-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:55:13-36
-66            android:windowSoftInputMode="adjustResize" />
-66-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:56:13-55
-67        <activity
-67-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:57:9-59:39
-68            android:name="com.cw.playnxt.activity.SuggestNewFeatureActivity"
-68-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:58:13-63
-69            android:exported="true" />
-69-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:59:13-36
-70        <activity
-70-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:60:9-62:39
-71            android:name="com.cw.playnxt.activity.ConfirmationActivity"
-71-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:61:13-58
-72            android:exported="true" />
-72-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:62:13-36
+55        <activity
+55-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:45:9-47:39
+56            android:name="com.cw.playnxt.activity.MainGameInfoActivity"
+56-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:46:13-58
+57            android:exported="true" />
+57-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:47:13-36
+58        <activity
+58-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:48:9-51:58
+59            android:name="com.cw.playnxt.activity.AddGameFromWishlistActivity"
+59-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:49:13-65
+60            android:exported="true"
+60-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:50:13-36
+61            android:windowSoftInputMode="adjustResize" />
+61-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:51:13-55
+62        <activity
+62-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:52:9-54:39
+63            android:name="com.cw.playnxt.activity.WishlistGameInfoActivity"
+63-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:53:13-62
+64            android:exported="true" />
+64-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:54:13-36
+65        <activity
+65-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:55:9-58:58
+66            android:name="com.cw.playnxt.activity.AddGameFromBacklogListActivity"
+66-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:56:13-68
+67            android:exported="true"
+67-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:57:13-36
+68            android:windowSoftInputMode="adjustResize" />
+68-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:58:13-55
+69        <activity
+69-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:59:9-62:58
+70            android:name="com.cw.playnxt.activity.AddGameActivity"
+70-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:60:13-53
+71            android:exported="true"
+71-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:61:13-36
+72            android:windowSoftInputMode="adjustResize" />
+72-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:62:13-55
 73        <activity
-73-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:63:9-66:58
-74            android:name="com.cw.playnxt.activity.AddCardActivity"
-74-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:64:13-53
-75            android:exported="true"
+73-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:63:9-65:39
+74            android:name="com.cw.playnxt.activity.SuggestNewFeatureActivity"
+74-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:64:13-63
+75            android:exported="true" />
 75-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:65:13-36
-76            android:windowSoftInputMode="adjustResize" />
-76-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:66:13-55
-77        <activity
-77-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:67:9-69:39
-78            android:name="com.cw.playnxt.activity.HomeSearchActivity"
-78-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:68:13-56
-79            android:exported="true" />
-79-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:69:13-36
-80        <activity
-80-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:70:9-72:39
-81            android:name="com.cw.playnxt.activity.SettingPlaynextPremiumActivity"
-81-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:71:13-68
-82            android:exported="true" />
-82-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:72:13-36
+76        <activity
+76-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:66:9-68:39
+77            android:name="com.cw.playnxt.activity.ConfirmationActivity"
+77-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:67:13-58
+78            android:exported="true" />
+78-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:68:13-36
+79        <activity
+79-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:69:9-72:58
+80            android:name="com.cw.playnxt.activity.AddCardActivity"
+80-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:70:13-53
+81            android:exported="true"
+81-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:71:13-36
+82            android:windowSoftInputMode="adjustResize" />
+82-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:72:13-55
 83        <activity
 83-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:73:9-75:39
-84            android:name="com.cw.playnxt.activity.EditProfileActivity"
-84-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:74:13-57
+84            android:name="com.cw.playnxt.activity.HomeSearchActivity"
+84-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:74:13-56
 85            android:exported="true" />
 85-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:75:13-36
 86        <activity
 86-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:76:9-78:39
-87            android:name="com.cw.playnxt.activity.SettingActivity"
-87-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:77:13-53
+87            android:name="com.cw.playnxt.activity.SettingPlaynextPremiumActivity"
+87-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:77:13-68
 88            android:exported="true" />
 88-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:78:13-36
 89        <activity
 89-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:79:9-81:39
-90            android:name="com.cw.playnxt.activity.MyProfileActivity"
-90-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:80:13-55
+90            android:name="com.cw.playnxt.activity.EditProfileActivity"
+90-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:80:13-57
 91            android:exported="true" />
 91-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:81:13-36
 92        <activity
 92-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:82:9-84:39
-93            android:name="com.cw.playnxt.activity.FriendsProfileActivity"
-93-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:83:13-60
+93            android:name="com.cw.playnxt.activity.SettingActivity"
+93-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:83:13-53
 94            android:exported="true" />
 94-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:84:13-36
 95        <activity
 95-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:85:9-87:39
-96            android:name="com.cw.playnxt.activity.AddEventActivity"
-96-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:86:13-54
+96            android:name="com.cw.playnxt.activity.MyProfileActivity"
+96-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:86:13-55
 97            android:exported="true" />
 97-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:87:13-36
 98        <activity
 98-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:88:9-90:39
-99            android:name="com.cw.playnxt.activity.WishlistXboxGameActivity"
-99-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:89:13-62
+99            android:name="com.cw.playnxt.activity.FriendsProfileActivity"
+99-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:89:13-60
 100            android:exported="true" />
 100-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:90:13-36
 101        <activity
 101-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:91:9-93:39
-102            android:name="com.cw.playnxt.activity.XboxGameInfoActivity"
-102-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:92:13-58
+102            android:name="com.cw.playnxt.activity.AddEventActivity"
+102-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:92:13-54
 103            android:exported="true" />
 103-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:93:13-36
 104        <activity
 104-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:94:9-96:39
-105            android:name="com.cw.playnxt.activity.XboxGamesActivity"
-105-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:95:13-55
+105            android:name="com.cw.playnxt.activity.WishlistXboxGameActivity"
+105-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:95:13-62
 106            android:exported="true" />
 106-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:96:13-36
 107        <activity
 107-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:97:9-99:39
-108            android:name="com.cw.playnxt.activity.GameInfoActivity"
-108-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:98:13-54
+108            android:name="com.cw.playnxt.activity.XboxGameInfoActivity"
+108-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:98:13-58
 109            android:exported="true" />
 109-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:99:13-36
 110        <activity
 110-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:100:9-102:39
-111            android:name="com.cw.playnxt.activity.YourStatsActivity"
+111            android:name="com.cw.playnxt.activity.XboxGamesActivity"
 111-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:101:13-55
 112            android:exported="true" />
 112-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:102:13-36
 113        <activity
 113-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:103:9-105:39
-114            android:name="com.cw.playnxt.activity.CalenderActivity"
+114            android:name="com.cw.playnxt.activity.GameInfoActivity"
 114-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:104:13-54
 115            android:exported="true" />
 115-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:105:13-36
 116        <activity
 116-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:106:9-108:39
-117            android:name="com.cw.playnxt.activity.WishlistActivity"
-117-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:107:13-54
+117            android:name="com.cw.playnxt.activity.YourStatsActivity"
+117-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:107:13-55
 118            android:exported="true" />
 118-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:108:13-36
 119        <activity
 119-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:109:9-111:39
-120            android:name="com.cw.playnxt.activity.BacklogActivity"
-120-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:110:13-53
+120            android:name="com.cw.playnxt.activity.CalenderActivity"
+120-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:110:13-54
 121            android:exported="true" />
 121-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:111:13-36
 122        <activity
 122-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:112:9-114:39
-123            android:name="com.cw.playnxt.activity.HomeActivity"
-123-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:113:13-50
+123            android:name="com.cw.playnxt.activity.WishlistActivity"
+123-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:113:13-54
 124            android:exported="true" />
 124-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:114:13-36
 125        <activity
-125-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:115:9-118:58
-126            android:name="com.cw.playnxt.activity.SignupActivity"
-126-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:116:13-52
-127            android:exported="true"
+125-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:115:9-117:39
+126            android:name="com.cw.playnxt.activity.BacklogActivity"
+126-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:116:13-53
+127            android:exported="true" />
 127-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:117:13-36
-128            android:windowSoftInputMode="adjustResize" />
-128-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:118:13-55
-129        <activity
-129-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:119:9-122:55
-130            android:name="com.cw.playnxt.activity.LoginActivity"
-130-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:120:13-51
-131            android:exported="true"
-131-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:121:13-36
-132            android:windowSoftInputMode="adjustPan" />
+128        <activity
+128-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:118:9-120:39
+129            android:name="com.cw.playnxt.activity.HomeActivity"
+129-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:119:13-50
+130            android:exported="true" />
+130-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:120:13-36
+131        <activity
+131-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:121:9-124:58
+132            android:name="com.cw.playnxt.activity.SignupActivity"
 132-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:122:13-52
-133        <activity
-133-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:123:9-125:39
-134            android:name="com.cw.playnxt.activity.LoginSignupButtonActivity"
-134-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:124:13-63
-135            android:exported="true" />
-135-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:125:13-36
-136        <activity
-136-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:126:9-128:39
-137            android:name="com.cw.playnxt.activity.WelcomeActivity"
-137-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:127:13-53
-138            android:exported="true" />
-138-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:128:13-36
+133            android:exported="true"
+133-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:123:13-36
+134            android:windowSoftInputMode="adjustResize" />
+134-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:124:13-55
+135        <activity
+135-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:125:9-128:55
+136            android:name="com.cw.playnxt.activity.LoginActivity"
+136-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:126:13-51
+137            android:exported="true"
+137-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:127:13-36
+138            android:windowSoftInputMode="adjustPan" />
+138-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:128:13-52
 139        <activity
 139-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:129:9-131:39
-140            android:name="com.cw.playnxt.MainActivity"
-140-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:130:13-41
+140            android:name="com.cw.playnxt.activity.LoginSignupButtonActivity"
+140-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:130:13-63
 141            android:exported="true" />
 141-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:131:13-36
 142        <activity
-142-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:132:9-140:20
-143            android:name="com.cw.playnxt.activity.SplashActivity"
-143-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:133:13-52
-144            android:exported="true" >
+142-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:132:9-134:39
+143            android:name="com.cw.playnxt.activity.WelcomeActivity"
+143-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:133:13-53
+144            android:exported="true" />
 144-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:134:13-36
-145            <intent-filter>
-145-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:135:13-139:29
-146                <action android:name="android.intent.action.MAIN" />
-146-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:136:17-69
-146-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:136:25-66
-147
-148                <category android:name="android.intent.category.LAUNCHER" />
-148-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:138:17-77
-148-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:138:27-74
-149            </intent-filter>
-150        </activity>
-151        <activity
-151-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:141:9-143:59
-152            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-152-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:13-76
-153            android:theme="@style/Base.Theme.AppCompat" />
-153-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:143:13-56
-154        <activity
-154-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:145:9-147:15
-155            android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
-155-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:145:19-85
-156            android:screenOrientation="portrait" />
-156-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:146:13-49
-157
-158        <provider
-158-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
-159            android:name="com.squareup.picasso.PicassoProvider"
-159-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
-160            android:authorities="com.cw.playnxt.com.squareup.picasso"
-160-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
-161            android:exported="false" />
-161-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
-162        <provider
-162-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-163            android:name="androidx.startup.InitializationProvider"
-163-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-164            android:authorities="com.cw.playnxt.androidx-startup"
-164-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-165            android:exported="false" >
-165-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-166            <meta-data
-166-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-167                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-167-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-168                android:value="androidx.startup" />
-168-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-169            <meta-data
-169-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-170                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-170-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-171                android:value="androidx.startup" />
-171-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-172        </provider>
-173    </application>
-174
-175</manifest>
+145        <activity
+145-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:135:9-137:39
+146            android:name="com.cw.playnxt.MainActivity"
+146-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:136:13-41
+147            android:exported="true" />
+147-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:137:13-36
+148        <activity
+148-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:138:9-146:20
+149            android:name="com.cw.playnxt.activity.SplashActivity"
+149-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:139:13-52
+150            android:exported="true" >
+150-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:140:13-36
+151            <intent-filter>
+151-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:141:13-145:29
+152                <action android:name="android.intent.action.MAIN" />
+152-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:17-69
+152-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:25-66
+153
+154                <category android:name="android.intent.category.LAUNCHER" />
+154-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:144:17-77
+154-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:144:27-74
+155            </intent-filter>
+156        </activity>
+157        <activity
+157-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:147:9-149:59
+158            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+158-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:148:13-76
+159            android:theme="@style/Base.Theme.AppCompat" />
+159-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:149:13-56
+160        <activity
+160-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:150:9-152:52
+161            android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
+161-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:151:13-79
+162            android:screenOrientation="portrait" />
+162-->/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:152:13-49
+163
+164        <provider
+164-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+165            android:name="com.squareup.picasso.PicassoProvider"
+165-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
+166            android:authorities="com.cw.playnxt.com.squareup.picasso"
+166-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+167            android:exported="false" />
+167-->[com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+168        <provider
+168-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+169            android:name="androidx.startup.InitializationProvider"
+169-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+170            android:authorities="com.cw.playnxt.androidx-startup"
+170-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+171            android:exported="false" >
+171-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+172            <meta-data
+172-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+173                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+173-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+174                android:value="androidx.startup" />
+174-->[androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+175            <meta-data
+175-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+176                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+176-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+177                android:value="androidx.startup" />
+177-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+178        </provider>
+179    </application>
+180
+181</manifest>

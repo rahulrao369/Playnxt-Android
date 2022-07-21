@@ -76,7 +76,6 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void onclicks() {

@@ -21,6 +21,7 @@ public class Constants {
     public static String UNLIKE_STATUS = "unlike";
     public static String SELF_GAME_VIEW = "self";
     public static String USER_GAME_VIEW = "user";
+    public static String ACTIVE_PLAN_YES = "Yes";
 
     public static boolean isInternetConnected(Context mContext) {
 

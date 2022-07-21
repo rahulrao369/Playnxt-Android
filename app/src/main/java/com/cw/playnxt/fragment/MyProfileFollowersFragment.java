@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.Interface.ItemClickId;
 import com.cw.playnxt.R;
+import com.cw.playnxt.activity.ChatActivity;
 import com.cw.playnxt.activity.FriendsProfileActivity;
 import com.cw.playnxt.adapter.FriendsAdapters.TabFollowersAdapter;
 import com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter;
@@ -137,6 +138,12 @@ public class MyProfileFollowersFragment extends Fragment {
                     startActivity(new Intent(context, FriendsProfileActivity.class)
                             .putExtra("key","1")
                             .putExtra("friends_id",id.toString()));
+                    Log.d("TAG", "friends_id>>"+id);
+                }else if(type.equals("message")){
+                    startActivity(new Intent(context, ChatActivity.class)
+                            .putExtra("receiverId", id.toString())
+                            .putExtra("receiverName", followerList.get(position).getName())
+                            .putExtra("receiverImage", followerList.get(position).getImage().toString()));
                     Log.d("TAG", "friends_id>>"+id);
                 }
             }

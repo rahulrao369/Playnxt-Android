@@ -117,7 +117,6 @@ public class InboxFragment extends Fragment {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        Toast.makeText(context, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         InboxListDataSet(response.body().getData().getInbox());
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();

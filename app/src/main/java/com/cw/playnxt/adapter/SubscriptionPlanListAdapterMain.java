@@ -113,22 +113,19 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
                 notifyDataSetChanged();
             }
         });
-           holder.binding.recyclerView.setOnClickListener(new View.OnClickListener() {
+
+        holder.binding.cb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectPosition = position;
-                itemClick.onItemClick(position,1l,"subscription");
-                notifyDataSetChanged();
-            }
-        });
-        holder.binding.cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(holder.binding.cb.isChecked()){
+                    holder.binding.cb.setChecked(true);
+                    Log.d("TAG","cheked");
                     selectPosition = position;
                     itemClick.onItemClick(position,1l,"subscription");
                     notifyDataSetChanged();
+
                 }else{
+                    holder.binding.cb.setChecked(false);
                     selectPosition = -1;
                     itemClick.onItemClick(position,1l,"not_selected");
                     notifyDataSetChanged();

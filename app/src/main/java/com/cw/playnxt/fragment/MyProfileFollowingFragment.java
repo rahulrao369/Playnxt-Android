@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.Interface.ItemClickId;
 import com.cw.playnxt.R;
+import com.cw.playnxt.activity.ChatActivity;
 import com.cw.playnxt.activity.FriendsProfileActivity;
 import com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowingAdapter;
 import com.cw.playnxt.databinding.FragmentMyProfileFollowingBinding;
@@ -123,6 +124,12 @@ public class MyProfileFollowingFragment extends Fragment {
                     startActivity(new Intent(context, FriendsProfileActivity.class)
                             .putExtra("key","1")
                             .putExtra("friends_id",id.toString()));
+                    Log.d("TAG", "friends_id>>"+id);
+                }else if(type.equals("message")){
+                    startActivity(new Intent(context, ChatActivity.class)
+                            .putExtra("receiverId", id.toString())
+                            .putExtra("receiverName", followingList.get(position).getName())
+                            .putExtra("receiverImage", followingList.get(position).getImage().toString()));
                     Log.d("TAG", "friends_id>>"+id);
                 }
             }

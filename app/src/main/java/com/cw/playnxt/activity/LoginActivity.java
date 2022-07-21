@@ -199,6 +199,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         mySharedPref.saveLogin(true);
                         mySharedPref.setSavedAccessToken(String.valueOf(response.body().getData().getToken()));
+                        mySharedPref.setSavedUserid(String.valueOf(response.body().getData().getUserId()));
                         Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
                         Intent intent = new Intent(getBaseContext(), HomeActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

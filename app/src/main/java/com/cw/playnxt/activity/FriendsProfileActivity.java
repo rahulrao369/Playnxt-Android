@@ -44,6 +44,7 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     String profile_image = "";
+    MyFriendProfile friendsProfileDetail = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +87,7 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
     public void onclicks() {
         headerBinding.btnBack.setOnClickListener(this);
         binding.cvFriendsProfile.setOnClickListener(this);
+        binding.btnMessage.setOnClickListener(this);
 
     }
 
@@ -100,6 +102,15 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
 
             case R.id.cvFriendsProfile:
                 openDialogBigProfile();
+                break;
+
+            case R.id.btnMessage:
+                if(friendsProfileDetail != null){
+                    startActivity(new Intent(context, ChatActivity.class)
+                            .putExtra("receiverId", friendsProfileDetail.getId().toString())
+                            .putExtra("receiverName", friendsProfileDetail.getName())
+                            .putExtra("receiverImage", friendsProfileDetail.getImage().toString()));
+                }
                 break;
         }
     }
@@ -141,7 +152,7 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
                                 following_count = response.body().getData().getTotelFollowing();
                                 profile_image = response.body().getData().getProfile().getImage();
                                 setMyFriendsProfileData(response.body().getData().getProfile());
-
+                                friendsProfileDetail = response.body().getData().getProfile();
                                 tabLayoutAdapter = new TabLayoutAdapter(getSupportFragmentManager(), binding.tablayout.getTabCount(), friends_id);
                                 binding.viewpager.setAdapter(tabLayoutAdapter);
 

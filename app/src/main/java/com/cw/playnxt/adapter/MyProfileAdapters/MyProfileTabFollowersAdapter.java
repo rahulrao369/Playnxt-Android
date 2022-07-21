@@ -75,6 +75,12 @@ public class MyProfileTabFollowersAdapter extends RecyclerView.Adapter<MyProfile
                 itemClick.onItemClick(position, Long.valueOf(list.get(position).getUserId()),"unfollow");
             }
         });
+        holder.binding.btnMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemClick.onItemClick(position, Long.valueOf(list.get(position).getUserId()),"message");
+            }
+        });
     }
 
     @Override

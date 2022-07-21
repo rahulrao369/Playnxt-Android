@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize">
         <activity
+            android:name=".activity.ChatActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.PlaynxtPremiumActivity"
             android:exported="true" />
         <activity

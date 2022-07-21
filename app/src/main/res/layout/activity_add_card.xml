@@ -63,7 +63,7 @@
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             android:fontFamily="@font/nunito_regular"
-                            android:hint="Name on card"
+                            android:hint="Card Holder Name"
                             android:inputType="text"
                             android:paddingStart="8dp"
                             android:paddingEnd="8dp"

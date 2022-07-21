@@ -11,6 +11,29 @@ public class GetRecentGameData {
 
     @SerializedName("backlog_count")
     private int backlog_count;
+
+    @SerializedName("backlog_remaining")
+    private int backlog_remaining;
+
+    @SerializedName("active_plan")
+    private String active_plan;
+
+    public int getBacklog_remaining() {
+        return backlog_remaining;
+    }
+
+    public void setBacklog_remaining(int backlog_remaining) {
+        this.backlog_remaining = backlog_remaining;
+    }
+
+    public String getActive_plan() {
+        return active_plan;
+    }
+
+    public void setActive_plan(String active_plan) {
+        this.active_plan = active_plan;
+    }
+
     @Expose
     private List<GetRecentGameDataCapsul> capsul;
 
