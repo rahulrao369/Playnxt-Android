@@ -42,6 +42,8 @@ public class AboutUsActivity extends AppCompatActivity implements View.OnClickLi
         onclicks();
     }
 //
+
+    //
     public void init() {
         context = AboutUsActivity.this;
         jsonPlaceHolderApi = ApiUtils.getAPIService();

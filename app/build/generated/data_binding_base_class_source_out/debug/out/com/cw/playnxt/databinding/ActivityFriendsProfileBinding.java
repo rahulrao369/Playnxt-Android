@@ -27,7 +27,7 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
   public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
-  public final LinearLayout btnLogin;
+  public final LinearLayout btnMessage;
 
   @NonNull
   public final CircleImageView cvFriendsProfile;
@@ -48,13 +48,13 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
   public final ViewPager viewpager;
 
   private ActivityFriendsProfileBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnLogin,
+      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnMessage,
       @NonNull CircleImageView cvFriendsProfile, @NonNull LinearLayout llMain,
       @NonNull TabLayout tablayout, @NonNull TextView tvName, @NonNull TextView txtBtn,
       @NonNull ViewPager viewpager) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
-    this.btnLogin = btnLogin;
+    this.btnMessage = btnMessage;
     this.cvFriendsProfile = cvFriendsProfile;
     this.llMain = llMain;
     this.tablayout = tablayout;
@@ -97,9 +97,9 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
       }
       HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
 
-      id = R.id.btnLogin;
-      LinearLayout btnLogin = ViewBindings.findChildViewById(rootView, id);
-      if (btnLogin == null) {
+      id = R.id.btnMessage;
+      LinearLayout btnMessage = ViewBindings.findChildViewById(rootView, id);
+      if (btnMessage == null) {
         break missingId;
       }
 
@@ -140,7 +140,7 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
       }
 
       return new ActivityFriendsProfileBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnLogin, cvFriendsProfile, llMain, tablayout, tvName, txtBtn, viewpager);
+          btnMessage, cvFriendsProfile, llMain, tablayout, tvName, txtBtn, viewpager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

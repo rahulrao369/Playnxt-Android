@@ -2990,6 +2990,7 @@ id btnAddToWishList
 id btnAdsShow
 id btnArrow
 id btnBack
+id btnBack1
 id btnChangePassword
 id btnCheckout
 id btnComplete
@@ -3229,6 +3230,7 @@ id ignore
 id ignoreRequest
 id image
 id imgIcon
+id imgUserProfile
 id img_splash_screen
 id immediateStop
 id included
@@ -3320,6 +3322,8 @@ id logo_img
 id lytCheckBox
 id lytForgotPassword
 id lytProfileImage
+id lytUserProfile
+id lyt_name
 id many_days_picker
 id masked
 id match_constraint
@@ -3675,6 +3679,7 @@ id viewpager
 id viewpager1
 id visible
 id visible_removing_fragment_view_tag
+id webView
 id wednesdayLabel
 id west
 id withText
@@ -3786,6 +3791,7 @@ layout activity_add_game_from_wishlist
 layout activity_backlog
 layout activity_calender
 layout activity_card_edit
+layout activity_chat
 layout activity_confirmation
 layout activity_contact_us
 layout activity_edit_profile
