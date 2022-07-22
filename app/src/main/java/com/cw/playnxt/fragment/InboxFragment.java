@@ -78,7 +78,7 @@ public class InboxFragment extends Fragment {
         ChatListAdapter adapter = new ChatListAdapter(context, inboxList, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
-                openDialogBigProfile();
+                openDialogBigProfile(inboxList.get(position).getImage());
             }
         });
         binding.recyclerView.setHasFixedSize(true);
@@ -90,13 +90,14 @@ public class InboxFragment extends Fragment {
         // binding.tvSeeAll.setOnClickListener(this);
     }
 
-    public void openDialogBigProfile() {
+    public void openDialogBigProfile(String image) {
         final Dialog dialog = new Dialog(context);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.setContentView(R.layout.dialog_big_profile_image);
         AppCompatImageView iv_profile_image = (AppCompatImageView) dialog.findViewById(R.id.iv_profile_image);
         MaterialCardView cv_cross = (MaterialCardView) dialog.findViewById(R.id.cv_cross);
 
+        Picasso.get().load(Allurls.IMAGEURL+image).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(iv_profile_image);
         cv_cross.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

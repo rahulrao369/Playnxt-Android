@@ -96,6 +96,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                 if(plan_ID == null){
                     Toast.makeText(context, "Please select any plan", Toast.LENGTH_SHORT).show();
                 }else{
+                    Log.d("TAG","plan_ID"+plan_ID);
                     startActivity(new Intent(context,AddCardActivity.class)
                     .putExtra("plan_ID",plan_ID.toString()));
                 }
@@ -144,6 +145,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onItemClick(int position, Long id, String type) {
                 if(type.equals("subscription")){
+                    Log.d("TAG","id"+id);
                     plan_ID = id;
                 }else if(type.equals("not_selected")){
                     plan_ID = null;

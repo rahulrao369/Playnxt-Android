@@ -97,7 +97,7 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
                 Log.d("TAG","Clicked");
                 selectPosition = position;
                 Log.d("TAG","selectPosition item"+selectPosition);
-                itemClick.onItemClick(position,1l,"subscription");
+                itemClick.onItemClick(position,list.get(position).getId(),"subscription");
                 notifyDataSetChanged();
             }
         });
@@ -109,7 +109,7 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
             @Override
             public void onClick(View view) {
                 selectPosition = position;
-                itemClick.onItemClick(position,1l,"subscription");
+                itemClick.onItemClick(position,list.get(position).getId(),"subscription");
                 notifyDataSetChanged();
             }
         });
@@ -121,13 +121,13 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
                     holder.binding.cb.setChecked(true);
                     Log.d("TAG","cheked");
                     selectPosition = position;
-                    itemClick.onItemClick(position,1l,"subscription");
+                    itemClick.onItemClick(position,list.get(position).getId(),"subscription");
                     notifyDataSetChanged();
 
                 }else{
                     holder.binding.cb.setChecked(false);
                     selectPosition = -1;
-                    itemClick.onItemClick(position,1l,"not_selected");
+                    itemClick.onItemClick(position,list.get(position).getId(),"not_selected");
                     notifyDataSetChanged();
                 }
             }

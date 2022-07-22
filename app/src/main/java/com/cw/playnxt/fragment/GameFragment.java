@@ -81,7 +81,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void GameListDataSet(String active_plan, int backlog_remaining) {
+    private void GameListDataSet(String active_plan, int backlog_remaining, String plan_type) {
         List<GameFragmentModel> list = new ArrayList<>();
         list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + ""));
         list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + ""));
@@ -104,19 +104,31 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     }
                 } else if (position == 1) {
                     if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        startActivity(new Intent(context, WishlistActivity.class));
+                        if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
+                            startActivity(new Intent(context, WishlistActivity.class));
+                        }else {
+                            startActivity(new Intent(context, SubscriptionActivity.class));
+                        }
                     } else {
                         startActivity(new Intent(context, SubscriptionActivity.class));
                     }
                 } else if (position == 2) {
                     if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        startActivity(new Intent(context, CalenderActivity.class));
+                        if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
+                            startActivity(new Intent(context, CalenderActivity.class));
+                        }else{
+                            startActivity(new Intent(context, SubscriptionActivity.class));
+                        }
                     } else {
                         startActivity(new Intent(context, SubscriptionActivity.class));
                     }
                 } else if (position == 3) {
                     if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        startActivity(new Intent(context, YourStatsActivity.class));
+                        if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
+                            startActivity(new Intent(context, YourStatsActivity.class));
+                        }else{
+                            startActivity(new Intent(context, SubscriptionActivity.class));
+                        }
                     } else {
                         startActivity(new Intent(context, SubscriptionActivity.class));
                     }
@@ -141,7 +153,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     Boolean status = response.body().getStatus();
                     if (status) {
                         if (response.body().getData() != null) {
-                            GameListDataSet(response.body().getData().getActive_plan(),response.body().getData().getBacklog_remaining());
+                            GameListDataSet(response.body().getData().getActive_plan(),response.body().getData().getBacklog_remaining(),response.body().getData().getPlan_type());
                             if (response.body().getData().getCapsul() != null) {
                                 if (response.body().getData().getCapsul().size() != 0) {
                                     binding.llRecentlyAdded.setVisibility(View.VISIBLE);

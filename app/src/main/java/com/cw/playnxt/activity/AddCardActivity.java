@@ -58,7 +58,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
             Intent intent = getIntent();
             if (intent != null) {
                 plan_ID = intent.getStringExtra("plan_ID");
-                Log.d("TAG", "plan_ID>>" + plan_ID);
+                Log.d("TAG", "plan_ID>>>" + plan_ID);
             }
         } catch (Exception e) {
             e.printStackTrace();

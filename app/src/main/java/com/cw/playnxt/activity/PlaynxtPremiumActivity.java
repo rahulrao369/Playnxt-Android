@@ -85,7 +85,7 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        Toast.makeText(context, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(context, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         ActivePlanDataSet(response.body().getData().getActivePlan());
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
@@ -103,6 +103,13 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
 
     private void ActivePlanDataSet(ActivePlan activePlan) {
         binding.tvPlanTitle.setText(activePlan.getTitle());
+        if(activePlan.getTitle().equals("Premium Plan")){
+            binding.tvValidUpto.setText("Valid Upto 12 months");
+        }else if(activePlan.getTitle().equals("Silver Plan")){
+            binding.tvValidUpto.setText("Valid Upto 1 month");
+        }else{
+            binding.tvValidUpto.setText("Valid for life time");
+        }
         binding.tvPurchaseDate.setText(activePlan.getStartDate());
         binding.tvExpiryDate.setText(activePlan.getEndDate());
         binding.tvDescription.setText(activePlan.getDescription());

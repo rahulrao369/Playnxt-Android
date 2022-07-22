@@ -18,6 +18,17 @@ public class GetRecentGameData {
     @SerializedName("active_plan")
     private String active_plan;
 
+    @SerializedName("plan_type")
+    private String plan_type;
+
+    public String getPlan_type() {
+        return plan_type;
+    }
+
+    public void setPlan_type(String plan_type) {
+        this.plan_type = plan_type;
+    }
+
     public int getBacklog_remaining() {
         return backlog_remaining;
     }

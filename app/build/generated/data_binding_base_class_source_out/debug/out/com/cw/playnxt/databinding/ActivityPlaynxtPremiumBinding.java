@@ -49,13 +49,13 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
   public final TextView tvPurchaseDate;
 
   @NonNull
-  public final TextView txtBtn;
+  public final TextView tvValidUpto;
 
   private ActivityPlaynxtPremiumBinding(@NonNull RelativeLayout rootView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnLogin,
       @NonNull ImageView ivPlan, @NonNull LinearLayout llUpper, @NonNull TextView tvDescription,
       @NonNull TextView tvExpiryDate, @NonNull TextView tvPlanTitle, @NonNull TextView tvPrice,
-      @NonNull TextView tvPurchaseDate, @NonNull TextView txtBtn) {
+      @NonNull TextView tvPurchaseDate, @NonNull TextView tvValidUpto) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
     this.btnLogin = btnLogin;
@@ -66,7 +66,7 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
     this.tvPlanTitle = tvPlanTitle;
     this.tvPrice = tvPrice;
     this.tvPurchaseDate = tvPurchaseDate;
-    this.txtBtn = txtBtn;
+    this.tvValidUpto = tvValidUpto;
   }
 
   @Override
@@ -151,15 +151,15 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtBtn;
-      TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
-      if (txtBtn == null) {
+      id = R.id.tvValidUpto;
+      TextView tvValidUpto = ViewBindings.findChildViewById(rootView, id);
+      if (tvValidUpto == null) {
         break missingId;
       }
 
       return new ActivityPlaynxtPremiumBinding((RelativeLayout) rootView, binding_bindingHeader,
           btnLogin, ivPlan, llUpper, tvDescription, tvExpiryDate, tvPlanTitle, tvPrice,
-          tvPurchaseDate, txtBtn);
+          tvPurchaseDate, tvValidUpto);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
