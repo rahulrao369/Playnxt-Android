@@ -2,35 +2,24 @@ package com.cw.playnxt.fragment;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
 import com.cw.playnxt.activity.HomeActivity;
-import com.cw.playnxt.adapter.DiscoverAdapters.GameListAdapter;
 import com.cw.playnxt.adapter.InboxAdapters.ChatListAdapter;
-import com.cw.playnxt.databinding.FragmentFriendsBinding;
 import com.cw.playnxt.databinding.FragmentInboxBinding;
 import com.cw.playnxt.model.ChatList.ChatListResponse;
 import com.cw.playnxt.model.ChatList.Inbox;
-import com.cw.playnxt.model.StaticModel.GameModel;
-import com.cw.playnxt.model.SubscriptionPlan.SubscriptionPlanResponse;
 import com.cw.playnxt.server.Allurls;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
@@ -40,7 +29,6 @@ import com.cw.playnxt.utils.Customprogress;
 import com.google.android.material.card.MaterialCardView;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -56,7 +44,7 @@ public class InboxFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_inbox,true);
+        ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_inbox, true);
         binding = FragmentInboxBinding.inflate(inflater, container, false);
         init();
         onclicks();
@@ -97,7 +85,7 @@ public class InboxFragment extends Fragment {
         AppCompatImageView iv_profile_image = (AppCompatImageView) dialog.findViewById(R.id.iv_profile_image);
         MaterialCardView cv_cross = (MaterialCardView) dialog.findViewById(R.id.cv_cross);
 
-        Picasso.get().load(Allurls.IMAGEURL+image).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(iv_profile_image);
+        Picasso.get().load(Allurls.IMAGEURL + image).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(iv_profile_image);
         cv_cross.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,12 +106,20 @@ public class InboxFragment extends Fragment {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        InboxListDataSet(response.body().getData().getInbox());
+                        if (response.body().getData().getInbox().size() == 0) {
+                            binding.llRecyclerview.setVisibility(View.GONE);
+                            binding.llNoData.setVisibility(View.VISIBLE);
+                        } else {
+                            binding.llRecyclerview.setVisibility(View.VISIBLE);
+                            binding.llNoData.setVisibility(View.GONE);
+                            InboxListDataSet(response.body().getData().getInbox());
+                        }
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<ChatListResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);

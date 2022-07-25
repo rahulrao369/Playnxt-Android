@@ -24,8 +24,8 @@ public class MainTabLayoutAdapterCommunityFriends extends FragmentStatePagerAdap
     @Override
     public Fragment getItem(int position) {
         switch (position){
-
             case 0 : return  new TabCommunityFragment();
+
             case 1 : return  new TabFriendsFragment();
             default: return null;
         }
@@ -35,4 +35,6 @@ public class MainTabLayoutAdapterCommunityFriends extends FragmentStatePagerAdap
     public int getCount() {
         return 2;
     }
+
+
 }

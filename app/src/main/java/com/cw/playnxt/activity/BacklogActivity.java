@@ -60,6 +60,7 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
     private MySharedPref mySharedPref;
     private PopupWindow mDropdown = null;
     Long backlog_ID ;
+    String backlogRemain = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,9 +111,12 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.llCreateBacklogList:
-                showBottomSheetFilterDialog();
+                if(backlogRemain.equals("0")){
+                    startActivity(new Intent(context, SubscriptionActivity.class));
+                }else{
+                    showBottomSheetFilterDialog();
+                }
                 break;
-
         }
     }
 
@@ -285,6 +289,8 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status)
                     {
+                        backlogRemain = response.body().getData().getBacklog_remain();
+
                         if(response.body().getData().getCount()!= null){
                             if(response.body().getData().getCount().size() != 0){
                                 binding.recyclerView.setVisibility(View.VISIBLE);

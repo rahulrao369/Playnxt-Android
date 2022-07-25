@@ -45,6 +45,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
     private MySharedPref mySharedPref;
     String cardHolderName,cardNumber,expiryDate,monthCard,yearCard,cvvCard;
     Long plan_ID = null;
+    String selected_plane_type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,9 +97,15 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                 if(plan_ID == null){
                     Toast.makeText(context, "Please select any plan", Toast.LENGTH_SHORT).show();
                 }else{
-                    Log.d("TAG","plan_ID"+plan_ID);
-                    startActivity(new Intent(context,AddCardActivity.class)
-                    .putExtra("plan_ID",plan_ID.toString()));
+                    Log.d("TAG1","plan_ID"+plan_ID);
+                    Log.d("TAG1","selected_plane_type"+selected_plane_type);
+                    if(selected_plane_type.equals("Free")){
+                        Toast.makeText(context, "For Free plan API not available", Toast.LENGTH_SHORT).show();
+                       // startActivity(new Intent(context,HomeActivity.class));
+                    }else{
+                        startActivity(new Intent(context,AddCardActivity.class)
+                                .putExtra("plan_ID",plan_ID.toString()));
+                    }
                 }
 
                 // startActivity(new Intent(context,AddCardActivity.class));
@@ -144,6 +151,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         SubscriptionPlanListAdapterMain adapter = new SubscriptionPlanListAdapterMain(context, planList, new ItemClickId() {
             @Override
             public void onItemClick(int position, Long id, String type) {
+                selected_plane_type = planList.get(position).getType();
                 if(type.equals("subscription")){
                     Log.d("TAG","id"+id);
                     plan_ID = id;

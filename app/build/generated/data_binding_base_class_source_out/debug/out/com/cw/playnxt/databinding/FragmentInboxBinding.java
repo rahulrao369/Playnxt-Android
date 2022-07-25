@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,15 +26,29 @@ public final class FragmentInboxBinding implements ViewBinding {
   public final EditText etSearchGame;
 
   @NonNull
+  public final LinearLayout llMain;
+
+  @NonNull
+  public final LinearLayout llNoData;
+
+  @NonNull
+  public final LinearLayout llRecyclerview;
+
+  @NonNull
   public final RecyclerView recyclerView;
 
   @NonNull
   public final TextView tvUserName;
 
   private FragmentInboxBinding(@NonNull RelativeLayout rootView, @NonNull EditText etSearchGame,
-      @NonNull RecyclerView recyclerView, @NonNull TextView tvUserName) {
+      @NonNull LinearLayout llMain, @NonNull LinearLayout llNoData,
+      @NonNull LinearLayout llRecyclerview, @NonNull RecyclerView recyclerView,
+      @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.etSearchGame = etSearchGame;
+    this.llMain = llMain;
+    this.llNoData = llNoData;
+    this.llRecyclerview = llRecyclerview;
     this.recyclerView = recyclerView;
     this.tvUserName = tvUserName;
   }
@@ -71,6 +86,24 @@ public final class FragmentInboxBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.llMain;
+      LinearLayout llMain = ViewBindings.findChildViewById(rootView, id);
+      if (llMain == null) {
+        break missingId;
+      }
+
+      id = R.id.llNoData;
+      LinearLayout llNoData = ViewBindings.findChildViewById(rootView, id);
+      if (llNoData == null) {
+        break missingId;
+      }
+
+      id = R.id.llRecyclerview;
+      LinearLayout llRecyclerview = ViewBindings.findChildViewById(rootView, id);
+      if (llRecyclerview == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerView;
       RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
       if (recyclerView == null) {
@@ -83,8 +116,8 @@ public final class FragmentInboxBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentInboxBinding((RelativeLayout) rootView, etSearchGame, recyclerView,
-          tvUserName);
+      return new FragmentInboxBinding((RelativeLayout) rootView, etSearchGame, llMain, llNoData,
+          llRecyclerview, recyclerView, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

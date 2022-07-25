@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -51,14 +52,32 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_home,true);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
+        onclicks();
+        CLick();
         return binding.getRoot();
+    }
+
+    private void CLick() {
+        binding.tvSeeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FriendsFragment friendsFragment4 = new FriendsFragment();
+                Bundle bundle2 = new Bundle();
+                bundle2.putInt("key", 1);
+                friendsFragment4.setArguments(bundle2);
+                ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.Layout_container, friendsFragment4)
+                        .addToBackStack("jknhkj")
+                        .commit();
+            }
+        });
     }
 
     @Override
     public void onStart() {
         super.onStart();
         init();
-        onclicks();
+
     }
 
     public void init() {
@@ -75,7 +94,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
 
     public void onclicks() {
-        binding.tvSeeAll.setOnClickListener(this);
+//        binding.tvSeeAll.setOnClickListener(this);
         binding.btnPlaynxt.setOnClickListener(this);
         binding.llMyProfile.setOnClickListener(this);
         binding.ivSearch.setOnClickListener(this);
@@ -84,21 +103,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tvSeeAll:
-          /*      startActivity(new Intent(context, MyProfileActivity.class)
-                        .putExtra("key","3")
-                );*/
-
-                FriendsFragment friendsFragment = new FriendsFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("key", "1");
-                friendsFragment.setArguments(bundle);
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.Layout_container, friendsFragment, "findThisFragment")
-                        .addToBackStack(null)
+           /* case R.id.tvSeeAll:
+                FriendsFragment friendsFragment4 = new FriendsFragment();
+                Bundle bundle2 = new Bundle();
+                bundle2.putInt("key", 1);
+                friendsFragment4.setArguments(bundle2);
+                ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.Layout_container, friendsFragment4)
+                        .addToBackStack("jknhkj")
                         .commit();
-
-                break;
+                break;*/
 
             case R.id.llMyProfile:
                 startActivity(new Intent(context, MyProfileActivity.class)

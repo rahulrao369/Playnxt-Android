@@ -45,8 +45,7 @@ public class TabFriendsFragment extends Fragment {
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentTabFriendsBinding.inflate(inflater, container, false);
         init();
         return binding.getRoot();
