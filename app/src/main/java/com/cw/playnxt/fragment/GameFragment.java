@@ -94,10 +94,14 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                 Log.d("TAG","active_plan>>"+active_plan);
                 if (position == 0) {
                     if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        if(backlog_remaining == 0){
-                            startActivity(new Intent(context, SubscriptionActivity.class));
-                        }else{
+                        if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
                             startActivity(new Intent(context, BacklogActivity.class));
+                        }else {
+                            if(backlog_remaining == 0){
+                                startActivity(new Intent(context, SubscriptionActivity.class));
+                            }else{
+                                startActivity(new Intent(context, BacklogActivity.class));
+                            }
                         }
                     } else {
                         startActivity(new Intent(context, SubscriptionActivity.class));

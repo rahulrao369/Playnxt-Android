@@ -13,6 +13,7 @@ import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventParaRes;
 import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventResponse;
 import com.cw.playnxt.model.ChangePassword.ChangePasswordParaRes;
 import com.cw.playnxt.model.ChatList.ChatListResponse;
+import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
 import com.cw.playnxt.model.CommunityData.GetCommunityListResponse;
 import com.cw.playnxt.model.ContactUs.ContactUsResponse;
 import com.cw.playnxt.model.DeleteBacklogList.DeleteBacklogListParaRes;
@@ -309,4 +310,9 @@ public interface JsonPlaceHolderApi {
     @POST("users/myactiveplan")
     Call<MyActivePlanResponse> MyActivePlanAPI(@Header("Content-Type") String content_type,
                                                @Header("Authorization") String token);
+
+  @POST("users/checksubscription")
+    Call<CheckPlanResponse> CheckPlanAPI(@Header("Content-Type") String content_type,
+                                         @Header("Authorization") String token);
+
 }

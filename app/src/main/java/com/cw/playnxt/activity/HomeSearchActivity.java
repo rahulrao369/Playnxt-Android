@@ -20,11 +20,13 @@ import com.cw.playnxt.adapter.SearchAdapters.SearchGamesAdapter;
 import com.cw.playnxt.adapter.SearchAdapters.SearchUserAdapter;
 import com.cw.playnxt.databinding.ActivityHomeSearchBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
+import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
 import com.cw.playnxt.model.HomeSearch.SearchFollowing;
 import com.cw.playnxt.model.HomeSearch.SearchGame;
 import com.cw.playnxt.model.HomeSearch.SearchParaRes;
 import com.cw.playnxt.model.HomeSearch.SearchProfile;
 import com.cw.playnxt.model.HomeSearch.SearchResponse;
+import com.cw.playnxt.model.MyActivePlan.MyActivePlanResponse;
 import com.cw.playnxt.model.StaticModel.GameModel;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
@@ -47,6 +49,9 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     private MySharedPref mySharedPref;
     String filter_byUser="";
     String filter_byGame="";
+    String activePlan = "";
+    String planType = "";
+    int totalBacklog ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +72,14 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
+
+        if (Constants.isInternetConnected(context)) {
+            CheckPlanAPI();
+        } else {
+            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        }
+
+
 
         binding.etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -115,7 +128,19 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.tvAddGame:
-                startActivity(new Intent(context, AddGameActivity.class));
+                if (activePlan.equals(Constants.ACTIVE_PLAN_YES)) {
+                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                        startActivity(new Intent(context, AddGameActivity.class));
+                    }else {
+                        if(totalBacklog == 0){
+                            startActivity(new Intent(context, SubscriptionActivity.class));
+                        }else{
+                            startActivity(new Intent(context, AddGameActivity.class));
+                        }
+                    }
+                } else {
+                    startActivity(new Intent(context, SubscriptionActivity.class));
+                }
                 break;
         }
     }
@@ -196,5 +221,32 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         binding.rvUser.setHasFixedSize(true);
         binding.rvUser.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         binding.rvUser.setAdapter(adapter);
+    }
+    //*********************************************************CHECK PLAN****************************************************
+    public void CheckPlanAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.CheckPlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckPlanResponse>() {
+            @Override
+            public void onResponse(Call<CheckPlanResponse> call, Response<CheckPlanResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        activePlan = response.body().getData().getActivePlan();
+                        planType =  response.body().getData().getActplan();
+                        totalBacklog =  response.body().getData().getTotalBacklog();
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<CheckPlanResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
