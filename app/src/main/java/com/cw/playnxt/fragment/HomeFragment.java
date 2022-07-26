@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.cw.playnxt.Interface.ItemClick;
@@ -61,14 +62,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         binding.tvSeeAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FriendsFragment friendsFragment4 = new FriendsFragment();
+                Fragment someFragment = new NewFriendsFragment();
+//                Fragment someFragment = new FriendsFragment();
                 Bundle bundle2 = new Bundle();
                 bundle2.putInt("key", 1);
-                friendsFragment4.setArguments(bundle2);
-                ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.Layout_container, friendsFragment4)
-                        .addToBackStack("jknhkj")
-                        .commit();
+                someFragment.setArguments(bundle2);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameContainer, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack("dvcsdvcd");  // if written, this transaction will be added to backstack
+                transaction.commit();
             }
         });
     }

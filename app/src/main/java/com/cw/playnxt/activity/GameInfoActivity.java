@@ -31,7 +31,7 @@ public class GameInfoActivity extends AppCompatActivity implements View.OnClickL
         headerBinding.tvHeading.setText(R.string.GameInfo);
         headerBinding.btnFilter.setVisibility(View.GONE);
         headerBinding.btnAdd.setVisibility(View.GONE);
-        headerBinding.btnShare.setVisibility(View.VISIBLE);
+        headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
 
         binding.tvGamePlatform.setText("The Sony PlayStation\n" +

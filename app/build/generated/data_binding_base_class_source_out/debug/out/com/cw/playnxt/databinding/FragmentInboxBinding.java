@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +20,7 @@ import java.lang.String;
 
 public final class FragmentInboxBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
   public final EditText etSearchGame;
@@ -40,7 +40,7 @@ public final class FragmentInboxBinding implements ViewBinding {
   @NonNull
   public final TextView tvUserName;
 
-  private FragmentInboxBinding(@NonNull RelativeLayout rootView, @NonNull EditText etSearchGame,
+  private FragmentInboxBinding(@NonNull FrameLayout rootView, @NonNull EditText etSearchGame,
       @NonNull LinearLayout llMain, @NonNull LinearLayout llNoData,
       @NonNull LinearLayout llRecyclerview, @NonNull RecyclerView recyclerView,
       @NonNull TextView tvUserName) {
@@ -55,7 +55,7 @@ public final class FragmentInboxBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -116,7 +116,7 @@ public final class FragmentInboxBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentInboxBinding((RelativeLayout) rootView, etSearchGame, llMain, llNoData,
+      return new FragmentInboxBinding((FrameLayout) rootView, etSearchGame, llMain, llNoData,
           llRecyclerview, recyclerView, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -50,15 +50,17 @@ public class TabFriendsFragment extends Fragment {
         init();
         return binding.getRoot();
     }
+
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            init();
+
         }
     }
+
     public void init() {
-        context = binding.getRoot().getContext();
+        context = getActivity();
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
 
@@ -67,8 +69,8 @@ public class TabFriendsFragment extends Fragment {
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
-    }
 
+    }
 
     public void GetMyFriendListAPI() {
         binding.rlProgressBar.setVisibility(View.VISIBLE);
@@ -186,6 +188,7 @@ public class TabFriendsFragment extends Fragment {
             }
         });
     }
+
     //************************************FOLLOW FRIEND API*********************************************
     public void UnfollowFriendAPI(GetMyFriendListDataCapsul data) {
         Customprogress.showPopupProgressSpinner(context, true);

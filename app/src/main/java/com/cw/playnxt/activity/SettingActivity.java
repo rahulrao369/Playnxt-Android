@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaticModel.GameModel;
+import com.cw.playnxt.server.Allurls;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
@@ -100,9 +102,10 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 }  else if (position == 3) {
                     startActivity(new Intent(context,AboutUsActivity.class));
                 }  else if (position == 4) {
-
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Allurls.share_app_url));
+                    startActivity(browserIntent);
                 }  else if (position == 5) {
-
+                    shareAppLink();
                 } else if (position == 6) {
                     openLogoutDialog();
                 }
@@ -111,6 +114,21 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         binding.recyclerView.setAdapter(adapter);
+    }
+
+    private void shareAppLink() {
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Playnxt");
+            String shareMessage = "This is a Playnxt link";
+            // shareMessage =  Allurls.share_app_url; shareMessage + DynamicLink + "\n\n";
+            Log.d("TAG", "shareMessage>>" + shareMessage);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+            startActivity(Intent.createChooser(shareIntent, "choose one"));
+        } catch (Exception e) {
+            //e.toString();
+        }
     }
 
     private void openLogoutDialog() {

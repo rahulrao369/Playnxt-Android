@@ -6,6 +6,8 @@ import com.google.gson.annotations.Expose;
 public class Inbox {
 
     @Expose
+    private Long id;
+    @Expose
     private String image;
     @Expose
     private String message;
@@ -13,6 +15,14 @@ public class Inbox {
     private String name;
     @Expose
     private String time;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getImage() {
         return image;

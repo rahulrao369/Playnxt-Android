@@ -31,6 +31,7 @@ public class MainTabLayoutAdapterCommunityFriends extends FragmentStatePagerAdap
         }
     }
 
+
     @Override
     public int getCount() {
         return 2;

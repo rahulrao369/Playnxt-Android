@@ -104,10 +104,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         binding.webView.setWebViewClient(new WebViewClient());
         binding.webView.getSettings().setJavaScriptEnabled(true);
         binding.webView.getSettings().setDomStorageEnabled(true);
-
-
         CHAT_WEBVIEW_URL = Allurls.WEBVIEWURL + "chat?uuid=" + userId +"&receiver_id="+receiverId;
-
         Log.d("TAG","CHAT_WEBVIEW_URL>>>>>>>>>"+CHAT_WEBVIEW_URL);
 
         binding.webView.setWebViewClient(new WebViewClient() {

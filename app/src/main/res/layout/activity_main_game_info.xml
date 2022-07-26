@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_above="@+id/btnAddToList">
 
         <include
             android:id="@+id/bindingHeader"
@@ -184,7 +185,6 @@
                 android:orientation="vertical"
                 android:visibility="visible">
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -223,7 +223,6 @@
 
                 </LinearLayout>
 
-
                 <TextView
                     android:id="@+id/tvGameDescription"
                     android:layout_width="match_parent"
@@ -240,7 +239,7 @@
                     android:id="@+id/tvPlatform"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/nunito_semi_bold"
                     android:text="Game Platform"
                     android:textColor="@color/white"
@@ -279,7 +278,6 @@
                     android:textColor="@color/white"
                     android:textFontWeight="500"
                     android:textSize="12sp" />
-
 
             </LinearLayout>
 

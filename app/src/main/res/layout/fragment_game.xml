@@ -6,7 +6,6 @@
     android:background="@color/top_gray"
     tools:context=".fragment.GameFragment">
 
-
     <LinearLayout
         android:id="@+id/llMain"
         android:layout_width="match_parent"

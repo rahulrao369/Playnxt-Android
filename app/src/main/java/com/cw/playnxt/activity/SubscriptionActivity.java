@@ -19,6 +19,8 @@ import com.cw.playnxt.adapter.SubscriptionPlanListAdapterMain;
 import com.cw.playnxt.databinding.ActivitySubscriptionBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.ForgotPassword.ForgotPasswordParaRes;
+import com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanParaRes;
+import com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanResponse;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
@@ -100,22 +102,16 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                     Log.d("TAG1","plan_ID"+plan_ID);
                     Log.d("TAG1","selected_plane_type"+selected_plane_type);
                     if(selected_plane_type.equals("Free")){
-                        Toast.makeText(context, "For Free plan API not available", Toast.LENGTH_SHORT).show();
-                       // startActivity(new Intent(context,HomeActivity.class));
+                        if (Constants.isInternetConnected(context)) {
+                            PurchaseFreePlanAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
                     }else{
                         startActivity(new Intent(context,AddCardActivity.class)
                                 .putExtra("plan_ID",plan_ID.toString()));
                     }
                 }
-
-                // startActivity(new Intent(context,AddCardActivity.class));
-             /*   if(plan_ID == null){
-                    Toast.makeText(context, "Please select any plan", Toast.LENGTH_SHORT).show();
-                }else{
-                    Intent intent = new Intent(SubscriptionActivity.this, CardEditActivity.class);
-                    startActivityForResult(intent, GET_NEW_CARD);
-
-                }*/
                 break;
         }
     }
@@ -164,4 +160,38 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
         binding.rvSubscriptionPlan.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
         binding.rvSubscriptionPlan.setAdapter(adapter);
     }
+
+    //**********************************************PURCHASE FREE PLAN*****************************************************
+
+    public void PurchaseFreePlanAPI() {
+        Log.d("TAG","plan_ID"+plan_ID);
+        Customprogress.showPopupProgressSpinner(context, true);
+        PurchaseFreePlanParaRes purchaseFreePlanParaRes = new PurchaseFreePlanParaRes();
+        purchaseFreePlanParaRes.setPlanId(Long.valueOf(plan_ID));
+
+        jsonPlaceHolderApi.PurchaseFreePlanAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken(), purchaseFreePlanParaRes).enqueue(new Callback<PurchaseFreePlanResponse>() {
+            @Override
+            public void onResponse(Call<PurchaseFreePlanResponse> call, Response<PurchaseFreePlanResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        //Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(context,ConfirmationActivity.class));
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<PurchaseFreePlanResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
 }

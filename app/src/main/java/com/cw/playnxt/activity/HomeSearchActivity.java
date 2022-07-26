@@ -132,11 +132,13 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     if(planType.equals(Constants.PLAN_TYPE_PAID)){
                         startActivity(new Intent(context, AddGameActivity.class));
                     }else {
-                        if(totalBacklog == 0){
+                       /* if(totalBacklog == 0){
                             startActivity(new Intent(context, SubscriptionActivity.class));
                         }else{
                             startActivity(new Intent(context, AddGameActivity.class));
-                        }
+                        }*/
+                        startActivity(new Intent(context, AddGameActivity.class));
+
                     }
                 } else {
                     startActivity(new Intent(context, SubscriptionActivity.class));

@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,6 +43,7 @@ import com.cw.playnxt.model.AddFriendGame.AddFriendGameResponse;
 import com.cw.playnxt.model.AddGameNote.AddGameNoteParaRes;
 import com.cw.playnxt.model.AddGameStatus.AddGameStatusParaRes;
 import com.cw.playnxt.model.AddWishlist.AddWishlistParaRes;
+import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
 import com.cw.playnxt.model.DeleteGame.DeleteGameParaRes;
 import com.cw.playnxt.model.DeleteGameNote.DeleteGameNoteParaRes;
 import com.cw.playnxt.model.EditGameNote.EditGameNoteParaRes;
@@ -105,7 +107,9 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
     Double rating ;
     EditText etName,etWishlistName;
     LinearLayout btnCreateList,btnCreateWishlist;
-
+    String activePlan = "";
+    String planType = "";
+    int totalBacklog ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,7 +127,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         headerBinding.tvHeading.setText(R.string.GameInfo);
         headerBinding.btnFilter.setVisibility(View.GONE);
         headerBinding.btnAdd.setVisibility(View.GONE);
-        headerBinding.btnShare.setVisibility(View.VISIBLE);
+        headerBinding.btnShare.setVisibility(View.GONE);
 
         try {
             Intent intent = getIntent();
@@ -196,22 +200,36 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                 category_type = CATEGORY_BACKLOG;
                 Log.d("TAG", "category_type>>" + category_type);
 
+                if (activePlan.equals(Constants.ACTIVE_PLAN_YES)) {
                     if (Constants.isInternetConnected(context)) {
                         GetCategoryBacklogListNameAPI(category_type);
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
+                } else {
+                    startActivity(new Intent(context, SubscriptionActivity.class));
+                }
+
+
 
                 break;
 
             case R.id.btnAddToWishList:
                 category_type = CATEGORY_WISHLIST;
                 Log.d("TAG", "category_type>>" + category_type);
-                    if (Constants.isInternetConnected(context)) {
-                        GetCategoryWishListNameAPI(category_type);
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                if (activePlan.equals(Constants.ACTIVE_PLAN_YES)) {
+                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                        if (Constants.isInternetConnected(context)) {
+                            GetCategoryWishListNameAPI(category_type);
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        startActivity(new Intent(context, SubscriptionActivity.class));
                     }
+                } else {
+                    startActivity(new Intent(context, SubscriptionActivity.class));
+                }
                 break;
 
         }
@@ -629,6 +647,10 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                     Customprogress.showPopupProgressSpinner(context, false);
                     Boolean status = response.body().getStatus();
                     if (status) {
+                        activePlan = response.body().getData().getActivePlan();
+                        planType =  response.body().getData().getActplan();
+                        totalBacklog =  response.body().getData().getTotalBacklog();
+
                         if (response.body().getData().getCapsul() != null) {
                             if (Constants.isInternetConnected(context)) {
                                 GetGameNoteAPI();
@@ -638,7 +660,6 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                             gameId = String.valueOf(response.body().getData().getCapsul().getGameId());
                             rating =response.body().getData().getCapsul().getRating();
                             GameInfoActivityDataSetAfterStatusChange(response.body().getData().getCapsul());
-
                         }
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
@@ -665,7 +686,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         Log.d("TAG", "selected_game_status>>" + selected_game_status);
         if (!capsulData.getDescription().equals("")) {
             binding.tvGameDescription.setVisibility(View.VISIBLE);
-            binding.tvGameDescription.setText(capsulData.getDescription());
+            binding.tvGameDescription.setText(HtmlCompat.fromHtml(capsulData.getDescription(), 0));
         } else {
             binding.tvGameDescription.setVisibility(View.GONE);
         }
@@ -1011,4 +1032,32 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
             }
         });
     }
+    //*********************************************************CHECK PLAN****************************************************
+    public void CheckPlanAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.CheckPlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckPlanResponse>() {
+            @Override
+            public void onResponse(Call<CheckPlanResponse> call, Response<CheckPlanResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        activePlan = response.body().getData().getActivePlan();
+                        planType =  response.body().getData().getActplan();
+                        totalBacklog =  response.body().getData().getTotalBacklog();
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<CheckPlanResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

@@ -4,6 +4,7 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -22,10 +23,10 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
-  public final RelativeLayout LayoutContainer;
+  public final FrameLayout LayoutContainer;
 
   @NonNull
   public final LinearLayout btnAdsShow;
@@ -69,14 +70,14 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView txtBtn;
 
-  private FragmentHomeBinding(@NonNull RelativeLayout rootView,
-      @NonNull RelativeLayout LayoutContainer, @NonNull LinearLayout btnAdsShow,
-      @NonNull LinearLayout btnPlaynxt, @NonNull CircleImageView cvMyProfile,
-      @NonNull ImageView ivSearch, @NonNull LinearLayout llFriendsList,
-      @NonNull LinearLayout llHomeMain, @NonNull LinearLayout llMyProfile,
-      @NonNull ProgressBar progressBar1, @NonNull RecyclerView recyclerView,
-      @NonNull RelativeLayout rlProgressBar, @NonNull TextView tvNoFriendsYet,
-      @NonNull TextView tvSeeAll, @NonNull TextView tvUserName, @NonNull TextView txtBtn) {
+  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull FrameLayout LayoutContainer,
+      @NonNull LinearLayout btnAdsShow, @NonNull LinearLayout btnPlaynxt,
+      @NonNull CircleImageView cvMyProfile, @NonNull ImageView ivSearch,
+      @NonNull LinearLayout llFriendsList, @NonNull LinearLayout llHomeMain,
+      @NonNull LinearLayout llMyProfile, @NonNull ProgressBar progressBar1,
+      @NonNull RecyclerView recyclerView, @NonNull RelativeLayout rlProgressBar,
+      @NonNull TextView tvNoFriendsYet, @NonNull TextView tvSeeAll, @NonNull TextView tvUserName,
+      @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.LayoutContainer = LayoutContainer;
     this.btnAdsShow = btnAdsShow;
@@ -97,7 +98,7 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -122,7 +123,7 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      RelativeLayout LayoutContainer = (RelativeLayout) rootView;
+      FrameLayout LayoutContainer = (FrameLayout) rootView;
 
       id = R.id.btnAdsShow;
       LinearLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
@@ -208,7 +209,7 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((RelativeLayout) rootView, LayoutContainer, btnAdsShow,
+      return new FragmentHomeBinding((FrameLayout) rootView, LayoutContainer, btnAdsShow,
           btnPlaynxt, cvMyProfile, ivSearch, llFriendsList, llHomeMain, llMyProfile, progressBar1,
           recyclerView, rlProgressBar, tvNoFriendsYet, tvSeeAll, tvUserName, txtBtn);
     }

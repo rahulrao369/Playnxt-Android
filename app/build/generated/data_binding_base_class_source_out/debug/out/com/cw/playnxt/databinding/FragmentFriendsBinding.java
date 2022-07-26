@@ -4,8 +4,8 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +21,7 @@ import java.lang.String;
 
 public final class FragmentFriendsBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
   public final CircleImageView cvMyProfile;
@@ -38,7 +38,7 @@ public final class FragmentFriendsBinding implements ViewBinding {
   @NonNull
   public final ViewPager viewpager1;
 
-  private FragmentFriendsBinding(@NonNull RelativeLayout rootView,
+  private FragmentFriendsBinding(@NonNull FrameLayout rootView,
       @NonNull CircleImageView cvMyProfile, @NonNull LinearLayout llMyProfile,
       @NonNull TabLayout tablayout1, @NonNull TextView tvUserName, @NonNull ViewPager viewpager1) {
     this.rootView = rootView;
@@ -51,7 +51,7 @@ public final class FragmentFriendsBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -106,7 +106,7 @@ public final class FragmentFriendsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentFriendsBinding((RelativeLayout) rootView, cvMyProfile, llMyProfile,
+      return new FragmentFriendsBinding((FrameLayout) rootView, cvMyProfile, llMyProfile,
           tablayout1, tvUserName, viewpager1);
     }
     String missingId = rootView.getResources().getResourceName(id);

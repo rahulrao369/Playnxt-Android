@@ -49,6 +49,12 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.Recycl
                 itemClick.onItemClick(position,"ChatListAdapter");
             }
         });
+        holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemClick.onItemClick(position,"Go to Chat");
+            }
+        });
     }
 
     @Override

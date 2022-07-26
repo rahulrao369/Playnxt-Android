@@ -46,7 +46,7 @@
             android:fontFamily="@font/nunitobold"
             android:hint="@string/enter_note_here"
             android:textColorHint="@color/edt_text"
-            android:textColor="@color/edt_text"
+            android:textColor="@color/white"
             android:textFontWeight="700"
             android:textSize="14sp"
             android:paddingStart="12dp"

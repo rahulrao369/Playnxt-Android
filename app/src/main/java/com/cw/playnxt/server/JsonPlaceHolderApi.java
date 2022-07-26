@@ -52,6 +52,8 @@ import com.cw.playnxt.model.LoginSignup.LoginResponse;
 import com.cw.playnxt.model.LoginSignup.SignupParaRes;
 import com.cw.playnxt.model.LoginSignup.SignupResponse;
 import com.cw.playnxt.model.MyActivePlan.MyActivePlanResponse;
+import com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanParaRes;
+import com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanResponse;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
@@ -311,8 +313,13 @@ public interface JsonPlaceHolderApi {
     Call<MyActivePlanResponse> MyActivePlanAPI(@Header("Content-Type") String content_type,
                                                @Header("Authorization") String token);
 
-  @POST("users/checksubscription")
+    @POST("users/checksubscription")
     Call<CheckPlanResponse> CheckPlanAPI(@Header("Content-Type") String content_type,
                                          @Header("Authorization") String token);
+
+    @POST("users/free-plan")
+    Call<PurchaseFreePlanResponse> PurchaseFreePlanAPI(@Header("Content-Type") String content_type,
+                                                       @Header("Authorization") String token,
+                                                       @Body PurchaseFreePlanParaRes purchaseFreePlanParaRes);
 
 }

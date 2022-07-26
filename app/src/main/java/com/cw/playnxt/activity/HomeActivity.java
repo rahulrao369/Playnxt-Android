@@ -3,7 +3,6 @@ package com.cw.playnxt.activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,15 +14,14 @@ import androidx.fragment.app.FragmentTransaction;
 import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ActivityHomeBinding;
 import com.cw.playnxt.fragment.DiscoverFragment;
-import com.cw.playnxt.fragment.FriendsFragment;
 import com.cw.playnxt.fragment.GameFragment;
 import com.cw.playnxt.fragment.HomeFragment;
 import com.cw.playnxt.fragment.InboxFragment;
+import com.cw.playnxt.fragment.NewFriendsFragment;
 import com.cw.playnxt.server.MySharedPref;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
-
     public static ChipNavigationBar chipNavigationBar;
     Context context;
     private ActivityHomeBinding binding;
@@ -37,14 +35,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer,new HomeFragment()).commit();
         init();
     }
-
-
     public void init() {
         context = HomeActivity.this;
         mySharedPref = new MySharedPref(context);
-
         Log.d("TAG","ACCESS_TOKEN>>>>>>>>>>>>>>"+mySharedPref.getSavedAccessToken());
-
         chipNavigationBar = findViewById(R.id.chipNavigationBar);
         chipNavigationBar.setItemSelected(R.id.home, true);
 
@@ -66,8 +60,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.menu_friends:
-
-                        Fragment friendsfrgamnet1 = new FriendsFragment();
+                        Fragment friendsfrgamnet1 = new NewFriendsFragment();
+//                        Fragment friendsfrgamnet1 = new FriendsFragment();
                         Bundle bundle1 = new Bundle();
                         bundle1.putInt("key", 0);
                         friendsfrgamnet1.setArguments(bundle1);
@@ -77,7 +71,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         transaction.replace(R.id.frameContainer, friendsfrgamnet1);
                         transaction.addToBackStack("jkhjb");
                         transaction.commit();
-
                         break;
 
                     case R.id.menu_inbox:

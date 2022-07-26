@@ -42,6 +42,7 @@ import com.cw.playnxt.databinding.ActivityAddGameBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.AddBacklogList.AddBacklogListParaRes;
 import com.cw.playnxt.model.AddWishlist.AddWishlistParaRes;
+import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
 import com.cw.playnxt.model.GetCategoryListName.Backlog;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameResponse;
@@ -91,6 +92,9 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     String gameRating= "";
     EditText etName,etWishlistName;
     LinearLayout btnCreateList,btnCreateWishlist;
+    String activePlan = "";
+    String planType = "";
+    String backlogRemain = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +124,11 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 binding.tvRating.setText(gameRating);
             }
         });
+        if (Constants.isInternetConnected(context)) {
+            CheckPlanAPI();
+        } else {
+            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void onclicks() {
@@ -172,13 +181,20 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.btnAddToWishList:
                 category_type = CATEGORY_WISHLIST;
                 Log.d("TAG", "category_type>>" + category_type);
-                if (isValidate()) {
-                    if (Constants.isInternetConnected(context)) {
-                        GetCategoryWishListNameAPI(category_type);
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+
+                if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                    if (isValidate()) {
+                        if (Constants.isInternetConnected(context)) {
+                            GetCategoryWishListNameAPI(category_type);
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
                     }
+                }else {
+                    startActivity(new Intent(context, SubscriptionActivity.class));
                 }
+
+
                 break;
         }
     }
@@ -212,6 +228,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                     Boolean status = response.body().getStatus();
                     if (status) {
                         if (response.body().getData() != null) {
+                            backlogRemain = response.body().getData().getBacklog_remain();
                             showBottomSheetCategoryBacklogListDialog(response.body().getData().getBacklog());
                         }
 
@@ -250,7 +267,12 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             ivAddNewList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    showBottomSheetCreateNewBacklogListDialog();
+                    //condition
+                    if(backlogRemain.equals("0")){
+                        startActivity(new Intent(context, SubscriptionActivity.class));
+                    }else{
+                        showBottomSheetCreateNewBacklogListDialog();
+                    }
                     bottomSheetDialog.dismiss();
                 }
             });
@@ -571,6 +593,33 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             public void onFailure(Call<ResponseSatusMessage> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
+            }
+        });
+    }
+
+    //*********************************************************CHECK PLAN****************************************************
+    public void CheckPlanAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.CheckPlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckPlanResponse>() {
+            @Override
+            public void onResponse(Call<CheckPlanResponse> call, Response<CheckPlanResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        activePlan = response.body().getData().getActivePlan();
+                        planType =  response.body().getData().getActplan();
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<CheckPlanResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

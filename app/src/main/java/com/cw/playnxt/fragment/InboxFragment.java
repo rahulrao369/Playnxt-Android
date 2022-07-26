@@ -2,6 +2,7 @@ package com.cw.playnxt.fragment;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
+import com.cw.playnxt.activity.ChatActivity;
 import com.cw.playnxt.activity.HomeActivity;
 import com.cw.playnxt.adapter.InboxAdapters.ChatListAdapter;
 import com.cw.playnxt.databinding.FragmentInboxBinding;
@@ -66,7 +68,16 @@ public class InboxFragment extends Fragment {
         ChatListAdapter adapter = new ChatListAdapter(context, inboxList, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
-                openDialogBigProfile(inboxList.get(position).getImage());
+                if(type.equals("ChatListAdapter")){
+                    openDialogBigProfile(inboxList.get(position).getImage());
+                }else{
+                    startActivity(new Intent(context, ChatActivity.class)
+                            .putExtra("receiverId", inboxList.get(position).getId().toString())
+                            .putExtra("receiverName", inboxList.get(position).getName())
+                            .putExtra("receiverImage", inboxList.get(position).getImage().toString()));
+                    Log.d("TAG", "inboxList.get(position).getId()>>"+inboxList.get(position).getId());
+                }
+
             }
         });
         binding.recyclerView.setHasFixedSize(true);

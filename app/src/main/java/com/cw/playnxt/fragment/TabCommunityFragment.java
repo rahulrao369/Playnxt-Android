@@ -51,13 +51,6 @@ public class TabCommunityFragment extends Fragment {
         return binding.getRoot();
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-
-        }
-    }
     public void init() {
         context = binding.getRoot().getContext();
         jsonPlaceHolderApi = ApiUtils.getAPIService();

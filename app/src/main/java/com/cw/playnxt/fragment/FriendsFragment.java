@@ -1,3 +1,4 @@
+/*
 package com.cw.playnxt.fragment;
 
 import android.content.Context;
@@ -33,8 +34,7 @@ import retrofit2.Response;
 
 public class FriendsFragment extends Fragment implements View.OnClickListener {
     Context context;
-//    MainTabLayoutAdapterCommunityFriends tabLayoutAdapter1;
-
+  //  MainTabLayoutAdapterCommunityFriends tabLayoutAdapter1;
     private FragmentFriendsBinding binding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
@@ -48,70 +48,69 @@ public class FriendsFragment extends Fragment implements View.OnClickListener {
         GetData();
         return binding.getRoot();
     }
-
     private void GetData() {
         try {
             Bundle bundle = getArguments();
             if (bundle != null) {
                 int tab_selected = bundle.getInt("key",0);
                 System.out.println("tab_selected >>>>>>>>>>"+tab_selected);
+              */
+/*
                 ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(((AppCompatActivity)context).getSupportFragmentManager());
                 binding.viewpager1.setAdapter(viewPagerAdapter);
                 binding.tablayout1.setupWithViewPager(binding.viewpager1);
-              /*  binding.tablayout1.addTab(binding.tablayout1.newTab().setText("Community"));
-                binding.tablayout1.addTab(binding.tablayout1.newTab().setText("Friends"));
-                MainTabLayoutAdapterCommunityFriends tabLayoutAdapter1 = new MainTabLayoutAdapterCommunityFriends(((AppCompatActivity)context).getSupportFragmentManager(), binding.tablayout1.getTabCount());
-                binding.viewpager1.setAdapter(tabLayoutAdapter1);
-                System.out.println("tab_selected >>>>>>>>>>"+tab_selected);
-                binding.viewpager1.setCurrentItem(tab_selected);*/
+                binding.viewpager1.setCurrentItem(tab_selected);*//*
 
 
-               /* binding.tablayout1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-                    @Override
-                    public void onTabSelected(TabLayout.Tab tab) {
-                        binding.viewpager1.setCurrentItem(tab.getPosition());
-                    }
 
-                    @Override
-                    public void onTabUnselected(TabLayout.Tab tab) {
-
-                    }
-
-                    @Override
-                    public void onTabReselected(TabLayout.Tab tab) {
-
-                    }
-                });*/
-//                binding.viewpager1.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.tablayout1));
-               /* binding.viewpager1.post(new Runnable() {
+                binding.viewpager1.setCurrentItem(tab_selected);
+               */
+/* binding.viewpager1.post(new Runnable() {
                     @Override
                     public void run() {
                         binding.viewpager1.setCurrentItem(Integer.parseInt(tab_selected));
                     }
-                });*/
+                });*//*
 
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
     public void init() {
+        System.out.println("method calling >>>>>>>>");
         context = binding.getRoot().getContext();
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
-
         if (Constants.isInternetConnected(context)) {
             GetMyProfileAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
-    }
 
+        binding.tablayout1.addTab(binding.tablayout1.newTab().setText("Community"));
+        binding.tablayout1.addTab(binding.tablayout1.newTab().setText("Friends"));
+        MainTabLayoutAdapterCommunityFriends tabLayoutAdapter1 = new MainTabLayoutAdapterCommunityFriends(((AppCompatActivity)context).getSupportFragmentManager(), binding.tablayout1.getTabCount());
+        binding.viewpager1.setAdapter(tabLayoutAdapter1);
+        binding.tablayout1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                binding.viewpager1.setCurrentItem(tab.getPosition());
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        binding.viewpager1.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.tablayout1));
+    }
     public void onclicks() {
         binding.llMyProfile.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -121,10 +120,8 @@ public class FriendsFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-
     public void GetMyProfileAPI() {
         // Customprogress.showPopupProgressSpinner(context, true);
-
         jsonPlaceHolderApi.GetMyProfileAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<GetMyProfileResponse>() {
             @Override
             public void onResponse(Call<GetMyProfileResponse> call, Response<GetMyProfileResponse> response) {
@@ -144,7 +141,6 @@ public class FriendsFragment extends Fragment implements View.OnClickListener {
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<GetMyProfileResponse> call, Throwable t) {
                 //  Customprogress.showPopupProgressSpinner(context, false);
@@ -154,6 +150,7 @@ public class FriendsFragment extends Fragment implements View.OnClickListener {
     }
 }
 
+*/
 /*
   if (tab.equals("1")) {
           binding.viewpager1.post(new Runnable() {
@@ -170,3 +167,5 @@ public void run() {
         }
         });
         }*/
+
+
