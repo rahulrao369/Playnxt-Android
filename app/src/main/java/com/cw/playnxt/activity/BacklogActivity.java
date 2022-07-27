@@ -290,6 +290,13 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                     if (status)
                     {
                         backlogRemain = response.body().getData().getBacklog_remain();
+                        if(backlogRemain.equals("0")){
+                            binding.ivAdd.setVisibility(View.GONE);
+                            binding.ivSubscription.setVisibility(View.VISIBLE);
+                        }else{
+                            binding.ivAdd.setVisibility(View.VISIBLE);
+                            binding.ivSubscription.setVisibility(View.GONE);
+                        }
                         if(response.body().getData().getCount()!= null){
                             if(response.body().getData().getCount().size() != 0){
                                 binding.recyclerView.setVisibility(View.VISIBLE);

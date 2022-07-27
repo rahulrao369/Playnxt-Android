@@ -38,7 +38,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.Recycl
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.cvFriendsProfile);
+        Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.default_user).placeholder(R.drawable.default_user).into(holder.binding.cvFriendsProfile);
         holder.binding.tvName.setText(list.get(position).getName());
         holder.binding.tvMsg.setText(list.get(position).getMessage());
         holder.binding.tvTime.setText(list.get(position).getTime());

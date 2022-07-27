@@ -69,7 +69,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
     public void setData(){
         binding.tvUserName.setText(receiverName);
-        Picasso.get().load(Allurls.IMAGEURL+receiverImage).into(binding.imgUserProfile);
+        Picasso.get().load(Allurls.IMAGEURL+receiverImage).error(R.drawable.default_user).placeholder(R.drawable.default_user).into(binding.imgUserProfile);
     }
 
     @Override
@@ -100,7 +100,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void openChatWebview() {
-        Customprogress.showPopupProgressSpinner(context, true);
         binding.webView.setWebViewClient(new WebViewClient());
         binding.webView.getSettings().setJavaScriptEnabled(true);
         binding.webView.getSettings().setDomStorageEnabled(true);
@@ -115,11 +114,10 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             public void onPageFinished(WebView view, String url) {
-                Customprogress.showPopupProgressSpinner(context, false);
+
             }
         });
         binding.webView.loadUrl(CHAT_WEBVIEW_URL);
-        Customprogress.showPopupProgressSpinner(context, false);
     }
 
 }

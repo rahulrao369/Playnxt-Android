@@ -3243,6 +3243,7 @@ id item2
 id item3
 id item4
 id item_touch_helper_previous_elevation
+id ivAdd
 id ivAddNewList
 id ivCross
 id ivCrossFreeUser
@@ -3264,6 +3265,7 @@ id ivRightPremiumUser
 id ivSearch
 id ivStartDate
 id ivSubscribeNow
+id ivSubscription
 id ivUnfav
 id iv_profile_image
 id ivinfinity
@@ -3872,6 +3874,7 @@ layout fragment_monthly
 layout fragment_my_profile_followers
 layout fragment_my_profile_following
 layout fragment_my_profile_games
+layout fragment_new_friends
 layout fragment_second
 layout fragment_tab_activity
 layout fragment_tab_community

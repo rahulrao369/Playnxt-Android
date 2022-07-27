@@ -83,10 +83,10 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
     private void GameListDataSet(String active_plan, int backlog_remaining, String plan_type) {
         List<GameFragmentModel> list = new ArrayList<>();
-        list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + ""));
-        list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + ""));
-        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Calendar Tool", ""));
-        list.add(new GameFragmentModel(R.drawable.ic_your_stats, "Your Stats", ""));
+        list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + "",plan_type));
+        list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + "",plan_type));
+        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Calendar Tool", "",plan_type));
+        list.add(new GameFragmentModel(R.drawable.ic_your_stats, "Your Stats", "",plan_type));
 
         GameFragmentTopListAdapter adapter = new GameFragmentTopListAdapter(context, list, new ItemClick() {
             @Override

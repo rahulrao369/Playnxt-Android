@@ -13,6 +13,7 @@ import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ItemListGameFragmentBinding;
 import com.cw.playnxt.model.StaticModel.GameFragmentModel;
 import com.cw.playnxt.model.StaticModel.GameModel;
+import com.cw.playnxt.utils.Constants;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -43,7 +44,11 @@ public class GameFragmentTopListAdapter extends RecyclerView.Adapter<GameFragmen
         if(position == 0){
             holder.binding.ivSubscribeNow.setVisibility(View.GONE);
         }else{
-            holder.binding.ivSubscribeNow.setVisibility(View.VISIBLE);
+            if(list.get(position).getPlan_type().equals(Constants.PLAN_TYPE_PAID)){
+                holder.binding.ivSubscribeNow.setVisibility(View.GONE);
+            }else{
+                holder.binding.ivSubscribeNow.setVisibility(View.VISIBLE);
+            }
         }
         holder.binding.icon.setImageResource(list.get(position).getIcon());
         holder.binding.tvName.setText(list.get(position).getHeading());

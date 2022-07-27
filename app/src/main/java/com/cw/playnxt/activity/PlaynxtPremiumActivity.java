@@ -86,7 +86,10 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
                     String msg = response.body().getMessage();
                     if (status) {
                        // Toast.makeText(context, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        ActivePlanDataSet(response.body().getData().getActivePlan());
+                        if(response.body().getData().getActivePlan() != null){
+                            ActivePlanDataSet(response.body().getData().getActivePlan());
+                        }
+
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }

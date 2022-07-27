@@ -102,11 +102,11 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                     Log.d("TAG1","plan_ID"+plan_ID);
                     Log.d("TAG1","selected_plane_type"+selected_plane_type);
                     if(selected_plane_type.equals("Free")){
-                        if (Constants.isInternetConnected(context)) {
+                       /* if (Constants.isInternetConnected(context)) {
                             PurchaseFreePlanAPI();
                         } else {
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                        }
+                        }*/
                     }else{
                         startActivity(new Intent(context,AddCardActivity.class)
                                 .putExtra("plan_ID",plan_ID.toString()));

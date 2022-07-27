@@ -91,7 +91,7 @@ public class XboxGameInfoActivity extends AppCompatActivity implements View.OnCl
         headerBinding.tvHeading.setText(R.string.GameInfo);
         headerBinding.btnFilter.setVisibility(View.GONE);
         headerBinding.btnAdd.setVisibility(View.GONE);
-        headerBinding.btnShare.setVisibility(View.VISIBLE);
+        headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.VISIBLE);
 
         try {

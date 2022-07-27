@@ -1,3 +1,4 @@
+com.cw.playnxt:id/ivSubscription = 0x7f0a0336
 com.cw.playnxt:style/Theme.Material3.Light.Dialog.MinWidth = 0x7f120234
 com.cw.playnxt:style/TextAppearance.MaterialComponents.Tooltip = 0x7f1201fc
 com.cw.playnxt:style/Widget.Design.Snackbar = 0x7f12031f
@@ -3276,6 +3277,7 @@ com.cw.playnxt:color/m3_navigation_item_background_color = 0x7f0600af
 com.cw.playnxt:color/m3_navigation_bar_item_with_indicator_label_tint = 0x7f0600ad
 com.cw.playnxt:style/Test.Widget.MaterialComponents.MaterialCalendar = 0x7f12017d
 com.cw.playnxt:attr/wavePeriod = 0x7f04049b
+com.cw.playnxt:id/ivAdd = 0x7f0a0335
 com.cw.playnxt:string/mtrl_picker_text_input_year_abbr = 0x7f1100d7
 com.cw.playnxt:color/m3_ref_palette_tertiary95 = 0x7f060144
 com.cw.playnxt:id/design_menu_item_action_area = 0x7f0a00f7

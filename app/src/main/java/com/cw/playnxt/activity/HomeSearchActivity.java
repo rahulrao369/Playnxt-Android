@@ -73,13 +73,13 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
 
+        Log.d("TAG","Games cb  "+binding.cbGames.isChecked());
+        Log.d("TAG","User cb  "+binding.cbUser.isChecked());
         if (Constants.isInternetConnected(context)) {
             CheckPlanAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
-
-
 
         binding.etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -159,6 +159,9 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         }else{
             filter_byGame = "0";
         }
+        Log.d("TAG","Games filter  "+filter_byGame);
+        Log.d("TAG","User filter  "+filter_byUser);
+
         SearchParaRes searchParaRes = new SearchParaRes();
         searchParaRes.setKey(binding.etSearch.getText().toString().trim());
         searchParaRes.setFilterByuser(filter_byUser);
@@ -171,23 +174,53 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                        if(response.body().getData().getFollowing().size() != 0){
-                            binding.rvUser.setVisibility(View.VISIBLE);
-                            binding.llNoUserResult.setVisibility(View.GONE);
-                            SearchUsersListDataSet(response.body().getData().getFollowing());
-                        }else{
-                            binding.rvUser.setVisibility(View.GONE);
-                            binding.llNoUserResult.setVisibility(View.VISIBLE);
-                        }
-                        if(response.body().getData().getGames().size() != 0){
-                            binding.rvGames.setVisibility(View.VISIBLE);
-                            binding.llNoGamesResult.setVisibility(View.GONE);
-                            SearchGamesListDataSet(response.body().getData().getGames());
+                        if(filter_byUser.equals("1")){
+                            if(response.body().getData().getFollowing().size() != 0){
+                                binding.rvUser.setVisibility(View.VISIBLE);
+                                binding.llNoUserResult.setVisibility(View.GONE);
+                                binding.rvGames.setVisibility(View.GONE);
+                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
+                                SearchUsersListDataSet(response.body().getData().getFollowing());
+                            }else{
+                                binding.rvUser.setVisibility(View.GONE);
+                                binding.llNoUserResult.setVisibility(View.VISIBLE);
+                                binding.rvGames.setVisibility(View.GONE);
+                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
+                            }
+                        }else if(filter_byGame.equals("1")){
+                            if(response.body().getData().getGames().size() != 0){
+                                binding.rvGames.setVisibility(View.VISIBLE);
+                                binding.llNoGamesResult.setVisibility(View.GONE);
+                                SearchGamesListDataSet(response.body().getData().getGames());
+                                binding.rvUser.setVisibility(View.GONE);
+                                binding.llNoUserResult.setVisibility(View.VISIBLE);
+                            }else{
+                                binding.rvGames.setVisibility(View.GONE);
+                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
+                                binding.rvUser.setVisibility(View.GONE);
+                                binding.llNoUserResult.setVisibility(View.VISIBLE);
+                            }
+                        }else if(filter_byUser.equals("1") && filter_byGame.equals("1")){
+                            if(response.body().getData().getFollowing().size() != 0){
+                                binding.rvUser.setVisibility(View.VISIBLE);
+                                binding.llNoUserResult.setVisibility(View.GONE);
+                                SearchUsersListDataSet(response.body().getData().getFollowing());
+                            }else if(response.body().getData().getGames().size() != 0){
+                                binding.rvGames.setVisibility(View.VISIBLE);
+                                binding.llNoGamesResult.setVisibility(View.GONE);
+                                SearchGamesListDataSet(response.body().getData().getGames());
+                            }else{
+                                binding.rvGames.setVisibility(View.GONE);
+                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
+                                binding.rvUser.setVisibility(View.GONE);
+                                binding.llNoUserResult.setVisibility(View.VISIBLE);
+                            }
                         }else{
                             binding.rvGames.setVisibility(View.GONE);
                             binding.llNoGamesResult.setVisibility(View.VISIBLE);
+                            binding.rvUser.setVisibility(View.GONE);
+                            binding.llNoUserResult.setVisibility(View.VISIBLE);
                         }
-
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }

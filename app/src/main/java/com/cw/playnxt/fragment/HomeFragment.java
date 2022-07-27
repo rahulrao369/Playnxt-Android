@@ -87,6 +87,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
         vibe = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        Log.d("TAG","Home Token>>>"+mySharedPref.getSavedAccessToken());
         if (Constants.isInternetConnected(context)) {
             HomeAPI();
         } else {
@@ -139,8 +140,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         }
     }
     //**********************************************HOME API***************************************
-
     public void HomeAPI() {
+
         binding.rlProgressBar.setVisibility(View.VISIBLE);
         binding.llHomeMain.setVisibility(View.GONE);
         jsonPlaceHolderApi.HomeAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<HomeApiResponse>() {

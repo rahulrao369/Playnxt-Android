@@ -49,6 +49,11 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
 
     @Override
     public void onBindViewHolder(@NonNull SubscriptionPlanListAdapterMain.RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        if(position == 0){
+            holder.binding.cb.setVisibility(View.GONE);
+        }else{
+            holder.binding.cb.setVisibility(View.VISIBLE);
+        }
 
         if (selectPosition == position){
             holder.binding.cb.setChecked(true);
@@ -95,10 +100,13 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
             @Override
             public void onItemClick(int position_item, String type) {
                 Log.d("TAG","Clicked");
-                selectPosition = position;
-                Log.d("TAG","selectPosition item"+selectPosition);
-                itemClick.onItemClick(position,list.get(position).getId(),"subscription");
-                notifyDataSetChanged();
+                if(position != 0){
+                    selectPosition = position;
+                    Log.d("TAG","selectPosition item"+selectPosition);
+                    itemClick.onItemClick(position,list.get(position).getId(),"subscription");
+                    notifyDataSetChanged();
+                }
+
             }
         });
         holder.binding.recyclerView.setHasFixedSize(true);
@@ -108,27 +116,32 @@ public class SubscriptionPlanListAdapterMain extends RecyclerView.Adapter<Subscr
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectPosition = position;
-                itemClick.onItemClick(position,list.get(position).getId(),"subscription");
-                notifyDataSetChanged();
+                if(position != 0){
+                    selectPosition = position;
+                    itemClick.onItemClick(position,list.get(position).getId(),"subscription");
+                    notifyDataSetChanged();
+                }
+
             }
         });
 
         holder.binding.cb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(holder.binding.cb.isChecked()){
-                    holder.binding.cb.setChecked(true);
-                    Log.d("TAG","cheked");
-                    selectPosition = position;
-                    itemClick.onItemClick(position,list.get(position).getId(),"subscription");
-                    notifyDataSetChanged();
+                if(position != 0){
+                    if(holder.binding.cb.isChecked()){
+                        holder.binding.cb.setChecked(true);
+                        Log.d("TAG","cheked");
+                        selectPosition = position;
+                        itemClick.onItemClick(position,list.get(position).getId(),"subscription");
+                        notifyDataSetChanged();
 
-                }else{
-                    holder.binding.cb.setChecked(false);
-                    selectPosition = -1;
-                    itemClick.onItemClick(position,list.get(position).getId(),"not_selected");
-                    notifyDataSetChanged();
+                    }else{
+                        holder.binding.cb.setChecked(false);
+                        selectPosition = -1;
+                        itemClick.onItemClick(position,list.get(position).getId(),"not_selected");
+                        notifyDataSetChanged();
+                    }
                 }
             }
         });

@@ -120,18 +120,29 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     if (status)
                     {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+                        mySharedPref.saveLogin(true);
+                        mySharedPref.setSavedAccessToken(String.valueOf(response.body().getData().getToken()));
+                        mySharedPref.setSavedUserid(String.valueOf(response.body().getData().getUserId()));
+                        Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
+                        Intent intent = new Intent(getBaseContext(), HomeActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         finish();
+
+                        /*Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();*/
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<SignupResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);

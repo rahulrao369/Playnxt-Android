@@ -49,12 +49,22 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
        InitView();
        GetData();
         onclicks();
+        /*if (Constants.isInternetConnected(context)) {
+            GetMyProfileAPI();
+        } else {
+            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        }*/
+       return binding.getRoot();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
         if (Constants.isInternetConnected(context)) {
             GetMyProfileAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
-       return binding.getRoot();
     }
 
     private void InitView() {
