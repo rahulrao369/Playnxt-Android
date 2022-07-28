@@ -11,9 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,10 +25,16 @@ public final class FragmentInboxBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final CircleImageView cvMyProfile;
+
+  @NonNull
   public final EditText etSearchGame;
 
   @NonNull
   public final LinearLayout llMain;
+
+  @NonNull
+  public final LinearLayout llMyProfile;
 
   @NonNull
   public final LinearLayout llNoData;
@@ -38,18 +46,25 @@ public final class FragmentInboxBinding implements ViewBinding {
   public final RecyclerView recyclerView;
 
   @NonNull
+  public final SwipeRefreshLayout swipeLayout;
+
+  @NonNull
   public final TextView tvUserName;
 
-  private FragmentInboxBinding(@NonNull FrameLayout rootView, @NonNull EditText etSearchGame,
-      @NonNull LinearLayout llMain, @NonNull LinearLayout llNoData,
+  private FragmentInboxBinding(@NonNull FrameLayout rootView, @NonNull CircleImageView cvMyProfile,
+      @NonNull EditText etSearchGame, @NonNull LinearLayout llMain,
+      @NonNull LinearLayout llMyProfile, @NonNull LinearLayout llNoData,
       @NonNull LinearLayout llRecyclerview, @NonNull RecyclerView recyclerView,
-      @NonNull TextView tvUserName) {
+      @NonNull SwipeRefreshLayout swipeLayout, @NonNull TextView tvUserName) {
     this.rootView = rootView;
+    this.cvMyProfile = cvMyProfile;
     this.etSearchGame = etSearchGame;
     this.llMain = llMain;
+    this.llMyProfile = llMyProfile;
     this.llNoData = llNoData;
     this.llRecyclerview = llRecyclerview;
     this.recyclerView = recyclerView;
+    this.swipeLayout = swipeLayout;
     this.tvUserName = tvUserName;
   }
 
@@ -80,6 +95,12 @@ public final class FragmentInboxBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cvMyProfile;
+      CircleImageView cvMyProfile = ViewBindings.findChildViewById(rootView, id);
+      if (cvMyProfile == null) {
+        break missingId;
+      }
+
       id = R.id.etSearchGame;
       EditText etSearchGame = ViewBindings.findChildViewById(rootView, id);
       if (etSearchGame == null) {
@@ -89,6 +110,12 @@ public final class FragmentInboxBinding implements ViewBinding {
       id = R.id.llMain;
       LinearLayout llMain = ViewBindings.findChildViewById(rootView, id);
       if (llMain == null) {
+        break missingId;
+      }
+
+      id = R.id.llMyProfile;
+      LinearLayout llMyProfile = ViewBindings.findChildViewById(rootView, id);
+      if (llMyProfile == null) {
         break missingId;
       }
 
@@ -110,14 +137,20 @@ public final class FragmentInboxBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeLayout;
+      SwipeRefreshLayout swipeLayout = ViewBindings.findChildViewById(rootView, id);
+      if (swipeLayout == null) {
+        break missingId;
+      }
+
       id = R.id.tvUserName;
       TextView tvUserName = ViewBindings.findChildViewById(rootView, id);
       if (tvUserName == null) {
         break missingId;
       }
 
-      return new FragmentInboxBinding((FrameLayout) rootView, etSearchGame, llMain, llNoData,
-          llRecyclerview, recyclerView, tvUserName);
+      return new FragmentInboxBinding((FrameLayout) rootView, cvMyProfile, etSearchGame, llMain,
+          llMyProfile, llNoData, llRecyclerview, recyclerView, swipeLayout, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

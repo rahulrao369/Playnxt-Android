@@ -4,6 +4,7 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,6 +29,12 @@ public final class ActivityBacklogBinding implements ViewBinding {
   public final LinearLayout btnAdd;
 
   @NonNull
+  public final ImageView ivAdd;
+
+  @NonNull
+  public final ImageView ivSubscription;
+
+  @NonNull
   public final LinearLayout llCreateBacklogList;
 
   @NonNull
@@ -41,11 +48,14 @@ public final class ActivityBacklogBinding implements ViewBinding {
 
   private ActivityBacklogBinding(@NonNull RelativeLayout rootView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAdd,
+      @NonNull ImageView ivAdd, @NonNull ImageView ivSubscription,
       @NonNull LinearLayout llCreateBacklogList, @NonNull LinearLayout llNoData,
       @NonNull RecyclerView recyclerView, @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
     this.btnAdd = btnAdd;
+    this.ivAdd = ivAdd;
+    this.ivSubscription = ivSubscription;
     this.llCreateBacklogList = llCreateBacklogList;
     this.llNoData = llNoData;
     this.recyclerView = recyclerView;
@@ -92,6 +102,18 @@ public final class ActivityBacklogBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ivAdd;
+      ImageView ivAdd = ViewBindings.findChildViewById(rootView, id);
+      if (ivAdd == null) {
+        break missingId;
+      }
+
+      id = R.id.ivSubscription;
+      ImageView ivSubscription = ViewBindings.findChildViewById(rootView, id);
+      if (ivSubscription == null) {
+        break missingId;
+      }
+
       id = R.id.llCreateBacklogList;
       LinearLayout llCreateBacklogList = ViewBindings.findChildViewById(rootView, id);
       if (llCreateBacklogList == null) {
@@ -117,7 +139,7 @@ public final class ActivityBacklogBinding implements ViewBinding {
       }
 
       return new ActivityBacklogBinding((RelativeLayout) rootView, binding_bindingHeader, btnAdd,
-          llCreateBacklogList, llNoData, recyclerView, txtBtn);
+          ivAdd, ivSubscription, llCreateBacklogList, llNoData, recyclerView, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

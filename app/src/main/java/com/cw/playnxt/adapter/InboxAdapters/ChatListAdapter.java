@@ -41,7 +41,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.Recycl
         Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.default_user).placeholder(R.drawable.default_user).into(holder.binding.cvFriendsProfile);
         holder.binding.tvName.setText(list.get(position).getName());
         holder.binding.tvMsg.setText(list.get(position).getMessage());
-        holder.binding.tvTime.setText(list.get(position).getTime());
+       // holder.binding.tvTime.setText(list.get(position).getTime());
 
         holder.binding.cvFriendsProfile.setOnClickListener(new View.OnClickListener() {
             @Override
