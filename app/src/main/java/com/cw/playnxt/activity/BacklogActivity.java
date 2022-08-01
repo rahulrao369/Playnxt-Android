@@ -33,6 +33,7 @@ import com.cw.playnxt.model.DeleteBacklogList.DeleteBacklogListParaRes;
 import com.cw.playnxt.model.EditBacklogList.EditBacklogListParaRes;
 import com.cw.playnxt.model.GetBacklogList.Count;
 import com.cw.playnxt.model.GetBacklogList.GetMyBacklogListResponse;
+import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaticModel.GameModel;
 import com.cw.playnxt.server.ApiUtils;
@@ -60,7 +61,8 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
     private MySharedPref mySharedPref;
     private PopupWindow mDropdown = null;
     Long backlog_ID ;
-    String backlogRemain = "";
+    String planType = "";
+    int total_backlog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +91,7 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
         headerBinding.btnEdit.setVisibility(View.GONE);
 
         if (Constants.isInternetConnected(context)) {
-            GetBacklogListAPI();
+            NewCheckSubscriptionAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
@@ -111,9 +113,13 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.llCreateBacklogList:
-                if(backlogRemain.equals("0")){
-                    startActivity(new Intent(context, SubscriptionActivity.class));
-                }else{
+                if (planType.equals(Constants.PLAN_TYPE_FREE)) {
+                    if(total_backlog == 0){
+                        startActivity(new Intent(context, SubscriptionActivity.class));
+                    }else{
+                        showBottomSheetFilterDialog();
+                    }
+                }else if(planType.equals(Constants.PLAN_TYPE_PAID)){
                     showBottomSheetFilterDialog();
                 }
                 break;
@@ -260,7 +266,7 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                     if (status) {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         if (Constants.isInternetConnected(context)) {
-                            GetBacklogListAPI();
+                            NewCheckSubscriptionAPI();
                         } else {
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                         }
@@ -289,8 +295,7 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status)
                     {
-                        backlogRemain = response.body().getData().getBacklog_remain();
-                        if(backlogRemain.equals("0")){
+                        if(total_backlog == 0){
                             binding.ivAdd.setVisibility(View.GONE);
                             binding.ivSubscription.setVisibility(View.VISIBLE);
                         }else{
@@ -416,4 +421,36 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+            @Override
+            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        planType =  response.body().getData().getSubscription().getType();
+                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        if (Constants.isInternetConnected(context)) {
+                            GetBacklogListAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

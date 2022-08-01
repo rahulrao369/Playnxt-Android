@@ -1,10 +1,11 @@
 
-package com.cw.playnxt.model.HomeSearch;
+package com.cw.playnxt.model.HomeSearch.GameSearch;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SearchGame {
+
+public class SearchGameDataResult {
 
     @Expose
     private String description;
@@ -18,6 +19,8 @@ public class SearchGame {
     private String platform;
     @Expose
     private String title;
+    @Expose
+    private String type;
 
     public String getDescription() {
         return description;
@@ -65,6 +68,14 @@ public class SearchGame {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
 }

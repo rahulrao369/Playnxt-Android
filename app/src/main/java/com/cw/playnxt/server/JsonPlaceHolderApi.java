@@ -44,14 +44,16 @@ import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
 import com.cw.playnxt.model.GetWishlist.GetMyWishlistResponse;
 import com.cw.playnxt.model.HomeButton.HomeButtonResponse;
 import com.cw.playnxt.model.HomeData.HomeApiResponse;
+import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameResponse;
 import com.cw.playnxt.model.HomeSearch.SearchParaRes;
-import com.cw.playnxt.model.HomeSearch.SearchResponse;
+import com.cw.playnxt.model.HomeSearch.UserSearch.SearchUserResponse;
 import com.cw.playnxt.model.LikeAndUnlikeProfile.LikeAndUnlikeProfileParaRes;
 import com.cw.playnxt.model.LoginSignup.LoginParaRes;
 import com.cw.playnxt.model.LoginSignup.LoginResponse;
 import com.cw.playnxt.model.LoginSignup.SignupParaRes;
 import com.cw.playnxt.model.LoginSignup.SignupResponse;
 import com.cw.playnxt.model.MyActivePlan.MyActivePlanResponse;
+import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
 import com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanParaRes;
 import com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanResponse;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes;
@@ -274,9 +276,14 @@ public interface JsonPlaceHolderApi {
                                            @Body SuggestionParaRes suggestionParaRes);
 
     @POST("users/search")
-    Call<SearchResponse> SearchAPI(@Header("Content-Type") String content_type,
-                                   @Header("Authorization") String token,
-                                   @Body SearchParaRes searchParaRes);
+    Call<SearchGameResponse> SearchGameAPI(@Header("Content-Type") String content_type,
+                                           @Header("Authorization") String token,
+                                           @Body SearchParaRes searchParaRes);
+
+    @POST("users/search")
+    Call<SearchUserResponse> SearchUserAPI(@Header("Content-Type") String content_type,
+                                           @Header("Authorization") String token,
+                                           @Body SearchParaRes searchParaRes);
 
     @POST("users/homeButton")
     Call<HomeButtonResponse> HomeButtonAPI(@Header("Content-Type") String content_type,
@@ -322,4 +329,7 @@ public interface JsonPlaceHolderApi {
                                                        @Header("Authorization") String token,
                                                        @Body PurchaseFreePlanParaRes purchaseFreePlanParaRes);
 
+    @POST("users/check-subscription")
+    Call<NewCheckSubscriptionResponse> NewCheckSubscriptionAPI(@Header("Content-Type") String content_type,
+                                                               @Header("Authorization") String token);
 }

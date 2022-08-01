@@ -3538,6 +3538,7 @@ id submenuarrow
 id submit_area
 id sundayLabel
 id supportScrollUp
+id swipeLayout
 id tabMode
 id tablayout
 id tablayout1

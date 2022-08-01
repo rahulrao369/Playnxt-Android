@@ -1,23 +1,22 @@
 
-package com.cw.playnxt.model.HomeSearch;
+package com.cw.playnxt.model.NewCheckSubscription;
 
 import com.google.gson.annotations.Expose;
 
-
-public class SearchResponse {
+public class NewCheckSubscriptionResponse {
 
     @Expose
-    private SearchData data;
+    private NewCheckSubscriptionData data;
     @Expose
     private String message;
     @Expose
     private Boolean status;
 
-    public SearchData getData() {
+    public NewCheckSubscriptionData getData() {
         return data;
     }
 
-    public void setData(SearchData data) {
+    public void setData(NewCheckSubscriptionData data) {
         this.data = data;
     }
 

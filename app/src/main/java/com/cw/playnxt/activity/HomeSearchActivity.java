@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,20 +22,18 @@ import com.cw.playnxt.adapter.SearchAdapters.SearchUserAdapter;
 import com.cw.playnxt.databinding.ActivityHomeSearchBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
-import com.cw.playnxt.model.HomeSearch.SearchFollowing;
-import com.cw.playnxt.model.HomeSearch.SearchGame;
+import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameDataResult;
+import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameResponse;
 import com.cw.playnxt.model.HomeSearch.SearchParaRes;
-import com.cw.playnxt.model.HomeSearch.SearchProfile;
-import com.cw.playnxt.model.HomeSearch.SearchResponse;
-import com.cw.playnxt.model.MyActivePlan.MyActivePlanResponse;
-import com.cw.playnxt.model.StaticModel.GameModel;
+import com.cw.playnxt.model.HomeSearch.UserSearch.SearchUserDataResult;
+import com.cw.playnxt.model.HomeSearch.UserSearch.SearchUserResponse;
+import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -47,11 +46,9 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String filter_byUser="";
-    String filter_byGame="";
-    String activePlan = "";
+    String filter_type="user";
     String planType = "";
-    int totalBacklog ;
+    int total_backlog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,10 +73,29 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         Log.d("TAG","Games cb  "+binding.cbGames.isChecked());
         Log.d("TAG","User cb  "+binding.cbUser.isChecked());
         if (Constants.isInternetConnected(context)) {
-            CheckPlanAPI();
+            NewCheckSubscriptionAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
+
+        binding.cbUser.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    binding.cbGames.setChecked(false);
+                    filter_type = "user";
+                }
+            }
+        });
+        binding.cbGames.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    binding.cbUser.setChecked(false);
+                    filter_type = "game";
+                }
+            }
+        });
 
         binding.etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -87,10 +103,18 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                 if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
                     Log.d("TAG","Enter pressed");
                     if (!binding.etSearch.getText().toString().equals("")) {
-                        if (Constants.isInternetConnected(context)) {
-                            SearchAPI();
-                        } else {
-                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        if(filter_type.equals("user")){
+                            if (Constants.isInternetConnected(context)) {
+                                SearchUserAPI();
+                            } else {
+                                Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                            }
+                        }else if(filter_type.equals("game")){
+                            if (Constants.isInternetConnected(context)) {
+                                SearchGameAPI();
+                            } else {
+                                Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                            }
                         }
                     } else {
                         Toast.makeText(context, "Search keyword is required", Toast.LENGTH_SHORT).show();
@@ -117,125 +141,110 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.ivSearch:
                 if (!binding.etSearch.getText().toString().equals("")) {
-                    if (Constants.isInternetConnected(context)) {
-                        SearchAPI();
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                    if(filter_type.equals("user")){
+                        if (Constants.isInternetConnected(context)) {
+                            SearchUserAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                    }else if(filter_type.equals("game")){
+                        if (Constants.isInternetConnected(context)) {
+                            SearchGameAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
                     }
+
                 } else {
                     Toast.makeText(context, "Search keyword is required", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
             case R.id.tvAddGame:
-                if (activePlan.equals(Constants.ACTIVE_PLAN_YES)) {
-                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
-                        startActivity(new Intent(context, AddGameActivity.class));
-                    }else {
-                       /* if(totalBacklog == 0){
-                            startActivity(new Intent(context, SubscriptionActivity.class));
-                        }else{
-                            startActivity(new Intent(context, AddGameActivity.class));
-                        }*/
-                        startActivity(new Intent(context, AddGameActivity.class));
-
-                    }
-                } else {
-                    startActivity(new Intent(context, SubscriptionActivity.class));
-                }
+                startActivity(new Intent(context, AddGameActivity.class));
                 break;
         }
     }
 
-    public void SearchAPI() {
+    public void SearchGameAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         if(binding.cbUser.isChecked()){
-            filter_byUser = "1";
-        }else{
-            filter_byUser = "0";
+            filter_type = "user";
+        }else if(binding.cbGames.isChecked()){
+            filter_type = "game";
         }
-        if(binding.cbGames.isChecked()){
-            filter_byGame = "1";
-        }else{
-            filter_byGame = "0";
-        }
-        Log.d("TAG","Games filter  "+filter_byGame);
-        Log.d("TAG","User filter  "+filter_byUser);
+        Log.d("TAG","filter_type  "+filter_type);
 
         SearchParaRes searchParaRes = new SearchParaRes();
         searchParaRes.setKey(binding.etSearch.getText().toString().trim());
-        searchParaRes.setFilterByuser(filter_byUser);
-        searchParaRes.setFilterBygame(filter_byGame);
+        searchParaRes.setType(filter_type);
 
-        jsonPlaceHolderApi.SearchAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), searchParaRes).enqueue(new Callback<SearchResponse>() {
+        jsonPlaceHolderApi.SearchGameAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), searchParaRes).enqueue(new Callback<SearchGameResponse>() {
             @Override
-            public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
+            public void onResponse(Call<SearchGameResponse> call, Response<SearchGameResponse> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                        if(filter_byUser.equals("1")){
-                            if(response.body().getData().getFollowing().size() != 0){
-                                binding.rvUser.setVisibility(View.VISIBLE);
-                                binding.llNoUserResult.setVisibility(View.GONE);
-                                binding.rvGames.setVisibility(View.GONE);
-                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
-                                SearchUsersListDataSet(response.body().getData().getFollowing());
-                            }else{
-                                binding.rvUser.setVisibility(View.GONE);
-                                binding.llNoUserResult.setVisibility(View.VISIBLE);
-                                binding.rvGames.setVisibility(View.GONE);
-                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
-                            }
-                        }else if(filter_byGame.equals("1")){
-                            if(response.body().getData().getGames().size() != 0){
-                                binding.rvGames.setVisibility(View.VISIBLE);
-                                binding.llNoGamesResult.setVisibility(View.GONE);
-                                SearchGamesListDataSet(response.body().getData().getGames());
-                                binding.rvUser.setVisibility(View.GONE);
-                                binding.llNoUserResult.setVisibility(View.VISIBLE);
-                            }else{
-                                binding.rvGames.setVisibility(View.GONE);
-                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
-                                binding.rvUser.setVisibility(View.GONE);
-                                binding.llNoUserResult.setVisibility(View.VISIBLE);
-                            }
-                        }else if(filter_byUser.equals("1") && filter_byGame.equals("1")){
-                            if(response.body().getData().getFollowing().size() != 0){
-                                binding.rvUser.setVisibility(View.VISIBLE);
-                                binding.llNoUserResult.setVisibility(View.GONE);
-                                SearchUsersListDataSet(response.body().getData().getFollowing());
-                            }else if(response.body().getData().getGames().size() != 0){
-                                binding.rvGames.setVisibility(View.VISIBLE);
-                                binding.llNoGamesResult.setVisibility(View.GONE);
-                                SearchGamesListDataSet(response.body().getData().getGames());
-                            }else{
-                                binding.rvGames.setVisibility(View.GONE);
-                                binding.llNoGamesResult.setVisibility(View.VISIBLE);
-                                binding.rvUser.setVisibility(View.GONE);
-                                binding.llNoUserResult.setVisibility(View.VISIBLE);
-                            }
-                        }else{
+                        if (response.body().getData().getResult().size() != 0) {
+                            binding.rvGames.setVisibility(View.VISIBLE);
+                            binding.rvUser.setVisibility(View.GONE);
+                            binding.llNoUserResult.setVisibility(View.GONE);
+                            binding.llNoGamesResult.setVisibility(View.GONE);
+                            SearchGamesListDataSet(response.body().getData().getResult());
+                        } else {
                             binding.rvGames.setVisibility(View.GONE);
                             binding.llNoGamesResult.setVisibility(View.VISIBLE);
-                            binding.rvUser.setVisibility(View.GONE);
-                            binding.llNoUserResult.setVisibility(View.VISIBLE);
                         }
-                    } else {
-                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
             }
-
             @Override
-            public void onFailure(Call<SearchResponse> call, Throwable t) {
+            public void onFailure(Call<SearchGameResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
             }
         });
     }
-    private void SearchGamesListDataSet(List<SearchGame> gamesList) {
-        SearchGamesAdapter adapter = new SearchGamesAdapter(context, gamesList, new ItemClick() {
+
+    public void SearchUserAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        Log.d("TAG","filter_type  "+filter_type);
+
+        SearchParaRes searchParaRes = new SearchParaRes();
+        searchParaRes.setKey(binding.etSearch.getText().toString().trim());
+        searchParaRes.setType(filter_type);
+
+        jsonPlaceHolderApi.SearchUserAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), searchParaRes).enqueue(new Callback<SearchUserResponse>() {
+            @Override
+            public void onResponse(Call<SearchUserResponse> call, Response<SearchUserResponse> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    Customprogress.showPopupProgressSpinner(context, false);
+                    if (status) {
+                        if (response.body().getData().getResult().size() != 0) {
+                            binding.rvUser.setVisibility(View.VISIBLE);
+                            binding.rvGames.setVisibility(View.GONE);
+                            binding.llNoUserResult.setVisibility(View.GONE);
+                            binding.llNoGamesResult.setVisibility(View.GONE);
+                            SearchUsersListDataSet(response.body().getData().getResult());
+                        } else {
+                            binding.rvUser.setVisibility(View.GONE);
+                            binding.llNoUserResult.setVisibility(View.VISIBLE);
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<SearchUserResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+            }
+        });
+    }
+
+    private void SearchGamesListDataSet(List<SearchGameDataResult> resultGameList) {
+        SearchGamesAdapter adapter = new SearchGamesAdapter(context, resultGameList, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
 
@@ -246,8 +255,8 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         binding.rvGames.setAdapter(adapter);
     }
 
-    private void SearchUsersListDataSet(List<SearchFollowing> followingList) {
-        SearchUserAdapter adapter = new SearchUserAdapter(context, followingList, new ItemClick() {
+    private void SearchUsersListDataSet(List<SearchUserDataResult> resultUserList) {
+        SearchUserAdapter adapter = new SearchUserAdapter(context, resultUserList, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
 
@@ -257,8 +266,36 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         binding.rvUser.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         binding.rvUser.setAdapter(adapter);
     }
+
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+            @Override
+            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        planType =  response.body().getData().getSubscription().getType();
+                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     //*********************************************************CHECK PLAN****************************************************
-    public void CheckPlanAPI() {
+   /* public void CheckPlanAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         jsonPlaceHolderApi.CheckPlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckPlanResponse>() {
             @Override
@@ -283,5 +320,5 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 }

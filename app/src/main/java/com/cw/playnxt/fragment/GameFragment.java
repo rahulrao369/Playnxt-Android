@@ -25,13 +25,16 @@ import com.cw.playnxt.activity.YourStatsActivity;
 import com.cw.playnxt.adapter.GameAdapters.GameFragmentTopListAdapter;
 import com.cw.playnxt.adapter.GameAdapters.RecentGamesAdapter;
 import com.cw.playnxt.databinding.FragmentGameBinding;
+import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
 import com.cw.playnxt.model.GetRecentGame.GetRecentGameDataCapsul;
 import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
+import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
 import com.cw.playnxt.model.StaticModel.GameFragmentModel;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
+import com.cw.playnxt.utils.Customprogress;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +49,8 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     private FragmentGameBinding binding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
+    String planType = "";
+    int total_backlog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,9 +65,13 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         context = binding.getRoot().getContext();
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
+    }
 
+    @Override
+    public void onStart() {
+        super.onStart();
         if (Constants.isInternetConnected(context)) {
-            GetRecentGameAPI();
+            NewCheckSubscriptionAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
@@ -81,60 +90,44 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void GameListDataSet(String active_plan, int backlog_remaining, String plan_type) {
+    private void GameListDataSet() {
         List<GameFragmentModel> list = new ArrayList<>();
-        list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + "",plan_type));
-        list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + "",plan_type));
-        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Calendar Tool", "",plan_type));
-        list.add(new GameFragmentModel(R.drawable.ic_your_stats, "Your Stats", "",plan_type));
+        list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + "",planType));
+        list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + "",planType));
+        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Calendar Tool", "",planType));
+        list.add(new GameFragmentModel(R.drawable.ic_your_stats, "Your Stats", "",planType));
 
         GameFragmentTopListAdapter adapter = new GameFragmentTopListAdapter(context, list, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
-                Log.d("TAG","active_plan>>"+active_plan);
+                Log.d("TAG","planType>>"+planType);
+                Log.d("TAG","total_backlog>>"+total_backlog);
                 if (position == 0) {
-                    if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        startActivity(new Intent(context, BacklogActivity.class));
-                       /* if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
-                            startActivity(new Intent(context, BacklogActivity.class));
-                        }else {
-                            if(backlog_remaining == 0){
+                    if (planType.equals(Constants.PLAN_TYPE_FREE)) {
+                            if(total_backlog == 0){
                                 startActivity(new Intent(context, SubscriptionActivity.class));
                             }else{
                                 startActivity(new Intent(context, BacklogActivity.class));
                             }
-                        }*/
-                    } else {
-                        startActivity(new Intent(context, SubscriptionActivity.class));
+                    }else if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                        startActivity(new Intent(context, BacklogActivity.class));
                     }
                 } else if (position == 1) {
-                    if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
-                            startActivity(new Intent(context, WishlistActivity.class));
-                        }else {
-                            startActivity(new Intent(context, SubscriptionActivity.class));
-                        }
-                    } else {
+                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                        startActivity(new Intent(context, WishlistActivity.class));
+                    }else{
                         startActivity(new Intent(context, SubscriptionActivity.class));
                     }
                 } else if (position == 2) {
-                    if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
-                            startActivity(new Intent(context, CalenderActivity.class));
-                        }else{
-                            startActivity(new Intent(context, SubscriptionActivity.class));
-                        }
-                    } else {
+                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                        startActivity(new Intent(context, CalenderActivity.class));
+                    }else{
                         startActivity(new Intent(context, SubscriptionActivity.class));
                     }
                 } else if (position == 3) {
-                    if (active_plan.equals(Constants.ACTIVE_PLAN_YES)) {
-                        if(plan_type.equals(Constants.PLAN_TYPE_PAID)){
-                            startActivity(new Intent(context, YourStatsActivity.class));
-                        }else{
-                            startActivity(new Intent(context, SubscriptionActivity.class));
-                        }
-                    } else {
+                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                        startActivity(new Intent(context, YourStatsActivity.class));
+                    }else{
                         startActivity(new Intent(context, SubscriptionActivity.class));
                     }
                 }
@@ -158,12 +151,14 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     Boolean status = response.body().getStatus();
                     if (status) {
                         if (response.body().getData() != null) {
-                            GameListDataSet(response.body().getData().getActive_plan(),response.body().getData().getBacklog_remaining(),response.body().getData().getPlan_type());
+                            backlog_count = String.valueOf(response.body().getData().getBacklog_count());
+                            wish_count = String.valueOf(response.body().getData().getWish_count());
+                            GameListDataSet();
                             if (response.body().getData().getCapsul() != null) {
                                 if (response.body().getData().getCapsul().size() != 0) {
                                     binding.llRecentlyAdded.setVisibility(View.VISIBLE);
-                                    backlog_count = String.valueOf(response.body().getData().getBacklog_count());
-                                    wish_count = String.valueOf(response.body().getData().getWish_count());
+                                    Log.d("TAG","backlog_count>>>>"+backlog_count);
+                                    Log.d("TAG","wish_count>>>>"+wish_count);
                                     RecentGameListDataSet(response.body().getData().getCapsul());
                                 } else {
                                     binding.llRecentlyAdded.setVisibility(View.GONE);
@@ -204,6 +199,40 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         binding.rvRecentGames.setHasFixedSize(true);
         binding.rvRecentGames.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
         binding.rvRecentGames.setAdapter(adapter);
+    }
+
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+       Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+            @Override
+            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        planType =  response.body().getData().getSubscription().getType();
+                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        Log.d("TAG","planType>>>>"+planType);
+                        Log.d("TAG","total_backlog>>>>"+total_backlog);
+                        if (Constants.isInternetConnected(context)) {
+                            GetRecentGameAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

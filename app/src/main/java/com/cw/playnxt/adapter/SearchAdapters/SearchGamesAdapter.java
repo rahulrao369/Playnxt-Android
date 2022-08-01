@@ -11,10 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
-import com.cw.playnxt.databinding.ItemListInboxLayoutBinding;
 import com.cw.playnxt.databinding.ItemListSearchGamesBinding;
-import com.cw.playnxt.model.HomeSearch.SearchGame;
-import com.cw.playnxt.model.StaticModel.GameModel;
+import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameDataResult;
 import com.cw.playnxt.server.Allurls;
 import com.squareup.picasso.Picasso;
 
@@ -23,11 +21,11 @@ import java.util.List;
 
 public class SearchGamesAdapter extends RecyclerView.Adapter<SearchGamesAdapter.RecyclerViewHolder> {
     Context context;
-    List<SearchGame> list;
+    List<SearchGameDataResult> list;
     ItemClick itemClick ;
 
 
-    public SearchGamesAdapter(Context context, List<SearchGame> list, ItemClick itemClick) {
+    public SearchGamesAdapter(Context context, List<SearchGameDataResult> list, ItemClick itemClick) {
         this.context = context;
         this.list = list;
         this.itemClick = itemClick;

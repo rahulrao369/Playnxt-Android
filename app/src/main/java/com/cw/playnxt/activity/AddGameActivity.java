@@ -49,6 +49,7 @@ import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameRespon
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameResponse;
 import com.cw.playnxt.model.GetCategoryListName.Wishlist;
+import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
@@ -92,9 +93,8 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     String gameRating= "";
     EditText etName,etWishlistName;
     LinearLayout btnCreateList,btnCreateWishlist;
-    String activePlan = "";
     String planType = "";
-    String backlogRemain = "";
+    int total_backlog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +125,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
         if (Constants.isInternetConnected(context)) {
-            CheckPlanAPI();
+            NewCheckSubscriptionAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
@@ -175,7 +175,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
                 }
-
                 break;
 
             case R.id.btnAddToWishList:
@@ -228,7 +227,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                     Boolean status = response.body().getStatus();
                     if (status) {
                         if (response.body().getData() != null) {
-                            backlogRemain = response.body().getData().getBacklog_remain();
                             showBottomSheetCategoryBacklogListDialog(response.body().getData().getBacklog());
                         }
 
@@ -268,7 +266,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onClick(View view) {
                     //condition
-                    if(backlogRemain.equals("0")){
+                    if(total_backlog == 0){
                         startActivity(new Intent(context, SubscriptionActivity.class));
                     }else{
                         showBottomSheetCreateNewBacklogListDialog();
@@ -597,8 +595,35 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         });
     }
 
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+            @Override
+            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        planType =  response.body().getData().getSubscription().getType();
+                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     //*********************************************************CHECK PLAN****************************************************
-    public void CheckPlanAPI() {
+   /* public void CheckPlanAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         jsonPlaceHolderApi.CheckPlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckPlanResponse>() {
             @Override
@@ -622,6 +647,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
 }
