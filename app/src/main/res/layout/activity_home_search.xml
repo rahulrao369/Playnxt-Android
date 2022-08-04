@@ -12,9 +12,58 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            android:id="@+id/bindingHeader"
-            layout="@layout/header_layout" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/top_gray"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="25dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_back_btn" />
+
+                <TextView
+                    android:id="@+id/tvHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:paddingBottom="8dp"
+                    android:text="Heading"
+                    android:textColor="@color/white"
+                    android:textFontWeight="500"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAddGame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:fontFamily="@font/nunitobold"
+                android:paddingBottom="8dp"
+                android:text="+ Add a Game"
+                android:textColor="@color/app_theme"
+                android:textFontWeight="500"
+                android:textSize="19sp" />
+
+        </LinearLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -139,6 +188,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvGame"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -148,19 +198,9 @@
                             android:text="Games"
                             android:textColor="@color/white"
                             android:textFontWeight="500"
-                            android:textSize="19sp" />
-                        <TextView
-                            android:id="@+id/tvAddGame"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical|end"
-                            android:fontFamily="@font/nunitobold"
-                            android:paddingBottom="8dp"
-                            android:text="+ Add a Game"
-                            android:textColor="@color/app_theme"
-                            android:textFontWeight="500"
-                            android:textSize="19sp" />
+                            android:textSize="19sp"
+                            android:visibility="gone"/>
+
                     </LinearLayout>
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvGames"
@@ -204,6 +244,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvUser"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -213,7 +254,8 @@
                             android:text="Users"
                             android:textColor="@color/white"
                             android:textFontWeight="500"
-                            android:textSize="19sp" />
+                            android:textSize="19sp"
+                            android:visibility="gone"/>
 
                     </LinearLayout>
                     <androidx.recyclerview.widget.RecyclerView

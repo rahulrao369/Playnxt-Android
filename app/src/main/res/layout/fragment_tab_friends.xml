@@ -15,6 +15,12 @@
         android:paddingBottom="23dp"
         android:visibility="gone">
 
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
@@ -22,6 +28,8 @@
             android:layout_marginTop="6dp"
             android:paddingStart="16dp"
             android:paddingEnd="16dp" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <LinearLayout
             android:id="@+id/llNoData"
@@ -40,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No Data Found"
+                android:text=""
                 android:textColor="@color/edt_text_bg" />
         </LinearLayout>
 

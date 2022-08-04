@@ -137,6 +137,7 @@ public class MyProfileFollowersFragment extends Fragment {
                 }else if(type.equals("FollowerAdapter")){
                     startActivity(new Intent(context, FriendsProfileActivity.class)
                             .putExtra("key","1")
+                            .putExtra("show_key", Constants.FRIENDS)
                             .putExtra("friends_id",id.toString()));
                     Log.d("TAG", "friends_id>>"+id);
                 }else if(type.equals("message")){

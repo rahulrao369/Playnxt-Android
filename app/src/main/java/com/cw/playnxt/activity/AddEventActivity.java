@@ -146,7 +146,7 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
                 }
                // String date = "" + year + "/" + fm + "/" + fd;
                 String date = "" + fm + "/" + fd + "/" + year;
-                binding.tvEndDate.setText("" + fm + "/" + fm + "/" + year);
+                binding.tvEndDate.setText("" + fd + "/" + fm + "/" + year);
                 END_DATE = date;
             }
         }, mYear, mMonth, mDay);
@@ -172,7 +172,7 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
                     fd = "0" + dayOfMonth;
                 }
                 String date = "" + fm + "/" + fd + "/" + year;
-                binding.tvStartDate.setText("" + fm + "/" + fd + "/" + year);
+                binding.tvStartDate.setText("" + fd + "/" + fm + "/" + year);
                 START_DATE = date;
             }
         }, mYear, mMonth, mDay);
@@ -254,13 +254,10 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
         } else if (binding.tvStartDate.getText().toString().trim().isEmpty()) {
             Toast.makeText(context, "Please select any start date", Toast.LENGTH_SHORT).show();
             return false;
-        } else if (binding.tvEndDate.getText().toString().trim().isEmpty()) {
+        } /*else if (binding.tvEndDate.getText().toString().trim().isEmpty()) {
             Toast.makeText(context, "Please select any end date", Toast.LENGTH_SHORT).show();
             return false;
-        } /*else if (binding.etAddNote.getText().toString().trim().isEmpty()) {
-            Toast.makeText(context, "Please add any note", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
+        } */
         return true;
     }
 }

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.Interface.ItemClickGameInfoRecentList;
@@ -58,9 +59,26 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         binding = FragmentGameBinding.inflate(inflater, container, false);
         init();
         onclicks();
+        initializeRefreshListener();
         return binding.getRoot();
     }
-
+    void initializeRefreshListener() {
+        binding.swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (Constants.isInternetConnected(context)) {
+                    NewCheckSubscriptionAPI();
+                } else {
+                    Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    public void stopSwipeRefesh(){
+        if(binding.swipeLayout.isRefreshing()) {
+            binding.swipeLayout.setRefreshing(false);
+        }
+    }
     public void init() {
         context = binding.getRoot().getContext();
         jsonPlaceHolderApi = ApiUtils.getAPIService();
@@ -103,7 +121,8 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                 Log.d("TAG","planType>>"+planType);
                 Log.d("TAG","total_backlog>>"+total_backlog);
                 if (position == 0) {
-                    if (planType.equals(Constants.PLAN_TYPE_FREE)) {
+                    startActivity(new Intent(context, BacklogActivity.class));
+                   /* if (planType.equals(Constants.PLAN_TYPE_FREE)) {
                             if(total_backlog == 0){
                                 startActivity(new Intent(context, SubscriptionActivity.class));
                             }else{
@@ -111,7 +130,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                             }
                     }else if(planType.equals(Constants.PLAN_TYPE_PAID)){
                         startActivity(new Intent(context, BacklogActivity.class));
-                    }
+                    }*/
                 } else if (position == 1) {
                     if(planType.equals(Constants.PLAN_TYPE_PAID)){
                         startActivity(new Intent(context, WishlistActivity.class));
@@ -203,6 +222,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
     //*********************************************************CHECK SUBSCRIPTION****************************************************
     public void NewCheckSubscriptionAPI() {
+        stopSwipeRefesh();
        Customprogress.showPopupProgressSpinner(context, true);
         jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
             @Override

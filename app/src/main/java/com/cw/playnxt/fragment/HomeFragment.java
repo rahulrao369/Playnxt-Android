@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
@@ -55,9 +56,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         onclicks();
         CLick();
+        initializeRefreshListener();
         return binding.getRoot();
     }
-
+    void initializeRefreshListener() {
+        binding.swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (Constants.isInternetConnected(context)) {
+                    HomeAPI();
+                } else {
+                    Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    public void stopSwipeRefesh(){
+        if(binding.swipeLayout.isRefreshing()) {
+            binding.swipeLayout.setRefreshing(false);
+        }
+    }
     private void CLick() {
         binding.tvSeeAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,13 +153,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 }
 
                 break;
-
-
         }
     }
     //**********************************************HOME API***************************************
     public void HomeAPI() {
-
+        stopSwipeRefesh();
         binding.rlProgressBar.setVisibility(View.VISIBLE);
         binding.llHomeMain.setVisibility(View.GONE);
         jsonPlaceHolderApi.HomeAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<HomeApiResponse>() {
@@ -194,6 +210,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             public void onItemClick(int position, String type) {
                 startActivity(new Intent(context, FriendsProfileActivity.class)
                         .putExtra("key","1")
+                        .putExtra("show_key", Constants.FRIENDS)
                         .putExtra("friends_id",followingList.get(position).getUserId().toString())
                 );
             }

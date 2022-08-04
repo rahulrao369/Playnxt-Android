@@ -16,6 +16,8 @@ import com.cw.playnxt.R;
 import com.cw.playnxt.adapter.FriendsAdapters.TabLayoutAdapter;
 import com.cw.playnxt.databinding.ActivityFriendsProfileBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
+import com.cw.playnxt.model.FollowFriend.FollowFriendParaRes;
+import com.cw.playnxt.model.FollowFriend.FollowFriendResponse;
 import com.cw.playnxt.model.GetMyFriendProfile.GetMyFriendProfileParaRes;
 import com.cw.playnxt.model.GetMyFriendProfile.GetMyFriendProfileResponse;
 import com.cw.playnxt.model.GetMyFriendProfile.MyFriendProfile;
@@ -39,12 +41,14 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
     Long game_count, followers_count, following_count;
     String friends_id;
     String tab;
+    String profile_image = "";
+    MyFriendProfile friendsProfileDetail = null;
+    String show_key = "";
     private ActivityFriendsProfileBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String profile_image = "";
-    MyFriendProfile friendsProfileDetail = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,9 +73,19 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
             Intent intent = getIntent();
             if (intent != null) {
                 tab = intent.getStringExtra("key");
+                show_key = intent.getStringExtra("show_key");
                 friends_id = intent.getStringExtra("friends_id");
                 Log.d("TAG", "friends_id>>" + friends_id);
                 Log.d("TAG", "tab>>" + tab);
+                Log.d("TAG", "show_key>>" + show_key);
+
+                if (show_key.equals(Constants.COMMUNITY)) {
+                    binding.btnFollow.setVisibility(View.VISIBLE);
+                    binding.btnMessage.setVisibility(View.GONE);
+                } else {
+                    binding.btnFollow.setVisibility(View.GONE);
+                    binding.btnMessage.setVisibility(View.VISIBLE);
+                }
 
                 if (Constants.isInternetConnected(context)) {
                     GetMyFriendProfileAPI();
@@ -88,6 +102,7 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
         headerBinding.btnBack.setOnClickListener(this);
         binding.cvFriendsProfile.setOnClickListener(this);
         binding.btnMessage.setOnClickListener(this);
+        binding.btnFollow.setOnClickListener(this);
 
     }
 
@@ -105,11 +120,18 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
                 break;
 
             case R.id.btnMessage:
-                if(friendsProfileDetail != null){
+                if (friendsProfileDetail != null) {
                     startActivity(new Intent(context, ChatActivity.class)
                             .putExtra("receiverId", friendsProfileDetail.getId().toString())
                             .putExtra("receiverName", friendsProfileDetail.getName())
                             .putExtra("receiverImage", friendsProfileDetail.getImage().toString()));
+                }
+                break;
+            case R.id.btnFollow:
+                if (Constants.isInternetConnected(context)) {
+                    FollowFriendAPI();
+                } else {
+                    Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -121,7 +143,7 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
         dialog.setContentView(R.layout.dialog_big_profile_image);
         AppCompatImageView iv_profile_image = (AppCompatImageView) dialog.findViewById(R.id.iv_profile_image);
         MaterialCardView cv_cross = (MaterialCardView) dialog.findViewById(R.id.cv_cross);
-        Picasso.get().load(Allurls.IMAGEURL+profile_image).error(R.drawable.default_user).placeholder(R.drawable.default_user).into(iv_profile_image);
+        Picasso.get().load(Allurls.IMAGEURL + profile_image).error(R.drawable.default_user).placeholder(R.drawable.default_user).into(iv_profile_image);
 
         cv_cross.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -213,4 +235,32 @@ public class FriendsProfileActivity extends AppCompatActivity implements View.On
         binding.tvName.setText(userName);
     }
 
+    //************************************FOLLOW FRIEND API*********************************************
+    public void FollowFriendAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        FollowFriendParaRes followFriendParaRes = new FollowFriendParaRes();
+        followFriendParaRes.setUserId(friends_id.toString());
+
+        jsonPlaceHolderApi.FollowFriendAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), followFriendParaRes).enqueue(new Callback<FollowFriendResponse>() {
+            @Override
+            public void onResponse(Call<FollowFriendResponse> call, Response<FollowFriendResponse> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    Customprogress.showPopupProgressSpinner(context, false);
+                    if (status) {
+                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        binding.btnFollow.setVisibility(View.GONE);
+                        binding.btnMessage.setVisibility(View.VISIBLE);
+                    } else {
+                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<FollowFriendResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+            }
+        });
+    }
 }

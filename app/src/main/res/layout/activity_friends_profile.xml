@@ -85,6 +85,26 @@
                                 android:textSize="12sp" />
 
                         </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/btnFollow"
+                            android:layout_width="110dp"
+                            android:layout_height="26dp"
+                            android:background="@drawable/bg_button"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:gravity="center"
+                                android:text="Follow"
+                                android:textColor="@color/white"
+                                android:textFontWeight="500"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

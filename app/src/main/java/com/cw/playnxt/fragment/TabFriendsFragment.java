@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,9 +49,27 @@ public class TabFriendsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentTabFriendsBinding.inflate(inflater, container, false);
         init();
+        initializeRefreshListener();
         return binding.getRoot();
     }
+    void initializeRefreshListener() {
+        binding.swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (Constants.isInternetConnected(context)) {
+                    GetMyFriendListAPI();
+                } else {
+                    Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                }
 
+            }
+        });
+    }
+    public void stopSwipeRefesh(){
+        if(binding.swipeLayout.isRefreshing()) {
+            binding.swipeLayout.setRefreshing(false);
+        }
+    }
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -73,6 +92,7 @@ public class TabFriendsFragment extends Fragment {
     }
 
     public void GetMyFriendListAPI() {
+        stopSwipeRefesh();
         binding.rlProgressBar.setVisibility(View.VISIBLE);
         binding.llMain.setVisibility(View.GONE);
 
@@ -143,6 +163,7 @@ public class TabFriendsFragment extends Fragment {
                 }else if(type.equals("CommunityFragmentMain")){
                     startActivity(new Intent(context, FriendsProfileActivity.class)
                             .putExtra("key","1")
+                            .putExtra("show_key", Constants.FRIENDS)
                             .putExtra("friends_id",data.getUserId().toString())
                     );
                 }
@@ -151,7 +172,7 @@ public class TabFriendsFragment extends Fragment {
             }
         });
         binding.recyclerView.setHasFixedSize(true);
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(context));
         binding.recyclerView.setAdapter(adapter);
     }
 

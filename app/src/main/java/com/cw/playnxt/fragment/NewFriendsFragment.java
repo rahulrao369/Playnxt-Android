@@ -3,22 +3,18 @@ package com.cw.playnxt.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.cw.playnxt.R;
 import com.cw.playnxt.activity.MyProfileActivity;
 import com.cw.playnxt.adapter.ViewPagerAdapter;
-import com.cw.playnxt.databinding.FragmentFriendsBinding;
 import com.cw.playnxt.databinding.FragmentNewFriendsBinding;
 import com.cw.playnxt.model.GetMyProfile.GetMyProfileResponse;
 import com.cw.playnxt.server.Allurls;
@@ -29,32 +25,23 @@ import com.cw.playnxt.utils.Constants;
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewFriendsFragment extends Fragment implements View.OnClickListener{
+public class NewFriendsFragment extends Fragment implements View.OnClickListener {
     FragmentNewFriendsBinding binding;
     Context context;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-//       View v = inflater.inflate(R.layout.fragment_new_friends, container, false);
-       binding = FragmentNewFriendsBinding.inflate(inflater, container, false);
-       InitView();
-       GetData();
+        binding = FragmentNewFriendsBinding.inflate(inflater, container, false);
+        InitView();
+        GetData();
         onclicks();
-        /*if (Constants.isInternetConnected(context)) {
-            GetMyProfileAPI();
-        } else {
-            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-        }*/
-       return binding.getRoot();
+        return binding.getRoot();
     }
 
     @Override
@@ -77,19 +64,19 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
         try {
             Bundle bundle = getArguments();
             if (bundle != null) {
-                int tab_selected = bundle.getInt("key",0);
-                System.out.println("tab_selected >>>>>>>>>>"+tab_selected);
+                int tab_selected = bundle.getInt("key", 0);
+                System.out.println("tab_selected >>>>>>>>>>" + tab_selected);
 
                 binding.tablayout1.addTab(binding.tablayout1.newTab().setText("Community"));
                 binding.tablayout1.addTab(binding.tablayout1.newTab().setText("Friends"));
                 binding.tablayout1.setTabGravity(TabLayout.GRAVITY_FILL);
-                ViewPagerAdapter adapter = new ViewPagerAdapter(((AppCompatActivity)context).getSupportFragmentManager());
+                ViewPagerAdapter adapter = new ViewPagerAdapter(((AppCompatActivity) context).getSupportFragmentManager());
                 binding.viewpager1.setAdapter(adapter);
 
                 binding.tablayout1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
                     @Override
                     public void onTabSelected(TabLayout.Tab tab) {
-                        System.out.println("onTabSelected>>>>>>>>>>>>>> "+tab.getPosition());
+                        System.out.println("onTabSelected>>>>>>>>>>>>>> " + tab.getPosition());
                         binding.viewpager1.setCurrentItem(tab.getPosition());
                         int currentPosition = binding.viewpager1.getCurrentItem();
                         adapter.notifyDataSetChanged();
@@ -134,7 +121,7 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
                 break;
         }
     }
-    
+
     public void GetMyProfileAPI() {
         // Customprogress.showPopupProgressSpinner(context, true);
         jsonPlaceHolderApi.GetMyProfileAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<GetMyProfileResponse>() {
@@ -156,6 +143,7 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<GetMyProfileResponse> call, Throwable t) {
                 //  Customprogress.showPopupProgressSpinner(context, false);

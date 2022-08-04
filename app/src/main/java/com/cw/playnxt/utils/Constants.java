@@ -24,6 +24,8 @@ public class Constants {
     public static String ACTIVE_PLAN_YES = "Yes";
     public static String PLAN_TYPE_FREE= "Free";
     public static String PLAN_TYPE_PAID= "Paid";
+    public static String COMMUNITY= "community";
+    public static String FRIENDS= "friends";
 
     public static boolean isInternetConnected(Context mContext) {
 

@@ -295,13 +295,19 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status)
                     {
-                        if(total_backlog == 0){
-                            binding.ivAdd.setVisibility(View.GONE);
-                            binding.ivSubscription.setVisibility(View.VISIBLE);
+                        if(planType.equals(Constants.PLAN_TYPE_FREE)){
+                            if(total_backlog == 0){
+                                binding.ivAdd.setVisibility(View.GONE);
+                                binding.ivSubscription.setVisibility(View.VISIBLE);
+                            }else{
+                                binding.ivAdd.setVisibility(View.VISIBLE);
+                                binding.ivSubscription.setVisibility(View.GONE);
+                            }
                         }else{
                             binding.ivAdd.setVisibility(View.VISIBLE);
                             binding.ivSubscription.setVisibility(View.GONE);
                         }
+
                         if(response.body().getData().getCount()!= null){
                             if(response.body().getData().getCount().size() != 0){
                                 binding.recyclerView.setVisibility(View.VISIBLE);

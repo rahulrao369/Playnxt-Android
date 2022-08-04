@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,9 +57,26 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
         binding = FragmentDiscoverBinding.inflate(inflater, container, false);
         init();
         onclicks();
+        initializeRefreshListener();
         return binding.getRoot();
     }
-
+    void initializeRefreshListener() {
+        binding.swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (Constants.isInternetConnected(context)) {
+                    StaffPicksAPI();
+                } else {
+                    Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    public void stopSwipeRefesh(){
+        if(binding.swipeLayout.isRefreshing()) {
+            binding.swipeLayout.setRefreshing(false);
+        }
+    }
     public void init() {
         context = binding.getRoot().getContext();
         jsonPlaceHolderApi = ApiUtils.getAPIService();
@@ -86,6 +104,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
 
 
     public void StaffPicksAPI() {
+        stopSwipeRefesh();
         Customprogress.showPopupProgressSpinner(context, true);
         jsonPlaceHolderApi.StaffPicksAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<StaffPicksResponse>() {
             @SuppressLint("SetTextI18n")

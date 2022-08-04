@@ -2792,6 +2792,7 @@ drawable img3
 drawable img_amex_center_face
 drawable imgmain
 drawable login_signup_btn
+drawable logo_main
 drawable m1
 drawable m2
 drawable m3
@@ -3612,6 +3613,7 @@ id tvFav
 id tvFav1
 id tvFeatures
 id tvFreeUser
+id tvGame
 id tvGameDescription
 id tvGameGenre
 id tvGameName
@@ -3651,6 +3653,7 @@ id tvTimeStamps1
 id tvTotalGame
 id tvTotalLike
 id tvUploadGameImg
+id tvUser
 id tvUserName
 id tvValidUpto
 id tvaddtobacklog
