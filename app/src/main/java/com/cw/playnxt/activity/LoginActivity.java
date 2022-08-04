@@ -39,12 +39,12 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
-    GpsTracker gpsTracker;
+   /* GpsTracker gpsTracker;
     double lat = 0.0, lng = 0.0;
     String city = "";
     String state = "";
     Geocoder geocoder;
-    List<Address> addresses;
+    List<Address> addresses;*/
     private ActivityLoginBinding binding;
     private boolean isShowPassword = false;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
@@ -91,14 +91,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
 
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+     /*   if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((AppCompatActivity) context, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
         } else {
             getGpsLocation();
-        }
+        }*/
     }
 
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+  /*  public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         System.out.println("Request Code >>>>>>>" + requestCode);
         switch (requestCode) {
@@ -111,9 +111,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 return;
             }
         }
-    }
+    }*/
 
-    public void getGpsLocation() {
+  /*  public void getGpsLocation() {
         gpsTracker = new GpsTracker((AppCompatActivity) context);
         if (gpsTracker.canGetLocation()) {
             lat = gpsTracker.getLatitude();
@@ -147,20 +147,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Log.d("TAG", "");
         }
     }
-
+*/
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogin:
                 if (isValidate()) {
-                    if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions((AppCompatActivity) context, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+                    if (Constants.isInternetConnected(context)) {
+                        loginAPI();
                     } else {
-                        if (Constants.isInternetConnected(context)) {
-                            loginAPI();
-                        } else {
-                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
@@ -172,20 +168,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.lytForgotPassword:
                 startActivity(new Intent(context, ForgotPasswordActivity.class));
                 break;
-
         }
     }
 
     public void loginAPI() {
         device_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
-
         Customprogress.showPopupProgressSpinner(context, true);
         LoginParaRes loginParaRes = new LoginParaRes();
         loginParaRes.setEmail(binding.etEmail.getText().toString().trim());
         loginParaRes.setPassword(binding.etPassword.getText().toString().trim());
         loginParaRes.setRole(Long.valueOf(Constants.ROLE));
-        loginParaRes.setLat(mySharedPref.getLatitude());
-        loginParaRes.setLng(mySharedPref.getLongitude());
+        loginParaRes.setLat("0.0");
+        loginParaRes.setLng("0.0");
         loginParaRes.setDeviceToken(device_id);
         loginParaRes.setFcmToken(fcm_token);
 
@@ -212,7 +206,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);

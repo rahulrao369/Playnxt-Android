@@ -29,12 +29,7 @@ public class SplashActivity extends AppCompatActivity {
     String device_id = "";
     private ActivitySplashBinding binding;
     private MySharedPref mySharedPref;
-    GpsTracker gpsTracker;
-    double lat = 0.0, lng = 0.0;
-    String city = "";
-    String state = "";
-    Geocoder geocoder;
-    List<Address> addresses;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,28 +44,9 @@ public class SplashActivity extends AppCompatActivity {
         mySharedPref = new MySharedPref(context);
         device_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
-      /*  if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions((AppCompatActivity) context, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-        } else {
-            getGpsLocation();
-        }*/
         startApp();
     }
 
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        System.out.println("Request Code >>>>>>>" + requestCode);
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    getGpsLocation();
-                } else {
-                    Toast.makeText((AppCompatActivity) context, "Permission denied", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-        }
-    }
 
     public void startApp() {
         new Handler().postDelayed(() -> {
@@ -124,40 +100,4 @@ public class SplashActivity extends AppCompatActivity {
             }*/
         }, 3000);
     }
-
-    public void getGpsLocation() {
-        gpsTracker = new GpsTracker((AppCompatActivity)context);
-        if (gpsTracker.canGetLocation()) {
-            lat = gpsTracker.getLatitude();
-            lng = gpsTracker.getLongitude();
-            Log.d("TAG","lat>>"+lat);
-            Log.d("TAG","lng>>"+lng);
-
-            mySharedPref.setLatitude(String.valueOf(lat));
-            mySharedPref.setLongitude(String.valueOf(lng));
-
-            Log.d("TAG","mySharedPref.getLatitude()>>"+mySharedPref.getLatitude());
-            Log.d("TAG","mySharedPref.getLongitude()>>"+mySharedPref.getLongitude());
-            try {
-                geocoder = new Geocoder((AppCompatActivity)context, Locale.getDefault());
-                addresses = geocoder.getFromLocation(lat, lng, 1);
-                Log.d("TAG", "   addresses     " + addresses);
-
-                String address = addresses.get(0).getAddressLine(0);
-                Log.d("TAG", "   address     " + address);
-
-                city = addresses.get(0).getLocality();
-                Log.d("TAG", "   city     " + city);
-
-                state = addresses.get(0).getAdminArea();
-                Log.d("TAG", "   state     " + state);
-
-            } catch (Exception e) {
-                Toast.makeText((AppCompatActivity)context, e.toString(), Toast.LENGTH_LONG).show();
-            }
-        }else{
-            Log.d("TAG","!!!!");
-        }
-    }
-
 }
