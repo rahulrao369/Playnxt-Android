@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
@@ -28,13 +29,18 @@ public final class FragmentDiscoverBinding implements ViewBinding {
   public final RecyclerView recyclerView;
 
   @NonNull
+  public final SwipeRefreshLayout swipeLayout;
+
+  @NonNull
   public final TextView tvUserName;
 
   private FragmentDiscoverBinding(@NonNull FrameLayout rootView, @NonNull LinearLayout llNoData,
-      @NonNull RecyclerView recyclerView, @NonNull TextView tvUserName) {
+      @NonNull RecyclerView recyclerView, @NonNull SwipeRefreshLayout swipeLayout,
+      @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.llNoData = llNoData;
     this.recyclerView = recyclerView;
+    this.swipeLayout = swipeLayout;
     this.tvUserName = tvUserName;
   }
 
@@ -77,6 +83,12 @@ public final class FragmentDiscoverBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeLayout;
+      SwipeRefreshLayout swipeLayout = ViewBindings.findChildViewById(rootView, id);
+      if (swipeLayout == null) {
+        break missingId;
+      }
+
       id = R.id.tvUserName;
       TextView tvUserName = ViewBindings.findChildViewById(rootView, id);
       if (tvUserName == null) {
@@ -84,7 +96,7 @@ public final class FragmentDiscoverBinding implements ViewBinding {
       }
 
       return new FragmentDiscoverBinding((FrameLayout) rootView, llNoData, recyclerView,
-          tvUserName);
+          swipeLayout, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

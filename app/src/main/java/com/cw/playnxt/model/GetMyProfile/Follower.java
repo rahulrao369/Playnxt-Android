@@ -8,6 +8,10 @@ public class Follower {
     @Expose
     private Integer userId;
 
+    @SerializedName("is_followed")
+    @Expose
+    private Integer is_follow;
+
     @SerializedName("name")
     @Expose
     private String name;
@@ -15,6 +19,17 @@ public class Follower {
     @SerializedName("mutual_friend")
     @Expose
     private int mutual_friend;
+    @SerializedName("image")
+    @Expose
+    private String image;
+
+    public Integer getIs_follow() {
+        return is_follow;
+    }
+
+    public void setIs_follow(Integer is_follow) {
+        this.is_follow = is_follow;
+    }
 
     public int getMutual_friend() {
         return mutual_friend;
@@ -47,8 +62,4 @@ public class Follower {
     public void setImage(String image) {
         this.image = image;
     }
-
-    @SerializedName("image")
-    @Expose
-    private String image;
 }

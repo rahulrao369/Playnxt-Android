@@ -48,7 +48,7 @@ public class MyProfileTabFollowingAdapter extends RecyclerView.Adapter<MyProfile
         holder.binding.btnFollow.setVisibility(View.GONE);
         holder.binding.btnUnfollow.setVisibility(View.VISIBLE);
         holder.binding.btnUnfollow.getBackground().setTint(context.getResources().getColor(R.color.app_theme));
-        holder.binding.tvBtn.setText("Following");
+        holder.binding.tvBtn.setText("Unfollow");
         Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.default_user).placeholder(R.drawable.default_user).into(holder.binding.cvFriendsProfile);
         String userName = list.get(position).getName().substring(0, 1).toUpperCase() +list.get(position).getName().substring(1).toLowerCase();
         holder.binding.tvName.setText(userName);

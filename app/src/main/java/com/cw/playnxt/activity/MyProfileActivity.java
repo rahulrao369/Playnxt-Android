@@ -157,6 +157,11 @@ public class MyProfileActivity extends AppCompatActivity implements View.OnClick
                                     @Override
                                     public void onTabSelected(TabLayout.Tab tab) {
                                         binding.viewpager.setCurrentItem(tab.getPosition());
+                                        int currentPosition = binding.viewpager.getCurrentItem();
+                                        tabLayoutAdapter.notifyDataSetChanged();
+                                        binding.viewpager.setAdapter(null);
+                                        binding.viewpager.setAdapter(tabLayoutAdapter);
+                                        binding.viewpager.setCurrentItem(currentPosition);
                                     }
 
                                     @Override

@@ -27,6 +27,9 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
   public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
+  public final LinearLayout btnFollow;
+
+  @NonNull
   public final LinearLayout btnMessage;
 
   @NonNull
@@ -48,12 +51,13 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
   public final ViewPager viewpager;
 
   private ActivityFriendsProfileBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnMessage,
-      @NonNull CircleImageView cvFriendsProfile, @NonNull LinearLayout llMain,
-      @NonNull TabLayout tablayout, @NonNull TextView tvName, @NonNull TextView txtBtn,
-      @NonNull ViewPager viewpager) {
+      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnFollow,
+      @NonNull LinearLayout btnMessage, @NonNull CircleImageView cvFriendsProfile,
+      @NonNull LinearLayout llMain, @NonNull TabLayout tablayout, @NonNull TextView tvName,
+      @NonNull TextView txtBtn, @NonNull ViewPager viewpager) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
+    this.btnFollow = btnFollow;
     this.btnMessage = btnMessage;
     this.cvFriendsProfile = cvFriendsProfile;
     this.llMain = llMain;
@@ -96,6 +100,12 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
         break missingId;
       }
       HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
+
+      id = R.id.btnFollow;
+      LinearLayout btnFollow = ViewBindings.findChildViewById(rootView, id);
+      if (btnFollow == null) {
+        break missingId;
+      }
 
       id = R.id.btnMessage;
       LinearLayout btnMessage = ViewBindings.findChildViewById(rootView, id);
@@ -140,7 +150,7 @@ public final class ActivityFriendsProfileBinding implements ViewBinding {
       }
 
       return new ActivityFriendsProfileBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnMessage, cvFriendsProfile, llMain, tablayout, tvName, txtBtn, viewpager);
+          btnFollow, btnMessage, cvFriendsProfile, llMain, tablayout, tvName, txtBtn, viewpager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -25,7 +25,7 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final HeaderLayoutBinding bindingHeader;
+  public final ImageView btnBack;
 
   @NonNull
   public final CheckBox cbGames;
@@ -57,14 +57,23 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   @NonNull
   public final TextView tvAddGame;
 
-  private ActivityHomeSearchBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull CheckBox cbGames,
-      @NonNull CheckBox cbUser, @NonNull EditText etSearch, @NonNull ImageView ivSearch,
-      @NonNull LinearLayout llNoGamesResult, @NonNull LinearLayout llNoUserResult,
-      @NonNull LinearLayout lytCheckBox, @NonNull RecyclerView rvGames,
-      @NonNull RecyclerView rvUser, @NonNull TextView tvAddGame) {
+  @NonNull
+  public final TextView tvGame;
+
+  @NonNull
+  public final TextView tvHeading;
+
+  @NonNull
+  public final TextView tvUser;
+
+  private ActivityHomeSearchBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btnBack,
+      @NonNull CheckBox cbGames, @NonNull CheckBox cbUser, @NonNull EditText etSearch,
+      @NonNull ImageView ivSearch, @NonNull LinearLayout llNoGamesResult,
+      @NonNull LinearLayout llNoUserResult, @NonNull LinearLayout lytCheckBox,
+      @NonNull RecyclerView rvGames, @NonNull RecyclerView rvUser, @NonNull TextView tvAddGame,
+      @NonNull TextView tvGame, @NonNull TextView tvHeading, @NonNull TextView tvUser) {
     this.rootView = rootView;
-    this.bindingHeader = bindingHeader;
+    this.btnBack = btnBack;
     this.cbGames = cbGames;
     this.cbUser = cbUser;
     this.etSearch = etSearch;
@@ -75,6 +84,9 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
     this.rvGames = rvGames;
     this.rvUser = rvUser;
     this.tvAddGame = tvAddGame;
+    this.tvGame = tvGame;
+    this.tvHeading = tvHeading;
+    this.tvUser = tvUser;
   }
 
   @Override
@@ -104,12 +116,11 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.bindingHeader;
-      View bindingHeader = ViewBindings.findChildViewById(rootView, id);
-      if (bindingHeader == null) {
+      id = R.id.btnBack;
+      ImageView btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
         break missingId;
       }
-      HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
 
       id = R.id.cbGames;
       CheckBox cbGames = ViewBindings.findChildViewById(rootView, id);
@@ -171,9 +182,27 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityHomeSearchBinding((RelativeLayout) rootView, binding_bindingHeader,
-          cbGames, cbUser, etSearch, ivSearch, llNoGamesResult, llNoUserResult, lytCheckBox,
-          rvGames, rvUser, tvAddGame);
+      id = R.id.tvGame;
+      TextView tvGame = ViewBindings.findChildViewById(rootView, id);
+      if (tvGame == null) {
+        break missingId;
+      }
+
+      id = R.id.tvHeading;
+      TextView tvHeading = ViewBindings.findChildViewById(rootView, id);
+      if (tvHeading == null) {
+        break missingId;
+      }
+
+      id = R.id.tvUser;
+      TextView tvUser = ViewBindings.findChildViewById(rootView, id);
+      if (tvUser == null) {
+        break missingId;
+      }
+
+      return new ActivityHomeSearchBinding((RelativeLayout) rootView, btnBack, cbGames, cbUser,
+          etSearch, ivSearch, llNoGamesResult, llNoUserResult, lytCheckBox, rvGames, rvUser,
+          tvAddGame, tvGame, tvHeading, tvUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
@@ -37,15 +38,20 @@ public final class FragmentTabCommunityBinding implements ViewBinding {
   @NonNull
   public final RelativeLayout rlProgressBar;
 
+  @NonNull
+  public final SwipeRefreshLayout swipeLayout;
+
   private FragmentTabCommunityBinding(@NonNull FrameLayout rootView, @NonNull LinearLayout llMain,
       @NonNull LinearLayout llNoData, @NonNull ProgressBar progressBar1,
-      @NonNull RecyclerView recyclerView, @NonNull RelativeLayout rlProgressBar) {
+      @NonNull RecyclerView recyclerView, @NonNull RelativeLayout rlProgressBar,
+      @NonNull SwipeRefreshLayout swipeLayout) {
     this.rootView = rootView;
     this.llMain = llMain;
     this.llNoData = llNoData;
     this.progressBar1 = progressBar1;
     this.recyclerView = recyclerView;
     this.rlProgressBar = rlProgressBar;
+    this.swipeLayout = swipeLayout;
   }
 
   @Override
@@ -105,8 +111,14 @@ public final class FragmentTabCommunityBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeLayout;
+      SwipeRefreshLayout swipeLayout = ViewBindings.findChildViewById(rootView, id);
+      if (swipeLayout == null) {
+        break missingId;
+      }
+
       return new FragmentTabCommunityBinding((FrameLayout) rootView, llMain, llNoData, progressBar1,
-          recyclerView, rlProgressBar);
+          recyclerView, rlProgressBar, swipeLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

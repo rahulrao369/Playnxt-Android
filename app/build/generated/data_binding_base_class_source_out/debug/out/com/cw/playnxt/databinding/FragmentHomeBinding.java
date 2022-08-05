@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
@@ -59,6 +60,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final RelativeLayout rlProgressBar;
 
   @NonNull
+  public final SwipeRefreshLayout swipeLayout;
+
+  @NonNull
   public final TextView tvNoFriendsYet;
 
   @NonNull
@@ -76,8 +80,8 @@ public final class FragmentHomeBinding implements ViewBinding {
       @NonNull LinearLayout llFriendsList, @NonNull LinearLayout llHomeMain,
       @NonNull LinearLayout llMyProfile, @NonNull ProgressBar progressBar1,
       @NonNull RecyclerView recyclerView, @NonNull RelativeLayout rlProgressBar,
-      @NonNull TextView tvNoFriendsYet, @NonNull TextView tvSeeAll, @NonNull TextView tvUserName,
-      @NonNull TextView txtBtn) {
+      @NonNull SwipeRefreshLayout swipeLayout, @NonNull TextView tvNoFriendsYet,
+      @NonNull TextView tvSeeAll, @NonNull TextView tvUserName, @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.LayoutContainer = LayoutContainer;
     this.btnAdsShow = btnAdsShow;
@@ -90,6 +94,7 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.progressBar1 = progressBar1;
     this.recyclerView = recyclerView;
     this.rlProgressBar = rlProgressBar;
+    this.swipeLayout = swipeLayout;
     this.tvNoFriendsYet = tvNoFriendsYet;
     this.tvSeeAll = tvSeeAll;
     this.tvUserName = tvUserName;
@@ -185,6 +190,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeLayout;
+      SwipeRefreshLayout swipeLayout = ViewBindings.findChildViewById(rootView, id);
+      if (swipeLayout == null) {
+        break missingId;
+      }
+
       id = R.id.tvNoFriendsYet;
       TextView tvNoFriendsYet = ViewBindings.findChildViewById(rootView, id);
       if (tvNoFriendsYet == null) {
@@ -211,7 +222,7 @@ public final class FragmentHomeBinding implements ViewBinding {
 
       return new FragmentHomeBinding((FrameLayout) rootView, LayoutContainer, btnAdsShow,
           btnPlaynxt, cvMyProfile, ivSearch, llFriendsList, llHomeMain, llMyProfile, progressBar1,
-          recyclerView, rlProgressBar, tvNoFriendsYet, tvSeeAll, tvUserName, txtBtn);
+          recyclerView, rlProgressBar, swipeLayout, tvNoFriendsYet, tvSeeAll, tvUserName, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

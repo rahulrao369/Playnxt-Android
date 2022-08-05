@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
@@ -42,12 +43,16 @@ public final class FragmentGameBinding implements ViewBinding {
   public final RecyclerView rvRecentGames;
 
   @NonNull
+  public final SwipeRefreshLayout swipeLayout;
+
+  @NonNull
   public final TextView tvUserName;
 
   private FragmentGameBinding(@NonNull FrameLayout rootView, @NonNull LinearLayout llMain,
       @NonNull LinearLayout llRecentlyAdded, @NonNull ProgressBar progressBar1,
       @NonNull RecyclerView recyclerView, @NonNull RelativeLayout rlProgressBar,
-      @NonNull RecyclerView rvRecentGames, @NonNull TextView tvUserName) {
+      @NonNull RecyclerView rvRecentGames, @NonNull SwipeRefreshLayout swipeLayout,
+      @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.llMain = llMain;
     this.llRecentlyAdded = llRecentlyAdded;
@@ -55,6 +60,7 @@ public final class FragmentGameBinding implements ViewBinding {
     this.recyclerView = recyclerView;
     this.rlProgressBar = rlProgressBar;
     this.rvRecentGames = rvRecentGames;
+    this.swipeLayout = swipeLayout;
     this.tvUserName = tvUserName;
   }
 
@@ -121,6 +127,12 @@ public final class FragmentGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeLayout;
+      SwipeRefreshLayout swipeLayout = ViewBindings.findChildViewById(rootView, id);
+      if (swipeLayout == null) {
+        break missingId;
+      }
+
       id = R.id.tvUserName;
       TextView tvUserName = ViewBindings.findChildViewById(rootView, id);
       if (tvUserName == null) {
@@ -128,7 +140,7 @@ public final class FragmentGameBinding implements ViewBinding {
       }
 
       return new FragmentGameBinding((FrameLayout) rootView, llMain, llRecentlyAdded, progressBar1,
-          recyclerView, rlProgressBar, rvRecentGames, tvUserName);
+          recyclerView, rlProgressBar, rvRecentGames, swipeLayout, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
