@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <!--
-        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -35,6 +35,9 @@
         android:theme="@style/Theme.Playnxt"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize" >
+        <activity
+            android:name="com.cw.playnxt.activity.SubscriptionActivityFinal"
+            android:exported="true" />
         <activity
             android:name="com.cw.playnxt.activity.ChatActivity"
             android:exported="true" />

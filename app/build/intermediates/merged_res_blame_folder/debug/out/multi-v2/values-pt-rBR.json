@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "/home/cw/.gradle/caches/transforms-3/b3249158987b6b167538e934ddd3688e/transformed/jetified-CreditCardView-v1.0.4/res/values-pt-rBR/values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,154,217,262,319,359,421,482,528,568,624,665",
+                        "endColumns": "50,47,62,44,56,39,61,60,45,39,55,40,45",
+                        "endOffsets": "101,149,212,257,314,354,416,477,523,563,619,660,706"
+                    },
+                    "to": {
+                        "startLines": "34,35,36,37,38,49,50,52,53,69,103,104,107",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3100,3151,3199,3262,3307,4150,4190,4316,4377,5592,8356,8412,8616",
+                        "endColumns": "50,47,62,44,56,39,61,60,45,39,55,40,45",
+                        "endOffsets": "3146,3194,3257,3302,3359,4185,4247,4372,4418,5627,8407,8448,8657"
+                    }
+                },
+                {
                     "source": "/home/cw/.gradle/caches/transforms-3/dd7d100d6c9f473334a40e625f5e13f2/transformed/jetified-android-image-cropper-2.8.0/res/values-pt-rBR/values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -35,23 +52,6 @@
                         "startOffsets": "3666,3713,3769,3827,3912,3994,4072,8530",
                         "endColumns": "46,55,57,84,81,77,77,85",
                         "endOffsets": "3708,3764,3822,3907,3989,4067,4145,8611"
-                    }
-                },
-                {
-                    "source": "/home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/res/values-pt-rBR/values-pt-rBR.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,106,154,217,262,319,359,421,482,528,568,624,665",
-                        "endColumns": "50,47,62,44,56,39,61,60,45,39,55,40,45",
-                        "endOffsets": "101,149,212,257,314,354,416,477,523,563,619,660,706"
-                    },
-                    "to": {
-                        "startLines": "34,35,36,37,38,49,50,52,53,69,103,104,107",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3100,3151,3199,3262,3307,4150,4190,4316,4377,5592,8356,8412,8616",
-                        "endColumns": "50,47,62,44,56,39,61,60,45,39,55,40,45",
-                        "endOffsets": "3146,3194,3257,3302,3359,4185,4247,4372,4418,5627,8407,8448,8657"
                     }
                 },
                 {

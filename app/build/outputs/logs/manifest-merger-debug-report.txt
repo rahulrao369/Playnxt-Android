@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.8.0] /home/cw/.gradle/caches/transforms-3/dd7d100d6c9f473334a40e625f5e13f2/transformed/jetified-android-image-cropper-2.8.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:viewbinding:7.0.1] /home/cw/.gradle/caches/transforms-3/ff5d982a54f36c84e4fced91462e97bb/transformed/jetified-viewbinding-7.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.androidwidgets:formatedittext:0.2.0] /home/cw/.gradle/caches/transforms-3/a40dba9647b19ba1ebc3c846a6084662/transformed/jetified-formatedittext-0.2.0/AndroidManifest.xml:2:1-11:12
@@ -11,12 +11,12 @@ MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches
 MERGED from [com.github.ismaeldivita:chip-navigation-bar:1.4.0] /home/cw/.gradle/caches/transforms-3/cfc8c4e264027644fff76df3ef9258a2/transformed/jetified-chip-navigation-bar-1.4.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches/transforms-3/124ee3f62a1261b99cdf0eddb06e39d5/transformed/jetified-material-calendar-view-1.7.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/b3249158987b6b167538e934ddd3688e/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:2:1-17:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/3fa0fe92d846f5c8ae89ebc20cb4fd9e/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cw/.gradle/caches/transforms-3/55e311d705e7ca24b3efd8612e6caa41/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:2:1-14:12
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:2:1-14:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/ae731995f260e8d6dff1013753f31d11/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:2:1-11:12
-MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/7091689ad06647474094d19714822e31/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/3c992c2a31d9aa7add4daeeb969f267a/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/cw/.gradle/caches/transforms-3/fd792957e204380ae9a093367e4eded6/transformed/exifinterface-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/cw/.gradle/caches/transforms-3/c84966d631d6e0b75d6bb70ed84f0980/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] /home/cw/.gradle/caches/transforms-3/85b785c0f464fd717fc0c3319209a901/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
@@ -60,20 +60,20 @@ MERGED from [androidx.print:print:1.0.0] /home/cw/.gradle/caches/transforms-3/36
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cw/.gradle/caches/transforms-3/2f8e445222e4e599ddd0550fcb0ff3e9/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/cw/.gradle/caches/transforms-3/990035cce6f8133573ea22ca7a8dd41c/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:2:1-12:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
-INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
+INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
 	package
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:3:5-29
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-155:12
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:1-160:12
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:2:11-69
@@ -90,27 +90,27 @@ ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app
 	android:name
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:7:22-63
 uses-permission#android.permission.CAMERA
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:10:5-65
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:12:5-65
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:10:22-62
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:12:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:11:5-80
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:13:5-80
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:11:22-77
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:13:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:12:5-81
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:12:22-78
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:22-78
 application
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:14:5-153:19
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:16:5-158:19
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/b3249158987b6b167538e934ddd3688e/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/b3249158987b6b167538e934ddd3688e/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/ae731995f260e8d6dff1013753f31d11/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/ae731995f260e8d6dff1013753f31d11/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
@@ -126,281 +126,287 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cw/.gradle/caches/tra
 MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:10:5-20
 MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/cw/.gradle/caches/transforms-3/ef974ae385ede946e81f843efe376cd4/transformed/jetified-CircularReveal-1.0.5/AndroidManifest.xml:10:5-20
 	android:requestLegacyExternalStorage
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:20:9-52
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:22:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] /home/cw/.gradle/caches/transforms-3/5f5e792acd1d8373e906efd73c4b888f/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:22:9-35
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:20:9-41
 	android:hardwareAccelerated
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:16:9-43
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:18:9-43
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:25:9-51
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:27:9-51
 	android:roundIcon
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:21:9-54
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:23:9-54
 	android:icon
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:19:9-43
 	android:allowBackup
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:23:9-45
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:25:9-45
 	android:networkSecurityConfig
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:19:9-69
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:21:9-69
 	android:usesCleartextTraffic
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:24:9-44
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:26:9-44
+activity#com.cw.playnxt.activity.SubscriptionActivityFinal
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:28:9-30:39
+	android:exported
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:29:13-63
 activity#com.cw.playnxt.activity.ChatActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:26:9-28:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:31:9-33:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:28:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:33:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:27:13-50
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:32:13-50
 activity#com.cw.playnxt.activity.PlaynxtPremiumActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:29:9-31:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:34:9-36:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:31:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:36:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:30:13-60
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:35:13-60
 activity#com.cw.playnxt.activity.SubscriptionActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:32:9-34:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:37:9-39:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:34:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:39:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:33:13-58
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:38:13-58
 activity#com.cw.playnxt.activity.ForgotPasswordActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:35:9-38:58
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:40:9-43:58
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:38:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:43:13-55
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:37:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:42:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:36:13-60
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:41:13-60
 activity#com.cw.playnxt.activity.ContactUsActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:39:9-41:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:44:9-46:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:41:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:46:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:40:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:45:13-55
 activity#com.cw.playnxt.activity.AboutUsActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:42:9-44:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:47:9-49:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:44:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:49:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:43:13-53
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:48:13-53
 activity#com.cw.playnxt.activity.MainGameInfoActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:45:9-47:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:50:9-52:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:47:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:52:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:46:13-58
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:51:13-58
 activity#com.cw.playnxt.activity.AddGameFromWishlistActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:48:9-51:58
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:53:9-56:58
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:51:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:56:13-55
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:50:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:55:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:49:13-65
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:54:13-65
 activity#com.cw.playnxt.activity.WishlistGameInfoActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:52:9-54:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:57:9-59:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:54:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:59:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:53:13-62
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:58:13-62
 activity#com.cw.playnxt.activity.AddGameFromBacklogListActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:55:9-58:58
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:60:9-63:58
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:58:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:63:13-55
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:57:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:62:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:56:13-68
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:61:13-68
 activity#com.cw.playnxt.activity.AddGameActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:59:9-62:58
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:64:9-67:58
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:62:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:67:13-55
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:61:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:66:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:60:13-53
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:65:13-53
 activity#com.cw.playnxt.activity.SuggestNewFeatureActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:63:9-65:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:68:9-70:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:65:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:70:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:64:13-63
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:69:13-63
 activity#com.cw.playnxt.activity.ConfirmationActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:66:9-68:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:71:9-73:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:68:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:73:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:67:13-58
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:72:13-58
 activity#com.cw.playnxt.activity.AddCardActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:69:9-72:58
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:74:9-77:58
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:72:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:77:13-55
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:71:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:76:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:70:13-53
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:75:13-53
 activity#com.cw.playnxt.activity.HomeSearchActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:73:9-75:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:78:9-80:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:75:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:80:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:74:13-56
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:79:13-56
 activity#com.cw.playnxt.activity.SettingPlaynextPremiumActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:76:9-78:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:81:9-83:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:78:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:83:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:77:13-68
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:82:13-68
 activity#com.cw.playnxt.activity.EditProfileActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:79:9-81:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:84:9-86:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:81:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:86:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:80:13-57
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:85:13-57
 activity#com.cw.playnxt.activity.SettingActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:82:9-84:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:87:9-89:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:84:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:89:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:83:13-53
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:88:13-53
 activity#com.cw.playnxt.activity.MyProfileActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:85:9-87:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:90:9-92:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:87:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:92:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:86:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:91:13-55
 activity#com.cw.playnxt.activity.FriendsProfileActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:88:9-90:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:93:9-95:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:90:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:95:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:89:13-60
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:94:13-60
 activity#com.cw.playnxt.activity.AddEventActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:91:9-93:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:96:9-98:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:93:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:98:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:92:13-54
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:97:13-54
 activity#com.cw.playnxt.activity.WishlistXboxGameActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:94:9-96:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:99:9-101:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:96:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:101:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:95:13-62
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:100:13-62
 activity#com.cw.playnxt.activity.XboxGameInfoActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:97:9-99:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:102:9-104:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:99:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:104:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:98:13-58
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:103:13-58
 activity#com.cw.playnxt.activity.XboxGamesActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:100:9-102:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:105:9-107:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:102:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:107:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:101:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:106:13-55
 activity#com.cw.playnxt.activity.GameInfoActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:103:9-105:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:108:9-110:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:105:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:110:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:104:13-54
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:109:13-54
 activity#com.cw.playnxt.activity.YourStatsActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:106:9-108:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:111:9-113:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:108:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:113:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:107:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:112:13-55
 activity#com.cw.playnxt.activity.CalenderActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:109:9-111:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:114:9-116:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:111:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:116:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:110:13-54
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:115:13-54
 activity#com.cw.playnxt.activity.WishlistActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:112:9-114:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:117:9-119:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:114:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:119:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:113:13-54
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:118:13-54
 activity#com.cw.playnxt.activity.BacklogActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:115:9-117:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:120:9-122:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:117:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:122:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:116:13-53
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:121:13-53
 activity#com.cw.playnxt.activity.HomeActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:118:9-120:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:123:9-125:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:120:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:125:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:119:13-50
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:124:13-50
 activity#com.cw.playnxt.activity.SignupActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:121:9-124:58
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:126:9-129:58
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:124:13-55
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:129:13-55
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:123:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:128:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:122:13-52
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:127:13-52
 activity#com.cw.playnxt.activity.LoginActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:125:9-128:55
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:130:9-133:55
 	android:windowSoftInputMode
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:128:13-52
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:133:13-52
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:127:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:132:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:126:13-51
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:131:13-51
 activity#com.cw.playnxt.activity.LoginSignupButtonActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:129:9-131:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:134:9-136:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:131:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:136:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:130:13-63
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:135:13-63
 activity#com.cw.playnxt.activity.WelcomeActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:132:9-134:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:137:9-139:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:134:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:139:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:133:13-53
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:138:13-53
 activity#com.cw.playnxt.MainActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:135:9-137:39
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:140:9-142:39
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:137:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:136:13-41
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:141:13-41
 activity#com.cw.playnxt.activity.SplashActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:138:9-146:20
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:143:9-151:20
 	android:exported
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:140:13-36
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:145:13-36
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:139:13-52
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:144:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:141:13-145:29
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:146:13-150:29
 action#android.intent.action.MAIN
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:17-69
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:147:17-69
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:142:25-66
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:147:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:144:17-77
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:149:17-77
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:144:27-74
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:149:27-74
 activity#com.theartofdev.edmodo.cropper.CropImageActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:147:9-149:59
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:152:9-154:59
 	android:theme
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:149:13-56
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:154:13-56
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:148:13-76
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:153:13-76
 activity#com.cooltechworks.creditcarddesign.CardEditActivity
-ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:150:9-152:52
+ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:155:9-157:52
 	android:screenOrientation
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:152:13-49
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:157:13-49
 	android:name
-		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:151:13-79
+		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml:156:13-79
 uses-sdk
 INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
@@ -419,18 +425,18 @@ MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches
 MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches/transforms-3/124ee3f62a1261b99cdf0eddb06e39d5/transformed/jetified-material-calendar-view-1.7.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/767b9a167597bcf72f3ba8e263f2f775/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/b3249158987b6b167538e934ddd3688e/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/b3249158987b6b167538e934ddd3688e/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/3fa0fe92d846f5c8ae89ebc20cb4fd9e/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/3fa0fe92d846f5c8ae89ebc20cb4fd9e/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cw/.gradle/caches/transforms-3/55e311d705e7ca24b3efd8612e6caa41/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cw/.gradle/caches/transforms-3/55e311d705e7ca24b3efd8612e6caa41/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/ae731995f260e8d6dff1013753f31d11/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/ae731995f260e8d6dff1013753f31d11/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/7091689ad06647474094d19714822e31/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
-MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/7091689ad06647474094d19714822e31/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/3c992c2a31d9aa7add4daeeb969f267a/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/3c992c2a31d9aa7add4daeeb969f267a/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/cw/.gradle/caches/transforms-3/fd792957e204380ae9a093367e4eded6/transformed/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/cw/.gradle/caches/transforms-3/fd792957e204380ae9a093367e4eded6/transformed/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/cw/.gradle/caches/transforms-3/c84966d631d6e0b75d6bb70ed84f0980/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
@@ -528,13 +534,13 @@ INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/
 		ADDED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/AndroidManifest.xml
 provider#com.squareup.picasso.PicassoProvider
-ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
 	android:authorities
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
 	android:exported
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
 	android:name
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/4fa97a6cc061fe98399e35599e4db7d0/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/8e1687dab47e80e0c023896b3af58979/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] /home/cw/.gradle/caches/transforms-3/883c8571d9900e72cce7dfb06c6e0c4b/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/cw/.gradle/caches/transforms-3/c761cbdefd74fb3955bd84ec83922caa/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:26:9-34:20

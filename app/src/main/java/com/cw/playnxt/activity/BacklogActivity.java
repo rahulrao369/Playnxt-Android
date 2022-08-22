@@ -115,7 +115,7 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.llCreateBacklogList:
                 if (planType.equals(Constants.PLAN_TYPE_FREE)) {
                     if(total_backlog == 0){
-                        startActivity(new Intent(context, SubscriptionActivity.class));
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }else{
                         showBottomSheetFilterDialog();
                     }

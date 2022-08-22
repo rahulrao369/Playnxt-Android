@@ -21,6 +21,7 @@ import com.cw.playnxt.activity.CalenderActivity;
 import com.cw.playnxt.activity.HomeActivity;
 import com.cw.playnxt.activity.MainGameInfoActivity;
 import com.cw.playnxt.activity.SubscriptionActivity;
+import com.cw.playnxt.activity.SubscriptionActivityFinal;
 import com.cw.playnxt.activity.WishlistActivity;
 import com.cw.playnxt.activity.YourStatsActivity;
 import com.cw.playnxt.adapter.GameAdapters.GameFragmentTopListAdapter;
@@ -122,32 +123,23 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                 Log.d("TAG","total_backlog>>"+total_backlog);
                 if (position == 0) {
                     startActivity(new Intent(context, BacklogActivity.class));
-                   /* if (planType.equals(Constants.PLAN_TYPE_FREE)) {
-                            if(total_backlog == 0){
-                                startActivity(new Intent(context, SubscriptionActivity.class));
-                            }else{
-                                startActivity(new Intent(context, BacklogActivity.class));
-                            }
-                    }else if(planType.equals(Constants.PLAN_TYPE_PAID)){
-                        startActivity(new Intent(context, BacklogActivity.class));
-                    }*/
                 } else if (position == 1) {
                     if(planType.equals(Constants.PLAN_TYPE_PAID)){
                         startActivity(new Intent(context, WishlistActivity.class));
                     }else{
-                        startActivity(new Intent(context, SubscriptionActivity.class));
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 } else if (position == 2) {
                     if(planType.equals(Constants.PLAN_TYPE_PAID)){
                         startActivity(new Intent(context, CalenderActivity.class));
                     }else{
-                        startActivity(new Intent(context, SubscriptionActivity.class));
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 } else if (position == 3) {
                     if(planType.equals(Constants.PLAN_TYPE_PAID)){
                         startActivity(new Intent(context, YourStatsActivity.class));
                     }else{
-                        startActivity(new Intent(context, SubscriptionActivity.class));
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 }
             }

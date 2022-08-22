@@ -70,6 +70,7 @@
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_subscription.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/activity_subscription_final.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_suggest_ne_feature.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_suggest_new_features.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.19791666666666666" />
@@ -130,6 +131,7 @@
         <entry key="app/src/main/res/layout/item_list_recent_games.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_search_games.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_search_users.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/item_list_subscription_plan_access_extra_features_layout.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_subscription_plan_inside_list_layout.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_subscription_plan_list_main_layout.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/item_list_xbox_game_info.xml" value="0.19791666666666666" />

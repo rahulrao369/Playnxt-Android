@@ -2692,6 +2692,7 @@ drawable design_snackbar_background
 drawable diamond
 drawable ic_add
 drawable ic_add_game
+drawable ic_add_grey
 drawable ic_add_theme
 drawable ic_arrow_left
 drawable ic_arrow_right
@@ -3005,6 +3006,7 @@ id btnFilter
 id btnFollow
 id btnLogin
 id btnMessage
+id btnMonth
 id btnNext
 id btnOk
 id btnPayNow
@@ -3019,6 +3021,7 @@ id btnSubmit
 id btnUnFollow
 id btnUnfollow
 id btnView
+id btnYear
 id buttonPanel
 id cache_measures
 id calendarContainer
@@ -3469,6 +3472,7 @@ id rounded
 id row_index_key
 id rvActivityList
 id rvBottomSheet
+id rvExtraFeatures
 id rvFollowersList
 id rvFollowingList
 id rvGames
@@ -3819,6 +3823,7 @@ layout activity_setting_palynxt_premium
 layout activity_signup
 layout activity_splash
 layout activity_subscription
+layout activity_subscription_final
 layout activity_suggest_ne_feature
 layout activity_welcome
 layout activity_wishlist
@@ -3906,6 +3911,7 @@ layout item_list_new_tab_activity_layout
 layout item_list_recent_games
 layout item_list_search_games
 layout item_list_search_users
+layout item_list_subscription_plan_access_extra_features_layout
 layout item_list_subscription_plan_inside_list_layout
 layout item_list_subscription_plan_list_main_layout
 layout item_list_xbox_game_info

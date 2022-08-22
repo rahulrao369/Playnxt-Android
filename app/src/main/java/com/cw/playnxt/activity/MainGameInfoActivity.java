@@ -218,7 +218,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
                 }else {
-                    startActivity(new Intent(context, SubscriptionActivity.class));
+                    startActivity(new Intent(context, SubscriptionActivityFinal.class));
                 }
                 break;
 

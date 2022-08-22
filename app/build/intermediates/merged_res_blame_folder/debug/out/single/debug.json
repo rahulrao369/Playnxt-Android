@@ -188,6 +188,10 @@
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/ic_diamond_1.xml"
     },
     {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_subscription_final.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_subscription_final.xml"
+    },
+    {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_bg_home_top.png.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_bg_home_top.png"
     },
@@ -940,6 +944,10 @@
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_right_arrow.png"
     },
     {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_ic_add_grey.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/ic_add_grey.xml"
+    },
+    {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_ic_delete_theme.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/ic_delete_theme.xml"
     },
@@ -1074,6 +1082,10 @@
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_setting.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_setting.xml"
+    },
+    {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_item_list_subscription_plan_access_extra_features_layout.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_subscription_plan_access_extra_features_layout.xml"
     },
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_ic_back_btn.xml.flat",

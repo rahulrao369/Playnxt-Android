@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/cw/.gradle/caches/transforms-3/5cb6ca8a034628aaade81ea8990c047d/transformed/jetified-CreditCardView-v1.0.4/res/values-fr/values-fr.xml",
+                    "source": "/home/cw/.gradle/caches/transforms-3/b3249158987b6b167538e934ddd3688e/transformed/jetified-CreditCardView-v1.0.4/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",

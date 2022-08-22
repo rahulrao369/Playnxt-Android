@@ -190,7 +190,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                         }
                     }
                 }else {
-                    startActivity(new Intent(context, SubscriptionActivity.class));
+                    startActivity(new Intent(context, SubscriptionActivityFinal.class));
                 }
 
 
@@ -267,7 +267,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 public void onClick(View view) {
                     //condition
                     if(total_backlog == 0){
-                        startActivity(new Intent(context, SubscriptionActivity.class));
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }else{
                         showBottomSheetCreateNewBacklogListDialog();
                     }
