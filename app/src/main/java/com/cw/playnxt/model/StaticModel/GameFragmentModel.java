@@ -4,21 +4,21 @@ public class GameFragmentModel {
     int icon;
     String heading;
     String number;
-    String plan_type;
+    String subscribed;
 
-    public GameFragmentModel(int icon, String heading, String number,String plan_type) {
+    public GameFragmentModel(int icon, String heading, String number,String subscribed) {
         this.icon = icon;
         this.heading = heading;
         this.number = number;
-        this.plan_type = plan_type;
+        this.subscribed = subscribed;
     }
 
-    public String getPlan_type() {
-        return plan_type;
+    public String getSubscribed() {
+        return subscribed;
     }
 
-    public void setPlan_type(String plan_type) {
-        this.plan_type = plan_type;
+    public void setSubscribed(String subscribed) {
+        this.subscribed = subscribed;
     }
 
     public int getIcon() {

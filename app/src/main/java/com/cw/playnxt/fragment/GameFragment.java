@@ -28,6 +28,7 @@ import com.cw.playnxt.adapter.GameAdapters.GameFragmentTopListAdapter;
 import com.cw.playnxt.adapter.GameAdapters.RecentGamesAdapter;
 import com.cw.playnxt.databinding.FragmentGameBinding;
 import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.GetRecentGame.GetRecentGameDataCapsul;
 import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
 import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
@@ -52,7 +53,8 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     String planType = "";
-    int total_backlog;
+    String subscribed = "";
+  //  int total_backlog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -111,32 +113,34 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
     private void GameListDataSet() {
         List<GameFragmentModel> list = new ArrayList<>();
-        list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + "",planType));
-        list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + "",planType));
-        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Calendar Tool", "",planType));
-        list.add(new GameFragmentModel(R.drawable.ic_your_stats, "Your Stats", "",planType));
+        list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + "",subscribed));
+        list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + "",subscribed));
+        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Calendar Tool", "",subscribed));
+        list.add(new GameFragmentModel(R.drawable.ic_your_stats, "Your Stats", "",subscribed));
 
         GameFragmentTopListAdapter adapter = new GameFragmentTopListAdapter(context, list, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
-                Log.d("TAG","planType>>"+planType);
-                Log.d("TAG","total_backlog>>"+total_backlog);
                 if (position == 0) {
-                    startActivity(new Intent(context, BacklogActivity.class));
+                    if(subscribed.equals(Constants.YES)){
+                        startActivity(new Intent(context, WishlistActivity.class));
+                    }else{
+                        startActivity(new Intent(context, BacklogActivity.class));
+                    }
                 } else if (position == 1) {
-                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                    if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, WishlistActivity.class));
                     }else{
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 } else if (position == 2) {
-                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                    if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, CalenderActivity.class));
                     }else{
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 } else if (position == 3) {
-                    if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                    if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, YourStatsActivity.class));
                     }else{
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
@@ -216,18 +220,18 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     public void NewCheckSubscriptionAPI() {
         stopSwipeRefesh();
        Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
             @Override
-            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 if (response.isSuccessful()) {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
                         planType =  response.body().getData().getSubscription().getType();
-                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
-                        Log.d("TAG","planType>>>>"+planType);
-                        Log.d("TAG","total_backlog>>>>"+total_backlog);
+                        subscribed = response.body().getData().getSubscribed();
+                     //   total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        Log.d("TAG","subscribed>>>>"+subscribed);
                         if (Constants.isInternetConnected(context)) {
                             GetRecentGameAPI();
                         } else {
@@ -239,7 +243,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                 }
             }
             @Override
-            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();

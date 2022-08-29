@@ -1,5 +1,6 @@
 package com.cw.playnxt.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -22,6 +23,9 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -74,8 +78,26 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         context = SignupActivity.this;
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
+        firebaseData();
     }
-
+    private void firebaseData() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        fcm_token = task.getResult();
+                        mySharedPref.saveFcmToken(fcm_token);
+                        Log.d("TAG", "fcm_token>>>>" + fcm_token);
+                    }
+                });
+        device_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        mySharedPref.setSavedDeviceid(device_id);
+        Log.d("TAG", "device_id " + device_id);
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -96,8 +118,6 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void registrationAPI() {
-        device_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
-
         Customprogress.showPopupProgressSpinner(context, true);
         SignupParaRes signupParaRes= new SignupParaRes();
         signupParaRes.setUserName(binding.etName.getText().toString().trim());

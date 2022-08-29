@@ -44,7 +44,7 @@ public class GameFragmentTopListAdapter extends RecyclerView.Adapter<GameFragmen
         if(position == 0){
             holder.binding.ivSubscribeNow.setVisibility(View.GONE);
         }else{
-            if(list.get(position).getPlan_type().equals(Constants.PLAN_TYPE_PAID)){
+            if(list.get(position).getSubscribed().equals(Constants.YES)){
                 holder.binding.ivSubscribeNow.setVisibility(View.GONE);
             }else{
                 holder.binding.ivSubscribeNow.setVisibility(View.VISIBLE);

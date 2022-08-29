@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1008373634991",
+    "firebase_url": "https://playnxt-4a074-default-rtdb.firebaseio.com",
+    "project_id": "playnxt-4a074",
+    "storage_bucket": "playnxt-4a074.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008373634991:android:849885e863aead104a815a",
+        "android_client_info": {
+          "package_name": "com.cw.playnxt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008373634991-4co2gupqd0l1qpcap4n4jvok4kkcmt8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZkKXJXQ94fYUt0ZQbn9oWxWDEv3VUcSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008373634991-4co2gupqd0l1qpcap4n4jvok4kkcmt8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

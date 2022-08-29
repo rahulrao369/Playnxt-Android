@@ -45,6 +45,7 @@ import com.cw.playnxt.model.AddGameNote.AddGameNoteParaRes;
 import com.cw.playnxt.model.AddGameStatus.AddGameStatusParaRes;
 import com.cw.playnxt.model.AddWishlist.AddWishlistParaRes;
 import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.DeleteGame.DeleteGameParaRes;
 import com.cw.playnxt.model.DeleteGameNote.DeleteGameNoteParaRes;
 import com.cw.playnxt.model.EditGameNote.EditGameNoteParaRes;
@@ -109,8 +110,9 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
     Double rating ;
     EditText etName,etWishlistName;
     LinearLayout btnCreateList,btnCreateWishlist;
-    String planType = "";
-    int total_backlog;
+    String subscribed = "";
+   /* String planType = "";
+    int total_backlog;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -201,17 +203,22 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
             case R.id.btnAddToBacklog:
                 category_type = CATEGORY_BACKLOG;
                 Log.d("TAG", "category_type>>" + category_type);
-                if (Constants.isInternetConnected(context)) {
-                    GetCategoryBacklogListNameAPI(category_type);
-                } else {
-                    Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                if(subscribed.equals(Constants.YES)){
+                    if (Constants.isInternetConnected(context)) {
+                        GetCategoryBacklogListNameAPI(category_type);
+                    } else {
+                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    startActivity(new Intent(context, SubscriptionActivityFinal.class));
                 }
+
                 break;
 
             case R.id.btnAddToWishList:
                 category_type = CATEGORY_WISHLIST;
                 Log.d("TAG", "category_type>>" + category_type);
-                if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                if(subscribed.equals(Constants.YES)){
                     if (Constants.isInternetConnected(context)) {
                         GetCategoryWishListNameAPI(category_type);
                     } else {
@@ -255,7 +262,6 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         });
         bottomSheetDialog.show();
     }
-
 
     private void showBottomSheetEditCurrentStatusDialog(String selected_game_status) {
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context, R.style.CustomBottomSheetDialog);
@@ -928,6 +934,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         });
         bottomSheetDialog.show();
     }
+
     public void AddBacklogListAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         AddBacklogListParaRes addBacklogListParaRes = new AddBacklogListParaRes();
@@ -985,6 +992,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         });
         bottomSheetDialog.show();
     }
+
     public void AddWishlistAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         AddWishlistParaRes addWishlistParaRes = new AddWishlistParaRes();
@@ -1019,18 +1027,19 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
     //*********************************************************CHECK SUBSCRIPTION****************************************************
     public void NewCheckSubscriptionAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
             @Override
-            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 if (response.isSuccessful()) {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        planType =  response.body().getData().getSubscription().getType();
-                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
-                        Log.d("TAG", "planType>>"+planType);
-                        Log.d("TAG", "total_backlog>>"+total_backlog);
+                        subscribed = response.body().getData().getSubscribed();
+                        Log.d("TAG","subscribed>>**"+subscribed);
+                      //  planType =  response.body().getData().getSubscription().getType();
+                      //  total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+
                         if (Constants.isInternetConnected(context)) {
                             GetGameInformationAPI(game_view);
                         } else {
@@ -1042,7 +1051,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                 }
             }
             @Override
-            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();

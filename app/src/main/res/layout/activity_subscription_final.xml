@@ -17,6 +17,7 @@
             layout="@layout/header_layout" />
 
         <LinearLayout
+            android:id="@+id/llMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -78,7 +79,7 @@
                 android:layout_marginEnd="40dp">
 
                 <TextView
-                    android:id="@+id/txtBtn"
+                    android:id="@+id/txtBtnMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -103,6 +104,7 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/txtbtnYear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_semi_bold"
@@ -123,6 +125,27 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNoData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/no_item_found"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/edt_text_bg"
+                />
         </LinearLayout>
 
     </LinearLayout>

@@ -29,6 +29,7 @@ import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.AddBacklogList.AddBacklogListParaRes;
 import com.cw.playnxt.model.CalenderDataModel.AddEvent.AddEventParaRes;
 import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventResponse;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.DeleteBacklogList.DeleteBacklogListParaRes;
 import com.cw.playnxt.model.EditBacklogList.EditBacklogListParaRes;
 import com.cw.playnxt.model.GetBacklogList.Count;
@@ -430,16 +431,16 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
     //*********************************************************CHECK SUBSCRIPTION****************************************************
     public void NewCheckSubscriptionAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
             @Override
-            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 if (response.isSuccessful()) {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
                         planType =  response.body().getData().getSubscription().getType();
-                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                      //  total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
                         if (Constants.isInternetConnected(context)) {
                             GetBacklogListAPI();
                         } else {
@@ -451,7 +452,7 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                 }
             }
             @Override
-            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();

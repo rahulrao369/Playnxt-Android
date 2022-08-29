@@ -4,17 +4,7 @@
             "outputFile": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/cw/.gradle/caches/transforms-3/3fa0fe92d846f5c8ae89ebc20cb4fd9e/transformed/appcompat-1.4.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "/home/cw/.gradle/caches/transforms-3/3fdc39a0a3a14e6a0ca0bb900d4856ed/transformed/material-1.6.0/res/values-v24/values-v24.xml",
+                    "source": "/home/cw/.gradle/caches/transforms-3/03b5a2a8499332e234a1bc400a43f631/transformed/material-1.6.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -33,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/cw/.gradle/caches/transforms-3/20a17e71544c4e7bb3fb65a7d7b86673/transformed/media-1.0.0/res/values-v24/values-v24.xml",
+                    "source": "/home/cw/.gradle/caches/transforms-3/37979f41fcbef0c1138d4bebcdf55324/transformed/media-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -47,6 +37,16 @@
                         "startOffsets": "1547,1613,1674,1740",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "1608,1669,1735,1802"
+                    }
+                },
+                {
+                    "source": "/home/cw/.gradle/caches/transforms-3/dee56e56ba061faa46371f782a83ef9b/transformed/appcompat-1.4.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

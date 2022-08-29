@@ -35,22 +35,36 @@ public final class ActivitySubscriptionFinalBinding implements ViewBinding {
   public final AppCompatImageView imgSplashScreen;
 
   @NonNull
+  public final LinearLayout llMain;
+
+  @NonNull
+  public final LinearLayout llNoData;
+
+  @NonNull
   public final RecyclerView rvExtraFeatures;
 
   @NonNull
-  public final TextView txtBtn;
+  public final TextView txtBtnMonth;
+
+  @NonNull
+  public final TextView txtbtnYear;
 
   private ActivitySubscriptionFinalBinding(@NonNull RelativeLayout rootView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnMonth,
       @NonNull LinearLayout btnYear, @NonNull AppCompatImageView imgSplashScreen,
-      @NonNull RecyclerView rvExtraFeatures, @NonNull TextView txtBtn) {
+      @NonNull LinearLayout llMain, @NonNull LinearLayout llNoData,
+      @NonNull RecyclerView rvExtraFeatures, @NonNull TextView txtBtnMonth,
+      @NonNull TextView txtbtnYear) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
     this.btnMonth = btnMonth;
     this.btnYear = btnYear;
     this.imgSplashScreen = imgSplashScreen;
+    this.llMain = llMain;
+    this.llNoData = llNoData;
     this.rvExtraFeatures = rvExtraFeatures;
-    this.txtBtn = txtBtn;
+    this.txtBtnMonth = txtBtnMonth;
+    this.txtbtnYear = txtbtnYear;
   }
 
   @Override
@@ -105,20 +119,39 @@ public final class ActivitySubscriptionFinalBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.llMain;
+      LinearLayout llMain = ViewBindings.findChildViewById(rootView, id);
+      if (llMain == null) {
+        break missingId;
+      }
+
+      id = R.id.llNoData;
+      LinearLayout llNoData = ViewBindings.findChildViewById(rootView, id);
+      if (llNoData == null) {
+        break missingId;
+      }
+
       id = R.id.rvExtraFeatures;
       RecyclerView rvExtraFeatures = ViewBindings.findChildViewById(rootView, id);
       if (rvExtraFeatures == null) {
         break missingId;
       }
 
-      id = R.id.txtBtn;
-      TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
-      if (txtBtn == null) {
+      id = R.id.txtBtnMonth;
+      TextView txtBtnMonth = ViewBindings.findChildViewById(rootView, id);
+      if (txtBtnMonth == null) {
+        break missingId;
+      }
+
+      id = R.id.txtbtnYear;
+      TextView txtbtnYear = ViewBindings.findChildViewById(rootView, id);
+      if (txtbtnYear == null) {
         break missingId;
       }
 
       return new ActivitySubscriptionFinalBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnMonth, btnYear, imgSplashScreen, rvExtraFeatures, txtBtn);
+          btnMonth, btnYear, imgSplashScreen, llMain, llNoData, rvExtraFeatures, txtBtnMonth,
+          txtbtnYear);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

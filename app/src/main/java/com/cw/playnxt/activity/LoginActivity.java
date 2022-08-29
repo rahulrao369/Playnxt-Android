@@ -15,6 +15,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -29,6 +30,9 @@ import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
 import com.cw.playnxt.utils.GpsTracker;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
 import java.util.Locale;
@@ -51,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private MySharedPref mySharedPref;
     private String fcm_token = "test";
     private String device_id = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,12 +95,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         context = LoginActivity.this;
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
-
+        firebaseData();
      /*   if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions((AppCompatActivity) context, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
         } else {
             getGpsLocation();
         }*/
+    }
+    private void firebaseData() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        fcm_token = task.getResult();
+                        mySharedPref.saveFcmToken(fcm_token);
+                        Log.d("TAG", "fcm_token>>>>" + fcm_token);
+                    }
+                });
+        device_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        mySharedPref.setSavedDeviceid(device_id);
+        Log.d("TAG", "device_id " + device_id);
     }
 
   /*  public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -172,7 +195,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void loginAPI() {
-        device_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         Customprogress.showPopupProgressSpinner(context, true);
         LoginParaRes loginParaRes = new LoginParaRes();
         loginParaRes.setEmail(binding.etEmail.getText().toString().trim());

@@ -3,21 +3,11 @@ package com.cw.playnxt.activity;
 import static com.cw.playnxt.utils.Constants.CATEGORY_BACKLOG;
 import static com.cw.playnxt.utils.Constants.CATEGORY_WISHLIST;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -29,8 +19,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,14 +30,13 @@ import com.cw.playnxt.databinding.ActivityAddGameBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.AddBacklogList.AddBacklogListParaRes;
 import com.cw.playnxt.model.AddWishlist.AddWishlistParaRes;
-import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.GetCategoryListName.Backlog;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameResponse;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameResponse;
 import com.cw.playnxt.model.GetCategoryListName.Wishlist;
-import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
@@ -61,11 +48,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -82,19 +65,20 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     TextView tvCreateNewList;
     ImageView ivAddNewList;
     RecyclerView recyclerView;
-    LinearLayout btnAdd,llSelectAnyList,llCreateNewList;
+    LinearLayout btnAdd, llSelectAnyList, llCreateNewList;
     String category_type = "";
     Long category_list_item_id;
     String category_list_item_name = " ";
+    String gameRating = "";
+    EditText etName, etWishlistName;
+    LinearLayout btnCreateList, btnCreateWishlist;
+    String subscribed = "";
     private ActivityAddGameBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String gameRating= "";
-    EditText etName,etWishlistName;
-    LinearLayout btnCreateList,btnCreateWishlist;
-    String planType = "";
-    int total_backlog;
+    /*String planType = "";
+    int total_backlog;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,7 +165,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 category_type = CATEGORY_WISHLIST;
                 Log.d("TAG", "category_type>>" + category_type);
 
-                if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                if (subscribed.equals(Constants.YES)) {
                     if (isValidate()) {
                         if (Constants.isInternetConnected(context)) {
                             GetCategoryWishListNameAPI(category_type);
@@ -189,7 +173,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                         }
                     }
-                }else {
+                } else {
                     startActivity(new Intent(context, SubscriptionActivityFinal.class));
                 }
 
@@ -197,6 +181,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -254,10 +239,10 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         llSelectAnyList = bottomSheetDialog.findViewById(R.id.llSelectAnyList);
         llCreateNewList = bottomSheetDialog.findViewById(R.id.llCreateNewList);
 
-        if(backlogList.size() != 0){
+        if (backlogList.size() != 0) {
             llSelectAnyList.setVisibility(View.VISIBLE);
             llCreateNewList.setVisibility(View.GONE);
-        }else{
+        } else {
             llSelectAnyList.setVisibility(View.GONE);
             llCreateNewList.setVisibility(View.VISIBLE);
             tvCreateNewList.setText("Create New Backlog List");
@@ -266,10 +251,17 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onClick(View view) {
                     //condition
-                    if(total_backlog == 0){
+                  /*  if(total_backlog == 0){
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }else{
                         showBottomSheetCreateNewBacklogListDialog();
+                    }*/
+
+                    if (subscribed.equals(Constants.YES)) {
+                        showBottomSheetCreateNewBacklogListDialog();
+                    } else {
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
+
                     }
                     bottomSheetDialog.dismiss();
                 }
@@ -278,7 +270,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
 
         GetCategoryNameListAdapter adapter = new GetCategoryNameListAdapter(context, backlogList, new ItemClickId() {
             @Override
-            public void onItemClick(int position, Long id,String type) {
+            public void onItemClick(int position, Long id, String type) {
                 category_list_item_id = id;
                 category_list_item_name = backlogList.get(position).getName();
 
@@ -293,7 +285,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(backlogList.size() != 0){
+                if (backlogList.size() != 0) {
                     if (category_list_item_id != null) {
                         bottomSheetDialog.dismiss();
                         if (Constants.isInternetConnected(context)) {
@@ -304,7 +296,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                     } else {
                         Toast.makeText(context, "Please select any list type", Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(context, "Please create any backlog list from the add button", Toast.LENGTH_SHORT).show();
                 }
 
@@ -352,10 +344,10 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         llCreateNewList = bottomSheetDialog.findViewById(R.id.llCreateNewList);
         ivAddNewList = bottomSheetDialog.findViewById(R.id.ivAddNewList);
 
-        if(wishlist.size() != 0){
+        if (wishlist.size() != 0) {
             llSelectAnyList.setVisibility(View.VISIBLE);
             llCreateNewList.setVisibility(View.GONE);
-        }else{
+        } else {
             llSelectAnyList.setVisibility(View.GONE);
             llCreateNewList.setVisibility(View.VISIBLE);
             tvCreateNewList.setText("Create New Wishlist");
@@ -370,7 +362,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
 
         GetCategoryNameWishListAdapter adapter = new GetCategoryNameWishListAdapter(context, wishlist, new ItemClickId() {
             @Override
-            public void onItemClick(int position, Long id,String type) {
+            public void onItemClick(int position, Long id, String type) {
                 category_list_item_id = id;
                 category_list_item_name = wishlist.get(position).getName();
 
@@ -385,7 +377,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(wishlist.size() != 0){
+                if (wishlist.size() != 0) {
                     if (category_list_item_id != null) {
                         bottomSheetDialog.dismiss();
                         if (Constants.isInternetConnected(context)) {
@@ -396,7 +388,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                     } else {
                         Toast.makeText(context, "Please select any list type", Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(context, "Please create any  Wishlist from the add button", Toast.LENGTH_SHORT).show();
                 }
 
@@ -487,20 +479,21 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         btnCreateList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!etName.getText().toString().equals("")){
+                if (!etName.getText().toString().equals("")) {
                     bottomSheetDialog.dismiss();
                     if (Constants.isInternetConnected(context)) {
                         AddBacklogListAPI();
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(context, "Please enter the name for your backlog list", Toast.LENGTH_SHORT).show();
                 }
             }
         });
         bottomSheetDialog.show();
     }
+
     public void AddBacklogListAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         AddBacklogListParaRes addBacklogListParaRes = new AddBacklogListParaRes();
@@ -513,7 +506,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                      //  Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        //  Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         if (isValidate()) {
                             if (Constants.isInternetConnected(context)) {
                                 GetCategoryBacklogListNameAPI(category_type);
@@ -546,14 +539,14 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         btnCreateWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!etWishlistName.getText().toString().equals("")){
+                if (!etWishlistName.getText().toString().equals("")) {
                     bottomSheetDialog.dismiss();
                     if (Constants.isInternetConnected(context)) {
                         AddWishlistAPI();
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(context, "Please enter the name for your wishlist", Toast.LENGTH_SHORT).show();
                 }
 
@@ -561,6 +554,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         });
         bottomSheetDialog.show();
     }
+
     public void AddWishlistAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         AddWishlistParaRes addWishlistParaRes = new AddWishlistParaRes();
@@ -573,7 +567,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                       // Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         if (isValidate()) {
                             if (Constants.isInternetConnected(context)) {
                                 GetCategoryWishListNameAPI(category_type);
@@ -598,23 +592,24 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     //*********************************************************CHECK SUBSCRIPTION****************************************************
     public void NewCheckSubscriptionAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
             @Override
-            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 if (response.isSuccessful()) {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        planType =  response.body().getData().getSubscription().getType();
-                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        subscribed = response.body().getData().getSubscribed();
+                        // total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
+
             @Override
-            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();

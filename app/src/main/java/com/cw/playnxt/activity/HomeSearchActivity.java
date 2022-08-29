@@ -24,6 +24,7 @@ import com.cw.playnxt.adapter.SearchAdapters.SearchUserAdapter;
 import com.cw.playnxt.databinding.ActivityHomeSearchBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameDataResult;
 import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameResponse;
 import com.cw.playnxt.model.HomeSearch.SearchParaRes;
@@ -48,8 +49,8 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     String filter_type="user";
-    String planType = "";
-    int total_backlog;
+  /*  String planType = "";
+    int total_backlog;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -311,23 +312,23 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     //*********************************************************CHECK SUBSCRIPTION****************************************************
     public void NewCheckSubscriptionAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<NewCheckSubscriptionResponse>() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
             @Override
-            public void onResponse(Call<NewCheckSubscriptionResponse> call, Response<NewCheckSubscriptionResponse> response) {
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 if (response.isSuccessful()) {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        planType =  response.body().getData().getSubscription().getType();
-                        total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                       // planType =  response.body().getData().getSubscription().getType();
+                       // total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
             @Override
-            public void onFailure(Call<NewCheckSubscriptionResponse> call, Throwable t) {
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();

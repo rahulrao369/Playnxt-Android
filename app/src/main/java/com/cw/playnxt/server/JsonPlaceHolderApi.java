@@ -14,6 +14,7 @@ import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventResponse;
 import com.cw.playnxt.model.ChangePassword.ChangePasswordParaRes;
 import com.cw.playnxt.model.ChatList.ChatListResponse;
 import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.CommunityData.GetCommunityListResponse;
 import com.cw.playnxt.model.ContactUs.ContactUsResponse;
 import com.cw.playnxt.model.DeleteBacklogList.DeleteBacklogListParaRes;
@@ -27,6 +28,7 @@ import com.cw.playnxt.model.EditWishlist.EditWishlistParaRes;
 import com.cw.playnxt.model.FollowFriend.FollowFriendParaRes;
 import com.cw.playnxt.model.FollowFriend.FollowFriendResponse;
 import com.cw.playnxt.model.ForgotPassword.ForgotPasswordParaRes;
+import com.cw.playnxt.model.GET_PLAN.GetPlanResponse;
 import com.cw.playnxt.model.GameInformation.GetGameInformationParaRes;
 import com.cw.playnxt.model.GameInformation.GetGameInformationResponse;
 import com.cw.playnxt.model.GetBacklogList.GetMyBacklogListResponse;
@@ -330,6 +332,11 @@ public interface JsonPlaceHolderApi {
                                                        @Body PurchaseFreePlanParaRes purchaseFreePlanParaRes);
 
     @POST("users/check-subscription")
-    Call<NewCheckSubscriptionResponse> NewCheckSubscriptionAPI(@Header("Content-Type") String content_type,
-                                                               @Header("Authorization") String token);
+    Call<CheckSubscriptionFinalResponse> NewCheckSubscriptionAPI(@Header("Content-Type") String content_type,
+                                                                 @Header("Authorization") String token);
+
+    @POST("users/plans")
+    Call<GetPlanResponse> GET_PLAN_API(@Header("Content-Type") String content_type,
+                                       @Header("Authorization") String token);
+
 }
