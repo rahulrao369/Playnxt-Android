@@ -40,7 +40,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/ivSubscribeNow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_subscribe_icon"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

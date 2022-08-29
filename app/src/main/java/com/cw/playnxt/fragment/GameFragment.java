@@ -54,7 +54,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     private MySharedPref mySharedPref;
     String planType = "";
     String subscribed = "";
-  //  int total_backlog;
+    int free_backlog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -122,11 +122,17 @@ public class GameFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onItemClick(int position, String type) {
                 if (position == 0) {
-                    if(subscribed.equals(Constants.YES)){
-                        startActivity(new Intent(context, WishlistActivity.class));
+                    if(free_backlog == 1){
+                        startActivity(new Intent(context, BacklogActivity.class));
                     }else{
+                     /*   if(subscribed.equals(Constants.YES)){
+                            startActivity(new Intent(context, BacklogActivity.class));
+                        }else{
+                            startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                        }*/
                         startActivity(new Intent(context, BacklogActivity.class));
                     }
+
                 } else if (position == 1) {
                     if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, WishlistActivity.class));
@@ -230,8 +236,9 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     if (status) {
                         planType =  response.body().getData().getSubscription().getType();
                         subscribed = response.body().getData().getSubscribed();
-                     //   total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        free_backlog =  response.body().getData().getFree_backlog();
                         Log.d("TAG","subscribed>>>>"+subscribed);
+                        Log.d("TAG","free_backlog>>>>"+free_backlog);
                         if (Constants.isInternetConnected(context)) {
                             GetRecentGameAPI();
                         } else {

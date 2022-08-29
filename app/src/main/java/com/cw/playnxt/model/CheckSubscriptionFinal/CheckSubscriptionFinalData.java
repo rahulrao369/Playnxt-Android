@@ -6,6 +6,9 @@ import com.google.gson.annotations.Expose;
 public class CheckSubscriptionFinalData {
 
     @Expose
+    private int free_backlog;
+
+    @Expose
     private String subscribed;
     @Expose
     private Subscription subscription;
@@ -26,4 +29,11 @@ public class CheckSubscriptionFinalData {
         this.subscription = subscription;
     }
 
+    public int getFree_backlog() {
+        return free_backlog;
+    }
+
+    public void setFree_backlog(int free_backlog) {
+        this.free_backlog = free_backlog;
+    }
 }

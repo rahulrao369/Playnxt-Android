@@ -10,12 +10,13 @@ public class ActivePlan {
     private String amount;
     @Expose
     private String description;
-    @Expose
-    private String duration;
+
     @SerializedName("end_date")
     private String endDate;
+
     @SerializedName("start_date")
     private String startDate;
+
     @Expose
     private String title;
 
@@ -33,14 +34,6 @@ public class ActivePlan {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
     }
 
     public String getEndDate() {

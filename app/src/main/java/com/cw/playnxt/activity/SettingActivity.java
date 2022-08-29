@@ -21,6 +21,7 @@ import com.cw.playnxt.adapter.MyProfileAdapters.SettingsAdapter;
 import com.cw.playnxt.databinding.ActivityBacklogBinding;
 import com.cw.playnxt.databinding.ActivitySettingBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaticModel.GameModel;
@@ -44,6 +45,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
+    String subscribed = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,12 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
+
+        if (Constants.isInternetConnected(context)) {
+            NewCheckSubscriptionAPI();
+        } else {
+            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void onclicks() {
@@ -94,7 +102,12 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(int position, String type) {
                 if (position == 0) {
-                    startActivity(new Intent(context,PlaynxtPremiumActivity.class));
+                    if(subscribed.equals(Constants.YES)){
+                        startActivity(new Intent(context,PlaynxtPremiumActivity.class));
+                    }else{
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                    }
+
                 } else if (position == 1) {
                     startActivity(new Intent(context,SuggestNewFeatureActivity.class));
                 }  else if (position == 2) {
@@ -183,6 +196,34 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             public void onFailure(Call<ResponseSatusMessage> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
+            }
+        });
+    }
+
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
+            @Override
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        subscribed = response.body().getData().getSubscribed();
+                        Log.d("TAG","subscribed>>>>"+subscribed);
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

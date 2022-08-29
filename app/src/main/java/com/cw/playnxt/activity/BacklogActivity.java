@@ -62,8 +62,9 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
     private MySharedPref mySharedPref;
     private PopupWindow mDropdown = null;
     Long backlog_ID ;
-    String planType = "";
-    int total_backlog;
+    String subscribed = "";
+    /*String planType = "";*/
+    int free_backlog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,15 +115,16 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.llCreateBacklogList:
-                if (planType.equals(Constants.PLAN_TYPE_FREE)) {
-                    if(total_backlog == 0){
-                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
-                    }else{
-                        showBottomSheetFilterDialog();
-                    }
-                }else if(planType.equals(Constants.PLAN_TYPE_PAID)){
+                if(free_backlog == 1){
                     showBottomSheetFilterDialog();
+                }else{
+                    if(subscribed.equals(Constants.YES)){
+                        showBottomSheetFilterDialog();
+                    }else{
+                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                    }
                 }
+
                 break;
         }
     }
@@ -296,17 +298,18 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status)
                     {
-                        if(planType.equals(Constants.PLAN_TYPE_FREE)){
-                            if(total_backlog == 0){
-                                binding.ivAdd.setVisibility(View.GONE);
-                                binding.ivSubscription.setVisibility(View.VISIBLE);
-                            }else{
-                                binding.ivAdd.setVisibility(View.VISIBLE);
-                                binding.ivSubscription.setVisibility(View.GONE);
-                            }
-                        }else{
+                        if(free_backlog == 1){
                             binding.ivAdd.setVisibility(View.VISIBLE);
                             binding.ivSubscription.setVisibility(View.GONE);
+                        }else{
+                            if(subscribed.equals(Constants.YES)){
+                                binding.ivAdd.setVisibility(View.VISIBLE);
+                                binding.ivSubscription.setVisibility(View.GONE);
+                            }else{
+                                binding.ivAdd.setVisibility(View.GONE);
+                                binding.ivSubscription.setVisibility(View.VISIBLE);
+                            }
+
                         }
 
                         if(response.body().getData().getCount()!= null){
@@ -428,6 +431,7 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
+
     //*********************************************************CHECK SUBSCRIPTION****************************************************
     public void NewCheckSubscriptionAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
@@ -439,8 +443,9 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        planType =  response.body().getData().getSubscription().getType();
-                      //  total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        subscribed = response.body().getData().getSubscribed();
+                        free_backlog =  response.body().getData().getFree_backlog();
+                        Log.d("TAG","free_backlog>>>>"+free_backlog);
                         if (Constants.isInternetConnected(context)) {
                             GetBacklogListAPI();
                         } else {

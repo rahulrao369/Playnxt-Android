@@ -50,6 +50,7 @@ public class GameFragmentTopListAdapter extends RecyclerView.Adapter<GameFragmen
                 holder.binding.ivSubscribeNow.setVisibility(View.VISIBLE);
             }
         }
+
         holder.binding.icon.setImageResource(list.get(position).getIcon());
         holder.binding.tvName.setText(list.get(position).getHeading());
 

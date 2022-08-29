@@ -49,8 +49,7 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     String filter_type="user";
-  /*  String planType = "";
-    int total_backlog;*/
+    int free_backlog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -321,7 +320,8 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     String msg = response.body().getMessage();
                     if (status) {
                        // planType =  response.body().getData().getSubscription().getType();
-                       // total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        free_backlog =  response.body().getData().getFree_backlog();
+                        Log.d("TAG","free_backlog>>>>"+free_backlog);
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }

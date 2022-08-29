@@ -106,16 +106,14 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
 
     private void ActivePlanDataSet(ActivePlan activePlan) {
         binding.tvPlanTitle.setText(activePlan.getTitle());
-        if(activePlan.getTitle().equals("Premium Plan")){
-            binding.tvValidUpto.setText("Valid Upto 12 months");
-        }else if(activePlan.getTitle().equals("Silver Plan")){
+        if(activePlan.getTitle().equals("Monthly")){
             binding.tvValidUpto.setText("Valid Upto 1 month");
-        }else{
-            binding.tvValidUpto.setText("Valid for life time");
+        }else if(activePlan.getTitle().equals("Yearly")){
+            binding.tvValidUpto.setText("Valid Upto 12 months");
         }
         binding.tvPurchaseDate.setText(activePlan.getStartDate());
         binding.tvExpiryDate.setText(activePlan.getEndDate());
-        binding.tvDescription.setText(activePlan.getDescription());
+      //  binding.tvDescription.setText(activePlan.getDescription());
         binding.tvPrice.setText(activePlan.getAmount());
     }
 

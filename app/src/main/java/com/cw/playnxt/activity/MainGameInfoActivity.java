@@ -111,8 +111,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
     EditText etName,etWishlistName;
     LinearLayout btnCreateList,btnCreateWishlist;
     String subscribed = "";
-   /* String planType = "";
-    int total_backlog;*/
+    int free_backlog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,14 +202,24 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
             case R.id.btnAddToBacklog:
                 category_type = CATEGORY_BACKLOG;
                 Log.d("TAG", "category_type>>" + category_type);
-                if(subscribed.equals(Constants.YES)){
+
+                if(free_backlog == 1){
                     if (Constants.isInternetConnected(context)) {
                         GetCategoryBacklogListNameAPI(category_type);
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
-                }else {
-                    startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                }else{
+                        if(subscribed.equals(Constants.YES)){
+                            if (Constants.isInternetConnected(context)) {
+                                GetCategoryBacklogListNameAPI(category_type);
+                            } else {
+                                Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                            }
+                        }else{
+                            startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                        }
+
                 }
 
                 break;
@@ -879,7 +888,6 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         addFriendGameParaRes.setListName(category_list_item_name);
         addFriendGameParaRes.setRate(Double.valueOf(rating));
 
-
         jsonPlaceHolderApi.AddFriendGameAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken(), addFriendGameParaRes).enqueue(new Callback<AddFriendGameResponse>() {
             @Override
             public void onResponse(Call<AddFriendGameResponse> call, Response<AddFriendGameResponse> response) {
@@ -1037,8 +1045,9 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                     if (status) {
                         subscribed = response.body().getData().getSubscribed();
                         Log.d("TAG","subscribed>>**"+subscribed);
-                      //  planType =  response.body().getData().getSubscription().getType();
-                      //  total_backlog =  response.body().getData().getSubscription().getTotalBacklog();
+                        //planType =  response.body().getData().getSubscription().getType();
+                        free_backlog =  response.body().getData().getFree_backlog();
+                        Log.d("TAG","free_backlog>>**"+free_backlog);
 
                         if (Constants.isInternetConnected(context)) {
                             GetGameInformationAPI(game_view);
