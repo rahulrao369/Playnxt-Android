@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,6 +24,12 @@ import java.lang.String;
 public final class ActivityHomeSearchBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final AdView adView;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final ImageView btnBack;
@@ -66,13 +73,16 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   @NonNull
   public final TextView tvUser;
 
-  private ActivityHomeSearchBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btnBack,
-      @NonNull CheckBox cbGames, @NonNull CheckBox cbUser, @NonNull EditText etSearch,
-      @NonNull ImageView ivSearch, @NonNull LinearLayout llNoGamesResult,
-      @NonNull LinearLayout llNoUserResult, @NonNull LinearLayout lytCheckBox,
-      @NonNull RecyclerView rvGames, @NonNull RecyclerView rvUser, @NonNull TextView tvAddGame,
-      @NonNull TextView tvGame, @NonNull TextView tvHeading, @NonNull TextView tvUser) {
+  private ActivityHomeSearchBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
+      @NonNull RelativeLayout btnAdsShow, @NonNull ImageView btnBack, @NonNull CheckBox cbGames,
+      @NonNull CheckBox cbUser, @NonNull EditText etSearch, @NonNull ImageView ivSearch,
+      @NonNull LinearLayout llNoGamesResult, @NonNull LinearLayout llNoUserResult,
+      @NonNull LinearLayout lytCheckBox, @NonNull RecyclerView rvGames,
+      @NonNull RecyclerView rvUser, @NonNull TextView tvAddGame, @NonNull TextView tvGame,
+      @NonNull TextView tvHeading, @NonNull TextView tvUser) {
     this.rootView = rootView;
+    this.adView = adView;
+    this.btnAdsShow = btnAdsShow;
     this.btnBack = btnBack;
     this.cbGames = cbGames;
     this.cbUser = cbUser;
@@ -116,6 +126,18 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
       id = R.id.btnBack;
       ImageView btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
@@ -200,9 +222,9 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityHomeSearchBinding((RelativeLayout) rootView, btnBack, cbGames, cbUser,
-          etSearch, ivSearch, llNoGamesResult, llNoUserResult, lytCheckBox, rvGames, rvUser,
-          tvAddGame, tvGame, tvHeading, tvUser);
+      return new ActivityHomeSearchBinding((RelativeLayout) rootView, adView, btnAdsShow, btnBack,
+          cbGames, cbUser, etSearch, ivSearch, llNoGamesResult, llNoUserResult, lytCheckBox,
+          rvGames, rvUser, tvAddGame, tvGame, tvHeading, tvUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -28,6 +28,9 @@ public final class BottomSheetGetCategoryListBinding implements ViewBinding {
   public final ImageView ivAddNewList;
 
   @NonNull
+  public final ImageView ivSubscribeNow;
+
+  @NonNull
   public final LinearLayout llCreateNewList;
 
   @NonNull
@@ -47,12 +50,13 @@ public final class BottomSheetGetCategoryListBinding implements ViewBinding {
 
   private BottomSheetGetCategoryListBinding(@NonNull LinearLayout rootView,
       @NonNull LinearLayout btnAdd, @NonNull ImageView ivAddNewList,
-      @NonNull LinearLayout llCreateNewList, @NonNull LinearLayout llSelectAnyList,
-      @NonNull RecyclerView recyclerView, @NonNull TextView tvAddBtn,
-      @NonNull TextView tvCreateNewList, @NonNull TextView tvHeading) {
+      @NonNull ImageView ivSubscribeNow, @NonNull LinearLayout llCreateNewList,
+      @NonNull LinearLayout llSelectAnyList, @NonNull RecyclerView recyclerView,
+      @NonNull TextView tvAddBtn, @NonNull TextView tvCreateNewList, @NonNull TextView tvHeading) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
     this.ivAddNewList = ivAddNewList;
+    this.ivSubscribeNow = ivSubscribeNow;
     this.llCreateNewList = llCreateNewList;
     this.llSelectAnyList = llSelectAnyList;
     this.recyclerView = recyclerView;
@@ -100,6 +104,12 @@ public final class BottomSheetGetCategoryListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ivSubscribeNow;
+      ImageView ivSubscribeNow = ViewBindings.findChildViewById(rootView, id);
+      if (ivSubscribeNow == null) {
+        break missingId;
+      }
+
       id = R.id.llCreateNewList;
       LinearLayout llCreateNewList = ViewBindings.findChildViewById(rootView, id);
       if (llCreateNewList == null) {
@@ -137,7 +147,8 @@ public final class BottomSheetGetCategoryListBinding implements ViewBinding {
       }
 
       return new BottomSheetGetCategoryListBinding((LinearLayout) rootView, btnAdd, ivAddNewList,
-          llCreateNewList, llSelectAnyList, recyclerView, tvAddBtn, tvCreateNewList, tvHeading);
+          ivSubscribeNow, llCreateNewList, llSelectAnyList, recyclerView, tvAddBtn, tvCreateNewList,
+          tvHeading);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

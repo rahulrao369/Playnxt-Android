@@ -16,6 +16,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,6 +24,12 @@ import java.lang.String;
 public final class FragmentGameBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final AdView adView;
+
+  @NonNull
+  public final LinearLayout btnAdsShow;
 
   @NonNull
   public final LinearLayout llMain;
@@ -48,12 +55,15 @@ public final class FragmentGameBinding implements ViewBinding {
   @NonNull
   public final TextView tvUserName;
 
-  private FragmentGameBinding(@NonNull FrameLayout rootView, @NonNull LinearLayout llMain,
+  private FragmentGameBinding(@NonNull FrameLayout rootView, @NonNull AdView adView,
+      @NonNull LinearLayout btnAdsShow, @NonNull LinearLayout llMain,
       @NonNull LinearLayout llRecentlyAdded, @NonNull ProgressBar progressBar1,
       @NonNull RecyclerView recyclerView, @NonNull RelativeLayout rlProgressBar,
       @NonNull RecyclerView rvRecentGames, @NonNull SwipeRefreshLayout swipeLayout,
       @NonNull TextView tvUserName) {
     this.rootView = rootView;
+    this.adView = adView;
+    this.btnAdsShow = btnAdsShow;
     this.llMain = llMain;
     this.llRecentlyAdded = llRecentlyAdded;
     this.progressBar1 = progressBar1;
@@ -91,6 +101,18 @@ public final class FragmentGameBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      LinearLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
       id = R.id.llMain;
       LinearLayout llMain = ViewBindings.findChildViewById(rootView, id);
       if (llMain == null) {
@@ -139,8 +161,9 @@ public final class FragmentGameBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentGameBinding((FrameLayout) rootView, llMain, llRecentlyAdded, progressBar1,
-          recyclerView, rlProgressBar, rvRecentGames, swipeLayout, tvUserName);
+      return new FragmentGameBinding((FrameLayout) rootView, adView, btnAdsShow, llMain,
+          llRecentlyAdded, progressBar1, recyclerView, rlProgressBar, rvRecentGames, swipeLayout,
+          tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

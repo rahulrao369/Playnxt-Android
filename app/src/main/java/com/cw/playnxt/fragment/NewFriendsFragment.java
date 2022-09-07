@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.cw.playnxt.R;
+import com.cw.playnxt.activity.HomeActivity;
 import com.cw.playnxt.activity.MyProfileActivity;
 import com.cw.playnxt.adapter.ViewPagerAdapter;
 import com.cw.playnxt.databinding.FragmentNewFriendsBinding;
@@ -37,6 +38,7 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_friends,true);
         binding = FragmentNewFriendsBinding.inflate(inflater, container, false);
         InitView();
         GetData();

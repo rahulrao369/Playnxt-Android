@@ -56,7 +56,7 @@ public class SubscriptionActivityFinal extends AppCompatActivity implements View
         context = SubscriptionActivityFinal.this;
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
-        headerBinding.tvHeading.setText("Playnext Premium");
+        headerBinding.tvHeading.setText("Playnxt Premium");
         headerBinding.btnFilter.setVisibility(View.GONE);
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);

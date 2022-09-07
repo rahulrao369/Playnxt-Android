@@ -3,11 +3,21 @@ package com.cw.playnxt.activity;
 import static com.cw.playnxt.utils.Constants.CATEGORY_BACKLOG;
 import static com.cw.playnxt.utils.Constants.CATEGORY_WISHLIST;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -19,6 +29,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,7 +60,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -60,6 +76,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddGameActivity extends AppCompatActivity implements View.OnClickListener {
+    private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     Context context;
     String selectedPath = "";
     TextView tvCreateNewList;
@@ -78,6 +95,8 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     int free_backlog;
+    private String userChoosenTask;
+    String path = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,15 +151,19 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.tvUploadGameImg:
-                CropImage.activity()
+               /* CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(this);
+                        .start(this);*/
+
+                selectImage();
                 break;
 
             case R.id.llSelectImage:
-                CropImage.activity()
+                /*CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(this);
+                        .start(this);*/
+
+                selectImage();
                 break;
 
             case R.id.btnPayNow:
@@ -197,7 +220,18 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == SELECT_FILE) {
+                try {
+                    onSelectFromGalleryResultProfile(data);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (requestCode == REQUEST_CAMERA) {
+                onCaptureImageResultProfile(data);
+            }
+        }
+     /*   if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
@@ -209,7 +243,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
-        }
+        }*/
     }
 
     //******************************Category List Name*************************
@@ -657,4 +691,134 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         });
     }
 
+
+    //************************************SELECT IMAGE*********************************************
+    private void selectImage() {
+        final CharSequence[] items = {"Take Photo","Choose from Library", "Cancel"};
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
+        builder.setTitle("Upload Photo");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                if (items[item].equals("Take Photo")) {
+                    userChoosenTask = "Take Photo";
+                    if (ContextCompat.checkSelfPermission(AddGameActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(AddGameActivity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CAMERA);
+                    } else {
+                        cameraIntent();
+                    }
+                } else if (items[item].equals("Choose from Library")) {
+                    userChoosenTask = "Choose from Library";
+                    if (ContextCompat.checkSelfPermission(AddGameActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(AddGameActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, SELECT_FILE);
+                    } else {
+                        galleryIntent();
+                    }
+                } else if (items[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+
+    private void galleryIntent() {
+        System.out.println("GALLERY OPEN 22");
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_PICK);//
+        startActivityForResult(Intent.createChooser(intent, "Select File"), SELECT_FILE);
+    }
+
+    private void cameraIntent() {
+        try {
+            System.out.println("CAMERA OPEN 22");
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, REQUEST_CAMERA);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void onSelectFromGalleryResultProfile(Intent data) {
+        Bitmap bm = null;
+        if (data != null) {
+            try {
+                bm = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        BitmapDrawable d = new BitmapDrawable(bm);
+        int left = 0;
+        int top = 0;
+        int right = 40;
+        int bottom = 40;
+        Rect r = new Rect(left, top, right, bottom);
+        d.setBounds(r);
+        Uri tempUri = getImageUri(context, bm);
+        System.out.println("data.getData() " + data.getData());
+        selectedPath = getRealPathFromURI(tempUri);
+        System.out.println("ProfilePicPath  " + selectedPath);
+        binding.ivGame.setVisibility(View.VISIBLE);
+        binding.ivGameIcon.setVisibility(View.GONE);
+        binding.ivGame.setImageURI(tempUri);
+
+    }
+
+    private void onCaptureImageResultProfile(Intent data) {
+        Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        thumbnail.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+
+        File destination = new File(Environment.getExternalStorageDirectory(), "" + System.currentTimeMillis() + ".jpg");
+
+        FileOutputStream fo;
+        try {
+            destination.createNewFile();
+            fo = new FileOutputStream(destination);
+            fo.write(bytes.toByteArray());
+            fo.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Uri tempUri = getImageUri(context, thumbnail);
+        selectedPath = getRealPathFromURI(tempUri);
+        binding.ivGame.setVisibility(View.VISIBLE);
+        binding.ivGameIcon.setVisibility(View.GONE);
+        binding.ivGame.setImageURI(tempUri);
+    }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        try {
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            inImage.compress(Bitmap.CompressFormat.JPEG, 80, bytes);
+            path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "" + System.currentTimeMillis(), null);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Uri.parse(path);
+    }
+
+    private String getRealPathFromURI(Uri contentURI) {
+        String result;
+        String[] projection = {MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(contentURI, projection, null, null, null);
+        if (cursor == null) {
+            result = contentURI.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = 0;
+            idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            result = cursor.getString(idx);
+            cursor.close();
+        }
+
+        return result;
+
+    }
 }

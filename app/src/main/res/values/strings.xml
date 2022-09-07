@@ -1,7 +1,20 @@
 <resources>
+  <!--  Client-->
+    <!-- <string name="admob_app_id">
+ca-app-pub-2864521706832933~2687968123</string>
+    <string name="admob_banner_id">
+ca-app-pub-2864521706832933/7701208388</string>-->
+
+
+  <!--  Test-->
+    <string name="admob_app_id">
+ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id">
+ca-app-pub-3940256099942544/6300978111</string>
+
+
     <string name="app_name">Playnxt</string>
     <string name="Next">Next</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="GetStarted">Get Started</string>
     <string name="signup">Signup</string>
@@ -71,7 +84,7 @@
     <string name="FriendsProfile">Friends Profile</string>
     <string name="my_profile">My Profile</string>
     <string name="edit_profile">Edit profile</string>
-    <string name="EditAccount">Edit Account</string>
+    <string name="EditAccount">Edit Profile</string>
     <string name="Settings">Settings</string>
     <string name="pay_now">Pay now</string>
     <string name="Addcard">Add card</string>

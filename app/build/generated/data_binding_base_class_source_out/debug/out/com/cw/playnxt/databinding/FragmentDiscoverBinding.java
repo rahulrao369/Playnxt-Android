@@ -4,8 +4,8 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,13 +14,20 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentDiscoverBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final RelativeLayout rootView;
+
+  @NonNull
+  public final AdView adView;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final LinearLayout llNoData;
@@ -34,10 +41,13 @@ public final class FragmentDiscoverBinding implements ViewBinding {
   @NonNull
   public final TextView tvUserName;
 
-  private FragmentDiscoverBinding(@NonNull FrameLayout rootView, @NonNull LinearLayout llNoData,
+  private FragmentDiscoverBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
+      @NonNull RelativeLayout btnAdsShow, @NonNull LinearLayout llNoData,
       @NonNull RecyclerView recyclerView, @NonNull SwipeRefreshLayout swipeLayout,
       @NonNull TextView tvUserName) {
     this.rootView = rootView;
+    this.adView = adView;
+    this.btnAdsShow = btnAdsShow;
     this.llNoData = llNoData;
     this.recyclerView = recyclerView;
     this.swipeLayout = swipeLayout;
@@ -46,7 +56,7 @@ public final class FragmentDiscoverBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -71,6 +81,18 @@ public final class FragmentDiscoverBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
       id = R.id.llNoData;
       LinearLayout llNoData = ViewBindings.findChildViewById(rootView, id);
       if (llNoData == null) {
@@ -95,8 +117,8 @@ public final class FragmentDiscoverBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDiscoverBinding((FrameLayout) rootView, llNoData, recyclerView,
-          swipeLayout, tvUserName);
+      return new FragmentDiscoverBinding((RelativeLayout) rootView, adView, btnAdsShow, llNoData,
+          recyclerView, swipeLayout, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -124,10 +124,10 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 break;
 
             case R.id.llSelectImage:
-                CropImage.activity()
+              /*  CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(this);
-               // selectImage();
+                        .start(this);*/
+                selectImage();
                 break;
 
             case R.id.btnSave:
@@ -200,6 +200,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
         dialog.show();
     }
+
     public void showOldPassword(Boolean isShow) {
         if (isShow) {
             etOldPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -283,8 +284,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         });
     }
 
-
-
     public void GetMyProfileAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
 
@@ -366,7 +365,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-       /* if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK) {
             if (requestCode == SELECT_FILE) {
                 try {
                     onSelectFromGalleryResultProfile(data);
@@ -376,8 +375,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             } else if (requestCode == REQUEST_CAMERA) {
                 onCaptureImageResultProfile(data);
             }
-        }*/
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+        }
+      /*  if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
@@ -387,11 +386,11 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
-        }
+        }*/
     }
 
     //************************************SELECT IMAGE*********************************************
-/*    private void selectImage() {
+    private void selectImage() {
         final CharSequence[] items = {"Take Photo","Choose from Library", "Cancel"};
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
         builder.setTitle("Upload Photo");
@@ -437,8 +436,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             e.printStackTrace();
         }
 
-    }*/
-/*
+    }
+
     private void onSelectFromGalleryResultProfile(Intent data) {
         Bitmap bm = null;
         if (data != null) {
@@ -514,7 +513,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
         return result;
 
-    }*/
+    }
 
     //***************************************DeleteAccountAPI**************************************
     public void DeleteAccountAPI() {

@@ -25,6 +25,11 @@
         android:theme="@style/Theme.Playnxt"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id"/>
+
         <activity
             android:name=".activity.SubscriptionActivityFinal"
             android:exported="true" />

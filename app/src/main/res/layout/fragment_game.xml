@@ -92,6 +92,31 @@
                     android:paddingEnd="16dp" />
 
                 <LinearLayout
+                    android:id="@+id/btnAdsShow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:gravity="center">
+
+                    <!-- set Banner ad position in UI layout design -->
+                    <com.google.android.gms.ads.AdView
+                        android:id="@+id/adView"
+                        xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        ads:adSize="BANNER"
+                        android:layout_gravity="center"
+                        ads:adUnitId="@string/admob_banner_id">
+
+                    </com.google.android.gms.ads.AdView>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/llRecentlyAdded"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

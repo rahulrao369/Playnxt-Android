@@ -35,6 +35,11 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -54,6 +59,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_home,true);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
+
         onclicks();
         CLick();
         initializeRefreshListener();
@@ -106,6 +112,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         mySharedPref = new MySharedPref(context);
         vibe = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         Log.d("TAG","Home Token>>>"+mySharedPref.getSavedAccessToken());
+
+        // Initialize the Mobile Ads SDK
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
+
         if (Constants.isInternetConnected(context)) {
             HomeAPI();
         } else {

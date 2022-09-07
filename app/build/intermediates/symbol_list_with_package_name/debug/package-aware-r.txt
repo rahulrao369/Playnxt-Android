@@ -116,6 +116,9 @@ attr actionProviderClass
 attr actionTextColorAlpha
 attr actionViewClass
 attr activityChooserViewStyle
+attr adSize
+attr adSizes
+attr adUnitId
 attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
@@ -1328,6 +1331,10 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color brown_color
 color brown_color_gradient
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color btn_gray
 color btn_gray_dark
 color button_material_dark
@@ -2024,6 +2031,8 @@ dimen action_bar_size
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen card_height_normal
 dimen card_radius
 dimen card_width_normal
@@ -2915,6 +2924,7 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id CancleSubscription
 id CropOverlayView
 id CropProgressBar
 id FUNCTION
@@ -2987,6 +2997,7 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id adView
 id add
 id adjust_height
 id adjust_width
@@ -3023,6 +3034,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id btnAdd
 id btnAddEvent
 id btnAddNewNote
@@ -3887,6 +3903,8 @@ layout bottom_sheet_dialog_filter
 layout bottom_sheet_edit_current_status
 layout bottom_sheet_edit_wishlist
 layout bottom_sheet_get_category_list
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout calendar_view
 layout calendar_view_day
 layout calendar_view_grid
@@ -4127,6 +4145,8 @@ string add_game_title
 string add_new_note
 string add_to_backlog
 string add_to_wishist
+string admob_app_id
+string admob_banner_id
 string ads_will_go_here
 string already_have_an_account
 string androidx_startup
@@ -4338,6 +4358,13 @@ string please_enter_your_email
 string please_enter_your_password
 string previous
 string project_id
+string s1
+string s2
+string s3
+string s4
+string s5
+string s6
+string s7
 string save
 string save_list
 string search_menu_title
@@ -4896,6 +4923,7 @@ style Theme_Design_Light
 style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
+style Theme_IAPTheme
 style Theme_Material3_Dark
 style Theme_Material3_Dark_BottomSheetDialog
 style Theme_Material3_Dark_Dialog
@@ -5425,6 +5453,7 @@ styleable ActionMenuItemView android_minWidth
 styleable ActionMenuView
 styleable ActionMode background backgroundSplit closeItemLayout height subtitleTextStyle titleTextStyle
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
+styleable AdsAttrs adSize adSizes adUnitId
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
 styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable AnimatedStateListDrawableItem android_id android_drawable

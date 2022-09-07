@@ -17,6 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -30,7 +31,10 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final FrameLayout LayoutContainer;
 
   @NonNull
-  public final LinearLayout btnAdsShow;
+  public final AdView adView;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final LinearLayout btnPlaynxt;
@@ -71,19 +75,17 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView tvUserName;
 
-  @NonNull
-  public final TextView txtBtn;
-
   private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull FrameLayout LayoutContainer,
-      @NonNull LinearLayout btnAdsShow, @NonNull LinearLayout btnPlaynxt,
+      @NonNull AdView adView, @NonNull RelativeLayout btnAdsShow, @NonNull LinearLayout btnPlaynxt,
       @NonNull CircleImageView cvMyProfile, @NonNull ImageView ivSearch,
       @NonNull LinearLayout llFriendsList, @NonNull LinearLayout llHomeMain,
       @NonNull LinearLayout llMyProfile, @NonNull ProgressBar progressBar1,
       @NonNull RecyclerView recyclerView, @NonNull RelativeLayout rlProgressBar,
       @NonNull SwipeRefreshLayout swipeLayout, @NonNull TextView tvNoFriendsYet,
-      @NonNull TextView tvSeeAll, @NonNull TextView tvUserName, @NonNull TextView txtBtn) {
+      @NonNull TextView tvSeeAll, @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.LayoutContainer = LayoutContainer;
+    this.adView = adView;
     this.btnAdsShow = btnAdsShow;
     this.btnPlaynxt = btnPlaynxt;
     this.cvMyProfile = cvMyProfile;
@@ -98,7 +100,6 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.tvNoFriendsYet = tvNoFriendsYet;
     this.tvSeeAll = tvSeeAll;
     this.tvUserName = tvUserName;
-    this.txtBtn = txtBtn;
   }
 
   @Override
@@ -130,8 +131,14 @@ public final class FragmentHomeBinding implements ViewBinding {
     missingId: {
       FrameLayout LayoutContainer = (FrameLayout) rootView;
 
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
       id = R.id.btnAdsShow;
-      LinearLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
       if (btnAdsShow == null) {
         break missingId;
       }
@@ -214,15 +221,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtBtn;
-      TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
-      if (txtBtn == null) {
-        break missingId;
-      }
-
-      return new FragmentHomeBinding((FrameLayout) rootView, LayoutContainer, btnAdsShow,
+      return new FragmentHomeBinding((FrameLayout) rootView, LayoutContainer, adView, btnAdsShow,
           btnPlaynxt, cvMyProfile, ivSearch, llFriendsList, llHomeMain, llMyProfile, progressBar1,
-          recyclerView, rlProgressBar, swipeLayout, tvNoFriendsYet, tvSeeAll, tvUserName, txtBtn);
+          recyclerView, rlProgressBar, swipeLayout, tvNoFriendsYet, tvSeeAll, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

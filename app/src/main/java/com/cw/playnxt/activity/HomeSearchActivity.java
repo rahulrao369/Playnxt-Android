@@ -36,6 +36,10 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.util.List;
 
@@ -68,6 +72,16 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
 
         Log.d("TAG","Games cb  "+binding.cbGames.isChecked());
         Log.d("TAG","User cb  "+binding.cbUser.isChecked());
+
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
+
+
         if (Constants.isInternetConnected(context)) {
             NewCheckSubscriptionAPI();
         } else {
