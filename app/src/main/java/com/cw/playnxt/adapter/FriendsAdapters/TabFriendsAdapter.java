@@ -27,6 +27,7 @@ public class TabFriendsAdapter extends RecyclerView.Adapter<TabFriendsAdapter.Re
     List<GetMyFriendListDataCapsul> list;
     ItemClickLikeUnlikeFriend itemClick;
     String like_status = "";
+    Long total_like_count;
 
     public TabFriendsAdapter(Context context, List<GetMyFriendListDataCapsul> list, ItemClickLikeUnlikeFriend itemClick) {
         this.context = context;
@@ -81,11 +82,27 @@ public class TabFriendsAdapter extends RecyclerView.Adapter<TabFriendsAdapter.Re
                 if (list.get(position).getLike() == 1) {
                     like_status = Constants.UNLIKE_STATUS;
                     itemClick.onItemClick( "UnFav",list.get(position),like_status);
-                    notifyDataSetChanged();
+
+                    list.get(position).setLike(0);
+                    total_like_count = list.get(position).getTotalLike();
+                    total_like_count = total_like_count - 1;
+                    list.get(position).setTotalLike(total_like_count);
+                    holder.binding.ivFav.setVisibility(View.GONE);
+                    holder.binding.ivUnfav.setVisibility(View.VISIBLE);
+                    holder.binding.tvTotalLike.setText(String.valueOf(total_like_count));
+                    //notifyDataSetChanged();
                 } else if (list.get(position).getLike() == 0)  {
                     like_status = Constants.LIKE_STATUS;
                     itemClick.onItemClick( "Fav",list.get(position),like_status);
-                    notifyDataSetChanged();
+
+                    list.get(position).setLike(1);
+                    total_like_count = list.get(position).getTotalLike();
+                    total_like_count = total_like_count + 1;
+                    list.get(position).setTotalLike(total_like_count);
+                    holder.binding.ivFav.setVisibility(View.VISIBLE);
+                    holder.binding.ivUnfav.setVisibility(View.GONE);
+                    holder.binding.tvTotalLike.setText(String.valueOf(total_like_count));
+                   // notifyDataSetChanged();
                 }
             }
         });

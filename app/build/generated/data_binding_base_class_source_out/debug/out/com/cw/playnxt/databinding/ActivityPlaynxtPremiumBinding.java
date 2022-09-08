@@ -22,10 +22,10 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final HeaderLayoutBinding bindingHeader;
+  public final LinearLayout CancleSubscription;
 
   @NonNull
-  public final LinearLayout btnLogin;
+  public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
   public final ImageView ivPlan;
@@ -51,14 +51,17 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
   @NonNull
   public final TextView tvValidUpto;
 
+  @NonNull
+  public final TextView txtBtn;
+
   private ActivityPlaynxtPremiumBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnLogin,
+      @NonNull LinearLayout CancleSubscription, @NonNull HeaderLayoutBinding bindingHeader,
       @NonNull ImageView ivPlan, @NonNull LinearLayout llUpper, @NonNull TextView tvDescription,
       @NonNull TextView tvExpiryDate, @NonNull TextView tvPlanTitle, @NonNull TextView tvPrice,
-      @NonNull TextView tvPurchaseDate, @NonNull TextView tvValidUpto) {
+      @NonNull TextView tvPurchaseDate, @NonNull TextView tvValidUpto, @NonNull TextView txtBtn) {
     this.rootView = rootView;
+    this.CancleSubscription = CancleSubscription;
     this.bindingHeader = bindingHeader;
-    this.btnLogin = btnLogin;
     this.ivPlan = ivPlan;
     this.llUpper = llUpper;
     this.tvDescription = tvDescription;
@@ -67,6 +70,7 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
     this.tvPrice = tvPrice;
     this.tvPurchaseDate = tvPurchaseDate;
     this.tvValidUpto = tvValidUpto;
+    this.txtBtn = txtBtn;
   }
 
   @Override
@@ -96,18 +100,18 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.CancleSubscription;
+      LinearLayout CancleSubscription = ViewBindings.findChildViewById(rootView, id);
+      if (CancleSubscription == null) {
+        break missingId;
+      }
+
       id = R.id.bindingHeader;
       View bindingHeader = ViewBindings.findChildViewById(rootView, id);
       if (bindingHeader == null) {
         break missingId;
       }
       HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
-
-      id = R.id.btnLogin;
-      LinearLayout btnLogin = ViewBindings.findChildViewById(rootView, id);
-      if (btnLogin == null) {
-        break missingId;
-      }
 
       id = R.id.ivPlan;
       ImageView ivPlan = ViewBindings.findChildViewById(rootView, id);
@@ -157,9 +161,15 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityPlaynxtPremiumBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnLogin, ivPlan, llUpper, tvDescription, tvExpiryDate, tvPlanTitle, tvPrice,
-          tvPurchaseDate, tvValidUpto);
+      id = R.id.txtBtn;
+      TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
+      if (txtBtn == null) {
+        break missingId;
+      }
+
+      return new ActivityPlaynxtPremiumBinding((RelativeLayout) rootView, CancleSubscription,
+          binding_bindingHeader, ivPlan, llUpper, tvDescription, tvExpiryDate, tvPlanTitle, tvPrice,
+          tvPurchaseDate, tvValidUpto, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -45,7 +45,7 @@ public class SearchUserAdapter extends RecyclerView.Adapter<SearchUserAdapter.Re
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                itemClick.onItemClick(position,"UserSearch");
             }
         });
     }

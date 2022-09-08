@@ -218,7 +218,7 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     }
 
     public void SearchGameAPI() {
-        Customprogress.showPopupProgressSpinner(context, true);
+        //Customprogress.showPopupProgressSpinner(context, true);
         if(binding.cbUser.isChecked()){
             filter_type = "user";
         }else if(binding.cbGames.isChecked()){
@@ -235,7 +235,7 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
             public void onResponse(Call<SearchGameResponse> call, Response<SearchGameResponse> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                    Customprogress.showPopupProgressSpinner(context, false);
+                   // Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
                         if (response.body().getData().getResult().size() != 0) {
                             binding.tvGame.setVisibility(View.VISIBLE);
@@ -254,7 +254,7 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
             }
             @Override
             public void onFailure(Call<SearchGameResponse> call, Throwable t) {
-                Customprogress.showPopupProgressSpinner(context, false);
+              //  Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
             }
         });
@@ -302,7 +302,9 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         SearchGamesAdapter adapter = new SearchGamesAdapter(context, resultGameList, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
-
+                startActivity(new Intent(context, MainGameInfoActivity.class)
+                        .putExtra("game_id", resultGameList.get(position).getGameId().toString())
+                        .putExtra("key", Constants.USER_GAME_VIEW));
             }
         });
         binding.rvGames.setHasFixedSize(true);
@@ -314,7 +316,10 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         SearchUserAdapter adapter = new SearchUserAdapter(context, resultUserList, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
-
+                startActivity(new Intent(context, FriendsProfileActivity.class)
+                        .putExtra("key","1")
+                        .putExtra("show_key", Constants.COMMUNITY)
+                        .putExtra("friends_id",resultUserList.get(position).getId().toString()));
             }
         });
         binding.rvUser.setHasFixedSize(true);

@@ -191,11 +191,11 @@ public class TabFriendsFragment extends Fragment {
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
                        // Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        if (Constants.isInternetConnected(context)) {
+                      /*  if (Constants.isInternetConnected(context)) {
                             GetMyFriendListAPI();
                         } else {
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                        }
+                        }*/
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }

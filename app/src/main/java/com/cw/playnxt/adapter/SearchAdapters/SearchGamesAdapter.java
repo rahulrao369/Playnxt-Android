@@ -47,7 +47,7 @@ public class SearchGamesAdapter extends RecyclerView.Adapter<SearchGamesAdapter.
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                itemClick.onItemClick(position,"GameSearch");
             }
         });
     }

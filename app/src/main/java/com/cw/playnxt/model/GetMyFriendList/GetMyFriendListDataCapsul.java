@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class GetMyFriendListDataCapsul {
 
     @Expose
-    private Long like;
+    private int like;
 
     @SerializedName("total_like")
     private Long totalLike;
@@ -53,11 +53,11 @@ public class GetMyFriendListDataCapsul {
         this.addedTime = addedTime;
     }
 
-    public Long getLike() {
+    public int getLike() {
         return like;
     }
 
-    public void setLike(Long like) {
+    public void setLike(int like) {
         this.like = like;
     }
 
