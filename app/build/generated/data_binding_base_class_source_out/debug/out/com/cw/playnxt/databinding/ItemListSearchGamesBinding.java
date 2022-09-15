@@ -4,7 +4,6 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -13,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,7 +22,7 @@ public final class ItemListSearchGamesBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final ImageView ivImage;
+  public final CircleImageView ivImage;
 
   @NonNull
   public final LinearLayout layoutMain;
@@ -30,8 +30,9 @@ public final class ItemListSearchGamesBinding implements ViewBinding {
   @NonNull
   public final TextView tvName;
 
-  private ItemListSearchGamesBinding(@NonNull RelativeLayout rootView, @NonNull ImageView ivImage,
-      @NonNull LinearLayout layoutMain, @NonNull TextView tvName) {
+  private ItemListSearchGamesBinding(@NonNull RelativeLayout rootView,
+      @NonNull CircleImageView ivImage, @NonNull LinearLayout layoutMain,
+      @NonNull TextView tvName) {
     this.rootView = rootView;
     this.ivImage = ivImage;
     this.layoutMain = layoutMain;
@@ -66,7 +67,7 @@ public final class ItemListSearchGamesBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.ivImage;
-      ImageView ivImage = ViewBindings.findChildViewById(rootView, id);
+      CircleImageView ivImage = ViewBindings.findChildViewById(rootView, id);
       if (ivImage == null) {
         break missingId;
       }

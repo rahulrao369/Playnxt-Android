@@ -9,12 +9,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,6 +25,9 @@ import java.lang.String;
 public final class ActivityAddGameBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final TextView autoCompleteGameTitle;
 
   @NonNull
   public final HeaderLayoutBinding bindingHeader;
@@ -33,16 +39,13 @@ public final class ActivityAddGameBinding implements ViewBinding {
   public final LinearLayout btnAddToWishList;
 
   @NonNull
+  public final CircleImageView cvImage;
+
+  @NonNull
   public final EditText etGameDescription;
 
   @NonNull
-  public final EditText etGameGenre;
-
-  @NonNull
-  public final EditText etGamePlatform;
-
-  @NonNull
-  public final EditText etGameTitle;
+  public final EditText etSearch;
 
   @NonNull
   public final ImageView ivGame;
@@ -51,10 +54,22 @@ public final class ActivityAddGameBinding implements ViewBinding {
   public final ImageView ivGameIcon;
 
   @NonNull
+  public final LinearLayout llCross;
+
+  @NonNull
   public final LinearLayout llGiveRating;
 
   @NonNull
   public final RelativeLayout llImage;
+
+  @NonNull
+  public final LinearLayout llMain;
+
+  @NonNull
+  public final LinearLayout llNoData;
+
+  @NonNull
+  public final LinearLayout llSearch;
 
   @NonNull
   public final LinearLayout llSelectImage;
@@ -63,33 +78,61 @@ public final class ActivityAddGameBinding implements ViewBinding {
   public final RatingBar ratingBar;
 
   @NonNull
+  public final RelativeLayout rlGameGenre;
+
+  @NonNull
+  public final RelativeLayout rlGamePlatform;
+
+  @NonNull
+  public final RecyclerView rvGameTitle;
+
+  @NonNull
+  public final Spinner spGameGenre;
+
+  @NonNull
+  public final Spinner spGamePlatform;
+
+  @NonNull
   public final TextView tvRating;
 
   @NonNull
   public final TextView tvUploadGameImg;
 
   private ActivityAddGameBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAddToBacklog,
-      @NonNull LinearLayout btnAddToWishList, @NonNull EditText etGameDescription,
-      @NonNull EditText etGameGenre, @NonNull EditText etGamePlatform,
-      @NonNull EditText etGameTitle, @NonNull ImageView ivGame, @NonNull ImageView ivGameIcon,
-      @NonNull LinearLayout llGiveRating, @NonNull RelativeLayout llImage,
-      @NonNull LinearLayout llSelectImage, @NonNull RatingBar ratingBar, @NonNull TextView tvRating,
+      @NonNull TextView autoCompleteGameTitle, @NonNull HeaderLayoutBinding bindingHeader,
+      @NonNull LinearLayout btnAddToBacklog, @NonNull LinearLayout btnAddToWishList,
+      @NonNull CircleImageView cvImage, @NonNull EditText etGameDescription,
+      @NonNull EditText etSearch, @NonNull ImageView ivGame, @NonNull ImageView ivGameIcon,
+      @NonNull LinearLayout llCross, @NonNull LinearLayout llGiveRating,
+      @NonNull RelativeLayout llImage, @NonNull LinearLayout llMain, @NonNull LinearLayout llNoData,
+      @NonNull LinearLayout llSearch, @NonNull LinearLayout llSelectImage,
+      @NonNull RatingBar ratingBar, @NonNull RelativeLayout rlGameGenre,
+      @NonNull RelativeLayout rlGamePlatform, @NonNull RecyclerView rvGameTitle,
+      @NonNull Spinner spGameGenre, @NonNull Spinner spGamePlatform, @NonNull TextView tvRating,
       @NonNull TextView tvUploadGameImg) {
     this.rootView = rootView;
+    this.autoCompleteGameTitle = autoCompleteGameTitle;
     this.bindingHeader = bindingHeader;
     this.btnAddToBacklog = btnAddToBacklog;
     this.btnAddToWishList = btnAddToWishList;
+    this.cvImage = cvImage;
     this.etGameDescription = etGameDescription;
-    this.etGameGenre = etGameGenre;
-    this.etGamePlatform = etGamePlatform;
-    this.etGameTitle = etGameTitle;
+    this.etSearch = etSearch;
     this.ivGame = ivGame;
     this.ivGameIcon = ivGameIcon;
+    this.llCross = llCross;
     this.llGiveRating = llGiveRating;
     this.llImage = llImage;
+    this.llMain = llMain;
+    this.llNoData = llNoData;
+    this.llSearch = llSearch;
     this.llSelectImage = llSelectImage;
     this.ratingBar = ratingBar;
+    this.rlGameGenre = rlGameGenre;
+    this.rlGamePlatform = rlGamePlatform;
+    this.rvGameTitle = rvGameTitle;
+    this.spGameGenre = spGameGenre;
+    this.spGamePlatform = spGamePlatform;
     this.tvRating = tvRating;
     this.tvUploadGameImg = tvUploadGameImg;
   }
@@ -121,6 +164,12 @@ public final class ActivityAddGameBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.autoCompleteGameTitle;
+      TextView autoCompleteGameTitle = ViewBindings.findChildViewById(rootView, id);
+      if (autoCompleteGameTitle == null) {
+        break missingId;
+      }
+
       id = R.id.bindingHeader;
       View bindingHeader = ViewBindings.findChildViewById(rootView, id);
       if (bindingHeader == null) {
@@ -140,27 +189,21 @@ public final class ActivityAddGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cvImage;
+      CircleImageView cvImage = ViewBindings.findChildViewById(rootView, id);
+      if (cvImage == null) {
+        break missingId;
+      }
+
       id = R.id.etGameDescription;
       EditText etGameDescription = ViewBindings.findChildViewById(rootView, id);
       if (etGameDescription == null) {
         break missingId;
       }
 
-      id = R.id.etGameGenre;
-      EditText etGameGenre = ViewBindings.findChildViewById(rootView, id);
-      if (etGameGenre == null) {
-        break missingId;
-      }
-
-      id = R.id.etGamePlatform;
-      EditText etGamePlatform = ViewBindings.findChildViewById(rootView, id);
-      if (etGamePlatform == null) {
-        break missingId;
-      }
-
-      id = R.id.etGameTitle;
-      EditText etGameTitle = ViewBindings.findChildViewById(rootView, id);
-      if (etGameTitle == null) {
+      id = R.id.etSearch;
+      EditText etSearch = ViewBindings.findChildViewById(rootView, id);
+      if (etSearch == null) {
         break missingId;
       }
 
@@ -176,6 +219,12 @@ public final class ActivityAddGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.llCross;
+      LinearLayout llCross = ViewBindings.findChildViewById(rootView, id);
+      if (llCross == null) {
+        break missingId;
+      }
+
       id = R.id.llGiveRating;
       LinearLayout llGiveRating = ViewBindings.findChildViewById(rootView, id);
       if (llGiveRating == null) {
@@ -185,6 +234,24 @@ public final class ActivityAddGameBinding implements ViewBinding {
       id = R.id.llImage;
       RelativeLayout llImage = ViewBindings.findChildViewById(rootView, id);
       if (llImage == null) {
+        break missingId;
+      }
+
+      id = R.id.llMain;
+      LinearLayout llMain = ViewBindings.findChildViewById(rootView, id);
+      if (llMain == null) {
+        break missingId;
+      }
+
+      id = R.id.llNoData;
+      LinearLayout llNoData = ViewBindings.findChildViewById(rootView, id);
+      if (llNoData == null) {
+        break missingId;
+      }
+
+      id = R.id.llSearch;
+      LinearLayout llSearch = ViewBindings.findChildViewById(rootView, id);
+      if (llSearch == null) {
         break missingId;
       }
 
@@ -200,6 +267,36 @@ public final class ActivityAddGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rlGameGenre;
+      RelativeLayout rlGameGenre = ViewBindings.findChildViewById(rootView, id);
+      if (rlGameGenre == null) {
+        break missingId;
+      }
+
+      id = R.id.rlGamePlatform;
+      RelativeLayout rlGamePlatform = ViewBindings.findChildViewById(rootView, id);
+      if (rlGamePlatform == null) {
+        break missingId;
+      }
+
+      id = R.id.rvGameTitle;
+      RecyclerView rvGameTitle = ViewBindings.findChildViewById(rootView, id);
+      if (rvGameTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.spGameGenre;
+      Spinner spGameGenre = ViewBindings.findChildViewById(rootView, id);
+      if (spGameGenre == null) {
+        break missingId;
+      }
+
+      id = R.id.spGamePlatform;
+      Spinner spGamePlatform = ViewBindings.findChildViewById(rootView, id);
+      if (spGamePlatform == null) {
+        break missingId;
+      }
+
       id = R.id.tvRating;
       TextView tvRating = ViewBindings.findChildViewById(rootView, id);
       if (tvRating == null) {
@@ -212,10 +309,11 @@ public final class ActivityAddGameBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddGameBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnAddToBacklog, btnAddToWishList, etGameDescription, etGameGenre, etGamePlatform,
-          etGameTitle, ivGame, ivGameIcon, llGiveRating, llImage, llSelectImage, ratingBar,
-          tvRating, tvUploadGameImg);
+      return new ActivityAddGameBinding((RelativeLayout) rootView, autoCompleteGameTitle,
+          binding_bindingHeader, btnAddToBacklog, btnAddToWishList, cvImage, etGameDescription,
+          etSearch, ivGame, ivGameIcon, llCross, llGiveRating, llImage, llMain, llNoData, llSearch,
+          llSelectImage, ratingBar, rlGameGenre, rlGamePlatform, rvGameTitle, spGameGenre,
+          spGamePlatform, tvRating, tvUploadGameImg);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
     android:paddingStart="8dp"
@@ -19,13 +20,12 @@
             android:layout_height="wrap_content"
             android:gravity="center">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ivImage"
-                android:layout_width="47dp"
+                android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/m2"
-                android:scaleType="fitXY"
-                />
+                app:civ_border_color="@color/white" />
 
         </LinearLayout>
 

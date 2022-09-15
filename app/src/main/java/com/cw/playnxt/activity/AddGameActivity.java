@@ -18,8 +18,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,8 +38,10 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.Interface.ItemClickId;
 import com.cw.playnxt.R;
+import com.cw.playnxt.adapter.SearchAdapters.FilterGameTitleAdapter;
 import com.cw.playnxt.adapter.SearchAdapters.GetCategoryNameListAdapter;
 import com.cw.playnxt.adapter.SearchAdapters.GetCategoryNameWishListAdapter;
 import com.cw.playnxt.databinding.ActivityAddGameBinding;
@@ -49,22 +55,25 @@ import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameRespon
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameResponse;
 import com.cw.playnxt.model.GetCategoryListName.Wishlist;
+import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterParaRes;
+import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterResponse;
+import com.cw.playnxt.model.GetGameByFilter.Newdatum;
 import com.cw.playnxt.model.ResponseSatusMessage;
+import com.cw.playnxt.server.Allurls;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
-import com.cw.playnxt.utils.Filepath;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -76,11 +85,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddGameActivity extends AppCompatActivity implements View.OnClickListener {
-    private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     Context context;
     String selectedPath = "";
     TextView tvCreateNewList;
-    ImageView ivAddNewList,ivSubscribeNow;
+    ImageView ivAddNewList, ivSubscribeNow;
     RecyclerView recyclerView;
     LinearLayout btnAdd, llSelectAnyList, llCreateNewList;
     String category_type = "";
@@ -90,13 +98,22 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     EditText etName, etWishlistName;
     LinearLayout btnCreateList, btnCreateWishlist;
     String subscribed = "";
+    int free_backlog;
+    String path = "";
+    String[] gameTitle = {"Game Title", "GAT"};
+    List<Newdatum> gameTitleSearchList = new ArrayList<Newdatum>();
+    ArrayAdapter platformAdapter;
+    ArrayAdapter genreAdapter;
+    String platform = "";
+    String genre = "";
+    List<String> platformStatic = new ArrayList<>();
+    List<String> genreStatic = new ArrayList<>();
+    private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     private ActivityAddGameBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    int free_backlog;
     private String userChoosenTask;
-    String path = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +135,9 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
 
+        platformDataSet(platformStatic);
+        genreDataSet(genreStatic);
+
         binding.tvRating.setText(String.valueOf(binding.ratingBar.getRating()));
         binding.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -131,6 +151,34 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
         }
+
+
+        binding.etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count == 0) {
+                    binding.rvGameTitle.setVisibility(View.GONE);
+                } else {
+                    if (Constants.isInternetConnected(context)) {
+                        getGameByFilterAPI();
+                    } else {
+                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
     public void onclicks() {
@@ -139,6 +187,8 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         binding.btnAddToBacklog.setOnClickListener(this);
         binding.btnAddToWishList.setOnClickListener(this);
         binding.llSelectImage.setOnClickListener(this);
+        binding.llCross.setOnClickListener(this);
+        binding.autoCompleteGameTitle.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceAsColor")
@@ -148,6 +198,17 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btnBack:
                 onBackPressed();
+                break;
+
+            case R.id.llCross:
+                binding.llMain.setVisibility(View.VISIBLE);
+                binding.llSearch.setVisibility(View.GONE);
+                break;
+
+            case R.id.autoCompleteGameTitle:
+                binding.etSearch.setText("");
+                binding.llMain.setVisibility(View.GONE);
+                binding.llSearch.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.tvUploadGameImg:
@@ -175,20 +236,20 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 Log.d("TAG", "category_type>>" + category_type);
 
                 if (isValidate()) {
-                    if(free_backlog == 1){
+                    if (free_backlog == 1) {
                         if (Constants.isInternetConnected(context)) {
                             GetCategoryBacklogListNameAPI(category_type);
                         } else {
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        if(subscribed.equals(Constants.YES)){
+                    } else {
+                        if (subscribed.equals(Constants.YES)) {
                             if (Constants.isInternetConnected(context)) {
                                 GetCategoryBacklogListNameAPI(category_type);
                             } else {
                                 Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                             }
-                        }else{
+                        } else {
                             startActivity(new Intent(context, SubscriptionActivityFinal.class));
                         }
                     }
@@ -295,12 +356,12 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             llCreateNewList.setVisibility(View.VISIBLE);
             tvCreateNewList.setText("Create New Backlog List");
 
-            if(free_backlog == 1){
+            if (free_backlog == 1) {
                 ivAddNewList.setVisibility(View.VISIBLE);
-            }else{
-                if(subscribed.equals(Constants.YES)){
+            } else {
+                if (subscribed.equals(Constants.YES)) {
                     ivAddNewList.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     ivSubscribeNow.setVisibility(View.VISIBLE);
                 }
             }
@@ -309,12 +370,12 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onClick(View view) {
                     //condition
-                    if(free_backlog == 1){
+                    if (free_backlog == 1) {
                         showBottomSheetCreateNewBacklogListDialog();
-                    }else{
-                        if(subscribed.equals(Constants.YES)){
+                    } else {
+                        if (subscribed.equals(Constants.YES)) {
                             showBottomSheetCreateNewBacklogListDialog();
-                        }else{
+                        } else {
                             startActivity(new Intent(context, SubscriptionActivityFinal.class));
                         }
                     }
@@ -326,12 +387,12 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onClick(View view) {
                     //condition
-                    if(free_backlog == 1){
+                    if (free_backlog == 1) {
                         showBottomSheetCreateNewBacklogListDialog();
-                    }else{
-                        if(subscribed.equals(Constants.YES)){
+                    } else {
+                        if (subscribed.equals(Constants.YES)) {
                             showBottomSheetCreateNewBacklogListDialog();
-                        }else{
+                        } else {
                             startActivity(new Intent(context, SubscriptionActivityFinal.class));
                         }
                     }
@@ -470,19 +531,20 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private Boolean isValidate() {
-        if (selectedPath.isEmpty()) {
+       /* if (selectedPath.isEmpty()) {
             Toast.makeText(context, "Please select any image", Toast.LENGTH_SHORT).show();
             return false;
-        } else if (binding.etGameTitle.getText().toString().trim().isEmpty()) {
+        } else */
+        if (binding.autoCompleteGameTitle.getText().toString().trim().isEmpty()) {
             Toast.makeText(context, "Please select any game title", Toast.LENGTH_SHORT).show();
             return false;
-        } else if (binding.etGamePlatform.getText().toString().trim().isEmpty()) {
+        } else if (platform.equals("")) {
             Toast.makeText(context, "Please select any game platform", Toast.LENGTH_SHORT).show();
             return false;
         } else if (binding.etGameDescription.getText().toString().trim().isEmpty()) {
             Toast.makeText(context, "Please select any game description", Toast.LENGTH_SHORT).show();
             return false;
-        } else if (binding.etGameGenre.getText().toString().trim().isEmpty()) {
+        } else if (genre.equals("")) {
             Toast.makeText(context, "Please select any game genre", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -492,10 +554,10 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     public void AddGameAPI(String pathMain) {
         Customprogress.showPopupProgressSpinner(context, true);
         HashMap<String, RequestBody> data = new HashMap<>();
-        data.put("title", createRequestBody(binding.etGameTitle.getText().toString().trim()));
-        data.put("platform", createRequestBody(binding.etGamePlatform.getText().toString().trim()));
+        data.put("title", createRequestBody(binding.autoCompleteGameTitle.getText().toString().trim()));
+        data.put("platform", createRequestBody(platform));
         data.put("description", createRequestBody(binding.etGameDescription.getText().toString().trim()));
-        data.put("genre", createRequestBody(binding.etGameGenre.getText().toString().trim()));
+        data.put("genre", createRequestBody(genre));
         data.put("category", createRequestBody(category_type));
         data.put("list_name", createRequestBody(category_list_item_name));
         data.put("list_id", createRequestBody(String.valueOf(category_list_item_id)));
@@ -673,9 +735,9 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                     String msg = response.body().getMessage();
                     if (status) {
                         subscribed = response.body().getData().getSubscribed();
-                        free_backlog =  response.body().getData().getFree_backlog();
-                        Log.d("TAG","subscribed>>>>"+subscribed);
-                        Log.d("TAG","free_backlog>>>>"+free_backlog);
+                        free_backlog = response.body().getData().getFree_backlog();
+                        Log.d("TAG", "subscribed>>>>" + subscribed);
+                        Log.d("TAG", "free_backlog>>>>" + free_backlog);
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }
@@ -694,7 +756,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
 
     //************************************SELECT IMAGE*********************************************
     private void selectImage() {
-        final CharSequence[] items = {"Take Photo","Choose from Library", "Cancel"};
+        final CharSequence[] items = {"Take Photo", "Choose from Library", "Cancel"};
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
         builder.setTitle("Upload Photo");
         builder.setItems(items, new DialogInterface.OnClickListener() {
@@ -817,8 +879,107 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             result = cursor.getString(idx);
             cursor.close();
         }
-
         return result;
+    }
+
+    public void getGameByFilterAPI() {
+
+        GetGameByFilterParaRes getGameByFilterParaRes = new GetGameByFilterParaRes();
+        getGameByFilterParaRes.setTitle(binding.etSearch.getText().toString().trim());
+
+        jsonPlaceHolderApi.getGameByFilterAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), getGameByFilterParaRes).enqueue(new Callback<GetGameByFilterResponse>() {
+            @Override
+            public void onResponse(Call<GetGameByFilterResponse> call, Response<GetGameByFilterResponse> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+                        if (response.body().getData().getNewdata().size() != 0) {
+                            binding.rvGameTitle.setVisibility(View.VISIBLE);
+                            binding.llNoData.setVisibility(View.GONE);
+                            gameTitleSearchList = response.body().getData().getNewdata();
+                            SearchGamesTilteListDataSet(gameTitleSearchList);
+
+                        } else {
+                            binding.rvGameTitle.setVisibility(View.GONE);
+                            binding.llNoData.setVisibility(View.VISIBLE);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetGameByFilterResponse> call, Throwable t) {
+                Log.e("TAG", "" + t.getMessage());
+            }
+        });
+    }
+
+    private void SearchGamesTilteListDataSet(List<Newdatum> gameTitleList) {
+        FilterGameTitleAdapter adapter = new FilterGameTitleAdapter(context, gameTitleList, new ItemClick() {
+            @Override
+            public void onItemClick(int position, String type) {
+                binding.llMain.setVisibility(View.VISIBLE);
+                binding.llSearch.setVisibility(View.GONE);
+                binding.rvGameTitle.setVisibility(View.GONE);
+                binding.ivGame.setVisibility(View.VISIBLE);
+                binding.ivGameIcon.setVisibility(View.GONE);
+                Picasso.get().load(Allurls.IMAGEURL + gameTitleList.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(binding.ivGame);
+                binding.autoCompleteGameTitle.setText(gameTitleList.get(position).getTitle());
+
+              /*  List<String> platformList = new ArrayList<>();
+                for(int i = 0; i< gameTitleList.get(position).getPlatform().size(); i++){
+                    platformList.add(gameTitleList.get(position).getPlatform().get(i));
+                }*/
+                binding.etGameDescription.setText(gameTitleList.get(position).getDescription().toString().trim());
+                platformDataSet(gameTitleList.get(position).getPlatform());
+                genreDataSet(gameTitleList.get(position).getGenre());
+
+            }
+        });
+        binding.rvGameTitle.setHasFixedSize(true);
+        binding.rvGameTitle.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        binding.rvGameTitle.setAdapter(adapter);
+    }
+
+    private void platformDataSet(List<String> platformList) {
+        platformList.add(0, "Game Platform");
+        platformAdapter = new ArrayAdapter(this, R.layout.spinner_item1, platformList);
+        platformAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item1);
+        binding.spGamePlatform.setAdapter(platformAdapter);
+        binding.spGamePlatform.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (!platformList.get(i).equals("Game Platform")) {
+                    platform = platformList.get(i);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+    }
+
+    private void genreDataSet(List<String> genreList) {
+        genreList.add(0, "Genre");
+        genreAdapter = new ArrayAdapter(this, R.layout.spinner_item1, genreList);
+        genreAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item1);
+        binding.spGameGenre.setAdapter(genreAdapter);
+        binding.spGameGenre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (!genreList.get(i).equals("Genre")) {
+                    genre = genreList.get(i);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
     }
 }

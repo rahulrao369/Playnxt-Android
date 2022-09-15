@@ -2722,9 +2722,11 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable cr
 drawable crop_image_menu_flip
 drawable crop_image_menu_rotate_left
 drawable crop_image_menu_rotate_right
+drawable cross
 drawable custom_rating_bar
 drawable day_item_background
 drawable day_picker_item_background
@@ -2741,6 +2743,7 @@ drawable ic_add
 drawable ic_add_game
 drawable ic_add_grey
 drawable ic_add_theme
+drawable ic_arrow_down_sp
 drawable ic_arrow_left
 drawable ic_arrow_right
 drawable ic_back_btn
@@ -3015,6 +3018,7 @@ id asConfigured
 id async
 id auto
 id autoComplete
+id autoCompleteGameTitle
 id autoCompleteToEnd
 id autoCompleteToStart
 id back
@@ -3352,6 +3356,7 @@ id llAlreadyHaveAccount
 id llChangePassword
 id llCreateBacklogList
 id llCreateNewList
+id llCross
 id llDeleteAccount
 id llDontHaveAccount
 id llEdit
@@ -3375,6 +3380,7 @@ id llNoUserResult
 id llRecentlyAdded
 id llRecyclerview
 id llRightImg
+id llSearch
 id llSelectAnyList
 id llSelectEndDate
 id llSelectImage
@@ -3525,6 +3531,8 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rlGameGenre
+id rlGamePlatform
 id rlMain
 id rlProgressBar
 id rounded
@@ -3534,6 +3542,7 @@ id rvBottomSheet
 id rvExtraFeatures
 id rvFollowersList
 id rvFollowingList
+id rvGameTitle
 id rvGames
 id rvRecentGames
 id rvSubscriptionPlan
@@ -3577,6 +3586,8 @@ id snackbar_text
 id snap
 id snapMargins
 id south
+id spGameGenre
+id spGamePlatform
 id spacer
 id special_effects_controller_view_tag
 id spline
@@ -4055,6 +4066,8 @@ layout popup_progressbar
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout spinner_dropdown_item1
+layout spinner_item1
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius

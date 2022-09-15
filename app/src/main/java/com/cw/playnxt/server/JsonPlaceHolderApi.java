@@ -36,6 +36,8 @@ import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameParaRe
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameResponse;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameResponse;
+import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterParaRes;
+import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterResponse;
 import com.cw.playnxt.model.GetGameNote.GetGameNoteParaRes;
 import com.cw.playnxt.model.GetGameNote.GetGameNoteResponse;
 import com.cw.playnxt.model.GetMyFriendList.GetMyFriendListResponse;
@@ -338,9 +340,9 @@ public interface JsonPlaceHolderApi {
     Call<GetPlanResponse> GET_PLAN_API(@Header("Content-Type") String content_type,
                                        @Header("Authorization") String token);
 
-   /* @POST("users/plans")
-    Call<CancleSubscriptionResponse> CancleSubscriptionAPI(@Header("Content-Type") String content_type,
-                                                           @Header("Authorization") String token,
-                                                           @Body CancleSubscriptionParaRes cancleSubscriptionParaRes);*/
+    @POST("users/get-game-by-filter")
+    Call<GetGameByFilterResponse> getGameByFilterAPI(@Header("Content-Type") String content_type,
+                                                     @Header("Authorization") String token,
+                                                     @Body GetGameByFilterParaRes getGameByFilterParaRes);
 
 }
