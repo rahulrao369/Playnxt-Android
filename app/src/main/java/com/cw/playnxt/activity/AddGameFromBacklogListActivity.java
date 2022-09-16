@@ -25,14 +25,20 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.Interface.ItemClickId;
 import com.cw.playnxt.R;
+import com.cw.playnxt.adapter.SearchAdapters.FilterGameTitleAdapter;
 import com.cw.playnxt.adapter.SearchAdapters.GetCategoryNameListAdapter;
 import com.cw.playnxt.adapter.SearchAdapters.GetCategoryNameWishListAdapter;
 import com.cw.playnxt.databinding.ActivityAddGameBinding;
@@ -44,14 +50,23 @@ import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameRespon
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameResponse;
 import com.cw.playnxt.model.GetCategoryListName.Wishlist;
+import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterParaRes;
+import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterResponse;
+import com.cw.playnxt.model.GetGameByFilter.Newdatum;
 import com.cw.playnxt.model.ResponseSatusMessage;
+import com.cw.playnxt.server.Allurls;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
 import com.cw.playnxt.utils.Filepath;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -60,6 +75,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -71,6 +87,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddGameFromBacklogListActivity extends AppCompatActivity implements View.OnClickListener{
+    private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     Context context;
     String selectedPath = "";
     String category_type = "";
@@ -81,7 +98,17 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     String gameRating= "";
-
+    String path = "";
+    List<Newdatum> gameTitleSearchList = new ArrayList<Newdatum>();
+    ArrayAdapter platformAdapter;
+    ArrayAdapter genreAdapter;
+    String platform = "";
+    String genre = "";
+    List<String> platformStatic = new ArrayList<>();
+    List<String> genreStatic = new ArrayList<>();
+    String gameType = "";
+    String gameId = "";
+    private String userChoosenTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,13 +128,24 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
 
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
+
+        platformDataSet(platformStatic);
+        genreDataSet(genreStatic);
+
+
         try {
             Intent intent = getIntent();
             if (intent != null) {
                 category_list_item_id = intent.getStringExtra("category_list_item_id");
                 category_list_item_name = intent.getStringExtra("category_list_item_name");
                 Log.d("TAG", "category_list_item_name>>" + category_list_item_name);
-               // headerBinding.tvHeading.setText(category_list_item_name);
 
             }
         } catch (Exception e) {
@@ -121,14 +159,42 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
                 binding.tvRating.setText(gameRating);
             }
         });
+
+        binding.etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count == 0) {
+                    binding.rvGameTitle.setVisibility(View.GONE);
+                } else {
+                    if (Constants.isInternetConnected(context)) {
+                        getGameByFilterAPI();
+                    } else {
+                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     public void onclicks() {
         headerBinding.btnBack.setOnClickListener(this);
         binding.tvUploadGameImg.setOnClickListener(this);
         binding.btnAddToBacklog.setOnClickListener(this);
-       // binding.btnAddToWishList.setOnClickListener(this);
         binding.llSelectImage.setOnClickListener(this);
+        binding.llCross.setOnClickListener(this);
+        binding.autoCompleteGameTitle.setOnClickListener(this);
+        binding.btnGo.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceAsColor")
@@ -140,18 +206,33 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
                 onBackPressed();
                 break;
 
+            case R.id.llCross:
+                binding.llMain.setVisibility(View.VISIBLE);
+                binding.llSearch.setVisibility(View.GONE);
+                break;
+
+            case R.id.btnGo:
+                if(!binding.etSearch.getText().toString().equals("")){
+                    binding.autoCompleteGameTitle.setText(binding.etSearch.getText().toString().trim());
+                    binding.llMain.setVisibility(View.VISIBLE);
+                    binding.llSearch.setVisibility(View.GONE);
+                }
+
+                break;
+
+            case R.id.autoCompleteGameTitle:
+                binding.etSearch.setText("");
+                binding.llMain.setVisibility(View.GONE);
+                binding.llSearch.setVisibility(View.VISIBLE);
+                break;
+
             case R.id.tvUploadGameImg:
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(this);
+                selectImage();
 
                 break;
 
             case R.id.llSelectImage:
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(this);
-
+                selectImage();
                 break;
 
             case R.id.btnAddToBacklog:
@@ -171,18 +252,6 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
                 }
 
                 break;
-
-           /* case R.id.btnAddToWishList:
-                category_type = CATEGORY_WISHLIST;
-                Log.d("TAG", "category_type>>" + category_type);
-                if (isValidate()) {
-                    if (Constants.isInternetConnected(context)) {
-                        GetCategoryWishListNameAPI(category_type);
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                    }
-                }
-                break;*/
         }
     }
 
@@ -191,182 +260,28 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                Uri resultUri = result.getUri();
-                binding.ivGame.setVisibility(View.VISIBLE);
-                binding.ivGameIcon.setVisibility(View.GONE);
-                binding.ivGame.setImageURI(resultUri);
-                selectedPath = Filepath.getPathFromUri(context, resultUri);
-
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == SELECT_FILE) {
+                try {
+                    onSelectFromGalleryResultProfile(data);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (requestCode == REQUEST_CAMERA) {
+                onCaptureImageResultProfile(data);
             }
         }
     }
 
 
-    //******************************Category List Name*************************
-   /* public void GetCategoryBacklogListNameAPI(String category_type) {
-        Customprogress.showPopupProgressSpinner(context, true);
-        GetCategoryBacklogListNameParaRes getCategoryBacklogListNameParaRes = new GetCategoryBacklogListNameParaRes();
-        getCategoryBacklogListNameParaRes.setCategory(category_type);
-        jsonPlaceHolderApi.GetCategoryBacklogListNameAPI("application/json", "Bearer " + mySharedPref.getSavedAccessToken(), getCategoryBacklogListNameParaRes).enqueue(new Callback<GetCategoryBacklogListNameResponse>() {
-            @Override
-            public void onResponse(Call<GetCategoryBacklogListNameResponse> call, Response<GetCategoryBacklogListNameResponse> response) {
-                if (response.isSuccessful()) {
-                    Customprogress.showPopupProgressSpinner(context, false);
-                    Boolean status = response.body().getStatus();
-                    if (status) {
-                        if (response.body().getData() != null) {
-                            if (response.body().getData().getBacklog().size() != 0) {
-                                showBottomSheetCategoryBacklogListDialog(response.body().getData().getBacklog());
-                            } else {
-                                Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
 
-                        }
-
-                    } else {
-                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<GetCategoryBacklogListNameResponse> call, Throwable t) {
-                Customprogress.showPopupProgressSpinner(context, false);
-                Log.e("TAG", "" + t.getMessage());
-            }
-        });
-    }
-*/
-  /*  private void showBottomSheetCategoryBacklogListDialog(List<Backlog> backlogList) {
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context, R.style.CustomBottomSheetDialog);
-        bottomSheetDialog.setContentView(R.layout.bottom_sheet_get_category_list);
-        recyclerView = bottomSheetDialog.findViewById(R.id.recyclerView);
-        btnAdd = bottomSheetDialog.findViewById(R.id.btnAdd);
-
-        GetCategoryNameListAdapter adapter = new GetCategoryNameListAdapter(context, backlogList, new ItemClickId() {
-            @Override
-            public void onItemClick(int position, Long id) {
-                category_list_item_id = id;
-                category_list_item_name = backlogList.get(position).getName();
-
-                Log.d("TAG", "category_list_item_id>>" + category_list_item_id);
-                Log.d("TAG", "category_list_item_name>>" + category_list_item_name);
-            }
-        });
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(adapter);
-
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (category_list_item_id != null) {
-                    bottomSheetDialog.dismiss();
-                    if (Constants.isInternetConnected(context)) {
-                        AddGameAPI(selectedPath);
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(context, "Please select any list type", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        bottomSheetDialog.show();
-    }
-
-    public void GetCategoryWishListNameAPI(String category_type) {
-        Customprogress.showPopupProgressSpinner(context, true);
-        GetCategoryWishListNameParaRes getCategoryWishListNameParaRes = new GetCategoryWishListNameParaRes();
-        getCategoryWishListNameParaRes.setCategory(category_type);
-        jsonPlaceHolderApi.GetCategoryWishListNameAPI("application/json", "Bearer " + mySharedPref.getSavedAccessToken(), getCategoryWishListNameParaRes).enqueue(new Callback<GetCategoryWishListNameResponse>() {
-            @Override
-            public void onResponse(Call<GetCategoryWishListNameResponse> call, Response<GetCategoryWishListNameResponse> response) {
-                if (response.isSuccessful()) {
-                    Customprogress.showPopupProgressSpinner(context, false);
-                    Boolean status = response.body().getStatus();
-                    if (status) {
-                        if (response.body().getData() != null) {
-                            if (response.body().getData().getWishlist().size() != 0) {
-                                showBottomSheetCategoryWishListDialog(response.body().getData().getWishlist());
-                            } else {
-                                Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-
-                    } else {
-                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<GetCategoryWishListNameResponse> call, Throwable t) {
-                Customprogress.showPopupProgressSpinner(context, false);
-                Log.e("TAG", "" + t.getMessage());
-            }
-        });
-    }
-
-    private void showBottomSheetCategoryWishListDialog(List<Wishlist> wishlist) {
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context, R.style.CustomBottomSheetDialog);
-        bottomSheetDialog.setContentView(R.layout.bottom_sheet_get_category_list);
-        recyclerView = bottomSheetDialog.findViewById(R.id.recyclerView);
-        btnAdd = bottomSheetDialog.findViewById(R.id.btnAdd);
-
-        GetCategoryNameWishListAdapter adapter = new GetCategoryNameWishListAdapter(context, wishlist, new ItemClickId() {
-            @Override
-            public void onItemClick(int position, Long id) {
-                category_list_item_id = id;
-                category_list_item_name = wishlist.get(position).getName();
-
-                Log.d("TAG", "category_list_item_id>>" + category_list_item_id);
-                Log.d("TAG", "category_list_item_name>>" + category_list_item_name);
-            }
-        });
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(adapter);
-
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (category_list_item_id != null) {
-                    bottomSheetDialog.dismiss();
-                    if (Constants.isInternetConnected(context)) {
-                        AddGameAPI(selectedPath);
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(context, "Please select any list type", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        bottomSheetDialog.show();
-    }*/
 
     private Boolean isValidate() {
-        if (selectedPath.isEmpty()) {
-            Toast.makeText(context, "Please select any image", Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (binding.etGameTitle.getText().toString().trim().isEmpty()) {
+        if (binding.autoCompleteGameTitle.getText().toString().trim().isEmpty()) {
             Toast.makeText(context, "Please select any game title", Toast.LENGTH_SHORT).show();
             return false;
-        } else if (binding.etGamePlatform.getText().toString().trim().isEmpty()) {
+        } else if (platform.equals("")) {
             Toast.makeText(context, "Please select any game platform", Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (binding.etGameDescription.getText().toString().trim().isEmpty()) {
-            Toast.makeText(context, "Please select any game description", Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (binding.etGameGenre.getText().toString().trim().isEmpty()) {
-            Toast.makeText(context, "Please select any game genre", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -374,15 +289,33 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
 
     public void AddGameAPI(String pathMain) {
         Customprogress.showPopupProgressSpinner(context, true);
+        if(!pathMain.equals("")){
+            gameType = Constants.MANNUAL;
+        }else{
+            gameType = Constants.ADMIN_GAME;
+        }
+
         HashMap<String, RequestBody> data = new HashMap<>();
-        data.put("title", createRequestBody(binding.etGameTitle.getText().toString().trim()));
-        data.put("platform", createRequestBody(binding.etGamePlatform.getText().toString().trim()));
+        data.put("title", createRequestBody(binding.autoCompleteGameTitle.getText().toString().trim()));
+        data.put("platform", createRequestBody(platform));
         data.put("description", createRequestBody(binding.etGameDescription.getText().toString().trim()));
-        data.put("genre", createRequestBody(binding.etGameGenre.getText().toString().trim()));
+        data.put("genre", createRequestBody(genre));
         data.put("category", createRequestBody(category_type));
         data.put("list_name", createRequestBody(category_list_item_name));
         data.put("list_id", createRequestBody(String.valueOf(category_list_item_id)));
         data.put("rate", createRequestBody(gameRating));
+        data.put("game_type", createRequestBody(gameType));
+        data.put("game_id", createRequestBody(gameId));
+
+
+        Log.d("TAG2", "GameId>>"+gameId);
+        Log.d("TAG2", "game_type>>"+gameType);
+        Log.d("TAG2", "GameImage>>"+pathMain);
+        Log.d("TAG2", "GameTitle>>"+binding.autoCompleteGameTitle.getText().toString().trim());
+        Log.d("TAG2", "GameDescription>>"+binding.etGameDescription.getText().toString().trim());
+        Log.d("TAG2", "GamePlatform>>"+platform);
+        Log.d("TAG2", "GameGenre>>"+genre);
+        Log.d("TAG2", "gameRating>>"+gameRating);
 
         MultipartBody.Part image = null;
         if (pathMain != null && !pathMain.equals("")) {
@@ -425,40 +358,39 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
     public RequestBody createRequestBody(@NonNull String s) {
         return RequestBody.create(MediaType.parse("multipart/form-data"), s);
     }
-}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//************************************SELECT IMAGE*********************************************
-// selectImage();
-      /* if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == SELECT_FILE) {
-                try {
-                    onSelectFromGalleryResultProfile(data);
-                } catch (Exception e) {
-                    e.printStackTrace();
+    //************************************SELECT IMAGE*********************************************
+    private void selectImage() {
+        final CharSequence[] items = {"Take Photo", "Choose from Library", "Cancel"};
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
+        builder.setTitle("Upload Photo");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                if (items[item].equals("Take Photo")) {
+                    userChoosenTask = "Take Photo";
+                    if (ContextCompat.checkSelfPermission(AddGameFromBacklogListActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(AddGameFromBacklogListActivity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CAMERA);
+                    } else {
+                        cameraIntent();
+                    }
+                } else if (items[item].equals("Choose from Library")) {
+                    userChoosenTask = "Choose from Library";
+                    if (ContextCompat.checkSelfPermission(AddGameFromBacklogListActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(AddGameFromBacklogListActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, SELECT_FILE);
+                    } else {
+                        galleryIntent();
+                    }
+                } else if (items[item].equals("Cancel")) {
+                    dialog.dismiss();
                 }
-            } else if (requestCode == REQUEST_CAMERA) {
-                onCaptureImageResultProfile(data);
             }
-        }*/
+        });
+        builder.show();
+    }
 
-
- /*   private void galleryIntent() {
+    private void galleryIntent() {
         System.out.println("GALLERY OPEN 22");
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -475,32 +407,33 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
             e.printStackTrace();
         }
 
-    }*/
-/* private void onSelectFromGalleryResultProfile(Intent data) {
-     Bitmap bm = null;
-     if (data != null) {
-         try {
-             bm = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
-     }
-     BitmapDrawable d = new BitmapDrawable(bm);
-     int left = 0;
-     int top = 0;
-     int right = 40;
-     int bottom = 40;
-     Rect r = new Rect(left, top, right, bottom);
-     d.setBounds(r);
-     Uri tempUri = getImageUri(context, bm);
-     System.out.println("data.getData() " + data.getData());
-     selectedPath = getRealPathFromURI(tempUri);
-     System.out.println("ProfilePicPath  " + selectedPath);
-     binding.ivGame.setVisibility(View.VISIBLE);
-     binding.ivGameIcon.setVisibility(View.GONE);
-     binding.ivGame.setImageURI(tempUri);
+    }
 
- }
+    private void onSelectFromGalleryResultProfile(Intent data) {
+        Bitmap bm = null;
+        if (data != null) {
+            try {
+                bm = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        BitmapDrawable d = new BitmapDrawable(bm);
+        int left = 0;
+        int top = 0;
+        int right = 40;
+        int bottom = 40;
+        Rect r = new Rect(left, top, right, bottom);
+        d.setBounds(r);
+        Uri tempUri = getImageUri(context, bm);
+        System.out.println("data.getData() " + data.getData());
+        selectedPath = getRealPathFromURI(tempUri);
+        System.out.println("ProfilePicPath  " + selectedPath);
+        binding.ivGame.setVisibility(View.VISIBLE);
+        binding.ivGameIcon.setVisibility(View.GONE);
+        binding.ivGame.setImageURI(tempUri);
+
+    }
 
     private void onCaptureImageResultProfile(Intent data) {
         Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
@@ -522,6 +455,8 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
         }
         Uri tempUri = getImageUri(context, thumbnail);
         selectedPath = getRealPathFromURI(tempUri);
+        binding.ivGame.setVisibility(View.VISIBLE);
+        binding.ivGameIcon.setVisibility(View.GONE);
         binding.ivGame.setImageURI(tempUri);
     }
 
@@ -550,7 +485,131 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
             result = cursor.getString(idx);
             cursor.close();
         }
-
         return result;
+    }
 
-    }*/
+    public void getGameByFilterAPI() {
+
+        GetGameByFilterParaRes getGameByFilterParaRes = new GetGameByFilterParaRes();
+        getGameByFilterParaRes.setTitle(binding.etSearch.getText().toString().trim());
+
+        jsonPlaceHolderApi.getGameByFilterAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), getGameByFilterParaRes).enqueue(new Callback<GetGameByFilterResponse>() {
+            @Override
+            public void onResponse(Call<GetGameByFilterResponse> call, Response<GetGameByFilterResponse> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    if (status) {
+                        if (response.body().getData().getNewdata().size() != 0) {
+                            binding.rvGameTitle.setVisibility(View.VISIBLE);
+                            binding.llNoData.setVisibility(View.GONE);
+                            gameTitleSearchList = response.body().getData().getNewdata();
+                            SearchGamesTilteListDataSet(gameTitleSearchList);
+
+                        } else {
+                            binding.rvGameTitle.setVisibility(View.GONE);
+                            binding.llNoData.setVisibility(View.VISIBLE);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetGameByFilterResponse> call, Throwable t) {
+                Log.e("TAG", "" + t.getMessage());
+            }
+        });
+    }
+
+    private void SearchGamesTilteListDataSet(List<Newdatum> gameTitleList) {
+        FilterGameTitleAdapter adapter = new FilterGameTitleAdapter(context, gameTitleList, new ItemClick() {
+            @Override
+            public void onItemClick(int position, String type) {
+                binding.llMain.setVisibility(View.VISIBLE);
+                binding.llSearch.setVisibility(View.GONE);
+                binding.rvGameTitle.setVisibility(View.GONE);
+                binding.ivGame.setVisibility(View.VISIBLE);
+                binding.ivGameIcon.setVisibility(View.GONE);
+                gameId =  String.valueOf(gameTitleList.get(position).getId());
+                Picasso.get().load(Allurls.IMAGEURL + gameTitleList.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(binding.ivGame);
+                binding.autoCompleteGameTitle.setText(gameTitleList.get(position).getTitle());
+
+              /*  List<String> platformList = new ArrayList<>();
+                for(int i = 0; i< gameTitleList.get(position).getPlatform().size(); i++){
+                    platformList.add(gameTitleList.get(position).getPlatform().get(i));
+                }*/
+                binding.etGameDescription.setText(gameTitleList.get(position).getDescription().toString().trim());
+                platformDataSet(gameTitleList.get(position).getPlatform());
+                genreDataSet(gameTitleList.get(position).getGenre());
+
+                Log.d("TAG2", "GameId>>"+gameId);
+                Log.d("TAG2", "GameImage>>"+Allurls.IMAGEURL + gameTitleList.get(position).getImage());
+                Log.d("TAG2", "GameTitle>>"+gameTitleList.get(position).getTitle());
+                Log.d("TAG2", "GameDescription>>"+gameTitleList.get(position).getDescription());
+                Log.d("TAG2", "GamePlatform>>"+gameTitleList.get(position).getPlatform());
+                Log.d("TAG2", "GameGenre>>"+gameTitleList.get(position).getGenre());
+            }
+        });
+        binding.rvGameTitle.setHasFixedSize(true);
+        binding.rvGameTitle.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        binding.rvGameTitle.setAdapter(adapter);
+    }
+
+    private void platformDataSet(List<String> platformList) {
+        platformList.add(0, "Game Platform");
+        platformAdapter = new ArrayAdapter(this, R.layout.spinner_item1, platformList);
+        platformAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item1);
+        binding.spGamePlatform.setAdapter(platformAdapter);
+        binding.spGamePlatform.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (!platformList.get(i).equals("Game Platform")) {
+                    platform = platformList.get(i);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+    }
+
+    private void genreDataSet(List<String> genreList) {
+        genreList.add(0, "Genre");
+        genreAdapter = new ArrayAdapter(this, R.layout.spinner_item1, genreList);
+        genreAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item1);
+        binding.spGameGenre.setAdapter(genreAdapter);
+        binding.spGameGenre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (!genreList.get(i).equals("Genre")) {
+                    genre = genreList.get(i);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

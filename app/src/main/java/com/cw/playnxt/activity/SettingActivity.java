@@ -1,9 +1,5 @@
 package com.cw.playnxt.activity;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,15 +10,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
-import com.cw.playnxt.adapter.FriendsAdapters.FriendsListFriendsFragmentAdapter;
 import com.cw.playnxt.adapter.MyProfileAdapters.SettingsAdapter;
-import com.cw.playnxt.databinding.ActivityBacklogBinding;
 import com.cw.playnxt.databinding.ActivitySettingBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
-import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaticModel.GameModel;
 import com.cw.playnxt.server.Allurls;
@@ -41,11 +38,12 @@ import retrofit2.Response;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
+    String subscribed = "";
     private ActivitySettingBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String subscribed = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +53,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         init();
         onclicks();
     }
+
     public void init() {
         context = SettingActivity.this;
         jsonPlaceHolderApi = ApiUtils.getAPIService();
@@ -90,34 +89,42 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void SettingListDataSet() {
         List<GameModel> list = new ArrayList<>();
-        list.add(new GameModel(R.drawable.ic_s_manage_playnxt_premium,"Manage Playnxt Premium"));
-        list.add(new GameModel(R.drawable.ic_s_suggest_new_features,"Suggest New Features"));
-        list.add(new GameModel(R.drawable.ic_s_contact_us,"Contact Us"));
-        list.add(new GameModel(R.drawable.ic_s_about_us,"About Us"));
-        list.add(new GameModel(R.drawable.ic_s_rate_play_nxt,"Rate Playnxt"));
-        list.add(new GameModel(R.drawable.ic_s_invite_friend,"Invite a Friend"));
-        list.add(new GameModel(R.drawable.ic_s_logout,"Logout"));
+        list.add(new GameModel(R.drawable.ic_s_manage_playnxt_premium, "Manage Playnxt Premium"));
+        list.add(new GameModel(R.drawable.ic_s_suggest_new_features, "Suggest New Features"));
+        list.add(new GameModel(R.drawable.ic_s_contact_us, "Contact Us"));
+        list.add(new GameModel(R.drawable.ic_s_about_us, "About Us"));
+        list.add(new GameModel(R.drawable.ic_s_rate_play_nxt, "Rate Playnxt"));
+        list.add(new GameModel(R.drawable.ic_s_invite_friend, "Invite a Friend"));
+        list.add(new GameModel(R.drawable.ic_s_logout, "Logout"));
 
         SettingsAdapter adapter = new SettingsAdapter(context, list, new ItemClick() {
             @Override
             public void onItemClick(int position, String type) {
                 if (position == 0) {
-                    if(subscribed.equals(Constants.YES)){
-                        startActivity(new Intent(context,PlaynxtPremiumActivity.class));
-                    }else{
+                    if (subscribed.equals(Constants.YES)) {
+                        startActivity(new Intent(context, PlaynxtPremiumActivity.class));
+                    } else {
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
 
                 } else if (position == 1) {
-                    startActivity(new Intent(context,SuggestNewFeatureActivity.class));
-                }  else if (position == 2) {
-                    startActivity(new Intent(context,ContactUsActivity.class));
-                }  else if (position == 3) {
-                    startActivity(new Intent(context,AboutUsActivity.class));
-                }  else if (position == 4) {
+                    startActivity(new Intent(context, SuggestNewFeatureActivity.class));
+                } else if (position == 2) {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("plain/text");
+                    intent.putExtra(Intent.EXTRA_EMAIL, new String[]{Constants.CLIENT_EMAIL});
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
+                    intent.putExtra(Intent.EXTRA_TEXT, "mail body");
+                    startActivity(Intent.createChooser(intent, ""));
+                    // startActivity(new Intent(context,ContactUsActivity.class));
+                } else if (position == 3) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.ABOUT_US_LINK));
+                    startActivity(browserIntent);
+                    // startActivity(new Intent(context,AboutUsActivity.class));
+                } else if (position == 4) {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Allurls.share_app_url));
                     startActivity(browserIntent);
-                }  else if (position == 5) {
+                } else if (position == 5) {
                     shareAppLink();
                 } else if (position == 6) {
                     openLogoutDialog();
@@ -173,14 +180,13 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     public void LogoutAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
 
-        jsonPlaceHolderApi.LogoutAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<ResponseSatusMessage>() {
+        jsonPlaceHolderApi.LogoutAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<ResponseSatusMessage>() {
             @Override
             public void onResponse(Call<ResponseSatusMessage> call, Response<ResponseSatusMessage> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
-                    if (status)
-                    {
+                    if (status) {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         mySharedPref.saveLogin(false);
                         Intent intent = new Intent(context, LoginActivity.class);
@@ -212,7 +218,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                     String msg = response.body().getMessage();
                     if (status) {
                         subscribed = response.body().getData().getSubscribed();
-                        Log.d("TAG","subscribed>>>>"+subscribed);
+                        Log.d("TAG", "subscribed>>>>" + subscribed);
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }

@@ -8,6 +8,7 @@
     tools:context=".activity.AddGameActivity">
 
     <LinearLayout
+        android:layout_above="@+id/btnAdsShow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -346,7 +347,7 @@
                                 android:paddingTop="8dp"
                                 android:progressBackgroundTint="@color/edt_text"
                                 android:progressTint="@color/app_theme"
-                                android:rating="1"
+                                android:rating="0"
                                 android:scaleX="0.9"
                                 android:scaleY="0.9"
                                 android:secondaryProgressTint="@color/app_theme"
@@ -481,7 +482,38 @@
                             android:paddingEnd="8dp"
                             android:textColor="@color/white"
                             android:textColorHint="@color/edt_text"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:imeOptions="actionDone"/>
+
+                        <LinearLayout
+                            android:id="@+id/btnGo"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@drawable/bg_go_btn"
+                            android:orientation="horizontal"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:gravity="center"
+                                android:text="Add new"
+                                android:textColor="@color/white"
+                                android:textFontWeight="700"
+                                android:textSize="12sp" />
+
+                          <!--  <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_right_arrow"
+                                app:tint="@color/black"
+                                android:layout_gravity="center" />-->
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -501,5 +533,31 @@
 
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnAdsShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <!-- set Banner ad position in UI layout design -->
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/admob_banner_id">
+
+        </com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

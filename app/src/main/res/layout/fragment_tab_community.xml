@@ -12,7 +12,7 @@
             android:background="@drawable/bg_home_bottom"
            android:backgroundTint="@color/top_gray"
             android:orientation="vertical"
-            android:paddingBottom="23dp"
+            android:paddingBottom="8dp"
            android:visibility="gone">
 
            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

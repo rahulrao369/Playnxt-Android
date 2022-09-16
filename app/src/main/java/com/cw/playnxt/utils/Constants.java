@@ -27,6 +27,10 @@ public class Constants {
     public static String COMMUNITY= "community";
     public static String FRIENDS= "friends";
     public static String YES= "Yes";
+    public static String MANNUAL= "manual";
+    public static String ADMIN_GAME= "admin_game";
+    public static String CLIENT_EMAIL= "admin@trblclef.com";
+    public static String ABOUT_US_LINK= "https://www.trblclef.com/company/";
 
     public static boolean isInternetConnected(Context mContext) {
 

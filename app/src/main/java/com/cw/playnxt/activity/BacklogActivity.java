@@ -42,6 +42,10 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
@@ -91,6 +95,14 @@ public class BacklogActivity extends AppCompatActivity implements View.OnClickLi
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
+
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
 
         if (Constants.isInternetConnected(context)) {
             NewCheckSubscriptionAPI();

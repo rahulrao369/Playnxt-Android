@@ -18,7 +18,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.cw.playnxt.R;
+import com.cw.playnxt.fragment.FifthFragment;
 import com.cw.playnxt.fragment.FirstFragment;
+import com.cw.playnxt.fragment.FourthFragment;
 import com.cw.playnxt.fragment.SecondFragment;
 import com.cw.playnxt.fragment.ThirdFragment;
 import com.cw.playnxt.utils.PrefManager;
@@ -48,7 +50,7 @@ public class WelcomeActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 int current = getItem(+1);
-                if (current < 3) {
+                if (current < 5) {
                     pager.setCurrentItem(current);
                 } else {
                     launchHomeScreen();
@@ -64,7 +66,7 @@ public class WelcomeActivity extends FragmentActivity {
         @Override
         public void onPageSelected(int position) {
             // addBottomDots(position);
-            if (position == 2) {
+            if (position == 4) {
                 txtBtn.setText(getResources().getString(R.string.GetStarted));
             } else {
                 txtBtn.setText(getResources().getString(R.string.Next));
@@ -122,14 +124,18 @@ public class WelcomeActivity extends FragmentActivity {
                     return SecondFragment.newInstance("SecondFragment, Instance 1");
                 case 2:
                     return ThirdFragment.newInstance("ThirdFragment, Instance 1");
+                case 3:
+                    return FourthFragment.newInstance("FourthFragment, Instance 1");
+                case 4:
+                    return FifthFragment.newInstance("FifthFragment, Instance 1");
                 default:
-                    return ThirdFragment.newInstance("SixthFragment, Default");
+                    return FifthFragment.newInstance("FifthFragment, Default");
             }
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return 5;
         }
     }
 }

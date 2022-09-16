@@ -1,12 +1,12 @@
 <resources>
-  <!--  Client-->
+    <!--  Client-->
     <!-- <string name="admob_app_id">
 ca-app-pub-2864521706832933~2687968123</string>
     <string name="admob_banner_id">
 ca-app-pub-2864521706832933/7701208388</string>-->
 
 
-  <!--  Test-->
+    <!--  Test-->
     <string name="admob_app_id">
 ca-app-pub-3940256099942544~3347511713</string>
     <string name="admob_banner_id">
@@ -118,4 +118,7 @@ ca-app-pub-3940256099942544/6300978111</string>
     <string name="We_have_sent_a_reset_password_link_to_your_register_email_address">We have sent a reset password  link to your registered email address</string>
     <string name="OK">OK</string>
     <string name="description_price"><![CDATA[Description & Price]]></string>
+    <string name="welcome_to_playnxt">Welcome to Playnxt</string>
+    <string name="your_premium_video_game_backlog_manager">Your premium video game backlog manager.</string>
+    <string name="playnxt_button">Playnxt Button</string>
 </resources>

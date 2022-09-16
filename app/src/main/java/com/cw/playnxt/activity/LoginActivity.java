@@ -32,6 +32,8 @@ import com.cw.playnxt.utils.Customprogress;
 import com.cw.playnxt.utils.GpsTracker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
@@ -49,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     String state = "";
     Geocoder geocoder;
     List<Address> addresses;*/
+   private FirebaseAuth mAuth;
     private ActivityLoginBinding binding;
     private boolean isShowPassword = false;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
@@ -93,6 +96,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public void init() {
         context = LoginActivity.this;
+        FirebaseApp.initializeApp(context);
+        mAuth = FirebaseAuth.getInstance();
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
         firebaseData();

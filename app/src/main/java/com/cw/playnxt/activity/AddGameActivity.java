@@ -65,6 +65,10 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.squareup.picasso.Picasso;
 
@@ -108,6 +112,9 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     String genre = "";
     List<String> platformStatic = new ArrayList<>();
     List<String> genreStatic = new ArrayList<>();
+    String gameType = "";
+    String gameId = "";
+
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     private ActivityAddGameBinding binding;
     private HeaderLayoutBinding headerBinding;
@@ -134,6 +141,15 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
+
+        // Initialize the Mobile Ads SDK
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
 
         platformDataSet(platformStatic);
         genreDataSet(genreStatic);
@@ -178,7 +194,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
 
             }
         });
-
     }
 
     public void onclicks() {
@@ -189,6 +204,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         binding.llSelectImage.setOnClickListener(this);
         binding.llCross.setOnClickListener(this);
         binding.autoCompleteGameTitle.setOnClickListener(this);
+        binding.btnGo.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceAsColor")
@@ -203,6 +219,15 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.llCross:
                 binding.llMain.setVisibility(View.VISIBLE);
                 binding.llSearch.setVisibility(View.GONE);
+                break;
+
+            case R.id.btnGo:
+                if(!binding.etSearch.getText().toString().equals("")){
+                    binding.autoCompleteGameTitle.setText(binding.etSearch.getText().toString().trim());
+                    binding.llMain.setVisibility(View.VISIBLE);
+                    binding.llSearch.setVisibility(View.GONE);
+                }
+
                 break;
 
             case R.id.autoCompleteGameTitle:
@@ -220,10 +245,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.llSelectImage:
-                /*CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(this);*/
-
                 selectImage();
                 break;
 
@@ -306,7 +327,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             }
         }*/
     }
-
     //******************************Category List Name*************************
     public void GetCategoryBacklogListNameAPI(String category_type) {
         Customprogress.showPopupProgressSpinner(context, true);
@@ -531,21 +551,11 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private Boolean isValidate() {
-       /* if (selectedPath.isEmpty()) {
-            Toast.makeText(context, "Please select any image", Toast.LENGTH_SHORT).show();
-            return false;
-        } else */
         if (binding.autoCompleteGameTitle.getText().toString().trim().isEmpty()) {
             Toast.makeText(context, "Please select any game title", Toast.LENGTH_SHORT).show();
             return false;
         } else if (platform.equals("")) {
             Toast.makeText(context, "Please select any game platform", Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (binding.etGameDescription.getText().toString().trim().isEmpty()) {
-            Toast.makeText(context, "Please select any game description", Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (genre.equals("")) {
-            Toast.makeText(context, "Please select any game genre", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -553,6 +563,13 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
 
     public void AddGameAPI(String pathMain) {
         Customprogress.showPopupProgressSpinner(context, true);
+
+        if(!pathMain.equals("")){
+            gameType = Constants.MANNUAL;
+        }else{
+            gameType = Constants.ADMIN_GAME;
+        }
+
         HashMap<String, RequestBody> data = new HashMap<>();
         data.put("title", createRequestBody(binding.autoCompleteGameTitle.getText().toString().trim()));
         data.put("platform", createRequestBody(platform));
@@ -562,6 +579,18 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         data.put("list_name", createRequestBody(category_list_item_name));
         data.put("list_id", createRequestBody(String.valueOf(category_list_item_id)));
         data.put("rate", createRequestBody(gameRating));
+        data.put("game_type", createRequestBody(gameType));
+        data.put("game_id", createRequestBody(gameId));
+
+
+        Log.d("TAG2", "GameId>>"+gameId);
+        Log.d("TAG2", "game_type>>"+gameType);
+        Log.d("TAG2", "GameImage>>"+pathMain);
+        Log.d("TAG2", "GameTitle>>"+binding.autoCompleteGameTitle.getText().toString().trim());
+        Log.d("TAG2", "GameDescription>>"+binding.etGameDescription.getText().toString().trim());
+        Log.d("TAG2", "GamePlatform>>"+platform);
+        Log.d("TAG2", "GameGenre>>"+genre);
+        Log.d("TAG2", "gameRating>>"+gameRating);
 
         MultipartBody.Part image = null;
         if (pathMain != null && !pathMain.equals("")) {
@@ -753,7 +782,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
         });
     }
 
-
     //************************************SELECT IMAGE*********************************************
     private void selectImage() {
         final CharSequence[] items = {"Take Photo", "Choose from Library", "Cancel"};
@@ -923,6 +951,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 binding.rvGameTitle.setVisibility(View.GONE);
                 binding.ivGame.setVisibility(View.VISIBLE);
                 binding.ivGameIcon.setVisibility(View.GONE);
+                gameId =  String.valueOf(gameTitleList.get(position).getId());
                 Picasso.get().load(Allurls.IMAGEURL + gameTitleList.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(binding.ivGame);
                 binding.autoCompleteGameTitle.setText(gameTitleList.get(position).getTitle());
 
@@ -934,6 +963,12 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 platformDataSet(gameTitleList.get(position).getPlatform());
                 genreDataSet(gameTitleList.get(position).getGenre());
 
+                Log.d("TAG2", "GameId>>"+gameId);
+                Log.d("TAG2", "GameImage>>"+Allurls.IMAGEURL + gameTitleList.get(position).getImage());
+                Log.d("TAG2", "GameTitle>>"+gameTitleList.get(position).getTitle());
+                Log.d("TAG2", "GameDescription>>"+gameTitleList.get(position).getDescription());
+                Log.d("TAG2", "GamePlatform>>"+gameTitleList.get(position).getPlatform());
+                Log.d("TAG2", "GameGenre>>"+gameTitleList.get(position).getGenre());
             }
         });
         binding.rvGameTitle.setHasFixedSize(true);

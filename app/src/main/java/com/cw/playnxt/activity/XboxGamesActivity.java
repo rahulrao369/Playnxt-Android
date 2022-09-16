@@ -24,6 +24,10 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.io.Serializable;
 import java.util.List;
@@ -65,6 +69,14 @@ public class XboxGamesActivity extends AppCompatActivity implements View.OnClick
         headerBinding.btnAdd.setVisibility(View.VISIBLE);
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
+
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
 
         try {
             Intent intent = getIntent();

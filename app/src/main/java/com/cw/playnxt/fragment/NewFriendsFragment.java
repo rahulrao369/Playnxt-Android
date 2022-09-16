@@ -23,6 +23,10 @@ import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 
@@ -60,6 +64,14 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
         context = binding.getRoot().getContext();
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
+
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
     }
 
     private void GetData() {
@@ -81,9 +93,11 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
                         System.out.println("onTabSelected>>>>>>>>>>>>>> " + tab.getPosition());
                         binding.viewpager1.setCurrentItem(tab.getPosition());
                         int currentPosition = binding.viewpager1.getCurrentItem();
+                        System.out.println("onCurrentPosition 1>>>>>>>>>>>>>> " + currentPosition);
                         adapter.notifyDataSetChanged();
                         binding.viewpager1.setAdapter(null);
                         binding.viewpager1.setAdapter(adapter);
+                        System.out.println("onCurrentPosition 2>>>>>>>>>>>>>> " + currentPosition);
                         binding.viewpager1.setCurrentItem(currentPosition);
                     }
 
@@ -99,7 +113,7 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
                 });
 
                 binding.viewpager1.setCurrentItem(tab_selected);
-               /* TabLayout.Tab tab = binding.tablayout1.getTabAt(tab_selected);
+             /*   TabLayout.Tab tab = binding.tablayout1.getTabAt(tab_selected);
                 tab.select();*/
                 binding.viewpager1.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.tablayout1));
 

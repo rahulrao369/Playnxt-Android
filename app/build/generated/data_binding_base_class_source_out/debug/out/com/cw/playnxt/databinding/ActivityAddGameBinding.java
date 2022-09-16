@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -25,6 +26,9 @@ import java.lang.String;
 public final class ActivityAddGameBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final AdView adView;
 
   @NonNull
   public final TextView autoCompleteGameTitle;
@@ -37,6 +41,12 @@ public final class ActivityAddGameBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayout btnAddToWishList;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
+
+  @NonNull
+  public final LinearLayout btnGo;
 
   @NonNull
   public final CircleImageView cvImage;
@@ -98,9 +108,10 @@ public final class ActivityAddGameBinding implements ViewBinding {
   @NonNull
   public final TextView tvUploadGameImg;
 
-  private ActivityAddGameBinding(@NonNull RelativeLayout rootView,
+  private ActivityAddGameBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull TextView autoCompleteGameTitle, @NonNull HeaderLayoutBinding bindingHeader,
       @NonNull LinearLayout btnAddToBacklog, @NonNull LinearLayout btnAddToWishList,
+      @NonNull RelativeLayout btnAdsShow, @NonNull LinearLayout btnGo,
       @NonNull CircleImageView cvImage, @NonNull EditText etGameDescription,
       @NonNull EditText etSearch, @NonNull ImageView ivGame, @NonNull ImageView ivGameIcon,
       @NonNull LinearLayout llCross, @NonNull LinearLayout llGiveRating,
@@ -111,10 +122,13 @@ public final class ActivityAddGameBinding implements ViewBinding {
       @NonNull Spinner spGameGenre, @NonNull Spinner spGamePlatform, @NonNull TextView tvRating,
       @NonNull TextView tvUploadGameImg) {
     this.rootView = rootView;
+    this.adView = adView;
     this.autoCompleteGameTitle = autoCompleteGameTitle;
     this.bindingHeader = bindingHeader;
     this.btnAddToBacklog = btnAddToBacklog;
     this.btnAddToWishList = btnAddToWishList;
+    this.btnAdsShow = btnAdsShow;
+    this.btnGo = btnGo;
     this.cvImage = cvImage;
     this.etGameDescription = etGameDescription;
     this.etSearch = etSearch;
@@ -164,6 +178,12 @@ public final class ActivityAddGameBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
       id = R.id.autoCompleteGameTitle;
       TextView autoCompleteGameTitle = ViewBindings.findChildViewById(rootView, id);
       if (autoCompleteGameTitle == null) {
@@ -186,6 +206,18 @@ public final class ActivityAddGameBinding implements ViewBinding {
       id = R.id.btnAddToWishList;
       LinearLayout btnAddToWishList = ViewBindings.findChildViewById(rootView, id);
       if (btnAddToWishList == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
+      id = R.id.btnGo;
+      LinearLayout btnGo = ViewBindings.findChildViewById(rootView, id);
+      if (btnGo == null) {
         break missingId;
       }
 
@@ -309,11 +341,11 @@ public final class ActivityAddGameBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddGameBinding((RelativeLayout) rootView, autoCompleteGameTitle,
-          binding_bindingHeader, btnAddToBacklog, btnAddToWishList, cvImage, etGameDescription,
-          etSearch, ivGame, ivGameIcon, llCross, llGiveRating, llImage, llMain, llNoData, llSearch,
-          llSelectImage, ratingBar, rlGameGenre, rlGamePlatform, rvGameTitle, spGameGenre,
-          spGamePlatform, tvRating, tvUploadGameImg);
+      return new ActivityAddGameBinding((RelativeLayout) rootView, adView, autoCompleteGameTitle,
+          binding_bindingHeader, btnAddToBacklog, btnAddToWishList, btnAdsShow, btnGo, cvImage,
+          etGameDescription, etSearch, ivGame, ivGameIcon, llCross, llGiveRating, llImage, llMain,
+          llNoData, llSearch, llSelectImage, ratingBar, rlGameGenre, rlGamePlatform, rvGameTitle,
+          spGameGenre, spGamePlatform, tvRating, tvUploadGameImg);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

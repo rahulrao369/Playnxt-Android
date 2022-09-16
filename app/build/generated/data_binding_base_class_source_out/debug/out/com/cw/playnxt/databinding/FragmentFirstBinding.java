@@ -19,15 +19,11 @@ public final class FragmentFirstBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final LinearLayout layoutDots;
-
-  @NonNull
   public final LinearLayout layoutDotsMain;
 
-  private FragmentFirstBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout layoutDots,
+  private FragmentFirstBinding(@NonNull LinearLayout rootView,
       @NonNull LinearLayout layoutDotsMain) {
     this.rootView = rootView;
-    this.layoutDots = layoutDots;
     this.layoutDotsMain = layoutDotsMain;
   }
 
@@ -58,19 +54,13 @@ public final class FragmentFirstBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.layoutDots;
-      LinearLayout layoutDots = ViewBindings.findChildViewById(rootView, id);
-      if (layoutDots == null) {
-        break missingId;
-      }
-
       id = R.id.layoutDotsMain;
       LinearLayout layoutDotsMain = ViewBindings.findChildViewById(rootView, id);
       if (layoutDotsMain == null) {
         break missingId;
       }
 
-      return new FragmentFirstBinding((LinearLayout) rootView, layoutDots, layoutDotsMain);
+      return new FragmentFirstBinding((LinearLayout) rootView, layoutDotsMain);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

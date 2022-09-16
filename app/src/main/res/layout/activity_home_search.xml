@@ -154,7 +154,7 @@
                         android:text="Games"
                         android:textColor="@color/white"
                         android:textSize="16sp"
-                        android:checked="false"/>
+                        android:checked="true"/>
 
                     <CheckBox
                         android:id="@+id/cbUser"
@@ -167,7 +167,7 @@
                         android:text="User"
                         android:textColor="@color/white"
                         android:textSize="16sp"
-                        android:checked="true"/>
+                        android:checked="false"/>
 
 
 

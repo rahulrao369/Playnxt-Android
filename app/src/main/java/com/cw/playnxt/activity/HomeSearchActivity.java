@@ -52,7 +52,7 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     private ActivityHomeSearchBinding binding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String filter_type="user";
+    String filter_type="game";
     int free_backlog;
 
     @Override

@@ -5,14 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager.widget.ViewPager;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.tabs.TabLayout;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
@@ -21,7 +22,13 @@ import java.lang.String;
 
 public final class FragmentNewFriendsBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final RelativeLayout rootView;
+
+  @NonNull
+  public final AdView adView;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final CircleImageView cvMyProfile;
@@ -38,10 +45,13 @@ public final class FragmentNewFriendsBinding implements ViewBinding {
   @NonNull
   public final ViewPager viewpager1;
 
-  private FragmentNewFriendsBinding(@NonNull LinearLayoutCompat rootView,
-      @NonNull CircleImageView cvMyProfile, @NonNull LinearLayout llMyProfile,
-      @NonNull TabLayout tablayout1, @NonNull TextView tvUserName, @NonNull ViewPager viewpager1) {
+  private FragmentNewFriendsBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
+      @NonNull RelativeLayout btnAdsShow, @NonNull CircleImageView cvMyProfile,
+      @NonNull LinearLayout llMyProfile, @NonNull TabLayout tablayout1,
+      @NonNull TextView tvUserName, @NonNull ViewPager viewpager1) {
     this.rootView = rootView;
+    this.adView = adView;
+    this.btnAdsShow = btnAdsShow;
     this.cvMyProfile = cvMyProfile;
     this.llMyProfile = llMyProfile;
     this.tablayout1 = tablayout1;
@@ -51,7 +61,7 @@ public final class FragmentNewFriendsBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayoutCompat getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -76,6 +86,18 @@ public final class FragmentNewFriendsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
       id = R.id.cvMyProfile;
       CircleImageView cvMyProfile = ViewBindings.findChildViewById(rootView, id);
       if (cvMyProfile == null) {
@@ -106,8 +128,8 @@ public final class FragmentNewFriendsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentNewFriendsBinding((LinearLayoutCompat) rootView, cvMyProfile, llMyProfile,
-          tablayout1, tvUserName, viewpager1);
+      return new FragmentNewFriendsBinding((RelativeLayout) rootView, adView, btnAdsShow,
+          cvMyProfile, llMyProfile, tablayout1, tvUserName, viewpager1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -87,13 +87,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Fragment someFragment = new NewFriendsFragment();
-//                Fragment someFragment = new FriendsFragment();
                 Bundle bundle2 = new Bundle();
                 bundle2.putInt("key", 1);
                 someFragment.setArguments(bundle2);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.frameContainer, someFragment ); // give your fragment container id in first parameter
-                transaction.addToBackStack("dvcsdvcd");  // if written, this transaction will be added to backstack
+                transaction.replace(R.id.frameContainer, someFragment );
+                transaction.addToBackStack("dvcsdvcd");
                 transaction.commit();
             }
         });
@@ -131,7 +130,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
 
     public void onclicks() {
-//        binding.tvSeeAll.setOnClickListener(this);
         binding.btnPlaynxt.setOnClickListener(this);
         binding.llMyProfile.setOnClickListener(this);
         binding.ivSearch.setOnClickListener(this);
@@ -140,17 +138,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-           /* case R.id.tvSeeAll:
-                FriendsFragment friendsFragment4 = new FriendsFragment();
-                Bundle bundle2 = new Bundle();
-                bundle2.putInt("key", 1);
-                friendsFragment4.setArguments(bundle2);
-                ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.Layout_container, friendsFragment4)
-                        .addToBackStack("jknhkj")
-                        .commit();
-                break;*/
-
             case R.id.llMyProfile:
                 startActivity(new Intent(context, MyProfileActivity.class)
                         .putExtra("key","1"));
