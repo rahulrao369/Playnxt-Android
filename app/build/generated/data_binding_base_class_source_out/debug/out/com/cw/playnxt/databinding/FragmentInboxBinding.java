@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +16,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -23,6 +25,12 @@ import java.lang.String;
 public final class FragmentInboxBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final AdView adView;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final CircleImageView cvMyProfile;
@@ -51,12 +59,15 @@ public final class FragmentInboxBinding implements ViewBinding {
   @NonNull
   public final TextView tvUserName;
 
-  private FragmentInboxBinding(@NonNull FrameLayout rootView, @NonNull CircleImageView cvMyProfile,
+  private FragmentInboxBinding(@NonNull FrameLayout rootView, @NonNull AdView adView,
+      @NonNull RelativeLayout btnAdsShow, @NonNull CircleImageView cvMyProfile,
       @NonNull EditText etSearchGame, @NonNull LinearLayout llMain,
       @NonNull LinearLayout llMyProfile, @NonNull LinearLayout llNoData,
       @NonNull LinearLayout llRecyclerview, @NonNull RecyclerView recyclerView,
       @NonNull SwipeRefreshLayout swipeLayout, @NonNull TextView tvUserName) {
     this.rootView = rootView;
+    this.adView = adView;
+    this.btnAdsShow = btnAdsShow;
     this.cvMyProfile = cvMyProfile;
     this.etSearchGame = etSearchGame;
     this.llMain = llMain;
@@ -95,6 +106,18 @@ public final class FragmentInboxBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
       id = R.id.cvMyProfile;
       CircleImageView cvMyProfile = ViewBindings.findChildViewById(rootView, id);
       if (cvMyProfile == null) {
@@ -149,8 +172,9 @@ public final class FragmentInboxBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentInboxBinding((FrameLayout) rootView, cvMyProfile, etSearchGame, llMain,
-          llMyProfile, llNoData, llRecyclerview, recyclerView, swipeLayout, tvUserName);
+      return new FragmentInboxBinding((FrameLayout) rootView, adView, btnAdsShow, cvMyProfile,
+          etSearchGame, llMain, llMyProfile, llNoData, llRecyclerview, recyclerView, swipeLayout,
+          tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

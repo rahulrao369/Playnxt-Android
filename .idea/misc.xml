@@ -96,6 +96,7 @@
         <entry key="app/src/main/res/layout/dialog_forgot_password.xml" value="0.11296296296296296" />
         <entry key="app/src/main/res/layout/dialog_game_backlog_wishlist_type_list.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/dialog_subscription.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/dialog_thankyou.xml" value="0.1712962962962963" />
         <entry key="app/src/main/res/layout/fragment_anuual.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_fifth.xml" value="0.19791666666666666" />

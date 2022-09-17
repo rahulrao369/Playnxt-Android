@@ -69,6 +69,10 @@ import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
 import com.cw.playnxt.utils.Customprogress;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.squareup.picasso.Picasso;
 
@@ -131,6 +135,15 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         headerBinding.btnFilter.setVisibility(View.GONE);
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);
+
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
+
 
         try {
             Intent intent = getIntent();
@@ -1043,6 +1056,12 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
+                        if (response.body().getData().getSubscribed().equals(Constants.YES)) {
+                            binding.btnAdsShow.setVisibility(View.GONE);
+                        }else{
+                            binding.btnAdsShow.setVisibility(View.VISIBLE);
+                        }
+
                         subscribed = response.body().getData().getSubscribed();
                         Log.d("TAG","subscribed>>**"+subscribed);
                         //planType =  response.body().getData().getSubscription().getType();

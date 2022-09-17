@@ -248,6 +248,11 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
+                        if (response.body().getData().getSubscribed().equals(Constants.YES)) {
+                            binding.btnAdsShow.setVisibility(View.GONE);
+                        }else{
+                            binding.btnAdsShow.setVisibility(View.VISIBLE);
+                        }
                         planType =  response.body().getData().getSubscription().getType();
                         subscribed = response.body().getData().getSubscribed();
                         free_backlog =  response.body().getData().getFree_backlog();

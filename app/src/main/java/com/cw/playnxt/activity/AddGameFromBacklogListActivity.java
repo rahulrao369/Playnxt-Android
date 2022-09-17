@@ -44,6 +44,7 @@ import com.cw.playnxt.adapter.SearchAdapters.GetCategoryNameWishListAdapter;
 import com.cw.playnxt.databinding.ActivityAddGameBinding;
 import com.cw.playnxt.databinding.ActivityAddGameFromBacklogListBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.GetCategoryListName.Backlog;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameParaRes;
 import com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameResponse;
@@ -53,6 +54,7 @@ import com.cw.playnxt.model.GetCategoryListName.Wishlist;
 import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterParaRes;
 import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterResponse;
 import com.cw.playnxt.model.GetGameByFilter.Newdatum;
+import com.cw.playnxt.model.GetPlatformGenre.GetPlatformGenreResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.server.Allurls;
 import com.cw.playnxt.server.ApiUtils;
@@ -98,6 +100,8 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
     String gameRating= "";
+    String subscribed = "";
+    int free_backlog;
     String path = "";
     List<Newdatum> gameTitleSearchList = new ArrayList<Newdatum>();
     ArrayAdapter platformAdapter;
@@ -136,9 +140,12 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
         AdRequest adRequest = new AdRequest.Builder().build();
         binding.adView.loadAd(adRequest);
 
-        platformDataSet(platformStatic);
-        genreDataSet(genreStatic);
-
+        if (Constants.isInternetConnected(context)) {
+            NewCheckSubscriptionAPI();
+            getPlatformGenreAPI();
+        } else {
+            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        }
 
         try {
             Intent intent = getIntent();
@@ -357,6 +364,36 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
 
     public RequestBody createRequestBody(@NonNull String s) {
         return RequestBody.create(MediaType.parse("multipart/form-data"), s);
+    }
+
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
+            @Override
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        subscribed = response.body().getData().getSubscribed();
+                        free_backlog = response.body().getData().getFree_backlog();
+                        Log.d("TAG", "subscribed>>>>" + subscribed);
+                        Log.d("TAG", "free_backlog>>>>" + free_backlog);
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -594,6 +631,38 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
             }
         });
 
+    }
+    public void getPlatformGenreAPI() {
+        jsonPlaceHolderApi.getPlatformGenreAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<GetPlatformGenreResponse>() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onResponse(Call<GetPlatformGenreResponse> call, Response<GetPlatformGenreResponse> response) {
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        List<String> allPlatformList = new ArrayList<>();
+                        List<String> allGenreList = new ArrayList<>();
+                        for(int i = 0; i < response.body().getData().getPlatform().size(); i++){
+                            allPlatformList.add(response.body().getData().getPlatform().get(i).getName());
+                        }
+                        for(int i = 0; i < response.body().getData().getGenre().size(); i++){
+                            allGenreList.add(response.body().getData().getGenre().get(i).getName());
+                        }
+
+                        platformDataSet(allPlatformList);
+                        genreDataSet(allGenreList);
+
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<GetPlatformGenreResponse> call, Throwable t) {
+                Log.e("TAG", "" + t.getMessage());
+            }
+        });
     }
 }
 

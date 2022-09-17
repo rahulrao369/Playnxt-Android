@@ -52,7 +52,7 @@
                         android:paddingEnd="18dp"
                         android:textColor="@color/white"
                         android:textColorHint="@color/edt_text"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:scrollbars="vertical"
                     />
                 </LinearLayout>

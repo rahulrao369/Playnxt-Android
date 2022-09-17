@@ -3389,6 +3389,7 @@ id llTimeStamp
 id llUpper
 id llXboxGames
 id ll_bottom
+id llbottom
 id logo_center_img
 id logo_img
 id lytCheckBox
@@ -3742,6 +3743,7 @@ id txtBtn
 id txtBtnMonth
 id txtChangePassword
 id txtDeleteAccount
+id txtOk
 id txtSend
 id txt_ok
 id txtbtnYear
@@ -3948,6 +3950,7 @@ layout dialog_change_password
 layout dialog_forgot_password
 layout dialog_game_backlog_wishlist_type_list
 layout dialog_subscription
+layout dialog_thankyou
 layout fragment_anuual
 layout fragment_discover
 layout fragment_fifth

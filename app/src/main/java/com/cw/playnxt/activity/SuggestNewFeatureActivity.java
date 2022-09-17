@@ -3,10 +3,12 @@ package com.cw.playnxt.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cw.playnxt.R;
@@ -93,8 +95,7 @@ public class SuggestNewFeatureActivity extends AppCompatActivity implements View
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        finish();
+                        openThankyouDialog();
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
@@ -106,5 +107,21 @@ public class SuggestNewFeatureActivity extends AppCompatActivity implements View
                 Log.e("TAG", "" + t.getMessage());
             }
         });
+    }
+
+    private void openThankyouDialog() {
+        final Dialog dialog = new Dialog(context);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setContentView(R.layout.dialog_thankyou);
+        TextView txtOk = dialog.findViewById(R.id.txtOk);
+        txtOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
+        dialog.show();
     }
 }

@@ -53,6 +53,7 @@ import com.cw.playnxt.model.GetCategoryListName.Wishlist;
 import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterParaRes;
 import com.cw.playnxt.model.GetGameByFilter.GetGameByFilterResponse;
 import com.cw.playnxt.model.GetGameByFilter.Newdatum;
+import com.cw.playnxt.model.GetPlatformGenre.GetPlatformGenreResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.server.Allurls;
 import com.cw.playnxt.server.ApiUtils;
@@ -140,8 +141,11 @@ public class AddGameFromWishlistActivity extends AppCompatActivity implements Vi
         AdRequest adRequest = new AdRequest.Builder().build();
         binding.adView.loadAd(adRequest);
 
-        platformDataSet(platformStatic);
-        genreDataSet(genreStatic);
+        if (Constants.isInternetConnected(context)) {
+            getPlatformGenreAPI();
+        } else {
+            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        }
 
         try {
             Intent intent = getIntent();
@@ -586,5 +590,37 @@ public class AddGameFromWishlistActivity extends AppCompatActivity implements Vi
             }
         });
 
+    }
+    public void getPlatformGenreAPI() {
+        jsonPlaceHolderApi.getPlatformGenreAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<GetPlatformGenreResponse>() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onResponse(Call<GetPlatformGenreResponse> call, Response<GetPlatformGenreResponse> response) {
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        List<String> allPlatformList = new ArrayList<>();
+                        List<String> allGenreList = new ArrayList<>();
+                        for(int i = 0; i < response.body().getData().getPlatform().size(); i++){
+                            allPlatformList.add(response.body().getData().getPlatform().get(i).getName());
+                        }
+                        for(int i = 0; i < response.body().getData().getGenre().size(); i++){
+                            allGenreList.add(response.body().getData().getGenre().get(i).getName());
+                        }
+
+                        platformDataSet(allPlatformList);
+                        genreDataSet(allGenreList);
+
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<GetPlatformGenreResponse> call, Throwable t) {
+                Log.e("TAG", "" + t.getMessage());
+            }
+        });
     }
 }

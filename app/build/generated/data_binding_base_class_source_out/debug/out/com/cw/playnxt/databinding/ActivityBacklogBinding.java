@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,10 +24,16 @@ public final class ActivityBacklogBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final AdView adView;
+
+  @NonNull
   public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
   public final LinearLayout btnAdd;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final ImageView ivAdd;
@@ -46,14 +53,17 @@ public final class ActivityBacklogBinding implements ViewBinding {
   @NonNull
   public final TextView txtBtn;
 
-  private ActivityBacklogBinding(@NonNull RelativeLayout rootView,
+  private ActivityBacklogBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAdd,
-      @NonNull ImageView ivAdd, @NonNull ImageView ivSubscription,
-      @NonNull LinearLayout llCreateBacklogList, @NonNull LinearLayout llNoData,
-      @NonNull RecyclerView recyclerView, @NonNull TextView txtBtn) {
+      @NonNull RelativeLayout btnAdsShow, @NonNull ImageView ivAdd,
+      @NonNull ImageView ivSubscription, @NonNull LinearLayout llCreateBacklogList,
+      @NonNull LinearLayout llNoData, @NonNull RecyclerView recyclerView,
+      @NonNull TextView txtBtn) {
     this.rootView = rootView;
+    this.adView = adView;
     this.bindingHeader = bindingHeader;
     this.btnAdd = btnAdd;
+    this.btnAdsShow = btnAdsShow;
     this.ivAdd = ivAdd;
     this.ivSubscription = ivSubscription;
     this.llCreateBacklogList = llCreateBacklogList;
@@ -89,6 +99,12 @@ public final class ActivityBacklogBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
       id = R.id.bindingHeader;
       View bindingHeader = ViewBindings.findChildViewById(rootView, id);
       if (bindingHeader == null) {
@@ -99,6 +115,12 @@ public final class ActivityBacklogBinding implements ViewBinding {
       id = R.id.btnAdd;
       LinearLayout btnAdd = ViewBindings.findChildViewById(rootView, id);
       if (btnAdd == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
         break missingId;
       }
 
@@ -138,8 +160,9 @@ public final class ActivityBacklogBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityBacklogBinding((RelativeLayout) rootView, binding_bindingHeader, btnAdd,
-          ivAdd, ivSubscription, llCreateBacklogList, llNoData, recyclerView, txtBtn);
+      return new ActivityBacklogBinding((RelativeLayout) rootView, adView, binding_bindingHeader,
+          btnAdd, btnAdsShow, ivAdd, ivSubscription, llCreateBacklogList, llNoData, recyclerView,
+          txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

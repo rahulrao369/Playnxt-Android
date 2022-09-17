@@ -44,6 +44,7 @@ import com.cw.playnxt.model.GetMyFriendList.GetMyFriendListResponse;
 import com.cw.playnxt.model.GetMyFriendProfile.GetMyFriendProfileParaRes;
 import com.cw.playnxt.model.GetMyFriendProfile.GetMyFriendProfileResponse;
 import com.cw.playnxt.model.GetMyProfile.GetMyProfileResponse;
+import com.cw.playnxt.model.GetPlatformGenre.GetPlatformGenreResponse;
 import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
 import com.cw.playnxt.model.GetWishlist.GetMyWishlistResponse;
 import com.cw.playnxt.model.HomeButton.HomeButtonResponse;
@@ -344,5 +345,9 @@ public interface JsonPlaceHolderApi {
     Call<GetGameByFilterResponse> getGameByFilterAPI(@Header("Content-Type") String content_type,
                                                      @Header("Authorization") String token,
                                                      @Body GetGameByFilterParaRes getGameByFilterParaRes);
+
+    @POST("users/get-platform-genre")
+    Call<GetPlatformGenreResponse> getPlatformGenreAPI(@Header("Content-Type") String content_type,
+                                                       @Header("Authorization") String token);
 
 }

@@ -27,6 +27,7 @@ import com.cw.playnxt.adapter.DiscoverAdapters.GameListAdapter;
 import com.cw.playnxt.adapter.HomeAdapters.FriendsListAdapter;
 import com.cw.playnxt.databinding.FragmentDiscoverBinding;
 import com.cw.playnxt.databinding.FragmentHomeBinding;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.HomeButton.HomeButtonResponse;
 import com.cw.playnxt.model.StaffPicks.Capsul;
 import com.cw.playnxt.model.StaffPicks.StaffPicksResponse;
@@ -95,6 +96,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
         binding.adView.loadAd(adRequest);
 
         if (Constants.isInternetConnected(context)) {
+            NewCheckSubscriptionAPI();
             StaffPicksAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
@@ -176,5 +178,32 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
         binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(context,2));
         binding.recyclerView.setAdapter(adapter);
+    }
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
+            @Override
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        if (response.body().getData().getSubscribed().equals(Constants.YES)) {
+                            binding.btnAdsShow.setVisibility(View.GONE);
+                        }else{
+                            binding.btnAdsShow.setVisibility(View.VISIBLE);
+                        }
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

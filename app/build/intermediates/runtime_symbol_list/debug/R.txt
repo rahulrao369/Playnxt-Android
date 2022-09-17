@@ -3388,6 +3388,7 @@ int id llTimeStamp 0x7f0a01cb
 int id llUpper 0x7f0a01cc
 int id llXboxGames 0x7f0a01cd
 int id ll_bottom 0x7f0a01ce
+int id llbottom 0x7f0a0352
 int id logo_center_img 0x7f0a01cf
 int id logo_img 0x7f0a01d0
 int id lytCheckBox 0x7f0a01d1
@@ -3741,6 +3742,7 @@ int id txtBtn 0x7f0a032c
 int id txtBtnMonth 0x7f0a032d
 int id txtChangePassword 0x7f0a032e
 int id txtDeleteAccount 0x7f0a032f
+int id txtOk 0x7f0a0351
 int id txtSend 0x7f0a0330
 int id txt_ok 0x7f0a0331
 int id txtbtnYear 0x7f0a0332
@@ -3947,6 +3949,7 @@ int layout dialog_change_password 0x7f0d0068
 int layout dialog_forgot_password 0x7f0d0069
 int layout dialog_game_backlog_wishlist_type_list 0x7f0d006a
 int layout dialog_subscription 0x7f0d006b
+int layout dialog_thankyou 0x7f0d00f8
 int layout fragment_anuual 0x7f0d006c
 int layout fragment_discover 0x7f0d006d
 int layout fragment_fifth 0x7f0d006e

@@ -338,7 +338,11 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                       // planType =  response.body().getData().getSubscription().getType();
+                        if (response.body().getData().getSubscribed().equals(Constants.YES)) {
+                            binding.btnAdsShow.setVisibility(View.GONE);
+                        }else{
+                            binding.btnAdsShow.setVisibility(View.VISIBLE);
+                        }
                         free_backlog =  response.body().getData().getFree_backlog();
                         Log.d("TAG","free_backlog>>>>"+free_backlog);
                     } else {

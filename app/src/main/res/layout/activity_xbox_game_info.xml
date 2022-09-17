@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/btnAdsShow"
         android:orientation="vertical">
 
         <include
@@ -178,7 +179,7 @@
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp" />
 
 
             </LinearLayout>
@@ -186,5 +187,31 @@
         </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnAdsShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <!-- set Banner ad position in UI layout design -->
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/admob_banner_id">
+
+        </com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

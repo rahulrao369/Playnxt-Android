@@ -14,6 +14,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager.widget.ViewPager;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.tabs.TabLayout;
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
@@ -23,6 +24,12 @@ import java.lang.String;
 public final class ActivityMyProfileBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final AdView adView;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final ImageView btnBack;
@@ -54,12 +61,15 @@ public final class ActivityMyProfileBinding implements ViewBinding {
   @NonNull
   public final ViewPager viewpager;
 
-  private ActivityMyProfileBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btnBack,
+  private ActivityMyProfileBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
+      @NonNull RelativeLayout btnAdsShow, @NonNull ImageView btnBack,
       @NonNull LinearLayout btnEditProfile, @NonNull LinearLayout btnSetting,
       @NonNull CircleImageView cvUserProfile, @NonNull LinearLayout llMain,
       @NonNull TabLayout tablayout, @NonNull TextView tvHeading, @NonNull TextView tvName,
       @NonNull TextView txtBtn, @NonNull ViewPager viewpager) {
     this.rootView = rootView;
+    this.adView = adView;
+    this.btnAdsShow = btnAdsShow;
     this.btnBack = btnBack;
     this.btnEditProfile = btnEditProfile;
     this.btnSetting = btnSetting;
@@ -99,6 +109,18 @@ public final class ActivityMyProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
       id = R.id.btnBack;
       ImageView btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
@@ -159,8 +181,9 @@ public final class ActivityMyProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMyProfileBinding((RelativeLayout) rootView, btnBack, btnEditProfile,
-          btnSetting, cvUserProfile, llMain, tablayout, tvHeading, tvName, txtBtn, viewpager);
+      return new ActivityMyProfileBinding((RelativeLayout) rootView, adView, btnAdsShow, btnBack,
+          btnEditProfile, btnSetting, cvUserProfile, llMain, tablayout, tvHeading, tvName, txtBtn,
+          viewpager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

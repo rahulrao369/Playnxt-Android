@@ -99,7 +99,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
                     android:orientation="horizontal"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:gravity="center">
 
                     <!-- set Banner ad position in UI layout design -->

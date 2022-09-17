@@ -592,6 +592,10 @@
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/font/nunit_medium.ttf"
     },
     {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_dialog_thankyou.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_thankyou.xml"
+    },
+    {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_password.png.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/generated/res/pngs/debug/drawable-ldpi/ic_password.png"
     },

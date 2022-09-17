@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnAdd"
+        android:layout_above="@+id/llBottom"
         android:orientation="vertical">
 
         <include
@@ -154,53 +154,91 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/btnAdd"
+        android:id="@+id/llBottom"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
-            android:id="@+id/btnAddToBacklog"
+            android:id="@+id/btnAdd"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button"
-            android:gravity="center">
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_extra_light"
-                android:text="@string/add_to_backlog"
-                android:textColor="@color/white"
-                android:textFontWeight="300"
-                android:textSize="16sp" />
+            <LinearLayout
+                android:id="@+id/btnAddToBacklog"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_extra_light"
+                    android:text="@string/add_to_backlog"
+                    android:textColor="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnAddToWishList"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_extra_light"
+                    android:text="@string/add_to_wishist"
+                    android:textColor="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/btnAddToWishList"
+        <RelativeLayout
+            android:id="@+id/btnAdsShow"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:layout_marginStart="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_alignParentBottom="true">
 
-            <TextView
+            <!-- set Banner ad position in UI layout design -->
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_extra_light"
-                android:text="@string/add_to_wishist"
-                android:textColor="@color/white"
-                android:textFontWeight="300"
-                android:textSize="16sp" />
-        </LinearLayout>
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/admob_banner_id">
+
+            </com.google.android.gms.ads.AdView>
+
+        </RelativeLayout>
 
     </LinearLayout>
+
+
+
 
 </RelativeLayout>

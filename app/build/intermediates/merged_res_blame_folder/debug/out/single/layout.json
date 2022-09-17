@@ -172,12 +172,12 @@
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_forgot_password.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_recent_games.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_recent_games.xml"
-    },
-    {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game_from_wishlist.xml",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game_from_wishlist.xml"
+    },
+    {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_recent_games.xml",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_recent_games.xml"
     },
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_subscription_final.xml",
@@ -370,6 +370,10 @@
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_game_info.xml",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_game_info.xml"
+    },
+    {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_thankyou.xml",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_thankyou.xml"
     },
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/list_item_setting_layout.xml",

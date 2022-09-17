@@ -26,6 +26,7 @@ import com.cw.playnxt.activity.MainGameInfoActivity;
 import com.cw.playnxt.activity.MyProfileActivity;
 import com.cw.playnxt.adapter.HomeAdapters.FriendsListAdapter;
 import com.cw.playnxt.databinding.FragmentHomeBinding;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.HomeButton.HomeButtonResponse;
 import com.cw.playnxt.model.HomeData.Following;
 import com.cw.playnxt.model.HomeData.HomeApiResponse;
@@ -59,7 +60,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_home,true);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-
         onclicks();
         CLick();
         initializeRefreshListener();
@@ -112,7 +112,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         vibe = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         Log.d("TAG","Home Token>>>"+mySharedPref.getSavedAccessToken());
 
-        // Initialize the Mobile Ads SDK
         MobileAds.initialize(context, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -122,6 +121,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         binding.adView.loadAd(adRequest);
 
         if (Constants.isInternetConnected(context)) {
+            NewCheckSubscriptionAPI();
             HomeAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
@@ -263,6 +263,34 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             public void onFailure(Call<HomeButtonResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
+            }
+        });
+    }
+
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
+            @Override
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
+                        if (response.body().getData().getSubscribed().equals(Constants.YES)) {
+                            binding.btnAdsShow.setVisibility(View.GONE);
+                        }else{
+                            binding.btnAdsShow.setVisibility(View.VISIBLE);
+                        }
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

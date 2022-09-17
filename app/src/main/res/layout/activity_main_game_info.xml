@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,8 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_above="@+id/btnAddToList">
+        android:layout_above="@+id/llbottom"
+        android:orientation="vertical">
 
         <include
             android:id="@+id/bindingHeader"
@@ -174,112 +173,111 @@
                         android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="8dp" />
 
                 </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llFriendsGameInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
 
                 <LinearLayout
+                    android:id="@+id/llFriendsGameInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RatingBar
-                        android:id="@+id/ratingBar"
-                        style="?android:attr/ratingBarStyleIndicator"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:progressTint="@color/app_theme"
-                        android:progressBackgroundTint="@color/btn_gray"
-                        android:paddingTop="8dp"
-                        android:isIndicator="true"
-                        android:scaleX="0.9"
-                        android:scaleY="0.9"
-                        android:transformPivotX="0dp"
-                        android:transformPivotY="0dp"
-                        android:stepSize="0.1"
-                        android:numStars="5"
-                        android:secondaryProgressTint="@color/app_theme"
-                        android:layout_gravity="start"
-                        />
-
-                    <TextView
-                        android:id="@+id/tvRating"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            style="?android:attr/ratingBarStyleIndicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:paddingTop="8dp"
+                            android:progressBackgroundTint="@color/btn_gray"
+                            android:progressTint="@color/app_theme"
+                            android:scaleX="0.9"
+                            android:scaleY="0.9"
+                            android:secondaryProgressTint="@color/app_theme"
+                            android:stepSize="0.1"
+                            android:transformPivotX="0dp"
+                            android:transformPivotY="0dp" />
+
+                        <TextView
+                            android:id="@+id/tvRating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/nunito_semi_bold"
+                            android:text=""
+                            android:textColor="@color/edt_text"
+                            android:textFontWeight="300"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvGameDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:background="@android:color/transparent"
-                        android:fontFamily="@font/nunito_semi_bold"
+                        android:fontFamily="@font/nunito_extra_light"
                         android:text=""
-                        android:textColor="@color/edt_text"
+                        android:textColor="@color/white"
                         android:textFontWeight="300"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvPlatform"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/nunito_semi_bold"
+                        android:text="Game Platform"
+                        android:textColor="@color/white"
+                        android:textFontWeight="500"
                         android:textSize="16sp" />
 
+                    <TextView
+                        android:id="@+id/tvGamePlatform"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textFontWeight="500"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvGenre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/nunito_semi_bold"
+                        android:text="Genre"
+                        android:textColor="@color/white"
+                        android:textFontWeight="500"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvGameGenre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textFontWeight="500"
+                        android:textSize="12sp" />
+
                 </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tvGameDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="@font/nunito_extra_light"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textFontWeight="300"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tvPlatform"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/nunito_semi_bold"
-                    android:text="Game Platform"
-                    android:textColor="@color/white"
-                    android:textFontWeight="500"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tvGamePlatform"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textFontWeight="500"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/tvGenre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/nunito_semi_bold"
-                    android:text="Genre"
-                    android:textColor="@color/white"
-                    android:textFontWeight="500"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tvGameGenre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textFontWeight="500"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
 
             </LinearLayout>
 
@@ -288,53 +286,89 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/btnAddToList"
+        android:id="@+id/llbottom"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:visibility="gone">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
-            android:id="@+id/btnAddToBacklog"
+            android:id="@+id/btnAddToList"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button"
-            android:gravity="center">
+            android:layout_height="80dp"
+            android:layout_above="@+id/btnAdsShow"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:visibility="gone">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_extra_light"
-                android:text="@string/add_to_backlog"
-                android:textColor="@color/white"
-                android:textFontWeight="300"
-                android:textSize="16sp" />
+            <LinearLayout
+                android:id="@+id/btnAddToBacklog"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_extra_light"
+                    android:text="@string/add_to_backlog"
+                    android:textColor="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnAddToWishList"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_extra_light"
+                    android:text="@string/add_to_wishist"
+                    android:textColor="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/btnAddToWishList"
+        <RelativeLayout
+            android:id="@+id/btnAdsShow"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:layout_marginStart="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
 
-            <TextView
+            <!-- set Banner ad position in UI layout design -->
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_extra_light"
-                android:text="@string/add_to_wishist"
-                android:textColor="@color/white"
-                android:textFontWeight="300"
-                android:textSize="16sp" />
-        </LinearLayout>
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/admob_banner_id">
+
+            </com.google.android.gms.ads.AdView>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
