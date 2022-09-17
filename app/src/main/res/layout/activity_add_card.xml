@@ -40,7 +40,7 @@
 
                     <com.cooltechworks.creditcarddesign.CreditCardView
                         android:id="@+id/creditCardView"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:card_number=""
                         app:card_holder_name="  "

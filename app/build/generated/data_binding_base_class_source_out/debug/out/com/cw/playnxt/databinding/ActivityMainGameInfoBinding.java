@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,6 +23,9 @@ import java.lang.String;
 public final class ActivityMainGameInfoBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final AdView adView;
 
   @NonNull
   public final HeaderLayoutBinding bindingHeader;
@@ -39,6 +43,9 @@ public final class ActivityMainGameInfoBinding implements ViewBinding {
   public final LinearLayout btnAddToWishList;
 
   @NonNull
+  public final RelativeLayout btnAdsShow;
+
+  @NonNull
   public final LinearLayout btnEditCurrentStatus;
 
   @NonNull
@@ -52,6 +59,9 @@ public final class ActivityMainGameInfoBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayout llMyGameInfo;
+
+  @NonNull
+  public final LinearLayout llbottom;
 
   @NonNull
   public final RatingBar ratingBar;
@@ -86,28 +96,32 @@ public final class ActivityMainGameInfoBinding implements ViewBinding {
   @NonNull
   public final TextView tvRating;
 
-  private ActivityMainGameInfoBinding(@NonNull RelativeLayout rootView,
+  private ActivityMainGameInfoBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAddNewNote,
       @NonNull LinearLayout btnAddToBacklog, @NonNull LinearLayout btnAddToList,
-      @NonNull LinearLayout btnAddToWishList, @NonNull LinearLayout btnEditCurrentStatus,
-      @NonNull ImageView gameImg, @NonNull LinearLayout ivEditStatus,
-      @NonNull LinearLayout llFriendsGameInfo, @NonNull LinearLayout llMyGameInfo,
+      @NonNull LinearLayout btnAddToWishList, @NonNull RelativeLayout btnAdsShow,
+      @NonNull LinearLayout btnEditCurrentStatus, @NonNull ImageView gameImg,
+      @NonNull LinearLayout ivEditStatus, @NonNull LinearLayout llFriendsGameInfo,
+      @NonNull LinearLayout llMyGameInfo, @NonNull LinearLayout llbottom,
       @NonNull RatingBar ratingBar, @NonNull RecyclerView recyclerView,
       @NonNull TextView tvCurrentStatus, @NonNull TextView tvGameDescription,
       @NonNull TextView tvGameGenre, @NonNull TextView tvGamePlatform,
       @NonNull TextView tvGameTitle, @NonNull TextView tvGenre, @NonNull TextView tvNotes,
       @NonNull TextView tvPlatform, @NonNull TextView tvRating) {
     this.rootView = rootView;
+    this.adView = adView;
     this.bindingHeader = bindingHeader;
     this.btnAddNewNote = btnAddNewNote;
     this.btnAddToBacklog = btnAddToBacklog;
     this.btnAddToList = btnAddToList;
     this.btnAddToWishList = btnAddToWishList;
+    this.btnAdsShow = btnAdsShow;
     this.btnEditCurrentStatus = btnEditCurrentStatus;
     this.gameImg = gameImg;
     this.ivEditStatus = ivEditStatus;
     this.llFriendsGameInfo = llFriendsGameInfo;
     this.llMyGameInfo = llMyGameInfo;
+    this.llbottom = llbottom;
     this.ratingBar = ratingBar;
     this.recyclerView = recyclerView;
     this.tvCurrentStatus = tvCurrentStatus;
@@ -148,6 +162,12 @@ public final class ActivityMainGameInfoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
       id = R.id.bindingHeader;
       View bindingHeader = ViewBindings.findChildViewById(rootView, id);
       if (bindingHeader == null) {
@@ -179,6 +199,12 @@ public final class ActivityMainGameInfoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
       id = R.id.btnEditCurrentStatus;
       LinearLayout btnEditCurrentStatus = ViewBindings.findChildViewById(rootView, id);
       if (btnEditCurrentStatus == null) {
@@ -206,6 +232,12 @@ public final class ActivityMainGameInfoBinding implements ViewBinding {
       id = R.id.llMyGameInfo;
       LinearLayout llMyGameInfo = ViewBindings.findChildViewById(rootView, id);
       if (llMyGameInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.llbottom;
+      LinearLayout llbottom = ViewBindings.findChildViewById(rootView, id);
+      if (llbottom == null) {
         break missingId;
       }
 
@@ -275,11 +307,11 @@ public final class ActivityMainGameInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainGameInfoBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnAddNewNote, btnAddToBacklog, btnAddToList, btnAddToWishList, btnEditCurrentStatus,
-          gameImg, ivEditStatus, llFriendsGameInfo, llMyGameInfo, ratingBar, recyclerView,
-          tvCurrentStatus, tvGameDescription, tvGameGenre, tvGamePlatform, tvGameTitle, tvGenre,
-          tvNotes, tvPlatform, tvRating);
+      return new ActivityMainGameInfoBinding((RelativeLayout) rootView, adView,
+          binding_bindingHeader, btnAddNewNote, btnAddToBacklog, btnAddToList, btnAddToWishList,
+          btnAdsShow, btnEditCurrentStatus, gameImg, ivEditStatus, llFriendsGameInfo, llMyGameInfo,
+          llbottom, ratingBar, recyclerView, tvCurrentStatus, tvGameDescription, tvGameGenre,
+          tvGamePlatform, tvGameTitle, tvGenre, tvNotes, tvPlatform, tvRating);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

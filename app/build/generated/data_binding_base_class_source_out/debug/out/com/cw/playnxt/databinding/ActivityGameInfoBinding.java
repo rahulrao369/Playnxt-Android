@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class ActivityGameInfoBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final AdView adView;
 
   @NonNull
   public final HeaderLayoutBinding bindingHeader;
@@ -32,6 +36,12 @@ public final class ActivityGameInfoBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayout btnAddToWishList;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
+
+  @NonNull
+  public final LinearLayout llBottom;
 
   @NonNull
   public final RatingBar ratingBar;
@@ -54,17 +64,21 @@ public final class ActivityGameInfoBinding implements ViewBinding {
   @NonNull
   public final TextView tvRating;
 
-  private ActivityGameInfoBinding(@NonNull RelativeLayout rootView,
+  private ActivityGameInfoBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAdd,
       @NonNull LinearLayout btnAddToBacklog, @NonNull LinearLayout btnAddToWishList,
+      @NonNull RelativeLayout btnAdsShow, @NonNull LinearLayout llBottom,
       @NonNull RatingBar ratingBar, @NonNull TextView tvGameDescription,
       @NonNull TextView tvGameGenre, @NonNull TextView tvGamePlatform, @NonNull TextView tvGenre,
       @NonNull TextView tvPlatform, @NonNull TextView tvRating) {
     this.rootView = rootView;
+    this.adView = adView;
     this.bindingHeader = bindingHeader;
     this.btnAdd = btnAdd;
     this.btnAddToBacklog = btnAddToBacklog;
     this.btnAddToWishList = btnAddToWishList;
+    this.btnAdsShow = btnAdsShow;
+    this.llBottom = llBottom;
     this.ratingBar = ratingBar;
     this.tvGameDescription = tvGameDescription;
     this.tvGameGenre = tvGameGenre;
@@ -101,6 +115,12 @@ public final class ActivityGameInfoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
       id = R.id.bindingHeader;
       View bindingHeader = ViewBindings.findChildViewById(rootView, id);
       if (bindingHeader == null) {
@@ -123,6 +143,18 @@ public final class ActivityGameInfoBinding implements ViewBinding {
       id = R.id.btnAddToWishList;
       LinearLayout btnAddToWishList = ViewBindings.findChildViewById(rootView, id);
       if (btnAddToWishList == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
+        break missingId;
+      }
+
+      id = R.id.llBottom;
+      LinearLayout llBottom = ViewBindings.findChildViewById(rootView, id);
+      if (llBottom == null) {
         break missingId;
       }
 
@@ -168,9 +200,9 @@ public final class ActivityGameInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityGameInfoBinding((RelativeLayout) rootView, binding_bindingHeader, btnAdd,
-          btnAddToBacklog, btnAddToWishList, ratingBar, tvGameDescription, tvGameGenre,
-          tvGamePlatform, tvGenre, tvPlatform, tvRating);
+      return new ActivityGameInfoBinding((RelativeLayout) rootView, adView, binding_bindingHeader,
+          btnAdd, btnAddToBacklog, btnAddToWishList, btnAdsShow, llBottom, ratingBar,
+          tvGameDescription, tvGameGenre, tvGamePlatform, tvGenre, tvPlatform, tvRating);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

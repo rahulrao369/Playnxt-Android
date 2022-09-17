@@ -43,8 +43,9 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_friends,true);
         binding = FragmentNewFriendsBinding.inflate(inflater, container, false);
+       ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_home,false);
+        System.out.println("check tab test>>>");
         InitView();
         GetData();
         onclicks();
@@ -94,6 +95,7 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
                 ViewPagerAdapter adapter = new ViewPagerAdapter(((AppCompatActivity) context).getSupportFragmentManager());
                 binding.viewpager1.setAdapter(adapter);
 
+
                 binding.tablayout1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
                     @Override
                     public void onTabSelected(TabLayout.Tab tab) {
@@ -118,12 +120,14 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
 
                     }
                 });
-
+//                binding.tablayout1.getTabAt(tab_selected);
+                Log.d("TAG","tab_selected****"+tab_selected);
                 binding.viewpager1.setCurrentItem(tab_selected);
-             /*   TabLayout.Tab tab = binding.tablayout1.getTabAt(tab_selected);
-                tab.select();*/
+
                 binding.viewpager1.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.tablayout1));
 
+            }else{
+                ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_friends,true);
             }
 
         } catch (Exception e) {

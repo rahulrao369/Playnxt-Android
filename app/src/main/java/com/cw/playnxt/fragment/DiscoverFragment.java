@@ -133,8 +133,6 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
                             if(response.body().getData().getCapsul().size() != 0){
                                 binding.recyclerView.setVisibility(View.VISIBLE);
                                 binding.llNoData.setVisibility(View.GONE);
-                                buyNowLink = response.body().getData().getAffiliateLink();
-                                Log.d("TAG","buyNowLink>>"+buyNowLink);
                                 staffPicksDataSet(response.body().getData().getCapsul());
                             }else{
                                 binding.recyclerView.setVisibility(View.GONE);
@@ -170,6 +168,8 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
                             .putExtra("game_id", id.toString())
                             .putExtra("key", Constants.USER_GAME_VIEW));
                 }else if(type.equals("Buy")){
+                    buyNowLink = capsulList.get(position).getUrl();
+                    Log.d("TAG","buyNowLink>>"+buyNowLink);
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(buyNowLink));
                     startActivity(browserIntent);
                 }
@@ -179,6 +179,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
         binding.recyclerView.setLayoutManager(new GridLayoutManager(context,2));
         binding.recyclerView.setAdapter(adapter);
     }
+
     //*********************************************************CHECK SUBSCRIPTION****************************************************
     public void NewCheckSubscriptionAPI() {
         jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {

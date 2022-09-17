@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.cw.playnxt.R;
+import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,10 +24,16 @@ public final class ActivityXboxGameInfoBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final AdView adView;
+
+  @NonNull
   public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
   public final LinearLayout btnAddNewNote;
+
+  @NonNull
+  public final RelativeLayout btnAdsShow;
 
   @NonNull
   public final LinearLayout btnEditCurrentStatus;
@@ -43,14 +50,16 @@ public final class ActivityXboxGameInfoBinding implements ViewBinding {
   @NonNull
   public final TextView tvGameTitle;
 
-  private ActivityXboxGameInfoBinding(@NonNull RelativeLayout rootView,
+  private ActivityXboxGameInfoBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnAddNewNote,
-      @NonNull LinearLayout btnEditCurrentStatus, @NonNull ImageView gameImg,
-      @NonNull RecyclerView recyclerView, @NonNull TextView tvCurrentStatus,
-      @NonNull TextView tvGameTitle) {
+      @NonNull RelativeLayout btnAdsShow, @NonNull LinearLayout btnEditCurrentStatus,
+      @NonNull ImageView gameImg, @NonNull RecyclerView recyclerView,
+      @NonNull TextView tvCurrentStatus, @NonNull TextView tvGameTitle) {
     this.rootView = rootView;
+    this.adView = adView;
     this.bindingHeader = bindingHeader;
     this.btnAddNewNote = btnAddNewNote;
+    this.btnAdsShow = btnAdsShow;
     this.btnEditCurrentStatus = btnEditCurrentStatus;
     this.gameImg = gameImg;
     this.recyclerView = recyclerView;
@@ -85,6 +94,12 @@ public final class ActivityXboxGameInfoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adView;
+      AdView adView = ViewBindings.findChildViewById(rootView, id);
+      if (adView == null) {
+        break missingId;
+      }
+
       id = R.id.bindingHeader;
       View bindingHeader = ViewBindings.findChildViewById(rootView, id);
       if (bindingHeader == null) {
@@ -95,6 +110,12 @@ public final class ActivityXboxGameInfoBinding implements ViewBinding {
       id = R.id.btnAddNewNote;
       LinearLayout btnAddNewNote = ViewBindings.findChildViewById(rootView, id);
       if (btnAddNewNote == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdsShow;
+      RelativeLayout btnAdsShow = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdsShow == null) {
         break missingId;
       }
 
@@ -128,8 +149,9 @@ public final class ActivityXboxGameInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityXboxGameInfoBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnAddNewNote, btnEditCurrentStatus, gameImg, recyclerView, tvCurrentStatus, tvGameTitle);
+      return new ActivityXboxGameInfoBinding((RelativeLayout) rootView, adView,
+          binding_bindingHeader, btnAddNewNote, btnAdsShow, btnEditCurrentStatus, gameImg,
+          recyclerView, tvCurrentStatus, tvGameTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -55,6 +55,7 @@ public class InboxFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_inbox, true);
         binding = FragmentInboxBinding.inflate(inflater, container, false);
+        System.out.println("test inbox >>>>>  ");
         init();
         onclicks();
         initializeRefreshListener();
