@@ -64,6 +64,7 @@ import com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes;
 import com.cw.playnxt.model.PurchasePlan.PurchasePlanResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaffPicks.StaffPicksResponse;
+import com.cw.playnxt.model.StatsData.GetStatsResponse;
 import com.cw.playnxt.model.SubscriptionPlan.SubscriptionPlanResponse;
 import com.cw.playnxt.model.SuggestionData.SuggestionParaRes;
 import com.cw.playnxt.model.SuggestionData.SuggestionResponse;
@@ -349,5 +350,9 @@ public interface JsonPlaceHolderApi {
     @POST("users/get-platform-genre")
     Call<GetPlatformGenreResponse> getPlatformGenreAPI(@Header("Content-Type") String content_type,
                                                        @Header("Authorization") String token);
+
+    @POST("users/get-stat")
+    Call<GetStatsResponse> getStatAPI(@Header("Content-Type") String content_type,
+                                      @Header("Authorization") String token);
 
 }

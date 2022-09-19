@@ -13,17 +13,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cw.playnxt.Interface.ItemClick;
 import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ItemListYourStatsBinding;
+import com.cw.playnxt.databinding.ItemListYourStatsNewBinding;
 import com.cw.playnxt.model.StaticModel.GameModel;
 import com.cw.playnxt.model.StaticModel.YourStatsModel;
+import com.cw.playnxt.model.StatsData.staticStatDataModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class YourStatAapter extends RecyclerView.Adapter<YourStatAapter.RecyclerViewHolder> {
     Context context;
-    List<YourStatsModel> list;
+    ArrayList<staticStatDataModel> list;
     ItemClick itemClick ;
 
-    public YourStatAapter(Context context, List<YourStatsModel> list,  ItemClick itemClick) {
+    public YourStatAapter(Context context, ArrayList<staticStatDataModel> list,  ItemClick itemClick) {
         this.context = context;
         this.list = list;
         this.itemClick = itemClick;
@@ -32,14 +35,14 @@ public class YourStatAapter extends RecyclerView.Adapter<YourStatAapter.Recycler
     @NonNull
     @Override
     public YourStatAapter.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_list_your_stats, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list_your_stats_new, parent, false);
         RecyclerViewHolder recyclerViewHolder = new  RecyclerViewHolder(view);
         return recyclerViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        if(position == 0){
+       /* if(position == 0){
             holder.binding.rlMain.setCardBackgroundColor(Color.parseColor("#14274D"));
             holder.binding.tvHeading1.setText(list.get(position).getH1());
             holder.binding.tvHeading2.setText(list.get(position).getH2());
@@ -80,8 +83,9 @@ public class YourStatAapter extends RecyclerView.Adapter<YourStatAapter.Recycler
             holder.binding.tvnum1.setText(String.valueOf(list.get(position).getNum1()));
             holder.binding.tvnumber2.setText("06");
             holder.binding.tvnum2.setText("06");
-        }
+        }*/
 
+        holder.binding.tvHeading.setText(String.valueOf(list.get(position).getAvgrate()));
         holder.binding.llMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,11 +100,11 @@ public class YourStatAapter extends RecyclerView.Adapter<YourStatAapter.Recycler
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        private ItemListYourStatsBinding binding;
+        private ItemListYourStatsNewBinding binding;
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            binding = ItemListYourStatsBinding.bind(itemView);
+            binding = ItemListYourStatsNewBinding.bind(itemView);
 
         }
     }
