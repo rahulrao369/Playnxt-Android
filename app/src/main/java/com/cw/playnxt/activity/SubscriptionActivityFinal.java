@@ -131,8 +131,8 @@ public class SubscriptionActivityFinal extends AppCompatActivity implements View
                         plan_ID_YEARLY = response.body().getData().getPlan().get(1).getId();
                         binding.llMain.setVisibility(View.VISIBLE);
                         binding.llNoData.setVisibility(View.GONE);
-                        binding.txtBtnMonth.setText("$"+response.body().getData().getPlan().get(0).getPrice()+"/"+response.body().getData().getPlan().get(0).getType());
-                        binding.txtbtnYear.setText("$"+response.body().getData().getPlan().get(1).getPrice()+"/"+response.body().getData().getPlan().get(1).getType());
+                        binding.txtBtnMonth.setText("$"+response.body().getData().getPlan().get(0).getPrice()+" per month"/*response.body().getData().getPlan().get(0).getType()*/);
+                        binding.txtbtnYear.setText("$"+response.body().getData().getPlan().get(1).getPrice()+" per year"/*response.body().getData().getPlan().get(1).getType()*/);
 
                         setAccessExtraFeaturesData();
                     } else {

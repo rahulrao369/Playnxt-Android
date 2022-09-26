@@ -3154,6 +3154,16 @@ id contiguous
 id continuousVelocity
 id coordinator
 id cos
+id countAvgRating
+id countCompleted
+id countCurrentlyPlaying
+id countOnTheShelf
+id countRolledCredit
+id countTakingBreak
+id countTotalGames
+id countTotalRating
+id countWishlist
+id countbacklog
 id counterclockwise
 id creditCardView
 id credit_card_view
@@ -3733,6 +3743,7 @@ id tvUser
 id tvUserName
 id tvValidUpto
 id tvaddtobacklog
+id tvnum
 id tvnum1
 id tvnum2
 id tvnum3
@@ -4000,6 +4011,7 @@ layout item_list_xbox_game_info
 layout item_list_xbox_games_layout
 layout item_list_your_stats
 layout item_list_your_stats_inside_list
+layout item_list_your_stats_new
 layout list_item_setting_layout
 layout lyt_card_cvv
 layout lyt_card_expiry
@@ -4184,6 +4196,7 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
+string choose_one
 string clear_text_end_icon_content_description
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -4388,6 +4401,7 @@ string save
 string save_list
 string search_menu_title
 string see_all
+string share_app_url_string
 string sign_up_for_free
 string signup
 string staff_picks

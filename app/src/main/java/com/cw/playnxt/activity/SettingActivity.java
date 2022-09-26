@@ -110,13 +110,18 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 } else if (position == 1) {
                     startActivity(new Intent(context, SuggestNewFeatureActivity.class));
                 } else if (position == 2) {
-                    Intent intent = new Intent(Intent.ACTION_SEND);
+                   /* Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("plain/text");
                     intent.putExtra(Intent.EXTRA_EMAIL, new String[]{Constants.CLIENT_EMAIL});
                     intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
                     intent.putExtra(Intent.EXTRA_TEXT, "mail body");
-                    startActivity(Intent.createChooser(intent, ""));
-                    // startActivity(new Intent(context,ContactUsActivity.class));
+                    startActivity(Intent.createChooser(intent, ""));*/
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    Uri data = Uri.parse("mailto:"+Constants.CLIENT_EMAIL+"?subject=" + Uri.encode("subject") + "&body=" + Uri.encode("body"));
+                    intent.setData(data);
+                    startActivity(intent);
+
                 } else if (position == 3) {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.ABOUT_US_LINK));
                     startActivity(browserIntent);
@@ -141,11 +146,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Playnxt");
-            String shareMessage = "This is a Playnxt link";
+            String shareMessage = getResources().getString(R.string.share_app_url_string);
             // shareMessage =  Allurls.share_app_url; shareMessage + DynamicLink + "\n\n";
             Log.d("TAG", "shareMessage>>" + shareMessage);
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-            startActivity(Intent.createChooser(shareIntent, "choose one"));
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.choose_one)));
         } catch (Exception e) {
             //e.toString();
         }

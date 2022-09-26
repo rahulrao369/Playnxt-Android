@@ -121,4 +121,6 @@ ca-app-pub-3940256099942544/6300978111</string>
     <string name="welcome_to_playnxt">Welcome to Playnxt</string>
     <string name="your_premium_video_game_backlog_manager">Your premium video game backlog manager.</string>
     <string name="playnxt_button">Playnxt Button</string>
+    <string name="share_app_url_string">Hey check out all the games I have in my backlog!</string>
+    <string name="choose_one">choose one</string>
 </resources>

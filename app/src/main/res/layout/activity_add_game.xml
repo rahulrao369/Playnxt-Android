@@ -173,7 +173,8 @@
                                 android:paddingEnd="8dp"
                                 android:textColor="@color/white"
                                 android:textColorHint="@color/edt_text"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:imeOptions="actionDone"/>
                         </LinearLayout>
 
                         <RelativeLayout
@@ -249,6 +250,7 @@
                                   android:textColor="@color/white"
                                   android:textColorHint="@color/edt_text"
                                   android:textSize="14sp" />
+
                           </LinearLayout>
 
                         <RelativeLayout
@@ -432,9 +434,10 @@
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/cvImage"
-                            android:layout_width="20dp"
+                            android:layout_width="16dp"
                             android:layout_height="20dp"
-                            android:src="@drawable/cross" />
+                            android:src="@drawable/ic_cross"
+                            android:visibility="invisible"/>
 
                         <LinearLayout
                             android:id="@+id/llNoData"
@@ -483,7 +486,8 @@
                             android:textColor="@color/white"
                             android:textColorHint="@color/edt_text"
                             android:textSize="14sp"
-                            android:imeOptions="actionDone"/>
+                            android:imeOptions="actionDone"
+                            android:singleLine="true"/>
 
                         <LinearLayout
                             android:id="@+id/btnGo"

@@ -148,11 +148,12 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     }
 
                 } else if (position == 1) {
-                    if(subscribed.equals(Constants.YES)){
+                    startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                  /*  if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, WishlistActivity.class));
                     }else{
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
-                    }
+                    }*/
                 } else if (position == 2) {
                     if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, CalenderActivity.class));

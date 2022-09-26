@@ -28,6 +28,7 @@ import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
 import com.cw.playnxt.utils.Constants;
+import com.cw.playnxt.utils.Customprogress;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,10 +86,12 @@ public class YourStatsActivity extends AppCompatActivity implements View.OnClick
     }
 
     public void getStatAPI() {
+        Customprogress.showPopupProgressSpinner(context,true);
         jsonPlaceHolderApi.getStatAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<GetStatsResponse>() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(Call<GetStatsResponse> call, Response<GetStatsResponse> response) {
+                Customprogress.showPopupProgressSpinner(context,false);
                 if (response.isSuccessful()) {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
@@ -110,6 +113,7 @@ public class YourStatsActivity extends AppCompatActivity implements View.OnClick
             }
             @Override
             public void onFailure(Call<GetStatsResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context,false);
                 Log.e("TAG", "" + t.getMessage());
             }
         });
