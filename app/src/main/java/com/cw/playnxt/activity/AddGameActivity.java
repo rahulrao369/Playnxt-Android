@@ -928,7 +928,6 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                             binding.llNoData.setVisibility(View.GONE);
                             gameTitleSearchList = response.body().getData().getNewdata();
                             SearchGamesTilteListDataSet(gameTitleSearchList);
-
                         } else {
                             binding.rvGameTitle.setVisibility(View.GONE);
                             binding.llNoData.setVisibility(View.VISIBLE);
@@ -953,6 +952,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 binding.rvGameTitle.setVisibility(View.GONE);
                 binding.ivGame.setVisibility(View.VISIBLE);
                 binding.ivGameIcon.setVisibility(View.GONE);
+
                 gameId =  String.valueOf(gameTitleList.get(position).getId());
                 Picasso.get().load(Allurls.IMAGEURL + gameTitleList.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(binding.ivGame);
                 binding.autoCompleteGameTitle.setText(gameTitleList.get(position).getTitle());

@@ -51,6 +51,7 @@ public class InboxFragment extends Fragment implements View.OnClickListener{
     private FragmentInboxBinding binding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_inbox, true);

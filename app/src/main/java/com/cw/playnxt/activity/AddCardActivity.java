@@ -110,6 +110,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
+
     private void setExpiryDateOnCard() {
         binding.etExpringDate.addTextChangedListener(new TextWatcher() {
             @Override
@@ -136,6 +137,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
+
     private void setCvvOnCard() {
         binding.etCVV.addTextChangedListener(new TextWatcher() {
             @Override
@@ -155,6 +157,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
+
     public void onclicks() {
         headerBinding.btnBack.setOnClickListener(this);
         binding.btnPayNow.setOnClickListener(this);

@@ -37,7 +37,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(view);
         init();
         onclicks();
-
     }
     private void init() {
         context = ChatActivity.this;

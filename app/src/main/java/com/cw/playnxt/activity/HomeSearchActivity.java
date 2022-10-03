@@ -120,17 +120,22 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         binding.etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(filter_type.equals("user")){
-                    if (Constants.isInternetConnected(context)) {
-                        SearchUserAPI();
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                    }
-                }else if(filter_type.equals("game")){
-                    if (Constants.isInternetConnected(context)) {
-                        SearchGameAPI();
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                if(count == 0){
+                    binding.llGame.setVisibility(View.GONE);
+                    binding.llUser.setVisibility(View.GONE);
+                }else{
+                    if(filter_type.equals("user")){
+                        if (Constants.isInternetConnected(context)) {
+                            SearchUserAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                    }else if(filter_type.equals("game")){
+                        if (Constants.isInternetConnected(context)) {
+                            SearchGameAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }

@@ -33,8 +33,8 @@ import retrofit2.Response;
 
 public class AddEventActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
-    String START_DATE;
-    String END_DATE;
+    String START_DATE = "";
+    String END_DATE = "";
     private ActivityAddEventBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;

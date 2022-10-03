@@ -2,6 +2,7 @@ package com.cw.playnxt.adapter.SearchAdapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ public class FilterGameTitleAdapter extends RecyclerView.Adapter<FilterGameTitle
     Context context;
     List<Newdatum> list;
     ItemClick itemClick ;
-
+    String typeImage = "";
 
     public FilterGameTitleAdapter(Context context, List<Newdatum> list, ItemClick itemClick) {
         this.context = context;
@@ -41,7 +42,14 @@ public class FilterGameTitleAdapter extends RecyclerView.Adapter<FilterGameTitle
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.ivImage);
+        typeImage = list.get(position).getType();
+        Log.d("TAG","typeImage>>"+typeImage);
+        if(typeImage.equals("thirdparty")){
+            Picasso.get().load("https:"+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.ivImage);
+
+        }else{
+            Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.app_logo).placeholder(R.drawable.app_logo).into(holder.binding.ivImage);
+        }
         holder.binding.tvName.setText(list.get(position).getTitle());
 
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
