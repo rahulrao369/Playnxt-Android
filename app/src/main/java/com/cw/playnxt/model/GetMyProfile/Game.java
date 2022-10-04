@@ -18,6 +18,18 @@ public class Game {
     private String platform;
     @Expose
     private String title;
+
+    @Expose
+    private String image_type;
+
+    public String getImage_type() {
+        return image_type;
+    }
+
+    public void setImage_type(String image_type) {
+        this.image_type = image_type;
+    }
+
     private boolean isChecked = false;
 
     public boolean isChecked() {

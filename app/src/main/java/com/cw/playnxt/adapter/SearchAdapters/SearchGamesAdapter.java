@@ -42,15 +42,14 @@ public class SearchGamesAdapter extends RecyclerView.Adapter<SearchGamesAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
- /*       typeImage = list.get(position).getImage_type();
+        typeImage = list.get(position).getImage_type();
         Log.d("TAG","typeImage>>"+typeImage);
         if(typeImage.equals("thirdparty")){
             Picasso.get().load("https:"+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.ivImage);
 
         }else{
             Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.app_logo).placeholder(R.drawable.app_logo).into(holder.binding.ivImage);
-        }*/
-       Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.app_logo).placeholder(R.drawable.app_logo).into(holder.binding.ivImage);
+        }
 
         holder.binding.tvName.setText(list.get(position).getTitle());
 

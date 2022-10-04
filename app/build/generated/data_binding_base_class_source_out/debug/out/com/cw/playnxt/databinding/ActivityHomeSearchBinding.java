@@ -47,10 +47,16 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   public final ImageView ivSearch;
 
   @NonNull
+  public final LinearLayout llGame;
+
+  @NonNull
   public final LinearLayout llNoGamesResult;
 
   @NonNull
   public final LinearLayout llNoUserResult;
+
+  @NonNull
+  public final LinearLayout llUser;
 
   @NonNull
   public final LinearLayout lytCheckBox;
@@ -76,7 +82,8 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   private ActivityHomeSearchBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull RelativeLayout btnAdsShow, @NonNull ImageView btnBack, @NonNull CheckBox cbGames,
       @NonNull CheckBox cbUser, @NonNull EditText etSearch, @NonNull ImageView ivSearch,
-      @NonNull LinearLayout llNoGamesResult, @NonNull LinearLayout llNoUserResult,
+      @NonNull LinearLayout llGame, @NonNull LinearLayout llNoGamesResult,
+      @NonNull LinearLayout llNoUserResult, @NonNull LinearLayout llUser,
       @NonNull LinearLayout lytCheckBox, @NonNull RecyclerView rvGames,
       @NonNull RecyclerView rvUser, @NonNull TextView tvAddGame, @NonNull TextView tvGame,
       @NonNull TextView tvHeading, @NonNull TextView tvUser) {
@@ -88,8 +95,10 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
     this.cbUser = cbUser;
     this.etSearch = etSearch;
     this.ivSearch = ivSearch;
+    this.llGame = llGame;
     this.llNoGamesResult = llNoGamesResult;
     this.llNoUserResult = llNoUserResult;
+    this.llUser = llUser;
     this.lytCheckBox = lytCheckBox;
     this.rvGames = rvGames;
     this.rvUser = rvUser;
@@ -168,6 +177,12 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.llGame;
+      LinearLayout llGame = ViewBindings.findChildViewById(rootView, id);
+      if (llGame == null) {
+        break missingId;
+      }
+
       id = R.id.llNoGamesResult;
       LinearLayout llNoGamesResult = ViewBindings.findChildViewById(rootView, id);
       if (llNoGamesResult == null) {
@@ -177,6 +192,12 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
       id = R.id.llNoUserResult;
       LinearLayout llNoUserResult = ViewBindings.findChildViewById(rootView, id);
       if (llNoUserResult == null) {
+        break missingId;
+      }
+
+      id = R.id.llUser;
+      LinearLayout llUser = ViewBindings.findChildViewById(rootView, id);
+      if (llUser == null) {
         break missingId;
       }
 
@@ -223,8 +244,8 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
       }
 
       return new ActivityHomeSearchBinding((RelativeLayout) rootView, adView, btnAdsShow, btnBack,
-          cbGames, cbUser, etSearch, ivSearch, llNoGamesResult, llNoUserResult, lytCheckBox,
-          rvGames, rvUser, tvAddGame, tvGame, tvHeading, tvUser);
+          cbGames, cbUser, etSearch, ivSearch, llGame, llNoGamesResult, llNoUserResult, llUser,
+          lytCheckBox, rvGames, rvUser, tvAddGame, tvGame, tvHeading, tvUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

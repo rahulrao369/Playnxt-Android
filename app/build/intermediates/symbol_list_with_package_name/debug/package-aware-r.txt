@@ -3374,6 +3374,7 @@ id llEdit
 id llFavUnfav
 id llFriendsGameInfo
 id llFriendsList
+id llGame
 id llGiveRating
 id llHomeMain
 id llImage
@@ -3398,6 +3399,7 @@ id llSelectImage
 id llSelectStartDate
 id llTimeStamp
 id llUpper
+id llUser
 id llXboxGames
 id ll_bottom
 id llbottom

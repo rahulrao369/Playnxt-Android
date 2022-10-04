@@ -611,7 +611,14 @@ public class XboxGameInfoActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void GameInfoActivityDataSetAfterStatusChange(com.cw.playnxt.model.GameInformation.Capsul capsulData) {
-        Picasso.get().load(Allurls.IMAGEURL + capsulData.getGImage()).placeholder(R.drawable.progress_animation).error(R.drawable.progress_animation).into(binding.gameImg);
+        String typeImage = capsulData.getImage_type();
+        Log.d("TAG","typeImage>>"+typeImage);
+        if(typeImage.equals("thirdparty")){
+            Picasso.get().load("https:"+capsulData.getGImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(binding.gameImg);
+
+        }else{
+            Picasso.get().load(Allurls.IMAGEURL+capsulData.getGImage()).error(R.drawable.app_logo).placeholder(R.drawable.app_logo).into(binding.gameImg);
+        }
         String gameName = capsulData.getGTitle().substring(0, 1).toUpperCase() +capsulData.getGTitle().substring(1).toLowerCase();
         binding.tvGameTitle.setText(gameName);
         binding.tvCurrentStatus.setText(capsulData.getGameStatus());

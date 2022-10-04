@@ -21,6 +21,16 @@ public class Game implements Serializable {
     private String title;
     @Expose
     private String lastUpdate;
+ @Expose
+    private String image_type;
+
+    public String getImage_type() {
+        return image_type;
+    }
+
+    public void setImage_type(String image_type) {
+        this.image_type = image_type;
+    }
 
     public String getLastUpdate() {
         return lastUpdate;
