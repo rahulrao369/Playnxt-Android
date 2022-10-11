@@ -22,10 +22,10 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final LinearLayout CancleSubscription;
+  public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
-  public final HeaderLayoutBinding bindingHeader;
+  public final LinearLayout btnCancleSubscription;
 
   @NonNull
   public final ImageView ivPlan;
@@ -55,13 +55,13 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
   public final TextView txtBtn;
 
   private ActivityPlaynxtPremiumBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout CancleSubscription, @NonNull HeaderLayoutBinding bindingHeader,
+      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnCancleSubscription,
       @NonNull ImageView ivPlan, @NonNull LinearLayout llUpper, @NonNull TextView tvDescription,
       @NonNull TextView tvExpiryDate, @NonNull TextView tvPlanTitle, @NonNull TextView tvPrice,
       @NonNull TextView tvPurchaseDate, @NonNull TextView tvValidUpto, @NonNull TextView txtBtn) {
     this.rootView = rootView;
-    this.CancleSubscription = CancleSubscription;
     this.bindingHeader = bindingHeader;
+    this.btnCancleSubscription = btnCancleSubscription;
     this.ivPlan = ivPlan;
     this.llUpper = llUpper;
     this.tvDescription = tvDescription;
@@ -100,18 +100,18 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.CancleSubscription;
-      LinearLayout CancleSubscription = ViewBindings.findChildViewById(rootView, id);
-      if (CancleSubscription == null) {
-        break missingId;
-      }
-
       id = R.id.bindingHeader;
       View bindingHeader = ViewBindings.findChildViewById(rootView, id);
       if (bindingHeader == null) {
         break missingId;
       }
       HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
+
+      id = R.id.btnCancleSubscription;
+      LinearLayout btnCancleSubscription = ViewBindings.findChildViewById(rootView, id);
+      if (btnCancleSubscription == null) {
+        break missingId;
+      }
 
       id = R.id.ivPlan;
       ImageView ivPlan = ViewBindings.findChildViewById(rootView, id);
@@ -167,8 +167,8 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityPlaynxtPremiumBinding((RelativeLayout) rootView, CancleSubscription,
-          binding_bindingHeader, ivPlan, llUpper, tvDescription, tvExpiryDate, tvPlanTitle, tvPrice,
+      return new ActivityPlaynxtPremiumBinding((RelativeLayout) rootView, binding_bindingHeader,
+          btnCancleSubscription, ivPlan, llUpper, tvDescription, tvExpiryDate, tvPlanTitle, tvPrice,
           tvPurchaseDate, tvValidUpto, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);

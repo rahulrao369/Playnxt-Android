@@ -144,8 +144,7 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
                 if (dayOfMonth < 10) {
                     fd = "0" + dayOfMonth;
                 }
-               // String date = "" + year + "/" + fm + "/" + fd;
-                String date = "" + fm + "/" + fd + "/" + year;
+                String date = "" + year + "-" + fm + "-" + fd;
                 binding.tvEndDate.setText("" + fd + "/" + fm + "/" + year);
                 END_DATE = date;
             }
@@ -171,7 +170,7 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
                 if (dayOfMonth < 10) {
                     fd = "0" + dayOfMonth;
                 }
-                String date = "" + fm + "/" + fd + "/" + year;
+                String date = "" + year + "-" + fm + "-" + fd;
                 binding.tvStartDate.setText("" + fd + "/" + fm + "/" + year);
                 START_DATE = date;
             }
@@ -180,13 +179,12 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
         dpd.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
     }
 
-
     public void AddEventAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         AddEventParaRes addEventParaRes= new AddEventParaRes();
         addEventParaRes.setTitle(binding.etTitle.getText().toString().trim());
-        addEventParaRes.setStartDate(binding.tvStartDate.getText().toString().trim());
-        addEventParaRes.setEndDate(binding.tvEndDate.getText().toString().trim());
+        addEventParaRes.setStartDate(START_DATE);
+        addEventParaRes.setEndDate(END_DATE);
         addEventParaRes.setNote(binding.etAddNote.getText().toString().trim());
 
         jsonPlaceHolderApi.AddEventAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken(),addEventParaRes).enqueue(new Callback<ResponseSatusMessage>() {

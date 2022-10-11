@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -98,10 +100,34 @@ public class XboxGamesActivity extends AppCompatActivity implements View.OnClick
                     Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                 }
 
+                binding.etSearch.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        if (Constants.isInternetConnected(context)) {
+                            ViewMyBacklogGameAPI();
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                        // TODO Auto-generated method stub
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                        // TODO Auto-generated method stub
+                    }
+                });
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
 
     }
@@ -130,14 +156,15 @@ public class XboxGamesActivity extends AppCompatActivity implements View.OnClick
     }
 
     public void ViewMyBacklogGameAPI() {
-        Customprogress.showPopupProgressSpinner(context, true);
+       // Customprogress.showPopupProgressSpinner(context, true);
         ViewMyBacklogGameParaRes viewMyBacklogGameParaRes = new ViewMyBacklogGameParaRes();
         viewMyBacklogGameParaRes.setListId(Long.valueOf(category_list_item_id));
+        viewMyBacklogGameParaRes.setKeyword(binding.etSearch.getText().toString());
         jsonPlaceHolderApi.ViewMyBacklogGameAPI("application/json", "Bearer " + mySharedPref.getSavedAccessToken(), viewMyBacklogGameParaRes).enqueue(new Callback<ViewMyBacklogGameResponse>() {
             @Override
             public void onResponse(Call<ViewMyBacklogGameResponse> call, Response<ViewMyBacklogGameResponse> response) {
+               // Customprogress.showPopupProgressSpinner(context, false);
                 if (response.isSuccessful()) {
-                    Customprogress.showPopupProgressSpinner(context, false);
                     Boolean status = response.body().getStatus();
                     if (status) {
                         if (response.body().getData().getGames().size() != 0) {
@@ -158,7 +185,7 @@ public class XboxGamesActivity extends AppCompatActivity implements View.OnClick
 
             @Override
             public void onFailure(Call<ViewMyBacklogGameResponse> call, Throwable t) {
-                Customprogress.showPopupProgressSpinner(context, false);
+             //   Customprogress.showPopupProgressSpinner(context, false);
                 binding.recyclerView.setVisibility(View.GONE);
                 binding.llNoData.setVisibility(View.VISIBLE);
                 Log.e("TAG", "" + t.getMessage());

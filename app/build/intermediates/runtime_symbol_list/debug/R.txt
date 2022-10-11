@@ -2929,7 +2929,6 @@ int id ALT 0x7f0a0000
 int id BOTTOM_END 0x7f0a0001
 int id BOTTOM_START 0x7f0a0002
 int id CTRL 0x7f0a0003
-int id CancleSubscription 0x7f0a0004
 int id CropOverlayView 0x7f0a0005
 int id CropProgressBar 0x7f0a0006
 int id FUNCTION 0x7f0a0007
@@ -3055,6 +3054,7 @@ int id btnAdsShow 0x7f0a007e
 int id btnArrow 0x7f0a007f
 int id btnBack 0x7f0a0080
 int id btnBack1 0x7f0a0081
+int id btnCancleSubscription 0x7f0a0363
 int id btnChangePassword 0x7f0a0082
 int id btnCheckout 0x7f0a0083
 int id btnComplete 0x7f0a0084
@@ -3388,6 +3388,7 @@ int id llMyProfile 0x7f0a01cb
 int id llNoData 0x7f0a01cc
 int id llNoGamesResult 0x7f0a01cd
 int id llNoUserResult 0x7f0a01ce
+int id llProgressBar 0x7f0a0361
 int id llRecentlyAdded 0x7f0a01cf
 int id llRecyclerview 0x7f0a01d0
 int id llRightImg 0x7f0a01d1
@@ -3529,6 +3530,7 @@ int id postLayout 0x7f0a0258
 int id previous 0x7f0a0259
 int id previousButton 0x7f0a025a
 int id progressBar1 0x7f0a025b
+int id progressBar2 0x7f0a0362
 int id progress_circular 0x7f0a025c
 int id progress_horizontal 0x7f0a025d
 int id radio 0x7f0a025e

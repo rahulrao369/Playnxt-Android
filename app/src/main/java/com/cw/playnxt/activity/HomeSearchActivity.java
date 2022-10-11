@@ -22,15 +22,12 @@ import com.cw.playnxt.R;
 import com.cw.playnxt.adapter.SearchAdapters.SearchGamesAdapter;
 import com.cw.playnxt.adapter.SearchAdapters.SearchUserAdapter;
 import com.cw.playnxt.databinding.ActivityHomeSearchBinding;
-import com.cw.playnxt.databinding.HeaderLayoutBinding;
-import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
 import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameDataResult;
 import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameResponse;
 import com.cw.playnxt.model.HomeSearch.SearchParaRes;
 import com.cw.playnxt.model.HomeSearch.UserSearch.SearchUserDataResult;
 import com.cw.playnxt.model.HomeSearch.UserSearch.SearchUserResponse;
-import com.cw.playnxt.model.NewCheckSubscription.NewCheckSubscriptionResponse;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
@@ -49,11 +46,11 @@ import retrofit2.Response;
 
 public class HomeSearchActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
+    String filter_type = "game";
+    int free_backlog;
     private ActivityHomeSearchBinding binding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String filter_type="game";
-    int free_backlog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +67,8 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         mySharedPref = new MySharedPref(context);
         binding.tvHeading.setText(R.string.Search);
 
-        Log.d("TAG","Games cb  "+binding.cbGames.isChecked());
-        Log.d("TAG","User cb  "+binding.cbUser.isChecked());
+        Log.d("TAG", "Games cb  " + binding.cbGames.isChecked());
+        Log.d("TAG", "User cb  " + binding.cbUser.isChecked());
 
         MobileAds.initialize(context, new OnInitializationCompleteListener() {
             @Override
@@ -99,6 +96,13 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
+                }else{
+                    if(binding.cbGames.isChecked()){
+
+                    }else{
+                        binding.llGame.setVisibility(View.GONE);
+                        binding.llUser.setVisibility(View.GONE);
+                    }
                 }
             }
         });
@@ -113,6 +117,13 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
+                }else{
+                    if(binding.cbUser.isChecked()){
+
+                    }else{
+                        binding.llGame.setVisibility(View.GONE);
+                        binding.llUser.setVisibility(View.GONE);
+                    }
                 }
             }
         });
@@ -120,11 +131,11 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
         binding.etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(count == 0){
+                if (count == 0) {
                     binding.llGame.setVisibility(View.GONE);
                     binding.llUser.setVisibility(View.GONE);
-                }else{
-                    if(filter_type.equals("user")){
+                } else {
+                  /*  if(filter_type.equals("user")){
                         if (Constants.isInternetConnected(context)) {
                             SearchUserAPI();
                         } else {
@@ -136,7 +147,7 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                         } else {
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -157,15 +168,15 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
-                    Log.d("TAG","Enter pressed");
+                    Log.d("TAG", "Enter pressed");
                     if (!binding.etSearch.getText().toString().equals("")) {
-                        if(filter_type.equals("user")){
+                        if (filter_type.equals("user")) {
                             if (Constants.isInternetConnected(context)) {
                                 SearchUserAPI();
                             } else {
                                 Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                             }
-                        }else if(filter_type.equals("game")){
+                        } else if (filter_type.equals("game")) {
                             if (Constants.isInternetConnected(context)) {
                                 SearchGameAPI();
                             } else {
@@ -197,13 +208,13 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.ivSearch:
                 if (!binding.etSearch.getText().toString().equals("")) {
-                    if(filter_type.equals("user")){
+                    if (filter_type.equals("user")) {
                         if (Constants.isInternetConnected(context)) {
                             SearchUserAPI();
                         } else {
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                         }
-                    }else if(filter_type.equals("game")){
+                    } else if (filter_type.equals("game")) {
                         if (Constants.isInternetConnected(context)) {
                             SearchGameAPI();
                         } else {
@@ -223,13 +234,13 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
     }
 
     public void SearchGameAPI() {
-        //Customprogress.showPopupProgressSpinner(context, true);
-        if(binding.cbUser.isChecked()){
+        Customprogress.showPopupProgressSpinner(context, true);
+        if (binding.cbUser.isChecked()) {
             filter_type = "user";
-        }else if(binding.cbGames.isChecked()){
+        } else if (binding.cbGames.isChecked()) {
             filter_type = "game";
         }
-        Log.d("TAG","filter_type  "+filter_type);
+        Log.d("TAG", "filter_type  " + filter_type);
 
         SearchParaRes searchParaRes = new SearchParaRes();
         searchParaRes.setKey(binding.etSearch.getText().toString().trim());
@@ -240,13 +251,14 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
             public void onResponse(Call<SearchGameResponse> call, Response<SearchGameResponse> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                   // Customprogress.showPopupProgressSpinner(context, false);
+                    Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
+                        binding.llGame.setVisibility(View.VISIBLE);
+                        binding.tvGame.setVisibility(View.VISIBLE);
+                        binding.rvGames.setVisibility(View.VISIBLE);
+                        binding.tvUser.setVisibility(View.GONE);
+                        binding.llUser.setVisibility(View.GONE);
                         if (response.body().getData().getResult().size() != 0) {
-                            binding.tvGame.setVisibility(View.VISIBLE);
-                            binding.tvUser.setVisibility(View.GONE);
-                            binding.rvGames.setVisibility(View.VISIBLE);
-                            binding.rvUser.setVisibility(View.GONE);
                             binding.llNoUserResult.setVisibility(View.GONE);
                             binding.llNoGamesResult.setVisibility(View.GONE);
                             SearchGamesListDataSet(response.body().getData().getResult());
@@ -257,17 +269,18 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<SearchGameResponse> call, Throwable t) {
-              //  Customprogress.showPopupProgressSpinner(context, false);
+                Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
             }
         });
     }
 
     public void SearchUserAPI() {
-      //  Customprogress.showPopupProgressSpinner(context, true);
-        Log.d("TAG","filter_type  "+filter_type);
+        Customprogress.showPopupProgressSpinner(context, true);
+        Log.d("TAG", "filter_type  " + filter_type);
 
         SearchParaRes searchParaRes = new SearchParaRes();
         searchParaRes.setKey(binding.etSearch.getText().toString().trim());
@@ -278,13 +291,14 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
             public void onResponse(Call<SearchUserResponse> call, Response<SearchUserResponse> response) {
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
-                  //  Customprogress.showPopupProgressSpinner(context, false);
+                    Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
+                        binding.llGame.setVisibility(View.GONE);
+                        binding.tvGame.setVisibility(View.GONE);
+                        binding.tvUser.setVisibility(View.VISIBLE);
+                        binding.llUser.setVisibility(View.VISIBLE);
+                        binding.rvUser.setVisibility(View.VISIBLE);
                         if (response.body().getData().getResult().size() != 0) {
-                            binding.tvUser.setVisibility(View.VISIBLE);
-                            binding.tvGame.setVisibility(View.GONE);
-                            binding.rvUser.setVisibility(View.VISIBLE);
-                            binding.rvGames.setVisibility(View.GONE);
                             binding.llNoUserResult.setVisibility(View.GONE);
                             binding.llNoGamesResult.setVisibility(View.GONE);
                             SearchUsersListDataSet(response.body().getData().getResult());
@@ -295,9 +309,10 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<SearchUserResponse> call, Throwable t) {
-               // Customprogress.showPopupProgressSpinner(context, false);
+                Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
             }
         });
@@ -322,9 +337,9 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onItemClick(int position, String type) {
                 startActivity(new Intent(context, FriendsProfileActivity.class)
-                        .putExtra("key","1")
+                        .putExtra("key", "1")
                         .putExtra("show_key", Constants.COMMUNITY)
-                        .putExtra("friends_id",resultUserList.get(position).getId().toString()));
+                        .putExtra("friends_id", resultUserList.get(position).getId().toString()));
             }
         });
         binding.rvUser.setHasFixedSize(true);
@@ -345,16 +360,17 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
                     if (status) {
                         if (response.body().getData().getSubscribed().equals(Constants.YES)) {
                             binding.btnAdsShow.setVisibility(View.GONE);
-                        }else{
+                        } else {
                             binding.btnAdsShow.setVisibility(View.VISIBLE);
                         }
-                        free_backlog =  response.body().getData().getFree_backlog();
-                        Log.d("TAG","free_backlog>>>>"+free_backlog);
+                        free_backlog = response.body().getData().getFree_backlog();
+                        Log.d("TAG", "free_backlog>>>>" + free_backlog);
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
@@ -363,32 +379,4 @@ public class HomeSearchActivity extends AppCompatActivity implements View.OnClic
             }
         });
     }
-
-    //*********************************************************CHECK PLAN****************************************************
-   /* public void CheckPlanAPI() {
-        Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.CheckPlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckPlanResponse>() {
-            @Override
-            public void onResponse(Call<CheckPlanResponse> call, Response<CheckPlanResponse> response) {
-                Customprogress.showPopupProgressSpinner(context, false);
-                if (response.isSuccessful()) {
-                    boolean status = response.body().getStatus();
-                    String msg = response.body().getMessage();
-                    if (status) {
-                        activePlan = response.body().getData().getActivePlan();
-                        planType =  response.body().getData().getActplan();
-                        totalBacklog =  response.body().getData().getTotalBacklog();
-                    } else {
-                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(Call<CheckPlanResponse> call, Throwable t) {
-                Customprogress.showPopupProgressSpinner(context, false);
-                Log.e("TAG", "" + t.getMessage());
-                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
 }

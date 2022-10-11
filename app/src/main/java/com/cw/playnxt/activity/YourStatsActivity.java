@@ -99,11 +99,11 @@ public class YourStatsActivity extends AppCompatActivity implements View.OnClick
                         binding.countTotalGames.setText(String.valueOf(response.body().getData().getTotalgames()));
                         binding.countbacklog.setText(String.valueOf(response.body().getData().getBacklogcount()));
                         binding.countWishlist.setText(String.valueOf(response.body().getData().getWishlistcount()));
-                        binding.countOnTheShelf.setText(String.valueOf(response.body().getData().getOntheshelfcount()));
-                        binding.countRolledCredit.setText(String.valueOf(response.body().getData().getRolledcreditcount()));
-                        binding.countCompleted.setText(String.valueOf(response.body().getData().getCompletedcount()));
-                        binding.countCurrentlyPlaying.setText(String.valueOf(response.body().getData().getCurrentplayingcount()));
-                        binding.countTakingBreak.setText(String.valueOf(response.body().getData().getTakingbreakcount()));
+                        binding.countOnTheShelf.setText(String.valueOf(response.body().getData().getOntheshelfcount())+"%");
+                        binding.countRolledCredit.setText(String.valueOf(response.body().getData().getRolledcreditcount())+"%");
+                        binding.countCompleted.setText(String.valueOf(response.body().getData().getCompletedcount())+"%");
+                        binding.countCurrentlyPlaying.setText(String.valueOf(response.body().getData().getCurrentplayingcount())+"%");
+                        binding.countTakingBreak.setText(String.valueOf(response.body().getData().getTakingbreakcount())+"%");
                         binding.countTotalRating.setText(String.valueOf(response.body().getData().getRatingtotal()));
                         binding.countAvgRating.setText(String.valueOf(response.body().getData().getAvgrate()));
                     } else {

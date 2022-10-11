@@ -171,6 +171,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (count == 0) {
+                    Log.d("TAG","count>>>>>>"+count);
                     binding.rvGameTitle.setVisibility(View.GONE);
                 } else {
                     if (Constants.isInternetConnected(context)) {
@@ -262,15 +263,16 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        if (subscribed.equals(Constants.YES)) {
-                            if (Constants.isInternetConnected(context)) {
-                                GetCategoryBacklogListNameAPI(category_type);
-                            } else {
-                                Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                            }
+                        if (Constants.isInternetConnected(context)) {
+                            GetCategoryBacklogListNameAPI(category_type);
+                        } else {
+                            Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+                        }
+                       /* if (subscribed.equals(Constants.YES)) {
+
                         } else {
                             startActivity(new Intent(context, SubscriptionActivityFinal.class));
-                        }
+                        }*/
                     }
 
 
@@ -914,12 +916,14 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void getGameByFilterAPI() {
+        binding.llProgressBar.setVisibility(View.VISIBLE);
         GetGameByFilterParaRes getGameByFilterParaRes = new GetGameByFilterParaRes();
         getGameByFilterParaRes.setTitle(binding.etSearch.getText().toString().trim());
 
         jsonPlaceHolderApi.getGameByFilterAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), getGameByFilterParaRes).enqueue(new Callback<GetGameByFilterResponse>() {
             @Override
             public void onResponse(Call<GetGameByFilterResponse> call, Response<GetGameByFilterResponse> response) {
+                binding.llProgressBar.setVisibility(View.GONE);
                 if (response.isSuccessful()) {
                     Boolean status = response.body().getStatus();
                     if (status) {
@@ -938,6 +942,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
 
             @Override
             public void onFailure(Call<GetGameByFilterResponse> call, Throwable t) {
+                binding.llProgressBar.setVisibility(View.GONE);
                 Log.e("TAG", "" + t.getMessage());
             }
         });
@@ -954,7 +959,17 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 binding.ivGameIcon.setVisibility(View.GONE);
 
                 gameId =  String.valueOf(gameTitleList.get(position).getId());
-                Picasso.get().load(Allurls.IMAGEURL + gameTitleList.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(binding.ivGame);
+
+                String typeImage = gameTitleList.get(position).getImage_type();
+                Log.d("TAG","typeImage>>"+typeImage);
+
+                if(typeImage.equals("thirdparty")){
+                    Picasso.get().load("https:"+gameTitleList.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(binding.ivGame);
+                    Log.d("TAG","gameTitleList.get(position).getImage()>>"+gameTitleList.get(position).getImage());
+                }else if(typeImage.equals("admin")){
+                    Picasso.get().load(Allurls.IMAGEURL+gameTitleList.get(position).getImage()).error(R.drawable.app_logo).placeholder(R.drawable.app_logo).into(binding.ivGame);
+                    Log.d("TAG","gameTitleList.get(position).getImage()>>"+gameTitleList.get(position).getImage());
+                }
                 binding.autoCompleteGameTitle.setText(gameTitleList.get(position).getTitle());
 
               /*  List<String> platformList = new ArrayList<>();
@@ -966,7 +981,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
                 genreDataSet(gameTitleList.get(position).getGenre());
 
                 Log.d("TAG2", "GameId>>"+gameId);
-                Log.d("TAG2", "GameImage>>"+Allurls.IMAGEURL + gameTitleList.get(position).getImage());
+                Log.d("TAG2", "GameImage>>"+gameTitleList.get(position).getImage());
                 Log.d("TAG2", "GameTitle>>"+gameTitleList.get(position).getTitle());
                 Log.d("TAG2", "GameDescription>>"+gameTitleList.get(position).getDescription());
                 Log.d("TAG2", "GamePlatform>>"+gameTitleList.get(position).getPlatform());

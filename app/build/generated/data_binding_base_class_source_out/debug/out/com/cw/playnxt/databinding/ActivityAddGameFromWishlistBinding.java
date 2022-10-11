@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -76,10 +77,16 @@ public final class ActivityAddGameFromWishlistBinding implements ViewBinding {
   public final LinearLayout llNoData;
 
   @NonNull
+  public final LinearLayout llProgressBar;
+
+  @NonNull
   public final LinearLayout llSearch;
 
   @NonNull
   public final LinearLayout llSelectImage;
+
+  @NonNull
+  public final ProgressBar progressBar2;
 
   @NonNull
   public final RatingBar ratingBar;
@@ -113,7 +120,8 @@ public final class ActivityAddGameFromWishlistBinding implements ViewBinding {
       @NonNull EditText etSearch, @NonNull ImageView ivGame, @NonNull ImageView ivGameIcon,
       @NonNull LinearLayout llCross, @NonNull LinearLayout llGiveRating,
       @NonNull RelativeLayout llImage, @NonNull LinearLayout llMain, @NonNull LinearLayout llNoData,
-      @NonNull LinearLayout llSearch, @NonNull LinearLayout llSelectImage,
+      @NonNull LinearLayout llProgressBar, @NonNull LinearLayout llSearch,
+      @NonNull LinearLayout llSelectImage, @NonNull ProgressBar progressBar2,
       @NonNull RatingBar ratingBar, @NonNull RelativeLayout rlGameGenre,
       @NonNull RelativeLayout rlGamePlatform, @NonNull RecyclerView rvGameTitle,
       @NonNull Spinner spGameGenre, @NonNull Spinner spGamePlatform, @NonNull TextView tvRating,
@@ -135,8 +143,10 @@ public final class ActivityAddGameFromWishlistBinding implements ViewBinding {
     this.llImage = llImage;
     this.llMain = llMain;
     this.llNoData = llNoData;
+    this.llProgressBar = llProgressBar;
     this.llSearch = llSearch;
     this.llSelectImage = llSelectImage;
+    this.progressBar2 = progressBar2;
     this.ratingBar = ratingBar;
     this.rlGameGenre = rlGameGenre;
     this.rlGamePlatform = rlGamePlatform;
@@ -271,6 +281,12 @@ public final class ActivityAddGameFromWishlistBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.llProgressBar;
+      LinearLayout llProgressBar = ViewBindings.findChildViewById(rootView, id);
+      if (llProgressBar == null) {
+        break missingId;
+      }
+
       id = R.id.llSearch;
       LinearLayout llSearch = ViewBindings.findChildViewById(rootView, id);
       if (llSearch == null) {
@@ -280,6 +296,12 @@ public final class ActivityAddGameFromWishlistBinding implements ViewBinding {
       id = R.id.llSelectImage;
       LinearLayout llSelectImage = ViewBindings.findChildViewById(rootView, id);
       if (llSelectImage == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar2;
+      ProgressBar progressBar2 = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar2 == null) {
         break missingId;
       }
 
@@ -334,8 +356,9 @@ public final class ActivityAddGameFromWishlistBinding implements ViewBinding {
       return new ActivityAddGameFromWishlistBinding((RelativeLayout) rootView, adView,
           autoCompleteGameTitle, binding_bindingHeader, btnAddToWishList, btnAdsShow, btnGo,
           cvImage, etGameDescription, etSearch, ivGame, ivGameIcon, llCross, llGiveRating, llImage,
-          llMain, llNoData, llSearch, llSelectImage, ratingBar, rlGameGenre, rlGamePlatform,
-          rvGameTitle, spGameGenre, spGamePlatform, tvRating, tvUploadGameImg);
+          llMain, llNoData, llProgressBar, llSearch, llSelectImage, progressBar2, ratingBar,
+          rlGameGenre, rlGamePlatform, rvGameTitle, spGameGenre, spGamePlatform, tvRating,
+          tvUploadGameImg);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

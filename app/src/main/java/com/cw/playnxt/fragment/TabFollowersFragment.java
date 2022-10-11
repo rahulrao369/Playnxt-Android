@@ -140,10 +140,20 @@ public class TabFollowersFragment extends Fragment {
                         Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                     }
                 }else if(type.equals("FollowerAdapter")){
-                    startActivity(new Intent(context, FriendsProfileActivity.class)
-                            .putExtra("key","1")
-                            .putExtra("show_key", Constants.FRIENDS)
-                            .putExtra("friends_id",id.toString()));
+                    if(followerList.get(position).getIs_follow() == 1){
+                        Log.d("TAG","<<is_follow>>"+followerList.get(position).getIs_follow());
+                        startActivity(new Intent(context, FriendsProfileActivity.class)
+                                .putExtra("key","1")
+                                .putExtra("show_key", Constants.FRIENDS)
+                                .putExtra("friends_id",id.toString()));
+                    }else{
+                        Log.d("TAG","<<is_follow>>>>>"+followerList.get(position).getIs_follow());
+                        startActivity(new Intent(context, FriendsProfileActivity.class)
+                                .putExtra("key","1")
+                                .putExtra("show_key", Constants.COMMUNITY)
+                                .putExtra("friends_id",id.toString()));
+                    }
+
                 }
 
             }

@@ -64,6 +64,12 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         if (Constants.isInternetConnected(context)) {
             NewCheckSubscriptionAPI();
         } else {

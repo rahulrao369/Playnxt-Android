@@ -2930,7 +2930,6 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
-id CancleSubscription
 id CropOverlayView
 id CropProgressBar
 id FUNCTION
@@ -3056,6 +3055,7 @@ id btnAdsShow
 id btnArrow
 id btnBack
 id btnBack1
+id btnCancleSubscription
 id btnChangePassword
 id btnCheckout
 id btnComplete
@@ -3389,6 +3389,7 @@ id llMyProfile
 id llNoData
 id llNoGamesResult
 id llNoUserResult
+id llProgressBar
 id llRecentlyAdded
 id llRecyclerview
 id llRightImg
@@ -3530,6 +3531,7 @@ id postLayout
 id previous
 id previousButton
 id progressBar1
+id progressBar2
 id progress_circular
 id progress_horizontal
 id radio

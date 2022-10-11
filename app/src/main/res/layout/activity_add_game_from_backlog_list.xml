@@ -19,18 +19,19 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
             android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/llMain"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@drawable/bg_home_bottom"
                     android:backgroundTint="@color/top_gray"
                     android:orientation="vertical"
@@ -396,7 +397,7 @@
                 <LinearLayout
                     android:id="@+id/llSearch"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@drawable/bg_home_bottom"
                     android:backgroundTint="@color/top_gray"
                     android:orientation="vertical"
@@ -441,7 +442,6 @@
                         </LinearLayout>
 
                     </LinearLayout>
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -506,6 +506,28 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="16dp"
                         android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/llProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <ProgressBar
+                            android:id="@+id/progressBar2"
+                            style="?android:attr/progressBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="false"
+                            android:indeterminateTint="@color/app_theme"
+                            android:max="100"
+                            android:minWidth="200dp"
+                            android:minHeight="50dp"
+                            android:progress="1"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

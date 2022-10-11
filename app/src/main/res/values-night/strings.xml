@@ -2,8 +2,8 @@
 <resources>
     <string name="Next">Next</string>
     <string name="GetStarted">Get Started</string>
-    <string name="signup">Signup</string>
-    <string name="login">Login</string>
+    <string name="signup">Sign up</string>
+    <string name="login">Log in</string>
     <string name="login_to_your_account">Login To Your Account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -11,7 +11,7 @@
     <string name="forgot_your_password">Forgot Your Password?</string>
     <string name="sign_up_for_free">Sign Up For Free</string>
     <string name="name">Name</string>
-    <string name="already_have_an_account">Already have an account? Login</string>
+    <string name="already_have_an_account">Already have an account? Log in</string>
     <string name="keep_me_signed_in">Keep Me Signed In</string>
     <string name="email_me_about_special_pricing">Email Me About Special Pricing</string>
     <string name="are_you_sure_you_want_to_exit">Are you sure you want to exit?</string>

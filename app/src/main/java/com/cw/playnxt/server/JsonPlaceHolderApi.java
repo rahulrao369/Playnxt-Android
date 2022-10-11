@@ -11,6 +11,7 @@ import com.cw.playnxt.model.AddWishlist.AddWishlistParaRes;
 import com.cw.playnxt.model.CalenderDataModel.AddEvent.AddEventParaRes;
 import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventParaRes;
 import com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventResponse;
+import com.cw.playnxt.model.CancelSubscription.CancelSubscriptionResponse;
 import com.cw.playnxt.model.ChangePassword.ChangePasswordParaRes;
 import com.cw.playnxt.model.ChatList.ChatListResponse;
 import com.cw.playnxt.model.CheckPlan.CheckPlanResponse;
@@ -354,5 +355,9 @@ public interface JsonPlaceHolderApi {
     @POST("users/get-stat")
     Call<GetStatsResponse> getStatAPI(@Header("Content-Type") String content_type,
                                       @Header("Authorization") String token);
+
+    @POST("users/cancel-subscription")
+    Call<CancelSubscriptionResponse> cancelSubscriptionAPI(@Header("Content-Type") String content_type,
+                                                           @Header("Authorization") String token);
 
 }

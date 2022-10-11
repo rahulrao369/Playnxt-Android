@@ -44,7 +44,7 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   public final EditText etSearch;
 
   @NonNull
-  public final ImageView ivSearch;
+  public final LinearLayout ivSearch;
 
   @NonNull
   public final LinearLayout llGame;
@@ -81,7 +81,7 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
 
   private ActivityHomeSearchBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull RelativeLayout btnAdsShow, @NonNull ImageView btnBack, @NonNull CheckBox cbGames,
-      @NonNull CheckBox cbUser, @NonNull EditText etSearch, @NonNull ImageView ivSearch,
+      @NonNull CheckBox cbUser, @NonNull EditText etSearch, @NonNull LinearLayout ivSearch,
       @NonNull LinearLayout llGame, @NonNull LinearLayout llNoGamesResult,
       @NonNull LinearLayout llNoUserResult, @NonNull LinearLayout llUser,
       @NonNull LinearLayout lytCheckBox, @NonNull RecyclerView rvGames,
@@ -172,7 +172,7 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
       }
 
       id = R.id.ivSearch;
-      ImageView ivSearch = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout ivSearch = ViewBindings.findChildViewById(rootView, id);
       if (ivSearch == null) {
         break missingId;
       }

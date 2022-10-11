@@ -3,6 +3,7 @@ package com.cw.playnxt.model.GetGameByFilter;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Newdatum {
 
@@ -21,6 +22,17 @@ public class Newdatum {
 
     @Expose
     private String type;
+    @SerializedName("image_type")
+    private String image_type;
+
+    public String getImage_type() {
+        return image_type;
+    }
+
+    public void setImage_type(String image_type) {
+        this.image_type = image_type;
+    }
+
 
     public String getType() {
         return type;

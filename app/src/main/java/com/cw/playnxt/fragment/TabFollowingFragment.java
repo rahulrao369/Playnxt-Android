@@ -136,7 +136,7 @@ public class TabFollowingFragment extends Fragment {
                 }else if(type.equals("FollowingAdapter")){
                     startActivity(new Intent(context, FriendsProfileActivity.class)
                             .putExtra("key","1")
-                            .putExtra("show_key", Constants.FRIENDS)
+                            .putExtra("show_key", Constants.COMMUNITY)
                             .putExtra("friends_id",id.toString()));
                 }
             }
