@@ -2,6 +2,7 @@ package com.cw.playnxt.adapter.FriendsAdapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class TabActivityAdapter extends RecyclerView.Adapter<TabActivityAdapter.
     Context context;
     List<MyFriendProfileGame> list;
     ItemClickId itemClick;
-
+    String typeImage = "" ;
     public TabActivityAdapter(Context context, List<MyFriendProfileGame> list, ItemClickId itemClick) {
         this.context = context;
         this.list = list;
@@ -44,7 +45,15 @@ public class TabActivityAdapter extends RecyclerView.Adapter<TabActivityAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.gameImg);
+        typeImage = list.get(position).getImage_type();
+        Log.d("TAG","typeImage>>"+typeImage);
+        if(typeImage.equals("thirdparty")){
+            Picasso.get().load("https:"+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.gameImg);
+
+        }else{
+            Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.app_logo).placeholder(R.drawable.app_logo).into(holder.binding.gameImg);
+        }
+
         String gameName = list.get(position).getTitle().substring(0, 1).toUpperCase() +list.get(position).getTitle().substring(1).toLowerCase();
         holder.binding.gameName.setText(gameName);
 
