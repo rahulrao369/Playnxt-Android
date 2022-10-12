@@ -37,6 +37,39 @@
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp">
 
+
+                    <LinearLayout
+                        android:id="@+id/llGrace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/border"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_semi_bold"
+                            android:text="You are on a grace period"
+                            android:textColor="@color/red"
+                            android:textFontWeight="700"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvRemainingDays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_semi_bold"
+                            android:paddingStart="12dp"
+                            android:text=" Remaining Days :12"
+                            android:textColor="@color/red"
+                            android:textFontWeight="700"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -162,7 +195,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="8dp"
-                                        android:orientation="vertical">
+                                        android:orientation="horizontal">
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -179,7 +212,8 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:fontFamily="@font/nunit_medium"
-                                            android:paddingTop="4dp"
+                                            android:gravity="center_vertical"
+                                            android:paddingStart="4dp"
                                             android:text=""
                                             android:textColor="@color/white"
                                             android:textFontWeight="500"
@@ -306,12 +340,14 @@
 
                 <LinearLayout
                     android:id="@+id/btnCancleSubscription"
-                    android:layout_width="190dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="42dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/bg_button"
                     android:orientation="horizontal"
-                    android:visibility="visible">
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/txtBtn"
@@ -320,7 +356,31 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/nunito_semi_bold"
                         android:gravity="center"
-                        android:text="Cancel Subscription"
+                        android:text="@string/cancel_recurring_subscription"
+                        android:textColor="@color/white"
+                        android:textFontWeight="700"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnBuy"
+                    android:layout_width="120dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/bg_button"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nunito_semi_bold"
+                        android:gravity="center"
+                        android:text="@string/buy"
                         android:textColor="@color/white"
                         android:textFontWeight="700"
                         android:textSize="15sp" />

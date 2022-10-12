@@ -13,6 +13,17 @@ public class CheckSubscriptionFinalData {
     @Expose
     private Subscription subscription;
 
+    @Expose
+    private Long remaining_days;
+
+    public Long getRemaining_days() {
+        return remaining_days;
+    }
+
+    public void setRemaining_days(Long remaining_days) {
+        this.remaining_days = remaining_days;
+    }
+
     public String getSubscribed() {
         return subscribed;
     }

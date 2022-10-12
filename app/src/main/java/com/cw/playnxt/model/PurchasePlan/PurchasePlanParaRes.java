@@ -18,6 +18,16 @@ public class PurchasePlanParaRes {
     private Long planId;
     @Expose
     private String year;
+    @Expose
+    private String recurring;
+
+    public String getRecurring() {
+        return recurring;
+    }
+
+    public void setRecurring(String recurring) {
+        this.recurring = recurring;
+    }
 
     public String getCardNumber() {
         return cardNumber;

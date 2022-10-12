@@ -1,4 +1,3 @@
-
 package com.cw.playnxt.model.CheckSubscriptionFinal;
 
 import com.google.gson.annotations.Expose;
@@ -8,24 +7,66 @@ public class Subscription {
 
     @Expose
     private Long amount;
+
     @Expose
     private String createdAt;
+
     @SerializedName("end_date")
     private String endDate;
+
     @Expose
     private Long id;
+
     @SerializedName("plan_id")
     private Long planId;
+
     @SerializedName("start_date")
     private String startDate;
+
     @Expose
     private String status;
+
     @Expose
     private String type;
+
     @Expose
     private String updatedAt;
+
     @SerializedName("user_id")
     private Long userId;
+
+    @SerializedName("grace_taken")
+    private int grace_taken;
+
+    @SerializedName("recurring")
+    private int recurring;
+
+    @SerializedName("recurring_payment")
+    private String recurring_payment;
+
+    public int getGrace_taken() {
+        return grace_taken;
+    }
+
+    public void setGrace_taken(int grace_taken) {
+        this.grace_taken = grace_taken;
+    }
+
+    public int getRecurring() {
+        return recurring;
+    }
+
+    public void setRecurring(int recurring) {
+        this.recurring = recurring;
+    }
+
+    public String getRecurring_payment() {
+        return recurring_payment;
+    }
+
+    public void setRecurring_payment(String recurring_payment) {
+        this.recurring_payment = recurring_payment;
+    }
 
     public Long getAmount() {
         return amount;

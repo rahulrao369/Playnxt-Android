@@ -1921,6 +1921,7 @@ int color primary_text_disabled_material_light 0x7f06027b
 int color purple_color 0x7f06027c
 int color purple_color_gradient 0x7f06027d
 int color radiobutton_themeable_attribute_color 0x7f06027e
+int color red 0x7f060297
 int color ripple_material_dark 0x7f06027f
 int color ripple_material_light 0x7f060280
 int color secondary_text_default_material_dark 0x7f060281
@@ -3054,6 +3055,7 @@ int id btnAdsShow 0x7f0a007d
 int id btnArrow 0x7f0a007e
 int id btnBack 0x7f0a007f
 int id btnBack1 0x7f0a0080
+int id btnBuy 0x7f0a0368
 int id btnCancleSubscription 0x7f0a0081
 int id btnChangePassword 0x7f0a0082
 int id btnCheckout 0x7f0a0083
@@ -3113,6 +3115,7 @@ int id cbUser 0x7f0a00b8
 int id cbn_item_internal_container 0x7f0a00b9
 int id cbn_item_notification_count 0x7f0a00ba
 int id cbn_item_title 0x7f0a00bb
+int id cbrecurring 0x7f0a0364
 int id center 0x7f0a00bc
 int id centerCrop 0x7f0a00bd
 int id centerInside 0x7f0a00be
@@ -3375,6 +3378,7 @@ int id llFriendsGameInfo 0x7f0a01be
 int id llFriendsList 0x7f0a01bf
 int id llGame 0x7f0a01c0
 int id llGiveRating 0x7f0a01c1
+int id llGrace 0x7f0a0366
 int id llHomeMain 0x7f0a01c2
 int id llImage 0x7f0a01c3
 int id llLikeUnlike 0x7f0a01c4
@@ -3733,6 +3737,7 @@ int id tvPremiumUser 0x7f0a0324
 int id tvPrice 0x7f0a0325
 int id tvPurchaseDate 0x7f0a0326
 int id tvRating 0x7f0a0327
+int id tvRemainingDays 0x7f0a0367
 int id tvSeeAll 0x7f0a0328
 int id tvStartDate 0x7f0a0329
 int id tvStatus 0x7f0a032a
@@ -3754,6 +3759,7 @@ int id tvnumber1 0x7f0a0339
 int id tvnumber2 0x7f0a033a
 int id tvnumber3 0x7f0a033b
 int id tvplanForUser 0x7f0a033c
+int id tvrecurring 0x7f0a0365
 int id txtBtn 0x7f0a033d
 int id txtBtnMonth 0x7f0a033e
 int id txtChangePassword 0x7f0a033f
@@ -4172,6 +4178,7 @@ int string abc_shareactionprovider_share_with 0x7f110034
 int string abc_shareactionprovider_share_with_application 0x7f110035
 int string abc_toolbar_collapse_description 0x7f110036
 int string action_settings 0x7f110037
+int string active_recurring_payment_payment_will_automatically_deducted_every_month 0x7f11012e
 int string activity 0x7f110038
 int string add 0x7f110039
 int string add_game_title 0x7f11003a
@@ -4189,7 +4196,9 @@ int string are_you_sure_you_want_to_delete_account 0x7f110045
 int string are_you_sure_you_want_to_exit 0x7f110046
 int string bottom_sheet_behavior 0x7f110047
 int string bottomsheet_action_expand_halfway 0x7f110048
+int string buy 0x7f110130
 int string buy_now 0x7f110049
+int string cancel_recurring_subscription 0x7f11012f
 int string card_expiry 0x7f11004a
 int string card_holder 0x7f11004b
 int string card_holder_name_sample 0x7f11004c

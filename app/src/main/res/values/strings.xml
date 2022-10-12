@@ -123,4 +123,7 @@ ca-app-pub-3940256099942544/6300978111</string>
     <string name="playnxt_button">Playnxt Button</string>
     <string name="share_app_url_string">Hey check out all the games I have in my backlog!</string>
     <string name="choose_one">choose one</string>
+    <string name="active_recurring_payment_payment_will_automatically_deducted_every_month">Active Recurring Payment \n (Payment will automatically deducted every month)</string>
+    <string name="cancel_recurring_subscription">Cancel Recurring Subscription</string>
+    <string name="buy">Buy</string>
 </resources>

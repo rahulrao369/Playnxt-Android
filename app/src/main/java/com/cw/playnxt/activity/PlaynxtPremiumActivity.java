@@ -16,6 +16,7 @@ import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ActivityPlaynxtPremiumBinding;
 import com.cw.playnxt.databinding.HeaderLayoutBinding;
 import com.cw.playnxt.model.CancelSubscription.CancelSubscriptionResponse;
+import com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse;
 import com.cw.playnxt.model.MyActivePlan.ActivePlan;
 import com.cw.playnxt.model.MyActivePlan.MyActivePlanResponse;
 import com.cw.playnxt.server.ApiUtils;
@@ -30,6 +31,10 @@ import retrofit2.Response;
 
 public class PlaynxtPremiumActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
+    int grace_taken;
+    int recurring;
+    String recurring_payment = "";
+    String subscribed = "";
     private ActivityPlaynxtPremiumBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
@@ -54,7 +59,13 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         if (Constants.isInternetConnected(context)) {
+            NewCheckSubscriptionAPI();
             MyActivePlanAPI();
         } else {
             Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
@@ -64,6 +75,7 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
     public void onclicks() {
         headerBinding.btnBack.setOnClickListener(this);
         binding.btnCancleSubscription.setOnClickListener(this);
+        binding.btnBuy.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceAsColor")
@@ -79,20 +91,88 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
                 openCancelSubscriptionDialog();
                 break;
 
+            case R.id.btnBuy:
+                startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                break;
+
         }
     }
 
-    public void MyActivePlanAPI() {
+    //*********************************************************CHECK SUBSCRIPTION****************************************************
+    public void NewCheckSubscriptionAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
-        jsonPlaceHolderApi.MyActivePlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<MyActivePlanResponse>() {
+        jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {
+            @SuppressLint("SetTextI18n")
             @Override
-            public void onResponse(Call<MyActivePlanResponse> call, Response<MyActivePlanResponse> response) {
+            public void onResponse(Call<CheckSubscriptionFinalResponse> call, Response<CheckSubscriptionFinalResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
                 if (response.isSuccessful()) {
                     boolean status = response.body().getStatus();
                     String msg = response.body().getMessage();
                     if (status) {
-                        // Toast.makeText(context, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        grace_taken = response.body().getData().getSubscription().getGrace_taken();
+                        recurring = response.body().getData().getSubscription().getRecurring();
+                        recurring_payment = response.body().getData().getSubscription().getRecurring_payment();
+                        subscribed = response.body().getData().getSubscribed();
+                        Log.d("TAG!!", "grace_taken>>>>" + grace_taken);
+                        Log.d("TAG!!", "recurring>>>>" + recurring);
+                        Log.d("TAG!!", "recurring_payment>>>>" + recurring_payment);
+                        Log.d("TAG!!", "subscribed>>>>" + subscribed);
+
+                        if (subscribed.equals("Yes")) {
+                            binding.btnBuy.setVisibility(View.GONE);
+                            binding.llGrace.setVisibility(View.GONE);
+                        } else if(subscribed.equals("No")){
+                            binding.btnBuy.setVisibility(View.GONE);
+                            binding.llGrace.setVisibility(View.GONE);
+                        }else{
+                            binding.btnBuy.setVisibility(View.VISIBLE);
+                            binding.btnCancleSubscription.setVisibility(View.GONE);
+                            binding.llGrace.setVisibility(View.GONE);
+                        }
+
+
+                        if (recurring_payment.equals("Yes")) {
+                            binding.btnCancleSubscription.setVisibility(View.VISIBLE);
+                            binding.btnBuy.setVisibility(View.GONE);
+                            binding.llGrace.setVisibility(View.GONE);
+                        } else if(recurring_payment.equals("No")){
+                            binding.btnCancleSubscription.setVisibility(View.GONE);
+                            binding.btnBuy.setVisibility(View.GONE);
+                            binding.llGrace.setVisibility(View.GONE);
+                        }
+
+                        if (grace_taken == 0) {
+                            binding.llGrace.setVisibility(View.GONE);
+                        } else if (grace_taken == 1) {
+                            binding.llGrace.setVisibility(View.VISIBLE);
+                            binding.tvRemainingDays.setText("Remaining days: "+response.body().getData().getRemaining_days());
+                            binding.btnBuy.setVisibility(View.VISIBLE);
+                        }
+
+                    } else {
+                        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckSubscriptionFinalResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+                Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void MyActivePlanAPI() {
+        jsonPlaceHolderApi.MyActivePlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<MyActivePlanResponse>() {
+            @Override
+            public void onResponse(Call<MyActivePlanResponse> call, Response<MyActivePlanResponse> response) {
+                if (response.isSuccessful()) {
+                    boolean status = response.body().getStatus();
+                    String msg = response.body().getMessage();
+                    if (status) {
                         if (response.body().getData().getActivePlan() != null) {
                             ActivePlanDataSet(response.body().getData().getActivePlan());
                         }
@@ -105,7 +185,6 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
 
             @Override
             public void onFailure(Call<MyActivePlanResponse> call, Throwable t) {
-                Customprogress.showPopupProgressSpinner(context, false);
                 Log.e("TAG", "" + t.getMessage());
                 Toast.makeText(context, "" + t.toString(), Toast.LENGTH_SHORT).show();
             }
@@ -122,7 +201,7 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
         binding.tvPurchaseDate.setText(activePlan.getStartDate());
         binding.tvExpiryDate.setText(activePlan.getEndDate());
         //  binding.tvDescription.setText(activePlan.getDescription());
-        binding.tvPrice.setText(activePlan.getAmount());
+        binding.tvPrice.setText("$" + activePlan.getAmount());
     }
 
     public void cancelSubscriptionAPI() {
@@ -137,9 +216,9 @@ public class PlaynxtPremiumActivity extends AppCompatActivity implements View.On
                     String msg = response.body().getMessage();
                     if (status) {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(context, SubscriptionActivityFinal.class));
-                        finish();
-
+                      /*  startActivity(new Intent(context, SubscriptionActivityFinal.class));
+                        finish();*/
+                        onStart();
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }

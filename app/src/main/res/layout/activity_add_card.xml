@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/top_gray"
     tools:context=".activity.AddCardActivity">
 
@@ -35,18 +35,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <com.cooltechworks.creditcarddesign.CreditCardView
                         android:id="@+id/creditCardView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:card_number=""
-                        app:card_holder_name="  "
-                        app:cvv="000"
+                        android:visibility="visible"
                         app:card_expiration=""
-                       android:visibility="visible" />
+                        app:card_holder_name="  "
+                        app:card_number=""
+                        app:cvv="000" />
 
 
                     <LinearLayout
@@ -128,13 +128,14 @@
                                 android:textColorHint="@color/edt_text"
                                 android:textSize="14sp" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
                             android:layout_weight="1"
                             android:background="@drawable/bg_edit_text"
-                            android:orientation="horizontal"
-                            android:layout_marginStart="8dp">
+                            android:orientation="horizontal">
 
                             <EditText
                                 android:id="@+id/etCVV"
@@ -156,13 +157,41 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="24dp"
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        android:paddingStart="2dp">
+
+                        <CheckBox
+                            android:id="@+id/cbrecurring"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/checkbox_selector_2"
+                            android:gravity="center_vertical"/>
+
+                        <TextView
+                            android:id="@+id/tvrecurring"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/nunito_semi_bold"
+                            android:text=""
+                            android:textColor="@color/edt_text"
+                            android:textSize="12dp"
+                            android:gravity="start"
+                            android:layout_marginStart="8dp"/>
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:paddingTop="100dp">
+                        android:paddingTop="50dp">
 
                         <LinearLayout
                             android:id="@+id/btnPayNow"

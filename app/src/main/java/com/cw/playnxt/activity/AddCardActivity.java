@@ -1,16 +1,24 @@
 package com.cw.playnxt.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ActivityAddCardBinding;
@@ -27,13 +35,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddCardActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddCardActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
+    String cardHolderName, cardNumber, expiryDate, monthCard, yearCard, cvvCard, plan_ID;
+    String recurring = "0";
     private ActivityAddCardBinding binding;
     private HeaderLayoutBinding headerBinding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String cardHolderName,cardNumber,expiryDate,monthCard,yearCard,cvvCard,plan_ID;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +53,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
         init();
         onclicks();
     }
+
     public void init() {
         context = AddCardActivity.this;
         jsonPlaceHolderApi = ApiUtils.getAPIService();
@@ -53,6 +63,38 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
         headerBinding.btnAdd.setVisibility(View.GONE);
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
+
+        binding.cbrecurring.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    Log.d("TAG","b>>"+b);
+                    recurring = "1";
+                } else {
+                    Log.d("TAG","b>>>>"+b);
+                    recurring = "0";
+                }
+            }
+        });
+
+        String text1 = "Active Recurring Payment.\n";
+        String text2 = "(Payment will automatically deducted every month)";
+        SpannableString spannableString1 = new SpannableString(text1);
+        SpannableString spannableString2 = new SpannableString(text2);
+
+        spannableString1.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(new RelativeSizeSpan(0.9f), 0, text1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(new StyleSpan(Typeface.BOLD), 0, text1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        spannableString2.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.edt_text)), 0, text2.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString2.setSpan(new RelativeSizeSpan(0.8f), 0, text2.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString2.setSpan(new StyleSpan(Typeface.NORMAL), 0, text2.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
+        stringBuilder.append(spannableString1);
+        stringBuilder.append(spannableString2);
+        binding.tvrecurring.setText(stringBuilder);
+
 
         try {
             Intent intent = getIntent();
@@ -120,7 +162,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
                 int textLength = binding.etExpringDate.getText().length();
                 if (textLength == 3) {
                     if (!expiryDate.contains("/")) {
-                        binding.etExpringDate.setText(new StringBuilder( binding.etExpringDate.getText().toString()).insert(expiryDate.length() - 1, "/").toString());
+                        binding.etExpringDate.setText(new StringBuilder(binding.etExpringDate.getText().toString()).insert(expiryDate.length() - 1, "/").toString());
                         binding.etExpringDate.setSelection(binding.etExpringDate.getText().length());
                     }
                 }
@@ -178,7 +220,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
                     String[] separated = expiryDate.split("/");
                     monthCard = separated[0];
                     yearCard = separated[1];
-                    PurchasePlanAPI(cardHolderName,cardNumber,monthCard,yearCard,cvvCard);
+                    PurchasePlanAPI(cardHolderName, cardNumber, monthCard, yearCard, cvvCard);
                 } else {
                     Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                 }
@@ -195,8 +237,9 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
         purchasePlanParaRes.setMonth(Long.valueOf(monthCard));
         purchasePlanParaRes.setYear(yearCard);
         purchasePlanParaRes.setCvv(cvvCard);
+        purchasePlanParaRes.setRecurring(recurring);
 
-        jsonPlaceHolderApi.PurchasePlanAPI(Constants.CONTENT_TYPE,"Bearer " + mySharedPref.getSavedAccessToken(), purchasePlanParaRes).enqueue(new Callback<PurchasePlanResponse>() {
+        jsonPlaceHolderApi.PurchasePlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), purchasePlanParaRes).enqueue(new Callback<PurchasePlanResponse>() {
             @Override
             public void onResponse(Call<PurchasePlanResponse> call, Response<PurchasePlanResponse> response) {
                 Customprogress.showPopupProgressSpinner(context, false);
@@ -205,12 +248,13 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
                     String msg = response.body().getMessage();
                     if (status) {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(context,ConfirmationActivity.class));
+                        startActivity(new Intent(context, ConfirmationActivity.class));
                     } else {
                         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<PurchasePlanResponse> call, Throwable t) {
                 Customprogress.showPopupProgressSpinner(context, false);
