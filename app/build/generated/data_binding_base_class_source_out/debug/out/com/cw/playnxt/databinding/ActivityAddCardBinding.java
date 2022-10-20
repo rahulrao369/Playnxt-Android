@@ -4,6 +4,7 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -29,6 +30,9 @@ public final class ActivityAddCardBinding implements ViewBinding {
   public final LinearLayout btnPayNow;
 
   @NonNull
+  public final CheckBox cbrecurring;
+
+  @NonNull
   public final CreditCardView creditCardView;
 
   @NonNull
@@ -44,21 +48,26 @@ public final class ActivityAddCardBinding implements ViewBinding {
   public final EditText etExpringDate;
 
   @NonNull
+  public final TextView tvrecurring;
+
+  @NonNull
   public final TextView txtBtn;
 
   private ActivityAddCardBinding(@NonNull RelativeLayout rootView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnPayNow,
-      @NonNull CreditCardView creditCardView, @NonNull EditText etAccountHolderName,
-      @NonNull EditText etAccountNo, @NonNull EditText etCVV, @NonNull EditText etExpringDate,
-      @NonNull TextView txtBtn) {
+      @NonNull CheckBox cbrecurring, @NonNull CreditCardView creditCardView,
+      @NonNull EditText etAccountHolderName, @NonNull EditText etAccountNo, @NonNull EditText etCVV,
+      @NonNull EditText etExpringDate, @NonNull TextView tvrecurring, @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
     this.btnPayNow = btnPayNow;
+    this.cbrecurring = cbrecurring;
     this.creditCardView = creditCardView;
     this.etAccountHolderName = etAccountHolderName;
     this.etAccountNo = etAccountNo;
     this.etCVV = etCVV;
     this.etExpringDate = etExpringDate;
+    this.tvrecurring = tvrecurring;
     this.txtBtn = txtBtn;
   }
 
@@ -102,6 +111,12 @@ public final class ActivityAddCardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cbrecurring;
+      CheckBox cbrecurring = ViewBindings.findChildViewById(rootView, id);
+      if (cbrecurring == null) {
+        break missingId;
+      }
+
       id = R.id.creditCardView;
       CreditCardView creditCardView = ViewBindings.findChildViewById(rootView, id);
       if (creditCardView == null) {
@@ -132,6 +147,12 @@ public final class ActivityAddCardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvrecurring;
+      TextView tvrecurring = ViewBindings.findChildViewById(rootView, id);
+      if (tvrecurring == null) {
+        break missingId;
+      }
+
       id = R.id.txtBtn;
       TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
       if (txtBtn == null) {
@@ -139,7 +160,8 @@ public final class ActivityAddCardBinding implements ViewBinding {
       }
 
       return new ActivityAddCardBinding((RelativeLayout) rootView, binding_bindingHeader, btnPayNow,
-          creditCardView, etAccountHolderName, etAccountNo, etCVV, etExpringDate, txtBtn);
+          cbrecurring, creditCardView, etAccountHolderName, etAccountNo, etCVV, etExpringDate,
+          tvrecurring, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

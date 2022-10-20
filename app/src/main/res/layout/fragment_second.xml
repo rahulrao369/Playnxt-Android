@@ -44,7 +44,7 @@
                         android:layout_marginTop="14dp"
                         android:fontFamily="@font/nunit_medium"
                         android:gravity="center_horizontal"
-                        android:text="Ever finish a game can’t decide which one to play next? Just tap the Playnxt button and let us decide for you.\n Use the Playnxt button to add games to your backlog or help choose what game to play next."
+                        android:text="Ever finish a game and can’t decide which one to play next? Just tap the Playnxt button and let us decide for you.\n Use the Playnxt button to add games to your backlog or help choose what game to play next."
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="12sp" />

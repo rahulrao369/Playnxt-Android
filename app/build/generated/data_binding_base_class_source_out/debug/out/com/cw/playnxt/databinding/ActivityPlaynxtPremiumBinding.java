@@ -25,10 +25,16 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
   public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
+  public final LinearLayout btnBuy;
+
+  @NonNull
   public final LinearLayout btnCancleSubscription;
 
   @NonNull
   public final ImageView ivPlan;
+
+  @NonNull
+  public final LinearLayout llGrace;
 
   @NonNull
   public final LinearLayout llUpper;
@@ -49,26 +55,34 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
   public final TextView tvPurchaseDate;
 
   @NonNull
+  public final TextView tvRemainingDays;
+
+  @NonNull
   public final TextView tvValidUpto;
 
   @NonNull
   public final TextView txtBtn;
 
   private ActivityPlaynxtPremiumBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnCancleSubscription,
-      @NonNull ImageView ivPlan, @NonNull LinearLayout llUpper, @NonNull TextView tvDescription,
+      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnBuy,
+      @NonNull LinearLayout btnCancleSubscription, @NonNull ImageView ivPlan,
+      @NonNull LinearLayout llGrace, @NonNull LinearLayout llUpper, @NonNull TextView tvDescription,
       @NonNull TextView tvExpiryDate, @NonNull TextView tvPlanTitle, @NonNull TextView tvPrice,
-      @NonNull TextView tvPurchaseDate, @NonNull TextView tvValidUpto, @NonNull TextView txtBtn) {
+      @NonNull TextView tvPurchaseDate, @NonNull TextView tvRemainingDays,
+      @NonNull TextView tvValidUpto, @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
+    this.btnBuy = btnBuy;
     this.btnCancleSubscription = btnCancleSubscription;
     this.ivPlan = ivPlan;
+    this.llGrace = llGrace;
     this.llUpper = llUpper;
     this.tvDescription = tvDescription;
     this.tvExpiryDate = tvExpiryDate;
     this.tvPlanTitle = tvPlanTitle;
     this.tvPrice = tvPrice;
     this.tvPurchaseDate = tvPurchaseDate;
+    this.tvRemainingDays = tvRemainingDays;
     this.tvValidUpto = tvValidUpto;
     this.txtBtn = txtBtn;
   }
@@ -107,6 +121,12 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
       }
       HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
 
+      id = R.id.btnBuy;
+      LinearLayout btnBuy = ViewBindings.findChildViewById(rootView, id);
+      if (btnBuy == null) {
+        break missingId;
+      }
+
       id = R.id.btnCancleSubscription;
       LinearLayout btnCancleSubscription = ViewBindings.findChildViewById(rootView, id);
       if (btnCancleSubscription == null) {
@@ -116,6 +136,12 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
       id = R.id.ivPlan;
       ImageView ivPlan = ViewBindings.findChildViewById(rootView, id);
       if (ivPlan == null) {
+        break missingId;
+      }
+
+      id = R.id.llGrace;
+      LinearLayout llGrace = ViewBindings.findChildViewById(rootView, id);
+      if (llGrace == null) {
         break missingId;
       }
 
@@ -155,6 +181,12 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvRemainingDays;
+      TextView tvRemainingDays = ViewBindings.findChildViewById(rootView, id);
+      if (tvRemainingDays == null) {
+        break missingId;
+      }
+
       id = R.id.tvValidUpto;
       TextView tvValidUpto = ViewBindings.findChildViewById(rootView, id);
       if (tvValidUpto == null) {
@@ -168,8 +200,8 @@ public final class ActivityPlaynxtPremiumBinding implements ViewBinding {
       }
 
       return new ActivityPlaynxtPremiumBinding((RelativeLayout) rootView, binding_bindingHeader,
-          btnCancleSubscription, ivPlan, llUpper, tvDescription, tvExpiryDate, tvPlanTitle, tvPrice,
-          tvPurchaseDate, tvValidUpto, txtBtn);
+          btnBuy, btnCancleSubscription, ivPlan, llGrace, llUpper, tvDescription, tvExpiryDate,
+          tvPlanTitle, tvPrice, tvPurchaseDate, tvRemainingDays, tvValidUpto, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
