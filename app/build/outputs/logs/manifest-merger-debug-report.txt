@@ -11,15 +11,15 @@ MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches
 MERGED from [com.github.ismaeldivita:chip-navigation-bar:1.4.0] /home/cw/.gradle/caches/transforms-3/89a849c8d867b96b6375747ef88a17f1/transformed/jetified-chip-navigation-bar-1.4.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches/transforms-3/3f70c0fa86cc9bd6859a916bbd6fff52/transformed/jetified-material-calendar-view-1.7.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/e5ebb5a41ada6fb2f23f724908b99b41/transformed/constraintlayout-2.1.3/AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:2:1-17:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/dee56e56ba061faa46371f782a83ef9b/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cw/.gradle/caches/transforms-3/c9e1e39484c5b816bbed4acd5c06f97e/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:21.0.3] /home/cw/.gradle/caches/transforms-3/73b2c0e4515007aaad952a118a7c3b89/transformed/jetified-firebase-auth-21.0.3/AndroidManifest.xml:17:1-73:12
 MERGED from [com.google.firebase:firebase-analytics:20.1.0] /home/cw/.gradle/caches/transforms-3/6ca6a203343d82b608e1b32fdaaba9e5/transformed/jetified-firebase-analytics-20.1.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /home/cw/.gradle/caches/transforms-3/7f19c5fd65393fb083da49cb392c6f80/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:17:1-58:12
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:2:1-14:12
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:2:1-14:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/888e43d5ecae1b53d2d4a7d414216645/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:2:1-11:12
-MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/c669224d954c7e14030eba9201aa1135/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/eec7ad70af46e9ee566981270ff62e94/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-ads:19.3.0] /home/cw/.gradle/caches/transforms-3/39879458e1cfb73789f7fd29332b5054/transformed/jetified-play-services-ads-19.3.0/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-datatransport:18.0.0] /home/cw/.gradle/caches/transforms-3/dbd36bde59aa6e101c4e706ce077e2b1/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:15:1-34:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.0.0] /home/cw/.gradle/caches/transforms-3/16a68525e4b6d6ea006e59be39353e07/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:15:1-38:12
@@ -181,16 +181,16 @@ MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches
 MERGED from [com.google.android.material:material:1.6.0] /home/cw/.gradle/caches/transforms-3/03b5a2a8499332e234a1bc400a43f631/transformed/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/e5ebb5a41ada6fb2f23f724908b99b41/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/e5ebb5a41ada6fb2f23f724908b99b41/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:11:5-15:19
 MERGED from [com.google.firebase:firebase-auth:21.0.3] /home/cw/.gradle/caches/transforms-3/73b2c0e4515007aaad952a118a7c3b89/transformed/jetified-firebase-auth-21.0.3/AndroidManifest.xml:26:5-71:19
 MERGED from [com.google.firebase:firebase-auth:21.0.3] /home/cw/.gradle/caches/transforms-3/73b2c0e4515007aaad952a118a7c3b89/transformed/jetified-firebase-auth-21.0.3/AndroidManifest.xml:26:5-71:19
 MERGED from [com.google.firebase:firebase-analytics:20.1.0] /home/cw/.gradle/caches/transforms-3/6ca6a203343d82b608e1b32fdaaba9e5/transformed/jetified-firebase-analytics-20.1.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:20.1.0] /home/cw/.gradle/caches/transforms-3/6ca6a203343d82b608e1b32fdaaba9e5/transformed/jetified-firebase-analytics-20.1.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /home/cw/.gradle/caches/transforms-3/7f19c5fd65393fb083da49cb392c6f80/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:27:5-56:19
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /home/cw/.gradle/caches/transforms-3/7f19c5fd65393fb083da49cb392c6f80/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:27:5-56:19
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/888e43d5ecae1b53d2d4a7d414216645/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/888e43d5ecae1b53d2d4a7d414216645/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-datatransport:18.0.0] /home/cw/.gradle/caches/transforms-3/dbd36bde59aa6e101c4e706ce077e2b1/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:24:5-32:19
@@ -555,8 +555,8 @@ MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches
 MERGED from [com.applandeo:material-calendar-view:1.7.0] /home/cw/.gradle/caches/transforms-3/3f70c0fa86cc9bd6859a916bbd6fff52/transformed/jetified-material-calendar-view-1.7.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/e5ebb5a41ada6fb2f23f724908b99b41/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /home/cw/.gradle/caches/transforms-3/e5ebb5a41ada6fb2f23f724908b99b41/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/cw/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/dee56e56ba061faa46371f782a83ef9b/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] /home/cw/.gradle/caches/transforms-3/dee56e56ba061faa46371f782a83ef9b/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cw/.gradle/caches/transforms-3/c9e1e39484c5b816bbed4acd5c06f97e/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
@@ -567,12 +567,12 @@ MERGED from [com.google.firebase:firebase-analytics:20.1.0] /home/cw/.gradle/cac
 MERGED from [com.google.firebase:firebase-analytics:20.1.0] /home/cw/.gradle/caches/transforms-3/6ca6a203343d82b608e1b32fdaaba9e5/transformed/jetified-firebase-analytics-20.1.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /home/cw/.gradle/caches/transforms-3/7f19c5fd65393fb083da49cb392c6f80/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:23.0.0] /home/cw/.gradle/caches/transforms-3/7f19c5fd65393fb083da49cb392c6f80/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
-MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/888e43d5ecae1b53d2d4a7d414216645/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /home/cw/.gradle/caches/transforms-3/888e43d5ecae1b53d2d4a7d414216645/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/c669224d954c7e14030eba9201aa1135/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
-MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/c669224d954c7e14030eba9201aa1135/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/eec7ad70af46e9ee566981270ff62e94/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] /home/cw/.gradle/caches/transforms-3/eec7ad70af46e9ee566981270ff62e94/transformed/jetified-roundedimageview-2.3.0/AndroidManifest.xml:7:5-43
 MERGED from [com.google.android.gms:play-services-ads:19.3.0] /home/cw/.gradle/caches/transforms-3/39879458e1cfb73789f7fd29332b5054/transformed/jetified-play-services-ads-19.3.0/AndroidManifest.xml:21:5-23:52
 MERGED from [com.google.android.gms:play-services-ads:19.3.0] /home/cw/.gradle/caches/transforms-3/39879458e1cfb73789f7fd29332b5054/transformed/jetified-play-services-ads-19.3.0/AndroidManifest.xml:21:5-23:52
 MERGED from [com.google.firebase:firebase-datatransport:18.0.0] /home/cw/.gradle/caches/transforms-3/dbd36bde59aa6e101c4e706ce077e2b1/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:19:5-21:41
@@ -864,13 +864,13 @@ ADDED from [com.google.firebase:firebase-messaging:23.0.0] /home/cw/.gradle/cach
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:23.0.0] /home/cw/.gradle/caches/transforms-3/7f19c5fd65393fb083da49cb392c6f80/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:53:17-119
 provider#com.squareup.picasso.PicassoProvider
-ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
 	android:authorities
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
 	android:exported
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
 	android:name
-		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/23a34a07e9923828aab344dab86c5224/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/cw/.gradle/caches/transforms-3/9cee1615e1305da025cb573ba69c5e03/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
 meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
 ADDED from [com.google.firebase:firebase-datatransport:18.0.0] /home/cw/.gradle/caches/transforms-3/dbd36bde59aa6e101c4e706ce077e2b1/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:28:13-30:85
 	android:value

@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5ff840f68c09ca6994f113dfcf76b943/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cdd6cebd1cc7c376182cd759f93103a5/transformed/jetified-CreditCardView-v1.0.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
