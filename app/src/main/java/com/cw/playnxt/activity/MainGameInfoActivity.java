@@ -166,7 +166,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                     headerBinding.btnEdit.setVisibility(View.VISIBLE);
 
                 }
-                Log.d("TAG", "recent_game_id>>" + game_id);
+                Log.d("TAG", "game_id>>" + game_id);
                 if (Constants.isInternetConnected(context)) {
                     NewCheckSubscriptionAPI();
                 } else {
@@ -722,6 +722,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
             binding.tvGenre.setVisibility(View.GONE);
         }
     }
+
     //******************************Category List Name*************************
     public void GetCategoryBacklogListNameAPI(String category_type) {
         Customprogress.showPopupProgressSpinner(context, true);
@@ -1053,6 +1054,7 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
         });
     }
     //*********************************************************CHECK SUBSCRIPTION****************************************************
+
     public void NewCheckSubscriptionAPI() {
         Customprogress.showPopupProgressSpinner(context, true);
         jsonPlaceHolderApi.NewCheckSubscriptionAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken()).enqueue(new Callback<CheckSubscriptionFinalResponse>() {

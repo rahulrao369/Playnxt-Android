@@ -23,6 +23,7 @@ import com.cw.playnxt.R;
 import com.cw.playnxt.activity.GameInfoActivity;
 import com.cw.playnxt.activity.HomeActivity;
 import com.cw.playnxt.activity.MainGameInfoActivity;
+import com.cw.playnxt.activity.StaffPicksDetailActivity;
 import com.cw.playnxt.adapter.DiscoverAdapters.GameListAdapter;
 import com.cw.playnxt.adapter.HomeAdapters.FriendsListAdapter;
 import com.cw.playnxt.databinding.FragmentDiscoverBinding;
@@ -43,6 +44,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +57,6 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
     private FragmentDiscoverBinding binding;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
     private MySharedPref mySharedPref;
-    String buyNowLink = "";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_discover,true);
@@ -163,15 +164,10 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onItemClick(int position, Long id, String type) {
                 if(type.equals("StaffPicksFragment")){
-                    // startActivity(new Intent(context, GameInfoActivity.class));
-                    startActivity(new Intent(context, MainGameInfoActivity.class)
-                            .putExtra("game_id", id.toString())
-                            .putExtra("key", Constants.USER_GAME_VIEW));
+
                 }else if(type.equals("Buy")){
-                    buyNowLink = capsulList.get(position).getUrl();
-                    Log.d("TAG","buyNowLink>>"+buyNowLink);
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(buyNowLink));
-                    startActivity(browserIntent);
+                    startActivity(new Intent(context, StaffPicksDetailActivity.class)
+                            .putExtra("staffPicksList",(Serializable) capsulList.get(position)));
                 }
             }
         });

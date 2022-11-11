@@ -3,8 +3,10 @@ package com.cw.playnxt.model.StaffPicks;
 
 import com.google.gson.annotations.Expose;
 
+import java.io.Serializable;
 
-public class StaffPicksResponse {
+
+public class StaffPicksResponse implements Serializable {
 
     @Expose
     private Data data;

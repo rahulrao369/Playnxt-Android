@@ -2,6 +2,7 @@ package com.cw.playnxt.adapter.DiscoverAdapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,10 +41,10 @@ public class GameListAdapter extends RecyclerView.Adapter<GameListAdapter.Recycl
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.gameImg);
+        Picasso.get().load(Allurls.IMAGEURL+"/"+list.get(position).getImage()).error(R.drawable.progress_animation).placeholder(R.drawable.progress_animation).into(holder.binding.gameImg);
+        Log.d("TAG","image>>>>>> "+Allurls.IMAGEURL+"/"+list.get(position).getImage());
         String gameName = list.get(position).getTitle().substring(0, 1).toUpperCase() + list.get(position).getTitle().substring(1).toLowerCase();
         holder.binding.gameName.setText(gameName);
-        holder.binding.txtBtn.setText("Buy Now");
 
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override
