@@ -6,10 +6,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -152,8 +156,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Playnxt");
-            String shareMessage = getResources().getString(R.string.share_app_url_string);
-            // shareMessage =  Allurls.share_app_url; shareMessage + DynamicLink + "\n\n";
+
+            String app_msg = getResources().getString(R.string.share_app_url_string);
+            String app_link = "https://play.google.com/store/apps/details?id=com.cw.playnxt";
+
+            String shareMessage =app_msg + "\n\n" + app_link ;
             Log.d("TAG", "shareMessage>>" + shareMessage);
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, getString(R.string.choose_one)));
