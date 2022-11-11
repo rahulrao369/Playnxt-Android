@@ -1129,6 +1129,7 @@ com/cw/playnxt/databinding/ActivityStaffPicksDetailBinding.java
 com/cw/playnxt/activity/StaffPicksDetailActivity.java
  com.cw.playnxt.activity.StaffPicksDetailActivity
  com.cw.playnxt.activity.StaffPicksDetailActivity$1
+ com.cw.playnxt.activity.StaffPicksDetailActivity$2
 com/cw/playnxt/fragment/DiscoverFragment.java
  com.cw.playnxt.fragment.DiscoverFragment
  com.cw.playnxt.fragment.DiscoverFragment$1

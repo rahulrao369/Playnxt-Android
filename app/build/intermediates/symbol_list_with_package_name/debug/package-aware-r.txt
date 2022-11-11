@@ -3057,6 +3057,7 @@ id btnArrow
 id btnBack
 id btnBack1
 id btnBuy
+id btnBuyNow
 id btnCancleSubscription
 id btnChangePassword
 id btnCheckout
@@ -3920,6 +3921,7 @@ layout activity_setting
 layout activity_setting_palynxt_premium
 layout activity_signup
 layout activity_splash
+layout activity_staff_picks_detail
 layout activity_subscription
 layout activity_subscription_final
 layout activity_suggest_ne_feature

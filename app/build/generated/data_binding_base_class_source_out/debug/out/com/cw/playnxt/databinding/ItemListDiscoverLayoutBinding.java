@@ -33,18 +33,13 @@ public final class ItemListDiscoverLayoutBinding implements ViewBinding {
   @NonNull
   public final LinearLayout layoutMain;
 
-  @NonNull
-  public final TextView txtBtn;
-
   private ItemListDiscoverLayoutBinding(@NonNull CardView rootView, @NonNull LinearLayout btnView,
-      @NonNull ImageView gameImg, @NonNull TextView gameName, @NonNull LinearLayout layoutMain,
-      @NonNull TextView txtBtn) {
+      @NonNull ImageView gameImg, @NonNull TextView gameName, @NonNull LinearLayout layoutMain) {
     this.rootView = rootView;
     this.btnView = btnView;
     this.gameImg = gameImg;
     this.gameName = gameName;
     this.layoutMain = layoutMain;
-    this.txtBtn = txtBtn;
   }
 
   @Override
@@ -98,14 +93,8 @@ public final class ItemListDiscoverLayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtBtn;
-      TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
-      if (txtBtn == null) {
-        break missingId;
-      }
-
       return new ItemListDiscoverLayoutBinding((CardView) rootView, btnView, gameImg, gameName,
-          layoutMain, txtBtn);
+          layoutMain);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
