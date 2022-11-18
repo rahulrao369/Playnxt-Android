@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:id="@+id/llMain"
+    android:paddingTop="8dp"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/ic_add_grey"
+        />
+
+    <TextView
+        android:id="@+id/tvFeatures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_extra_light"
+        android:text="Ad-Free Experience"
+        android:textColor="@color/white"
+        android:textFontWeight="400"
+        android:textSize="11sp"
+        android:layout_marginStart="12dp"/>
+
+</LinearLayout>
