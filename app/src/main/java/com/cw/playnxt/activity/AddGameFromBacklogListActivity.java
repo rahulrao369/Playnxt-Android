@@ -297,12 +297,12 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
 
     public void AddGameAPI(String pathMain) {
         Customprogress.showPopupProgressSpinner(context, true);
-        if(!pathMain.equals("")){
+        if(gameId.equals("")){
             gameType = Constants.MANNUAL;
         }else{
             gameType = Constants.ADMIN_GAME;
         }
-
+        Log.d("TAG","gameType>>>"+gameType);
         HashMap<String, RequestBody> data = new HashMap<>();
         data.put("title", createRequestBody(binding.autoCompleteGameTitle.getText().toString().trim()));
         data.put("platform", createRequestBody(platform));
@@ -324,6 +324,7 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
         Log.d("TAG2", "GamePlatform>>"+platform);
         Log.d("TAG2", "GameGenre>>"+genre);
         Log.d("TAG2", "gameRating>>"+gameRating);
+
 
         MultipartBody.Part image = null;
         if (pathMain != null && !pathMain.equals("")) {

@@ -570,6 +570,7 @@ public class AddGameActivity extends AppCompatActivity implements View.OnClickLi
             gameType = Constants.ADMIN_GAME;
         }
 
+        Log.d("TAG","gameType>>>"+gameType);
         HashMap<String, RequestBody> data = new HashMap<>();
         data.put("title", createRequestBody(binding.autoCompleteGameTitle.getText().toString().trim()));
         data.put("platform", createRequestBody(platform));

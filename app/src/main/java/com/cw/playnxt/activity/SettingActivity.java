@@ -120,25 +120,18 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 } else if (position == 1) {
                     startActivity(new Intent(context, SuggestNewFeatureActivity.class));
                 } else if (position == 2) {
-                   /* Intent intent = new Intent(Intent.ACTION_SEND);
-                    intent.setType("plain/text");
-                    intent.putExtra(Intent.EXTRA_EMAIL, new String[]{Constants.CLIENT_EMAIL});
-                    intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
-                    intent.putExtra(Intent.EXTRA_TEXT, "mail body");
-                    startActivity(Intent.createChooser(intent, ""));*/
-
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     Uri data = Uri.parse("mailto:"+Constants.CLIENT_EMAIL+"?subject=" + Uri.encode("subject") + "&body=" + Uri.encode("body"));
                     intent.setData(data);
                     startActivity(intent);
-
                 } else if (position == 3) {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.ABOUT_US_LINK));
                     startActivity(browserIntent);
                     // startActivity(new Intent(context,AboutUsActivity.class));
                 } else if (position == 4) {
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Allurls.share_app_url));
-                    startActivity(browserIntent);
+                    shareAppLinkToRateApp();
+                    /*Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Allurls.share_app_url));
+                    startActivity(browserIntent);*/
                 } else if (position == 5) {
                     shareAppLink();
                 } else if (position == 6) {
@@ -158,6 +151,24 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Playnxt");
 
             String app_msg = getResources().getString(R.string.share_app_url_string);
+            String app_link = "https://play.google.com/store/apps/details?id=com.cw.playnxt";
+
+            String shareMessage =app_msg + "\n\n" + app_link ;
+            Log.d("TAG", "shareMessage>>" + shareMessage);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.choose_one)));
+        } catch (Exception e) {
+            //e.toString();
+        }
+    }
+
+    private void shareAppLinkToRateApp() {
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Playnxt");
+
+            String app_msg = getResources().getString(R.string.rate_app);
             String app_link = "https://play.google.com/store/apps/details?id=com.cw.playnxt";
 
             String shareMessage =app_msg + "\n\n" + app_link ;

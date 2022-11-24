@@ -119,6 +119,7 @@ ca-app-pub-2864521706832933/7701208388</string>
     <string name="your_premium_video_game_backlog_manager">Your premium video game backlog manager.</string>
     <string name="playnxt_button">Playnxt Button</string>
     <string name="share_app_url_string">Hey check out all the games I have in my backlog!</string>
+    <string name="rate_app">Rate Playnxt!</string>
     <string name="choose_one">choose one</string>
     <string name="active_recurring_payment_payment_will_automatically_deducted_every_month">Active Recurring Payment \n (Payment will automatically deducted every month)</string>
     <string name="cancel_recurring_subscription">Cancel Recurring Subscription</string>

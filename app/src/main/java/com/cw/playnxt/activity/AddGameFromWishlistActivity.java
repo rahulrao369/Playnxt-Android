@@ -287,7 +287,7 @@ public class AddGameFromWishlistActivity extends AppCompatActivity implements Vi
 
     public void AddGameAPI(String pathMain) {
         Customprogress.showPopupProgressSpinner(context, true);
-        if(!pathMain.equals("")){
+        if(gameId.equals("")){
             gameType = Constants.MANNUAL;
         }else{
             gameType = Constants.ADMIN_GAME;
