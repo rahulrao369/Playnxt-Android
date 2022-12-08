@@ -7,8 +7,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.LinkMovementMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -79,6 +85,40 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         jsonPlaceHolderApi = ApiUtils.getAPIService();
         mySharedPref = new MySharedPref(context);
         firebaseData();
+
+        String text1 = "By signup you agree to our Condition and Privacy policy.";
+        SpannableString spannableString1 = new SpannableString(text1);
+        ClickableSpan clickableSpan11 = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+               /* Intent intent11 = new Intent(context, TermsAndConditionActivity.class);
+                startActivity(intent11);*/
+            }
+
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(true);
+            }
+        };
+        ClickableSpan clickableSpan12 = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                Intent intent11 = new Intent(context, PrivacyPolicyActivity.class);
+                startActivity(intent11);
+            }
+
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(true);
+            }
+        };
+        spannableString1.setSpan(clickableSpan11, 27, 36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(clickableSpan12, 41, 55, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        binding.tvCheck.setText(spannableString1);
+        binding.tvCheck.setMovementMethod(LinkMovementMethod.getInstance());
     }
     private void firebaseData() {
         FirebaseMessaging.getInstance().getToken()
@@ -193,6 +233,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         }
         else if (binding.etPassword.getText().toString().trim().length() < 6) {
             Toast.makeText(context, R.string.password_should_be_atleast_6_digits, Toast.LENGTH_SHORT).show();
+            return false;
+        }else if (!binding.cbAgree.isChecked()) {
+            Toast.makeText(context, R.string.please_check, Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;

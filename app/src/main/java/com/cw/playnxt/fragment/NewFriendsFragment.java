@@ -44,7 +44,8 @@ public class NewFriendsFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentNewFriendsBinding.inflate(inflater, container, false);
-       ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_home,false);
+     //  ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_home,false);
+       ((HomeActivity) getActivity()).chipNavigationBar.setItemSelected(R.id.menu_friends,true);
         System.out.println("check tab test>>>");
         InitView();
         GetData();

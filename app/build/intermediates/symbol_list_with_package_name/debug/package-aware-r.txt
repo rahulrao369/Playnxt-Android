@@ -3106,9 +3106,9 @@ id card_number_field
 id card_outline_container
 id carryVelocity
 id cb
+id cbAgree
 id cbGames
 id cbKeepSignedIn
-id cbSpecialPrice
 id cbUser
 id cbn_item_internal_container
 id cbn_item_notification_count
@@ -3693,6 +3693,7 @@ id tvAddGame
 id tvAddToList
 id tvAmount
 id tvBtn
+id tvCheck
 id tvContactUs
 id tvCreateNewList
 id tvCreatedOn
@@ -3913,6 +3914,7 @@ layout activity_main
 layout activity_main_game_info
 layout activity_my_profile
 layout activity_playnxt_premium
+layout activity_privacy_policy
 layout activity_setting
 layout activity_setting_palynxt_premium
 layout activity_signup
@@ -4396,11 +4398,13 @@ string path_password_strike_through
 string pay_now
 string pick_image_intent_chooser_title
 string playnxt_button
+string please_check
 string please_enter_valid_email
 string please_enter_your_email
 string please_enter_your_password
 string previous
 string project_id
+string rate_app
 string s1
 string s2
 string s3

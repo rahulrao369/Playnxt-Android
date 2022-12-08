@@ -105,6 +105,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         list.add(new GameModel(R.drawable.ic_s_about_us, "About Us"));
         list.add(new GameModel(R.drawable.ic_s_rate_play_nxt, "Rate Playnxt"));
         list.add(new GameModel(R.drawable.ic_s_invite_friend, "Invite a Friend"));
+        list.add(new GameModel(R.drawable.ic_s_invite_friend, "Privacy Policy"));
         list.add(new GameModel(R.drawable.ic_s_logout, "Logout"));
 
         SettingsAdapter adapter = new SettingsAdapter(context, list, new ItemClick() {
@@ -135,6 +136,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 } else if (position == 5) {
                     shareAppLink();
                 } else if (position == 6) {
+                  startActivity(new Intent(context,PrivacyPolicyActivity.class));
+                }else if (position == 7) {
                     openLogoutDialog();
                 }
             }

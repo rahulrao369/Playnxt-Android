@@ -152,34 +152,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="start"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:orientation="horizontal"
+                    android:visibility="visible">
 
                     <CheckBox
-                        android:id="@+id/cbKeepSignedIn"
+                        android:id="@+id/cbAgree"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@drawable/checkbox_selector"
+                        android:button="@drawable/checkbox_selector_2"
                         android:fontFamily="@font/nunito_regular"
-                        android:paddingStart="8dp"
-                        android:text="@string/keep_me_signed_in"
                         android:textColor="@color/edt_text"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:text=""/>
 
-                    <CheckBox
-                        android:id="@+id/cbSpecialPrice"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/tvCheck"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:button="@drawable/checkbox_selector"
-                        android:fontFamily="@font/nunito_regular"
-                        android:paddingStart="8dp"
-                        android:text="@string/email_me_about_special_pricing"
-                        android:textColor="@color/edt_text"
-                        android:textSize="12sp" />
-
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textFontWeight="300"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nunito_extra_light"/>
 
                 </LinearLayout>
 

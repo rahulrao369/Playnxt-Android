@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cw.playnxt"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.0.1" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -39,6 +39,9 @@
         android:theme="@style/Theme.Playnxt"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize" >
+        <activity
+            android:name="com.cw.playnxt.activity.PrivacyPolicyActivity"
+            android:exported="false" />
         <activity
             android:name="com.cw.playnxt.activity.StaffPicksDetailActivity"
             android:exported="false"
