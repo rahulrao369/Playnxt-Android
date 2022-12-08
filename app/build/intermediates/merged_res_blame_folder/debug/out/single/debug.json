@@ -156,6 +156,10 @@
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_password.png"
     },
     {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_privacy_policy.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_privacy_policy.xml"
+    },
+    {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable-anydpi-v24_ic_hide_password.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_hide_password.xml"
     },
@@ -402,6 +406,10 @@
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_item_list_xbox_games_layout.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_xbox_games_layout.xml"
+    },
+    {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_ic_privacy_policy.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/ic_privacy_policy.xml"
     },
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_ic_playnxt_lable.xml.flat",
@@ -840,6 +848,10 @@
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_backlog_xbox_games.xml"
     },
     {
+        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_staff_picks_detail.xml.flat",
+        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_staff_picks_detail.xml"
+    },
+    {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_confirmation.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_confirmation.xml"
     },
@@ -850,10 +862,6 @@
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_ic_right.xml.flat",
         "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/drawable/ic_right.xml"
-    },
-    {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/layout_activity_staff_picks_detail.xml.flat",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_staff_picks_detail.xml"
     },
     {
         "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/merged_res/debug/drawable_progress_image.png.flat",

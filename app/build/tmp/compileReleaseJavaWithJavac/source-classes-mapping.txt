@@ -380,6 +380,9 @@ com/cw/playnxt/databinding/FragmentTabFollowingBinding.java
  com.cw.playnxt.databinding.FragmentTabFollowingBinding
 com/cw/playnxt/model/GetGameByFilter/GetGameByFilterResponse.java
  com.cw.playnxt.model.GetGameByFilter.GetGameByFilterResponse
+com/cw/playnxt/activity/PrivacyPolicyActivity.java
+ com.cw.playnxt.activity.PrivacyPolicyActivity
+ com.cw.playnxt.activity.PrivacyPolicyActivity$1
 com/cw/playnxt/databinding/ActivityAddGameBinding.java
  com.cw.playnxt.databinding.ActivityAddGameBinding
 com/cw/playnxt/databinding/ActivityAddGameFromBacklogListBinding.java
@@ -663,6 +666,8 @@ com/cw/playnxt/adapter/FriendsAdapters/FriendsListFriendsFragmentAdapter.java
  com.cw.playnxt.adapter.FriendsAdapters.FriendsListFriendsFragmentAdapter$1
  com.cw.playnxt.adapter.FriendsAdapters.FriendsListFriendsFragmentAdapter$2
  com.cw.playnxt.adapter.FriendsAdapters.FriendsListFriendsFragmentAdapter$RecyclerViewHolder
+com/cw/playnxt/databinding/ActivityPrivacyPolicyBinding.java
+ com.cw.playnxt.databinding.ActivityPrivacyPolicyBinding
 com/cw/playnxt/databinding/ActivityAddGameFromWishlistBinding.java
  com.cw.playnxt.databinding.ActivityAddGameFromWishlistBinding
 com/cw/playnxt/databinding/ItemListYourStatsNewBinding.java
@@ -1032,6 +1037,8 @@ com/cw/playnxt/activity/SignupActivity.java
  com.cw.playnxt.activity.SignupActivity$1
  com.cw.playnxt.activity.SignupActivity$2
  com.cw.playnxt.activity.SignupActivity$3
+ com.cw.playnxt.activity.SignupActivity$4
+ com.cw.playnxt.activity.SignupActivity$5
 com/cw/playnxt/model/DeleteCalenderEvent/DeleteCalenderEventParaRes.java
  com.cw.playnxt.model.DeleteCalenderEvent.DeleteCalenderEventParaRes
 com/cw/playnxt/activity/ForgotPasswordActivity.java

@@ -2804,6 +2804,7 @@ drawable ic_password
 drawable ic_playnxrbtn
 drawable ic_playnxt_icon
 drawable ic_playnxt_lable
+drawable ic_privacy_policy
 drawable ic_profile
 drawable ic_rec
 drawable ic_rect

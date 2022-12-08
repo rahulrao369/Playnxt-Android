@@ -27,10 +27,7 @@ public final class ActivitySignupBinding implements ViewBinding {
   public final LinearLayout btnSignup;
 
   @NonNull
-  public final CheckBox cbKeepSignedIn;
-
-  @NonNull
-  public final CheckBox cbSpecialPrice;
+  public final CheckBox cbAgree;
 
   @NonNull
   public final EditText etEmail;
@@ -51,23 +48,26 @@ public final class ActivitySignupBinding implements ViewBinding {
   public final ImageView passwordToggleImageView;
 
   @NonNull
+  public final TextView tvCheck;
+
+  @NonNull
   public final TextView txtBtn;
 
   private ActivitySignupBinding(@NonNull RelativeLayout rootView, @NonNull LinearLayout btnSignup,
-      @NonNull CheckBox cbKeepSignedIn, @NonNull CheckBox cbSpecialPrice, @NonNull EditText etEmail,
-      @NonNull EditText etName, @NonNull EditText etPassword,
-      @NonNull LinearLayout llAlreadyHaveAccount, @NonNull LinearLayout lytCheckBox,
-      @NonNull ImageView passwordToggleImageView, @NonNull TextView txtBtn) {
+      @NonNull CheckBox cbAgree, @NonNull EditText etEmail, @NonNull EditText etName,
+      @NonNull EditText etPassword, @NonNull LinearLayout llAlreadyHaveAccount,
+      @NonNull LinearLayout lytCheckBox, @NonNull ImageView passwordToggleImageView,
+      @NonNull TextView tvCheck, @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.btnSignup = btnSignup;
-    this.cbKeepSignedIn = cbKeepSignedIn;
-    this.cbSpecialPrice = cbSpecialPrice;
+    this.cbAgree = cbAgree;
     this.etEmail = etEmail;
     this.etName = etName;
     this.etPassword = etPassword;
     this.llAlreadyHaveAccount = llAlreadyHaveAccount;
     this.lytCheckBox = lytCheckBox;
     this.passwordToggleImageView = passwordToggleImageView;
+    this.tvCheck = tvCheck;
     this.txtBtn = txtBtn;
   }
 
@@ -104,15 +104,9 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cbKeepSignedIn;
-      CheckBox cbKeepSignedIn = ViewBindings.findChildViewById(rootView, id);
-      if (cbKeepSignedIn == null) {
-        break missingId;
-      }
-
-      id = R.id.cbSpecialPrice;
-      CheckBox cbSpecialPrice = ViewBindings.findChildViewById(rootView, id);
-      if (cbSpecialPrice == null) {
+      id = R.id.cbAgree;
+      CheckBox cbAgree = ViewBindings.findChildViewById(rootView, id);
+      if (cbAgree == null) {
         break missingId;
       }
 
@@ -152,15 +146,21 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvCheck;
+      TextView tvCheck = ViewBindings.findChildViewById(rootView, id);
+      if (tvCheck == null) {
+        break missingId;
+      }
+
       id = R.id.txtBtn;
       TextView txtBtn = ViewBindings.findChildViewById(rootView, id);
       if (txtBtn == null) {
         break missingId;
       }
 
-      return new ActivitySignupBinding((RelativeLayout) rootView, btnSignup, cbKeepSignedIn,
-          cbSpecialPrice, etEmail, etName, etPassword, llAlreadyHaveAccount, lytCheckBox,
-          passwordToggleImageView, txtBtn);
+      return new ActivitySignupBinding((RelativeLayout) rootView, btnSignup, cbAgree, etEmail,
+          etName, etPassword, llAlreadyHaveAccount, lytCheckBox, passwordToggleImageView, tvCheck,
+          txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2803,6 +2803,7 @@ int drawable ic_password 0x7f0800ff
 int drawable ic_playnxrbtn 0x7f080100
 int drawable ic_playnxt_icon 0x7f080101
 int drawable ic_playnxt_lable 0x7f080102
+int drawable ic_privacy_policy 0x7f08016a
 int drawable ic_profile 0x7f080103
 int drawable ic_rec 0x7f080104
 int drawable ic_rect 0x7f080105
