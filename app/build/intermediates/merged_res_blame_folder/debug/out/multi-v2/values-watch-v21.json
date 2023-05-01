@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/home/cw/.gradle/caches/transforms-3/dee56e56ba061faa46371f782a83ef9b/transformed/appcompat-1.4.1/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "/Users/cwpl/.gradle/caches/transforms-3/dee56e56ba061faa46371f782a83ef9b/transformed/appcompat-1.4.1/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

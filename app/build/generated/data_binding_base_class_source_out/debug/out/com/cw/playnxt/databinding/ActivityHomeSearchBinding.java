@@ -35,6 +35,9 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   public final ImageView btnBack;
 
   @NonNull
+  public final CheckBox cbBacklog;
+
+  @NonNull
   public final CheckBox cbGames;
 
   @NonNull
@@ -47,7 +50,13 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   public final LinearLayout ivSearch;
 
   @NonNull
+  public final LinearLayout llBacklog;
+
+  @NonNull
   public final LinearLayout llGame;
+
+  @NonNull
+  public final LinearLayout llNoBacklogResult;
 
   @NonNull
   public final LinearLayout llNoGamesResult;
@@ -62,6 +71,9 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   public final LinearLayout lytCheckBox;
 
   @NonNull
+  public final RecyclerView rvBacklog;
+
+  @NonNull
   public final RecyclerView rvGames;
 
   @NonNull
@@ -69,6 +81,9 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
 
   @NonNull
   public final TextView tvAddGame;
+
+  @NonNull
+  public final TextView tvBacklog;
 
   @NonNull
   public final TextView tvGame;
@@ -80,29 +95,36 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
   public final TextView tvUser;
 
   private ActivityHomeSearchBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
-      @NonNull RelativeLayout btnAdsShow, @NonNull ImageView btnBack, @NonNull CheckBox cbGames,
-      @NonNull CheckBox cbUser, @NonNull EditText etSearch, @NonNull LinearLayout ivSearch,
-      @NonNull LinearLayout llGame, @NonNull LinearLayout llNoGamesResult,
+      @NonNull RelativeLayout btnAdsShow, @NonNull ImageView btnBack, @NonNull CheckBox cbBacklog,
+      @NonNull CheckBox cbGames, @NonNull CheckBox cbUser, @NonNull EditText etSearch,
+      @NonNull LinearLayout ivSearch, @NonNull LinearLayout llBacklog, @NonNull LinearLayout llGame,
+      @NonNull LinearLayout llNoBacklogResult, @NonNull LinearLayout llNoGamesResult,
       @NonNull LinearLayout llNoUserResult, @NonNull LinearLayout llUser,
-      @NonNull LinearLayout lytCheckBox, @NonNull RecyclerView rvGames,
-      @NonNull RecyclerView rvUser, @NonNull TextView tvAddGame, @NonNull TextView tvGame,
-      @NonNull TextView tvHeading, @NonNull TextView tvUser) {
+      @NonNull LinearLayout lytCheckBox, @NonNull RecyclerView rvBacklog,
+      @NonNull RecyclerView rvGames, @NonNull RecyclerView rvUser, @NonNull TextView tvAddGame,
+      @NonNull TextView tvBacklog, @NonNull TextView tvGame, @NonNull TextView tvHeading,
+      @NonNull TextView tvUser) {
     this.rootView = rootView;
     this.adView = adView;
     this.btnAdsShow = btnAdsShow;
     this.btnBack = btnBack;
+    this.cbBacklog = cbBacklog;
     this.cbGames = cbGames;
     this.cbUser = cbUser;
     this.etSearch = etSearch;
     this.ivSearch = ivSearch;
+    this.llBacklog = llBacklog;
     this.llGame = llGame;
+    this.llNoBacklogResult = llNoBacklogResult;
     this.llNoGamesResult = llNoGamesResult;
     this.llNoUserResult = llNoUserResult;
     this.llUser = llUser;
     this.lytCheckBox = lytCheckBox;
+    this.rvBacklog = rvBacklog;
     this.rvGames = rvGames;
     this.rvUser = rvUser;
     this.tvAddGame = tvAddGame;
+    this.tvBacklog = tvBacklog;
     this.tvGame = tvGame;
     this.tvHeading = tvHeading;
     this.tvUser = tvUser;
@@ -153,6 +175,12 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cbBacklog;
+      CheckBox cbBacklog = ViewBindings.findChildViewById(rootView, id);
+      if (cbBacklog == null) {
+        break missingId;
+      }
+
       id = R.id.cbGames;
       CheckBox cbGames = ViewBindings.findChildViewById(rootView, id);
       if (cbGames == null) {
@@ -177,9 +205,21 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.llBacklog;
+      LinearLayout llBacklog = ViewBindings.findChildViewById(rootView, id);
+      if (llBacklog == null) {
+        break missingId;
+      }
+
       id = R.id.llGame;
       LinearLayout llGame = ViewBindings.findChildViewById(rootView, id);
       if (llGame == null) {
+        break missingId;
+      }
+
+      id = R.id.llNoBacklogResult;
+      LinearLayout llNoBacklogResult = ViewBindings.findChildViewById(rootView, id);
+      if (llNoBacklogResult == null) {
         break missingId;
       }
 
@@ -207,6 +247,12 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rvBacklog;
+      RecyclerView rvBacklog = ViewBindings.findChildViewById(rootView, id);
+      if (rvBacklog == null) {
+        break missingId;
+      }
+
       id = R.id.rvGames;
       RecyclerView rvGames = ViewBindings.findChildViewById(rootView, id);
       if (rvGames == null) {
@@ -222,6 +268,12 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
       id = R.id.tvAddGame;
       TextView tvAddGame = ViewBindings.findChildViewById(rootView, id);
       if (tvAddGame == null) {
+        break missingId;
+      }
+
+      id = R.id.tvBacklog;
+      TextView tvBacklog = ViewBindings.findChildViewById(rootView, id);
+      if (tvBacklog == null) {
         break missingId;
       }
 
@@ -244,8 +296,9 @@ public final class ActivityHomeSearchBinding implements ViewBinding {
       }
 
       return new ActivityHomeSearchBinding((RelativeLayout) rootView, adView, btnAdsShow, btnBack,
-          cbGames, cbUser, etSearch, ivSearch, llGame, llNoGamesResult, llNoUserResult, llUser,
-          lytCheckBox, rvGames, rvUser, tvAddGame, tvGame, tvHeading, tvUser);
+          cbBacklog, cbGames, cbUser, etSearch, ivSearch, llBacklog, llGame, llNoBacklogResult,
+          llNoGamesResult, llNoUserResult, llUser, lytCheckBox, rvBacklog, rvGames, rvUser,
+          tvAddGame, tvBacklog, tvGame, tvHeading, tvUser);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

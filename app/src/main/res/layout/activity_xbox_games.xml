@@ -25,40 +25,40 @@
             android:backgroundTint="@color/top_gray"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/bg_edit_text"
-                android:orientation="horizontal"
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="@drawable/bg_edit_text"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginEnd="16dp">-->
 
-                <EditText
-                    android:id="@+id/etSearch"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="@font/nunito_regular"
-                    android:hint="Search game.."
-                    android:inputType="text"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/edt_text"
-                    android:textSize="14sp"
-                    android:singleLine="true"
-                    android:imeOptions="actionDone"/>
-                <ImageView
-                    android:id="@+id/ivSearch"
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="start"
-                    android:padding="14dp"
-                    android:src="@drawable/ic_search"
-                    app:tint="@color/app_theme" />
-            </LinearLayout>
+<!--                <EditText-->
+<!--                    android:id="@+id/etSearch"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:fontFamily="@font/nunito_regular"-->
+<!--                    android:hint="Search game.."-->
+<!--                    android:inputType="text"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:paddingEnd="8dp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textColorHint="@color/edt_text"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:imeOptions="actionDone"/>-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/ivSearch"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="start"-->
+<!--                    android:padding="14dp"-->
+<!--                    android:src="@drawable/ic_search"-->
+<!--                    app:tint="@color/app_theme" />-->
+<!--            </LinearLayout>-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

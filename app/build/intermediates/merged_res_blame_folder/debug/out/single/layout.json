@@ -1,422 +1,442 @@
 [
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_friends.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_friends.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_my_profile_followers.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_my_profile_followers.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_friends.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_friends.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_thankyou.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_thankyou.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_bottom_sheet_current_status.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_bottom_sheet_current_status.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_add_new_note.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_add_new_note.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/spinner_dropdown_item1.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/spinner_dropdown_item1.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_subscription_plan_inside_list_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_subscription_plan_inside_list_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_edit_current_status.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_edit_current_status.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_profile.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_edit_profile.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_search_games.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_search_games.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_event.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_event.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_xbox_game_info.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_xbox_game_info.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game_from_backlog_list.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game_from_backlog_list.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/header_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/header_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_subscription.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_subscription.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_fifth.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_fifth.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_subscription_plan_list_main_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_subscription_plan_list_main_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_popup_header.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/custom_popup_header.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_search_users.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_search_users.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_community.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_community.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_card.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_card.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_suggest_ne_feature.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_suggest_ne_feature.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_new_tab_activity_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_new_tab_activity_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_second.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_second.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_confirmation.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_confirmation.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_my_profile_followers.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_my_profile_followers.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_setting.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_setting.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_your_stats.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_your_stats.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_third.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_third.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_home.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/list_item_setting_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/list_item_setting_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_profile.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_edit_profile.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_xbox_game_info.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_xbox_game_info.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_change_password.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_change_password.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_recent_games.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_recent_games.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_profile_followers_following_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_profile_followers_following_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_game.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_game.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login_signup_button.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_login_signup_button.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_about_us.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_about_us.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_following.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_following.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_suggest_ne_feature.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_suggest_ne_feature.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_game_backlog_wishlist_type_list.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_game_backlog_wishlist_type_list.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_fourth.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_fourth.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_popup_edit_delete.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/custom_popup_edit_delete.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_popup_header.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/custom_popup_header.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_anuual.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_anuual.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_dialog_filter.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_dialog_filter.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_setting.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_setting.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_welcome.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_welcome.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_signup.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_signup.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_payment_summary.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_payment_summary.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_discover_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_discover_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_backlog_xbox_games.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_backlog_xbox_games.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_home_search.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_home_search.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_splash.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_splash.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_get_category_name_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_get_category_name_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_get_category_name_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_get_category_name_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_my_profile_following.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_my_profile_following.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_home.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_your_stats_inside_list.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_your_stats_inside_list.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_wishlist.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_wishlist.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_followers.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_followers.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_add_new_wishlist.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_add_new_wishlist.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_about_us.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_about_us.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_staff_picks_detail.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_staff_picks_detail.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_subscription_plan_inside_list_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_subscription_plan_inside_list_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_subscription_coupon.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_subscription_coupon.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_discover.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_discover.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_game_backlog_wishlist_type_list.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_game_backlog_wishlist_type_list.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_login.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_welcome.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_welcome.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_my_profile_games.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_my_profile_games.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_wishlist_xbox_game.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_wishlist_xbox_game.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_discover.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_discover.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_friends_profile.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_friends_profile.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_calender_events_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_calender_events_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_wishlist_game_info.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_wishlist_game_info.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_profile_activity_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_profile_activity_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_login.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/header_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/header_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_backlog.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_backlog.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_playnxt_premium.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_playnxt_premium.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_forgot_password.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_forgot_password.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_edit_wishlist.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_edit_wishlist.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_recent_games.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_recent_games.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_friends_profile.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_friends_profile.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game_from_wishlist.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game_from_wishlist.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_friends.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_friends.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_subscription_final.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_subscription_final.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_wishlist_xbox_game.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_wishlist_xbox_game.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/popup_progressbar.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/popup_progressbar.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game_from_wishlist.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game_from_wishlist.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_forgot_password.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_forgot_password.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_confirmation.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_confirmation.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_popup_edit_delete.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/custom_popup_edit_delete.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_edit_wishlist.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_edit_wishlist.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_first.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_first.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_forgot_password.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_forgot_password.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bootom_sheet_edit_backloglist.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bootom_sheet_edit_backloglist.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_chat.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_chat.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_subscription_final.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_subscription_final.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_add_new_note.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_add_new_note.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_community.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_community.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_backlog_xbox_games.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_backlog_xbox_games.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_activity.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_activity.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_my_profile_games.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_my_profile_games.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_inbox_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_inbox_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_friends_fragment_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_friends_fragment_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_setting_palynxt_premium.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_setting_palynxt_premium.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_inbox_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_inbox_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/popup_progressbar.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/popup_progressbar.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_setting_palynxt_premium.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_setting_palynxt_premium.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main_game_info.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_main_game_info.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_your_stats_new.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_your_stats_new.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_get_category_list.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_get_category_list.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_following.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_following.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_contact_us.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_contact_us.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_xbox_games.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_xbox_games.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_calender.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_calender.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_inbox.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_inbox.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_calender_events_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_calender_events_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_your_stats_inside_list.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_your_stats_inside_list.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_card.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_card.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/spinner_dropdown_item1.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/spinner_dropdown_item1.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_xbox_games_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_xbox_games_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_calender_screen_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_calender_screen_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_splash.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_splash.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/spinner_item1.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/spinner_item1.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_new_friends.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_new_friends.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_backlog.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_backlog.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_your_stats_new.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_your_stats_new.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_search_games.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_search_games.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_subscription_plan_list_main_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_subscription_plan_list_main_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main_game_info.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_main_game_info.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_xbox_games.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_xbox_games.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_bottom_sheet_current_status.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_bottom_sheet_current_status.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_subscription_plan_access_extra_features_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_subscription_plan_access_extra_features_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_my_profile_following.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_my_profile_following.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_your_stats.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_your_stats.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_subscription.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_subscription.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_event.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_event.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_my_profile.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_my_profile.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game_from_backlog_list.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game_from_backlog_list.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_wishlist_game_info.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_wishlist_game_info.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_staff_picks_detail.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_staff_picks_detail.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_chat.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_chat.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_first.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_first.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_anuual.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_anuual.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_main.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_fifth.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_fifth.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/spinner_item1.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/spinner_item1.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_wishlist.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_wishlist.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_second.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_second.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_playnxt_premium.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_playnxt_premium.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_forgot_password.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_forgot_password.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_calender_screen_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_calender_screen_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_xbox_games_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_xbox_games_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_fourth.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_fourth.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_xbox_game_info.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_xbox_game_info.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_subscription.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_subscription.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_friends_fragment_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_friends_fragment_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_monthly.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_monthly.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_signup.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_signup.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_game.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_game.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_search_backlog.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_search_backlog.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_big_profile_image.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_big_profile_image.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_home.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_home.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_game_fragment.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_game_fragment.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_profile_followers_following_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_profile_followers_following_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_my_profile.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_my_profile.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_login.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_login.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_friends_profile_activity_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_friends_profile_activity_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_your_stats.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_your_stats.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bootom_sheet_edit_backloglist.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/bootom_sheet_edit_backloglist.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_followers.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_followers.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_privacy_policy.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_privacy_policy.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_privacy_policy.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_privacy_policy.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_subscription.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_subscription.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_calender.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_calender.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_activity.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_activity.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_big_profile_image.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_big_profile_image.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_anuual_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_anuual_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_anuual_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_anuual_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_third.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_third.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_discover_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_discover_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_game_info.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_game_info.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_game_fragment.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_game_fragment.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_thankyou.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_thankyou.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login_signup_button.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_login_signup_button.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/list_item_setting_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/list_item_setting_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_add_new_wishlist.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_add_new_wishlist.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_monthly.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_monthly.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_xbox_game_info.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_xbox_game_info.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_new_friends.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_new_friends.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_dialog_filter.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_dialog_filter.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tab_friends.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_tab_friends.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_inbox.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_inbox.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_subscription_plan_access_extra_features_layout.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_subscription_plan_access_extra_features_layout.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_home.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_home.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_signup.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_signup.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_search_users.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_search_users.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_game_info.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_game_info.xml"
     },
     {
-        "merged": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_new_tab_activity_layout.xml",
-        "source": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/src/main/res/layout/item_list_new_tab_activity_layout.xml"
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_edit_current_status.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_edit_current_status.xml"
+    },
+    {
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_contact_us.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_contact_us.xml"
+    },
+    {
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_home_search.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_home_search.xml"
+    },
+    {
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_get_category_list.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_get_category_list.xml"
+    },
+    {
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_your_stats.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_your_stats.xml"
+    },
+    {
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_change_password.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_change_password.xml"
     }
 ]

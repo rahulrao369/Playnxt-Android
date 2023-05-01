@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/app_theme_btn_press">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="@color/colorgreen"
+                android:endColor="@color/colorgreen"/>
+            <corners android:radius="15dp" />
+        </shape>
+    </item>
+</ripple>

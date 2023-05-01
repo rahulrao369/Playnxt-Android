@@ -189,6 +189,10 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".activity.SubscriptionActivityCoupon"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">

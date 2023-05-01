@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/cw/Kratika New/AndroidStudioProject/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml",
+            "outputFile": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/cw/.gradle/caches/transforms-3/03b5a2a8499332e234a1bc400a43f631/transformed/material-1.6.0/res/values-h480dp-land-v13/values-h480dp-land-v13.xml",
+                    "source": "/Users/cwpl/.gradle/caches/transforms-3/03b5a2a8499332e234a1bc400a43f631/transformed/material-1.6.0/res/values-h480dp-land-v13/values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

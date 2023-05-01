@@ -20,6 +20,8 @@ public class PurchasePlanParaRes {
     private String year;
     @Expose
     private String recurring;
+    @Expose
+    private String code;
 
     public String getRecurring() {
         return recurring;
@@ -77,4 +79,11 @@ public class PurchasePlanParaRes {
         this.year = year;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }

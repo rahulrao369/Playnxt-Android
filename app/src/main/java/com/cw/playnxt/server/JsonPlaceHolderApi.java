@@ -50,12 +50,15 @@ import com.cw.playnxt.model.GetRecentGame.GetRecentGameResponse;
 import com.cw.playnxt.model.GetWishlist.GetMyWishlistResponse;
 import com.cw.playnxt.model.HomeButton.HomeButtonResponse;
 import com.cw.playnxt.model.HomeData.HomeApiResponse;
+import com.cw.playnxt.model.HomeSearch.BacklogSearch.SearchBacklogResponse;
 import com.cw.playnxt.model.HomeSearch.GameSearch.SearchGameResponse;
 import com.cw.playnxt.model.HomeSearch.SearchParaRes;
 import com.cw.playnxt.model.HomeSearch.UserSearch.SearchUserResponse;
 import com.cw.playnxt.model.LikeAndUnlikeProfile.LikeAndUnlikeProfileParaRes;
 import com.cw.playnxt.model.LoginSignup.LoginParaRes;
 import com.cw.playnxt.model.LoginSignup.LoginResponse;
+import com.cw.playnxt.model.LoginSignup.ResendMailResponse;
+import com.cw.playnxt.model.LoginSignup.ResendVerificationReq;
 import com.cw.playnxt.model.LoginSignup.SignupParaRes;
 import com.cw.playnxt.model.LoginSignup.SignupResponse;
 import com.cw.playnxt.model.MyActivePlan.MyActivePlanResponse;
@@ -66,6 +69,8 @@ import com.cw.playnxt.model.PurchasePlan.PurchasePlanResponse;
 import com.cw.playnxt.model.ResponseSatusMessage;
 import com.cw.playnxt.model.StaffPicks.StaffPicksResponse;
 import com.cw.playnxt.model.StatsData.GetStatsResponse;
+import com.cw.playnxt.model.SubscriptionPlan.GetPaymentResponse;
+import com.cw.playnxt.model.SubscriptionPlan.GetPaymentSummaryREq;
 import com.cw.playnxt.model.SubscriptionPlan.SubscriptionPlanResponse;
 import com.cw.playnxt.model.SuggestionData.SuggestionParaRes;
 import com.cw.playnxt.model.SuggestionData.SuggestionResponse;
@@ -75,10 +80,13 @@ import com.cw.playnxt.model.ViewMyBacklogGame.ViewMyBacklogGameResponse;
 import com.cw.playnxt.model.ViewMyWishlistGame.ViewMyWishlistGameParaRes;
 import com.cw.playnxt.model.ViewMyWishlistGame.ViewMyWishlistGameResponse;
 
+import org.json.JSONObject;
+
 import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Header;
@@ -291,6 +299,11 @@ public interface JsonPlaceHolderApi {
                                            @Header("Authorization") String token,
                                            @Body SearchParaRes searchParaRes);
 
+    @POST("users/search")
+    Call<SearchBacklogResponse> SearchBacklogAPI(@Header("Content-Type") String content_type,
+                                                 @Header("Authorization") String token,
+                                                 @Body SearchParaRes searchParaRes);
+
     @POST("users/homeButton")
     Call<HomeButtonResponse> HomeButtonAPI(@Header("Content-Type") String content_type,
                                            @Header("Authorization") String token);
@@ -360,4 +373,11 @@ public interface JsonPlaceHolderApi {
     Call<CancelSubscriptionResponse> cancelSubscriptionAPI(@Header("Content-Type") String content_type,
                                                            @Header("Authorization") String token);
 
+    @POST("resend-mail")
+    Call<ResendMailResponse> resendmailAPI(@Header("Content-Type") String content_type,
+                                           @Body ResendVerificationReq resendVerificationReq);
+
+    @POST("users/get-payment-summery")
+    Call<GetPaymentResponse> getpaymentsummary(@Header("Content-Type") String content_type, @Header("Authorization") String token,
+                                         @Body GetPaymentSummaryREq paymentSummaryREq);
 }

@@ -174,11 +174,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/nunitobold"
+                            android:fontFamily="@font/nunito_regular"
                             android:gravity="center"
                             android:text="Tap to choose a game"
                             android:textColor="@color/white"
-                            android:textFontWeight="700"
+                            android:textFontWeight="400"
                             android:textSize="18sp" />
 
                     </LinearLayout>

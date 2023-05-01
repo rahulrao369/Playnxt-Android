@@ -21,6 +21,7 @@ import com.cw.playnxt.activity.CalenderActivity;
 import com.cw.playnxt.activity.HomeActivity;
 import com.cw.playnxt.activity.MainGameInfoActivity;
 import com.cw.playnxt.activity.SubscriptionActivity;
+import com.cw.playnxt.activity.SubscriptionActivityCoupon;
 import com.cw.playnxt.activity.SubscriptionActivityFinal;
 import com.cw.playnxt.activity.WishlistActivity;
 import com.cw.playnxt.activity.YourStatsActivity;
@@ -129,7 +130,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         List<GameFragmentModel> list = new ArrayList<>();
         list.add(new GameFragmentModel(R.drawable.ic_backlog, "Backlog", "" + backlog_count + "",subscribed));
         list.add(new GameFragmentModel(R.drawable.ic_wishlist, "Wishlist", "" + wish_count + "",subscribed));
-        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Calendar Tool", "",subscribed));
+        list.add(new GameFragmentModel(R.drawable.ic_calender_tool, "Playnxt Tool", "",subscribed));
         list.add(new GameFragmentModel(R.drawable.ic_your_stats, "Your Stats", "",subscribed));
 
         GameFragmentTopListAdapter adapter = new GameFragmentTopListAdapter(context, list, new ItemClick() {
@@ -151,18 +152,21 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                     if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, WishlistActivity.class));
                     }else{
+//                        startActivity(new Intent(context, SubscriptionActivityCoupon.class));
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 } else if (position == 2) {
                     if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, CalenderActivity.class));
                     }else{
+//                        startActivity(new Intent(context, SubscriptionActivityCoupon.class));
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 } else if (position == 3) {
                     if(subscribed.equals(Constants.YES)){
                         startActivity(new Intent(context, YourStatsActivity.class));
                     }else{
+//                        startActivity(new Intent(context, SubscriptionActivityCoupon.class));
                         startActivity(new Intent(context, SubscriptionActivityFinal.class));
                     }
                 }

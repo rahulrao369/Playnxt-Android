@@ -12,6 +12,8 @@ public class LoginData {
     private String token;
     @SerializedName("user_id")
     private Long userId;
+    @SerializedName("account_status")
+    private String accountStatus;
 
     public Long getRole() {
         return role;
@@ -37,4 +39,11 @@ public class LoginData {
         this.userId = userId;
     }
 
+    public String getAccountStatus() {
+        return accountStatus;
+    }
+
+    public void setAccountStatus(String accountStatus) {
+        this.accountStatus = accountStatus;
+    }
 }

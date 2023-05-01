@@ -37,7 +37,7 @@ import retrofit2.Response;
 
 public class AddCardActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
-    String cardHolderName, cardNumber, expiryDate, monthCard, yearCard, cvvCard, plan_ID;
+    String cardHolderName, cardNumber, expiryDate, monthCard, yearCard, cvvCard, plan_ID,couponCode;
     String recurring = "0";
     private ActivityAddCardBinding binding;
     private HeaderLayoutBinding headerBinding;
@@ -100,7 +100,9 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
             Intent intent = getIntent();
             if (intent != null) {
                 plan_ID = intent.getStringExtra("plan_ID");
+                couponCode = intent.getStringExtra("code");
                 Log.d("TAG", "plan_ID>>>" + plan_ID);
+                Log.d("TAG", "Coupon>>>" + couponCode);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -220,7 +222,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
                     String[] separated = expiryDate.split("/");
                     monthCard = separated[0];
                     yearCard = separated[1];
-                    PurchasePlanAPI(cardHolderName, cardNumber, monthCard, yearCard, cvvCard);
+                    PurchasePlanAPI(cardHolderName, cardNumber, monthCard, yearCard, cvvCard,couponCode);
                 } else {
                     Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
                 }
@@ -228,7 +230,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    public void PurchasePlanAPI(String cardHolderName, String cardNumber, String monthCard, String yearCard, String cvvCard) {
+    public void PurchasePlanAPI(String cardHolderName, String cardNumber, String monthCard, String yearCard, String cvvCard, String code) {
         Customprogress.showPopupProgressSpinner(context, true);
         PurchasePlanParaRes purchasePlanParaRes = new PurchasePlanParaRes();
         purchasePlanParaRes.setPlanId(Long.valueOf(plan_ID));
@@ -237,6 +239,7 @@ public class AddCardActivity extends AppCompatActivity implements View.OnClickLi
         purchasePlanParaRes.setMonth(Long.valueOf(monthCard));
         purchasePlanParaRes.setYear(yearCard);
         purchasePlanParaRes.setCvv(cvvCard);
+        purchasePlanParaRes.setCode(code);
         purchasePlanParaRes.setRecurring(recurring);
 
         jsonPlaceHolderApi.PurchasePlanAPI(Constants.CONTENT_TYPE, "Bearer " + mySharedPref.getSavedAccessToken(), purchasePlanParaRes).enqueue(new Callback<PurchasePlanResponse>() {

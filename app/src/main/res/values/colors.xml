@@ -20,4 +20,6 @@
     <color name="horizontal_line">#616161</color>
     <color name="transparent">#D9000000</color>
     <color name="selected">#061728</color>
+    <color name="colordialog">#5BA7F3</color>
+    <color name="colorgreen">#317034</color>
 </resources>

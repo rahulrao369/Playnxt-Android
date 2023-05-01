@@ -1,6 +1,7 @@
 package com.cw.playnxt.activity;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -13,6 +14,9 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +28,8 @@ import com.cw.playnxt.R;
 import com.cw.playnxt.databinding.ActivityLoginBinding;
 import com.cw.playnxt.model.LoginSignup.LoginParaRes;
 import com.cw.playnxt.model.LoginSignup.LoginResponse;
+import com.cw.playnxt.model.LoginSignup.ResendMailResponse;
+import com.cw.playnxt.model.LoginSignup.ResendVerificationReq;
 import com.cw.playnxt.server.ApiUtils;
 import com.cw.playnxt.server.JsonPlaceHolderApi;
 import com.cw.playnxt.server.MySharedPref;
@@ -45,13 +51,13 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Context context;
-   /* GpsTracker gpsTracker;
-    double lat = 0.0, lng = 0.0;
-    String city = "";
-    String state = "";
-    Geocoder geocoder;
-    List<Address> addresses;*/
-   private FirebaseAuth mAuth;
+    /* GpsTracker gpsTracker;
+     double lat = 0.0, lng = 0.0;
+     String city = "";
+     String state = "";
+     Geocoder geocoder;
+     List<Address> addresses;*/
+    private FirebaseAuth mAuth;
     private ActivityLoginBinding binding;
     private boolean isShowPassword = false;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
@@ -141,41 +147,41 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }*/
 
-  /*  public void getGpsLocation() {
-        gpsTracker = new GpsTracker((AppCompatActivity) context);
-        if (gpsTracker.canGetLocation()) {
-            lat = gpsTracker.getLatitude();
-            lng = gpsTracker.getLongitude();
-            Log.d("TAG", "lat>>" + lat);
-            Log.d("TAG", "lng>>" + lng);
+    /*  public void getGpsLocation() {
+          gpsTracker = new GpsTracker((AppCompatActivity) context);
+          if (gpsTracker.canGetLocation()) {
+              lat = gpsTracker.getLatitude();
+              lng = gpsTracker.getLongitude();
+              Log.d("TAG", "lat>>" + lat);
+              Log.d("TAG", "lng>>" + lng);
 
-            mySharedPref.setLatitude(String.valueOf(lat));
-            mySharedPref.setLongitude(String.valueOf(lng));
+              mySharedPref.setLatitude(String.valueOf(lat));
+              mySharedPref.setLongitude(String.valueOf(lng));
 
-            Log.d("TAG", "mySharedPref.getLatitude()>>" + mySharedPref.getLatitude());
-            Log.d("TAG", "mySharedPref.getLongitude()>>" + mySharedPref.getLongitude());
-            try {
-                geocoder = new Geocoder((AppCompatActivity) context, Locale.getDefault());
-                addresses = geocoder.getFromLocation(lat, lng, 1);
-                Log.d("TAG", "   addresses     " + addresses);
+              Log.d("TAG", "mySharedPref.getLatitude()>>" + mySharedPref.getLatitude());
+              Log.d("TAG", "mySharedPref.getLongitude()>>" + mySharedPref.getLongitude());
+              try {
+                  geocoder = new Geocoder((AppCompatActivity) context, Locale.getDefault());
+                  addresses = geocoder.getFromLocation(lat, lng, 1);
+                  Log.d("TAG", "   addresses     " + addresses);
 
-                String address = addresses.get(0).getAddressLine(0);
-                Log.d("TAG", "   address     " + address);
+                  String address = addresses.get(0).getAddressLine(0);
+                  Log.d("TAG", "   address     " + address);
 
-                city = addresses.get(0).getLocality();
-                Log.d("TAG", "   city     " + city);
+                  city = addresses.get(0).getLocality();
+                  Log.d("TAG", "   city     " + city);
 
-                state = addresses.get(0).getAdminArea();
-                Log.d("TAG", "   state     " + state);
+                  state = addresses.get(0).getAdminArea();
+                  Log.d("TAG", "   state     " + state);
 
-            } catch (Exception e) {
-                //  Toast.makeText((AppCompatActivity) context, "Location >>"+e.toString(), Toast.LENGTH_LONG).show();
-            }
-        } else {
-            Log.d("TAG", "");
-        }
-    }
-*/
+              } catch (Exception e) {
+                  //  Toast.makeText((AppCompatActivity) context, "Location >>"+e.toString(), Toast.LENGTH_LONG).show();
+              }
+          } else {
+              Log.d("TAG", "");
+          }
+      }
+  */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -217,17 +223,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Boolean status = response.body().getStatus();
                     Customprogress.showPopupProgressSpinner(context, false);
                     if (status) {
-                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        mySharedPref.saveLogin(true);
-                        mySharedPref.setSavedAccessToken(String.valueOf(response.body().getData().getToken()));
-                        mySharedPref.setSavedUserid(String.valueOf(response.body().getData().getUserId()));
-                        Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
-                        Intent intent = new Intent(getBaseContext(), HomeActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        finish();
+
+                        if(response.body().getData().getAccountStatus().equals("inactive")){
+                            dialogLogin("Your account is not verified yet. Please verify by your email",String.valueOf(response.body().getData().getUserId()),response.body().getData().getToken());
+                        }else{
+                            Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            mySharedPref.saveLogin(true);
+                            mySharedPref.setSavedAccessToken(String.valueOf(response.body().getData().getToken()));
+                            mySharedPref.setSavedUserid(String.valueOf(response.body().getData().getUserId()));
+                            Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
+                            Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            finish();
+                        }
+
                     } else {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
@@ -256,5 +268,76 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return false;
         }
         return true;
+    }
+
+    private void dialogLogin(String msg,String userId,String userToken) {
+
+        Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_login);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        TextView textmsg = dialog.findViewById(R.id.textmsg);
+        textmsg.setText(msg);
+        TextView txt_ok = dialog.findViewById(R.id.txt_ok);
+        TextView txt_resend = dialog.findViewById(R.id.txt_resend);
+        txt_resend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                resendAPI();
+
+            }
+        });
+        txt_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                mySharedPref.saveLogin(true);
+//                mySharedPref.setSavedAccessToken(String.valueOf(userToken));
+//                mySharedPref.setSavedUserid(userId);
+//                Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
+//                Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                startActivity(intent);
+//                finish();
+                dialog.cancel();
+            }
+        });
+
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        dialog.show();
+
+    }
+
+    public void resendAPI() {
+        Customprogress.showPopupProgressSpinner(context, true);
+        ResendVerificationReq resendVerificationReq = new ResendVerificationReq();
+        resendVerificationReq.setEmail(binding.etEmail.getText().toString().trim());
+
+        jsonPlaceHolderApi.resendmailAPI(Constants.CONTENT_TYPE, resendVerificationReq).enqueue(new Callback<ResendMailResponse>() {
+            @Override
+            public void onResponse(Call<ResendMailResponse> call, Response<ResendMailResponse> response) {
+                if (response.isSuccessful()) {
+                    Boolean status = response.body().getStatus();
+                    Customprogress.showPopupProgressSpinner(context, false);
+                    if (status) {
+                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                    } else {
+                        Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<ResendMailResponse> call, Throwable t) {
+                Customprogress.showPopupProgressSpinner(context, false);
+                Log.e("TAG", "" + t.getMessage());
+            }
+        });
     }
 }

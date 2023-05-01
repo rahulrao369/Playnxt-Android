@@ -3,6 +3,7 @@ package com.cw.playnxt.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,10 @@ import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cw.playnxt.R;
@@ -142,6 +147,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnSignup:
+
                 if (isValidate()) {
                     if (Constants.isInternetConnected(context)) {
                         registrationAPI();
@@ -167,7 +173,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
        /* if(binding.cbSpecialPrice.isChecked()){
             signupParaRes.setSpecialPriceNotification(Long.valueOf(1));
         }*/
-       // signupParaRes.setDeviceType(Constants.DEVICE_TYPE);
+        // signupParaRes.setDeviceType(Constants.DEVICE_TYPE);
         signupParaRes.setDeviceToken(device_id);
         signupParaRes.setFcmToken(fcm_token);
 
@@ -180,17 +186,18 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                     if (status)
                     {
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        mySharedPref.saveLogin(true);
-                        mySharedPref.setSavedAccessToken(String.valueOf(response.body().getData().getToken()));
-                        mySharedPref.setSavedUserid(String.valueOf(response.body().getData().getUserId()));
-                        Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
-                        Intent intent = new Intent(getBaseContext(), HomeActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        finish();
+//                        mySharedPref.saveLogin(true);
+//                        mySharedPref.setSavedAccessToken(String.valueOf(response.body().getData().getToken()));
+//                        mySharedPref.setSavedUserid(String.valueOf(response.body().getData().getUserId()));
+//                        Log.d("TAG", "ACCESS_TOKEN" + mySharedPref.getSavedAccessToken());
+//                        Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        startActivity(intent);
+//                        finish();
 
+                        dialogSignup(response.body().getMessage());
                         /*Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getBaseContext(), LoginActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -210,6 +217,37 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
     }
+
+    private void dialogSignup(String msg) {
+
+        Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_signup);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        TextView textmsg = dialog.findViewById(R.id.textmsg);
+        textmsg.setText(msg);
+        TextView txt_ok = dialog.findViewById(R.id.txt_ok);
+        txt_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        dialog.show();
+
+    }
+
 
     private Boolean isValidate() {
         if (binding.etName.getText().toString().trim().isEmpty()) {

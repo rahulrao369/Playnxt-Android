@@ -4,8 +4,6 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
@@ -33,12 +31,6 @@ public final class ActivityXboxGamesBinding implements ViewBinding {
   public final RelativeLayout btnAdsShow;
 
   @NonNull
-  public final EditText etSearch;
-
-  @NonNull
-  public final ImageView ivSearch;
-
-  @NonNull
   public final LinearLayout llNoData;
 
   @NonNull
@@ -46,14 +38,11 @@ public final class ActivityXboxGamesBinding implements ViewBinding {
 
   private ActivityXboxGamesBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
       @NonNull HeaderLayoutBinding bindingHeader, @NonNull RelativeLayout btnAdsShow,
-      @NonNull EditText etSearch, @NonNull ImageView ivSearch, @NonNull LinearLayout llNoData,
-      @NonNull RecyclerView recyclerView) {
+      @NonNull LinearLayout llNoData, @NonNull RecyclerView recyclerView) {
     this.rootView = rootView;
     this.adView = adView;
     this.bindingHeader = bindingHeader;
     this.btnAdsShow = btnAdsShow;
-    this.etSearch = etSearch;
-    this.ivSearch = ivSearch;
     this.llNoData = llNoData;
     this.recyclerView = recyclerView;
   }
@@ -104,18 +93,6 @@ public final class ActivityXboxGamesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.etSearch;
-      EditText etSearch = ViewBindings.findChildViewById(rootView, id);
-      if (etSearch == null) {
-        break missingId;
-      }
-
-      id = R.id.ivSearch;
-      ImageView ivSearch = ViewBindings.findChildViewById(rootView, id);
-      if (ivSearch == null) {
-        break missingId;
-      }
-
       id = R.id.llNoData;
       LinearLayout llNoData = ViewBindings.findChildViewById(rootView, id);
       if (llNoData == null) {
@@ -129,7 +106,7 @@ public final class ActivityXboxGamesBinding implements ViewBinding {
       }
 
       return new ActivityXboxGamesBinding((RelativeLayout) rootView, adView, binding_bindingHeader,
-          btnAdsShow, etSearch, ivSearch, llNoData, recyclerView);
+          btnAdsShow, llNoData, recyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

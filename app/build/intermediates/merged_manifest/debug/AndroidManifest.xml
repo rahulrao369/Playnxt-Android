@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cw.playnxt"
-    android:versionCode="2"
-    android:versionName="1.0.1" >
+    android:versionCode="5"
+    android:versionName="1.0.4" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -35,7 +35,6 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Playnxt"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize" >
@@ -200,6 +199,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.cw.playnxt.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cw.playnxt.activity.SubscriptionActivityCoupon"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity

@@ -167,17 +167,18 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void shareAppLinkToRateApp() {
         try {
-            Intent shareIntent = new Intent(Intent.ACTION_SEND);
-            shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Playnxt");
-
-            String app_msg = getResources().getString(R.string.rate_app);
-            String app_link = "https://play.google.com/store/apps/details?id=com.cw.playnxt";
-
-            String shareMessage =app_msg + "\n\n" + app_link ;
-            Log.d("TAG", "shareMessage>>" + shareMessage);
-            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-            startActivity(Intent.createChooser(shareIntent, getString(R.string.choose_one)));
+//            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+//            shareIntent.setType("text/plain");
+//            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Playnxt");
+//
+//            String app_msg = getResources().getString(R.string.rate_app);
+//            String app_link = "https://play.google.com/store/apps/details?id=com.cw.playnxt";
+//
+//            String shareMessage =app_msg + "\n\n" + app_link ;
+//            Log.d("TAG", "shareMessage>>" + shareMessage);
+//            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+//            startActivity(Intent.createChooser(shareIntent, getString(R.string.choose_one)));
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.cw.playnxt")));
         } catch (Exception e) {
             //e.toString();
         }

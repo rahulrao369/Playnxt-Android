@@ -92,6 +92,7 @@ public class SubscriptionActivityFinal extends AppCompatActivity implements View
         headerBinding.btnBack.setOnClickListener(this);
         binding.btnMonth.setOnClickListener(this);
         binding.btnYear.setOnClickListener(this);
+        binding.btnYear.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceAsColor")
@@ -104,12 +105,16 @@ public class SubscriptionActivityFinal extends AppCompatActivity implements View
                 break;
 
             case R.id.btnMonth:
-                startActivity(new Intent(context,AddCardActivity.class)
+//                startActivity(new Intent(context,AddCardActivity.class)
+//                        .putExtra("plan_ID",plan_ID_MONTHLY.toString()));
+                startActivity(new Intent(context,SubscriptionActivityCoupon.class)
                         .putExtra("plan_ID",plan_ID_MONTHLY.toString()));
                 break;
 
             case R.id.btnYear:
-                startActivity(new Intent(context,AddCardActivity.class)
+//                startActivity(new Intent(context,AddCardActivity.class)
+//                        .putExtra("plan_ID",plan_ID_YEARLY.toString()));
+                startActivity(new Intent(context,SubscriptionActivityCoupon.class)
                         .putExtra("plan_ID",plan_ID_YEARLY.toString()));
                 break;
         }

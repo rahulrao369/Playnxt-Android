@@ -185,7 +185,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                                     setMyFriendsProfileListData(response.body().getData().getFollowing());
                                 }else{
                                     binding.tvNoFriendsYet.setVisibility(View.VISIBLE);
-                                    binding.llFriendsList.setVisibility(View.GONE);
+                                    binding.llFriendsList.setVisibility(View.INVISIBLE);
                                 }
 
                             }

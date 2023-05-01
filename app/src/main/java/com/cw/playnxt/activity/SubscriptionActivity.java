@@ -109,7 +109,7 @@ public class SubscriptionActivity extends AppCompatActivity implements View.OnCl
                         }*/
                     }else{
                         startActivity(new Intent(context,AddCardActivity.class)
-                                .putExtra("plan_ID",plan_ID.toString()));
+                                .putExtra("plan_ID",plan_ID.toString()).putExtra("code",""));
                     }
                 }
                 break;

@@ -603,8 +603,10 @@ attr forceApplySystemWindowInsetTop
 attr foregroundInsidePadding
 attr forwardButtonSrc
 attr framePosition
+attr freezesAnimation
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
+attr gifSource
 attr goIcon
 attr guidelineUseRtl
 attr haloColor
@@ -661,6 +663,7 @@ attr insetForeground
 attr isLightTheme
 attr isMaterial3Theme
 attr isMaterialTheme
+attr isOpaque
 attr itemActiveIndicatorStyle
 attr itemBackground
 attr itemFillColor
@@ -797,6 +800,7 @@ attr logo
 attr logoAdjustViewBounds
 attr logoDescription
 attr logoScaleType
+attr loopCount
 attr marginHorizontal
 attr marginLeftSystemWindowInsets
 attr marginRightSystemWindowInsets
@@ -1351,6 +1355,8 @@ color chip_yellow_color
 color chip_yellow_inner_color
 color cnb_default_badge_color
 color cnb_default_unselected_color
+color colordialog
+color colorgreen
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -2667,6 +2673,7 @@ drawable bg_app_rounded_corners
 drawable bg_bottom_sheet
 drawable bg_button
 drawable bg_button_1
+drawable bg_button_green
 drawable bg_chip_navigation
 drawable bg_circle
 drawable bg_create_new
@@ -2675,6 +2682,7 @@ drawable bg_edit_text
 drawable bg_go_btn
 drawable bg_gray_btn
 drawable bg_home_bottom
+drawable bg_left_curve
 drawable bg_recent_games
 drawable bg_ring
 drawable bg_rounded_btn
@@ -2892,6 +2900,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable paymentsummary
 drawable playnxtbtn_bg
 drawable popup_background
 drawable progress_animation
@@ -3050,6 +3059,7 @@ id btnAddToBacklog
 id btnAddToList
 id btnAddToWishList
 id btnAdsShow
+id btnApply
 id btnArrow
 id btnBack
 id btnBack1
@@ -3108,6 +3118,7 @@ id card_outline_container
 id carryVelocity
 id cb
 id cbAgree
+id cbBacklog
 id cbGames
 id cbKeepSignedIn
 id cbUser
@@ -3364,6 +3375,7 @@ id listMode
 id list_item
 id llAfterAddingToWishlist
 id llAlreadyHaveAccount
+id llBacklog
 id llBottom
 id llChangePassword
 id llCreateBacklogList
@@ -3388,6 +3400,8 @@ id llMain3
 id llMainItem
 id llMyGameInfo
 id llMyProfile
+id llNext
+id llNoBacklogResult
 id llNoData
 id llNoGamesResult
 id llNoUserResult
@@ -3556,6 +3570,7 @@ id rlProgressBar
 id rounded
 id row_index_key
 id rvActivityList
+id rvBacklog
 id rvBottomSheet
 id rvExtraFeatures
 id rvFollowersList
@@ -3669,6 +3684,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textmsg
 id thursdayLabel
 id time
 id title
@@ -3689,10 +3705,12 @@ id transition_transform
 id triangle
 id tuesdayLabel
 id tvAboutUs
+id tvActualAmt
 id tvAddBtn
 id tvAddGame
 id tvAddToList
 id tvAmount
+id tvBacklog
 id tvBtn
 id tvCheck
 id tvContactUs
@@ -3700,6 +3718,7 @@ id tvCreateNewList
 id tvCreatedOn
 id tvCurrentStatus
 id tvDescription
+id tvDiscount
 id tvEndDate
 id tvExpiryDate
 id tvFav
@@ -3744,6 +3763,7 @@ id tvStatus
 id tvTime
 id tvTimeStamps
 id tvTimeStamps1
+id tvTotal
 id tvTotalGame
 id tvTotalLike
 id tvUploadGameImg
@@ -3766,7 +3786,9 @@ id txtChangePassword
 id txtDeleteAccount
 id txtOk
 id txtSend
+id txtSkip
 id txt_ok
+id txt_resend
 id txtbtnYear
 id unchecked
 id uniform
@@ -3922,6 +3944,7 @@ layout activity_signup
 layout activity_splash
 layout activity_staff_picks_detail
 layout activity_subscription
+layout activity_subscription_coupon
 layout activity_subscription_final
 layout activity_suggest_ne_feature
 layout activity_welcome
@@ -3972,6 +3995,9 @@ layout dialog_big_profile_image
 layout dialog_change_password
 layout dialog_forgot_password
 layout dialog_game_backlog_wishlist_type_list
+layout dialog_login
+layout dialog_payment_summary
+layout dialog_signup
 layout dialog_subscription
 layout dialog_thankyou
 layout fragment_anuual
@@ -4013,6 +4039,7 @@ layout item_list_get_category_name_layout
 layout item_list_inbox_layout
 layout item_list_new_tab_activity_layout
 layout item_list_recent_games
+layout item_list_search_backlog
 layout item_list_search_games
 layout item_list_search_users
 layout item_list_subscription_plan_access_extra_features_layout
@@ -5563,6 +5590,8 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc blendSrc brightness contrast crossfade imagePanX imagePanY imageRotate imageZoom overlay round roundPercent saturation warmth
