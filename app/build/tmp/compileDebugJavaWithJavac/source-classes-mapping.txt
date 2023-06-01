@@ -14,10 +14,8 @@ com/cw/playnxt/model/GetBacklogList/GetMyBacklogListData.java
  com.cw.playnxt.model.GetBacklogList.GetMyBacklogListData
 com/cw/playnxt/model/CheckSubscriptionFinal/CheckSubscriptionFinalResponse.java
  com.cw.playnxt.model.CheckSubscriptionFinal.CheckSubscriptionFinalResponse
-com/cw/playnxt/fragment/TabActivityFragment.java
- com.cw.playnxt.fragment.TabActivityFragment
- com.cw.playnxt.fragment.TabActivityFragment$1
- com.cw.playnxt.fragment.TabActivityFragment$2
+com/cw/playnxt/model/StatsData/Data.java
+ com.cw.playnxt.model.StatsData.Data
 com/cw/playnxt/adapter/SettingAdapters/AnnualPlanAdapter.java
  com.cw.playnxt.adapter.SettingAdapters.AnnualPlanAdapter
  com.cw.playnxt.adapter.SettingAdapters.AnnualPlanAdapter$RecyclerViewHolder
@@ -25,10 +23,9 @@ com/cw/playnxt/adapter/GameAdapters/RecentGamesAdapter.java
  com.cw.playnxt.adapter.GameAdapters.RecentGamesAdapter
  com.cw.playnxt.adapter.GameAdapters.RecentGamesAdapter$1
  com.cw.playnxt.adapter.GameAdapters.RecentGamesAdapter$RecyclerViewHolder
-com/cw/playnxt/adapter/GameAdapters/BottomSheetCurrentStatusListAdapter.java
- com.cw.playnxt.adapter.GameAdapters.BottomSheetCurrentStatusListAdapter
- com.cw.playnxt.adapter.GameAdapters.BottomSheetCurrentStatusListAdapter$1
- com.cw.playnxt.adapter.GameAdapters.BottomSheetCurrentStatusListAdapter$RecyclerViewHolder
+com/cw/playnxt/fragment/MonthlyFragment.java
+ com.cw.playnxt.fragment.MonthlyFragment
+ com.cw.playnxt.fragment.MonthlyFragment$1
 com/cw/playnxt/model/GetMyFriendProfile/MyFriendProfileFollower.java
  com.cw.playnxt.model.GetMyFriendProfile.MyFriendProfileFollower
 com/cw/playnxt/model/StaffPicks/Capsul.java
@@ -71,8 +68,8 @@ com/cw/playnxt/model/ChatList/Inbox.java
  com.cw.playnxt.model.ChatList.Inbox
 com/cw/playnxt/utils/Constants.java
  com.cw.playnxt.utils.Constants
-com/cw/playnxt/databinding/ActivityMyProfileBinding.java
- com.cw.playnxt.databinding.ActivityMyProfileBinding
+com/cw/playnxt/activity/ConfirmationActivity.java
+ com.cw.playnxt.activity.ConfirmationActivity
 com/cw/playnxt/model/PurchaseFreePlan/PurchaseFreePlanParaRes.java
  com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanParaRes
 com/cw/playnxt/model/HomeSearch/SearchParaRes.java
@@ -93,25 +90,10 @@ com/cw/playnxt/fragment/SecondFragment.java
  com.cw.playnxt.fragment.SecondFragment
 com/cw/playnxt/model/LoginSignup/ResendMailResponse.java
  com.cw.playnxt.model.LoginSignup.ResendMailResponse
-com/cw/playnxt/activity/SubscriptionActivityFinal.java
- com.cw.playnxt.activity.SubscriptionActivityFinal
- com.cw.playnxt.activity.SubscriptionActivityFinal$1
- com.cw.playnxt.activity.SubscriptionActivityFinal$2
-com/cw/playnxt/activity/HomeSearchActivity.java
- com.cw.playnxt.activity.HomeSearchActivity
- com.cw.playnxt.activity.HomeSearchActivity$1
- com.cw.playnxt.activity.HomeSearchActivity$10
- com.cw.playnxt.activity.HomeSearchActivity$11
- com.cw.playnxt.activity.HomeSearchActivity$12
- com.cw.playnxt.activity.HomeSearchActivity$13
- com.cw.playnxt.activity.HomeSearchActivity$2
- com.cw.playnxt.activity.HomeSearchActivity$3
- com.cw.playnxt.activity.HomeSearchActivity$4
- com.cw.playnxt.activity.HomeSearchActivity$5
- com.cw.playnxt.activity.HomeSearchActivity$6
- com.cw.playnxt.activity.HomeSearchActivity$7
- com.cw.playnxt.activity.HomeSearchActivity$8
- com.cw.playnxt.activity.HomeSearchActivity$9
+com/cw/playnxt/model/AddGameNote/AddGameNoteParaRes.java
+ com.cw.playnxt.model.AddGameNote.AddGameNoteParaRes
+com/cw/playnxt/databinding/ActivityAddGameBinding.java
+ com.cw.playnxt.databinding.ActivityAddGameBinding
 com/cw/playnxt/databinding/ActivitySubscriptionBinding.java
  com.cw.playnxt.databinding.ActivitySubscriptionBinding
 com/cw/playnxt/model/SubscriptionPlan/GetPaymentSummaryREq.java
@@ -128,11 +110,12 @@ com/cw/playnxt/databinding/ActivityWelcomeBinding.java
  com.cw.playnxt.databinding.ActivityWelcomeBinding
 com/cw/playnxt/model/GetMyFriendProfile/GetMyFriendProfileData.java
  com.cw.playnxt.model.GetMyFriendProfile.GetMyFriendProfileData
-com/cw/playnxt/activity/SubscriptionActivity.java
- com.cw.playnxt.activity.SubscriptionActivity
- com.cw.playnxt.activity.SubscriptionActivity$1
- com.cw.playnxt.activity.SubscriptionActivity$2
- com.cw.playnxt.activity.SubscriptionActivity$3
+com/cw/playnxt/adapter/FriendsAdapters/TabFriendsAdapter.java
+ com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter
+ com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$1
+ com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$2
+ com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$3
+ com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$RecyclerViewHolder
 com/cw/playnxt/databinding/ItemListSearchBacklogBinding.java
  com.cw.playnxt.databinding.ItemListSearchBacklogBinding
 com/cw/playnxt/model/GetMyFriendProfile/GetMyFriendProfileParaRes.java
@@ -143,22 +126,8 @@ com/cw/playnxt/databinding/ItemListCalenderScreenLayoutBinding.java
  com.cw.playnxt.databinding.ItemListCalenderScreenLayoutBinding
 com/cw/playnxt/model/GetCategoryListName/GetCategoryWishListNameResponse.java
  com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameResponse
-com/cw/playnxt/activity/BacklogActivity.java
- com.cw.playnxt.activity.BacklogActivity
- com.cw.playnxt.activity.BacklogActivity$1
- com.cw.playnxt.activity.BacklogActivity$10
- com.cw.playnxt.activity.BacklogActivity$11
- com.cw.playnxt.activity.BacklogActivity$12
- com.cw.playnxt.activity.BacklogActivity$13
- com.cw.playnxt.activity.BacklogActivity$14
- com.cw.playnxt.activity.BacklogActivity$2
- com.cw.playnxt.activity.BacklogActivity$3
- com.cw.playnxt.activity.BacklogActivity$4
- com.cw.playnxt.activity.BacklogActivity$5
- com.cw.playnxt.activity.BacklogActivity$6
- com.cw.playnxt.activity.BacklogActivity$7
- com.cw.playnxt.activity.BacklogActivity$8
- com.cw.playnxt.activity.BacklogActivity$9
+com/cw/playnxt/model/GetMyProfile/GetMyProfileResponse.java
+ com.cw.playnxt.model.GetMyProfile.GetMyProfileResponse
 com/cw/playnxt/databinding/FragmentMyProfileGamesBinding.java
  com.cw.playnxt.databinding.FragmentMyProfileGamesBinding
 com/cw/playnxt/model/GET_PLAN/GetPlanData.java
@@ -169,10 +138,8 @@ com/cw/playnxt/databinding/FragmentMonthlyBinding.java
  com.cw.playnxt.databinding.FragmentMonthlyBinding
 com/cw/playnxt/model/StaticModel/AccessExtraFeatures.java
  com.cw.playnxt.model.StaticModel.AccessExtraFeatures
-com/cw/playnxt/activity/SubscriptionActivityCoupon.java
- com.cw.playnxt.activity.SubscriptionActivityCoupon
- com.cw.playnxt.activity.SubscriptionActivityCoupon$1
- com.cw.playnxt.activity.SubscriptionActivityCoupon$2
+com/cw/playnxt/databinding/ActivityMyProfileBinding.java
+ com.cw.playnxt.databinding.ActivityMyProfileBinding
 com/cw/playnxt/fragment/ThirdFragment.java
  com.cw.playnxt.fragment.ThirdFragment
 com/cw/playnxt/model/GetGameNote/GetGameNoteData.java
@@ -195,8 +162,8 @@ com/cw/playnxt/databinding/FragmentTabFollowingBinding.java
  com.cw.playnxt.databinding.FragmentTabFollowingBinding
 com/cw/playnxt/model/GetGameByFilter/GetGameByFilterResponse.java
  com.cw.playnxt.model.GetGameByFilter.GetGameByFilterResponse
-com/cw/playnxt/databinding/ActivityAddGameBinding.java
- com.cw.playnxt.databinding.ActivityAddGameBinding
+com/cw/playnxt/databinding/ActivitySplashBinding.java
+ com.cw.playnxt.databinding.ActivitySplashBinding
 com/cw/playnxt/databinding/BottomSheetDialogFilterBinding.java
  com.cw.playnxt.databinding.BottomSheetDialogFilterBinding
 com/cw/playnxt/model/HomeSearch/GameSearch/SearchGameDataResult.java
@@ -207,9 +174,10 @@ com/cw/playnxt/model/GetMyProfile/Game.java
  com.cw.playnxt.model.GetMyProfile.Game
 com/cw/playnxt/databinding/ItemListSearchGamesBinding.java
  com.cw.playnxt.databinding.ItemListSearchGamesBinding
-com/cw/playnxt/fragment/MonthlyFragment.java
- com.cw.playnxt.fragment.MonthlyFragment
- com.cw.playnxt.fragment.MonthlyFragment$1
+com/cw/playnxt/adapter/GameAdapters/BottomSheetCurrentStatusListAdapter.java
+ com.cw.playnxt.adapter.GameAdapters.BottomSheetCurrentStatusListAdapter
+ com.cw.playnxt.adapter.GameAdapters.BottomSheetCurrentStatusListAdapter$1
+ com.cw.playnxt.adapter.GameAdapters.BottomSheetCurrentStatusListAdapter$RecyclerViewHolder
 com/cw/playnxt/databinding/ItemListGetCategoryNameLayoutBinding.java
  com.cw.playnxt.databinding.ItemListGetCategoryNameLayoutBinding
 com/cw/playnxt/databinding/ActivityGameInfoBinding.java
@@ -226,16 +194,8 @@ com/cw/playnxt/adapter/SubscriptionPlanListAdapterMain.java
  com.cw.playnxt.adapter.SubscriptionPlanListAdapterMain$2
  com.cw.playnxt.adapter.SubscriptionPlanListAdapterMain$3
  com.cw.playnxt.adapter.SubscriptionPlanListAdapterMain$RecyclerViewHolder
-com/cw/playnxt/activity/CalenderActivity.java
- com.cw.playnxt.activity.CalenderActivity
- com.cw.playnxt.activity.CalenderActivity$1
- com.cw.playnxt.activity.CalenderActivity$2
- com.cw.playnxt.activity.CalenderActivity$3
- com.cw.playnxt.activity.CalenderActivity$4
- com.cw.playnxt.activity.CalenderActivity$5
- com.cw.playnxt.activity.CalenderActivity$6
- com.cw.playnxt.activity.CalenderActivity$7
- com.cw.playnxt.activity.CalenderActivity$8
+com/cw/playnxt/databinding/FragmentTabFriendsBinding.java
+ com.cw.playnxt.databinding.FragmentTabFriendsBinding
 com/cw/playnxt/databinding/ActivityPlaynxtPremiumBinding.java
  com.cw.playnxt.databinding.ActivityPlaynxtPremiumBinding
 com/cw/playnxt/model/HomeSearch/GameSearch/SearchGameData.java
@@ -248,8 +208,8 @@ com/cw/playnxt/databinding/ActivityEditProfileBinding.java
  com.cw.playnxt.databinding.ActivityEditProfileBinding
 com/cw/playnxt/adapter/FriendsAdapters/TabLayoutAdapter.java
  com.cw.playnxt.adapter.FriendsAdapters.TabLayoutAdapter
-com/cw/playnxt/model/HomeSearch/BacklogSearch/SearchBacklogData.java
- com.cw.playnxt.model.HomeSearch.BacklogSearch.SearchBacklogData
+com/cw/playnxt/server/Allurls.java
+ com.cw.playnxt.server.Allurls
 com/cw/playnxt/model/GetGameByFilter/GetGameByFilterData.java
  com.cw.playnxt.model.GetGameByFilter.GetGameByFilterData
 com/cw/playnxt/model/ChatList/ChatListResponse.java
@@ -268,32 +228,22 @@ com/cw/playnxt/databinding/ActivityConfirmationBinding.java
  com.cw.playnxt.databinding.ActivityConfirmationBinding
 com/cw/playnxt/databinding/SpinnerItem1Binding.java
  com.cw.playnxt.databinding.SpinnerItem1Binding
-com/cw/playnxt/activity/AddCardActivity.java
- com.cw.playnxt.activity.AddCardActivity
- com.cw.playnxt.activity.AddCardActivity$1
- com.cw.playnxt.activity.AddCardActivity$2
- com.cw.playnxt.activity.AddCardActivity$3
- com.cw.playnxt.activity.AddCardActivity$4
- com.cw.playnxt.activity.AddCardActivity$5
- com.cw.playnxt.activity.AddCardActivity$6
-com/cw/playnxt/adapter/FriendsAdapters/TabFriendsAdapter.java
- com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter
- com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$1
- com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$2
- com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$3
- com.cw.playnxt.adapter.FriendsAdapters.TabFriendsAdapter$RecyclerViewHolder
+com/cw/playnxt/databinding/ActivityAddCardBinding.java
+ com.cw.playnxt.databinding.ActivityAddCardBinding
+com/cw/playnxt/databinding/ActivityBacklogBinding.java
+ com.cw.playnxt.databinding.ActivityBacklogBinding
 com/cw/playnxt/databinding/DialogChangePasswordBinding.java
  com.cw.playnxt.databinding.DialogChangePasswordBinding
 com/cw/playnxt/adapter/FriendsAdapters/MainTabLayoutAdapterCommunityFriends.java
  com.cw.playnxt.adapter.FriendsAdapters.MainTabLayoutAdapterCommunityFriends
 com/cw/playnxt/model/EditCalenderEvent/EditCalenderEventParaRes.java
  com.cw.playnxt.model.EditCalenderEvent.EditCalenderEventParaRes
-com/cw/playnxt/server/ApiUtils.java
- com.cw.playnxt.server.ApiUtils
-com/cw/playnxt/activity/GameInfoActivity.java
- com.cw.playnxt.activity.GameInfoActivity
- com.cw.playnxt.activity.GameInfoActivity$1
- com.cw.playnxt.activity.GameInfoActivity$2
+com/cw/playnxt/adapter/GameAdapters/WishlistXboxGamesListAdapter.java
+ com.cw.playnxt.adapter.GameAdapters.WishlistXboxGamesListAdapter
+ com.cw.playnxt.adapter.GameAdapters.WishlistXboxGamesListAdapter$1
+ com.cw.playnxt.adapter.GameAdapters.WishlistXboxGamesListAdapter$RecyclerViewHolder
+com/cw/playnxt/model/GetCategoryListName/GetCategoryWishListNameData.java
+ com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameData
 com/cw/playnxt/databinding/ItemListDiscoverLayoutBinding.java
  com.cw.playnxt.databinding.ItemListDiscoverLayoutBinding
 com/cw/playnxt/databinding/ItemListFriendsProfileActivityLayoutBinding.java
@@ -304,28 +254,12 @@ com/cw/playnxt/databinding/DialogBigProfileImageBinding.java
  com.cw.playnxt.databinding.DialogBigProfileImageBinding
 com/cw/playnxt/databinding/BottomSheetAddNewNoteBinding.java
  com.cw.playnxt.databinding.BottomSheetAddNewNoteBinding
-com/cw/playnxt/activity/EditProfileActivity.java
- com.cw.playnxt.activity.EditProfileActivity
- com.cw.playnxt.activity.EditProfileActivity$1
- com.cw.playnxt.activity.EditProfileActivity$10
- com.cw.playnxt.activity.EditProfileActivity$11
- com.cw.playnxt.activity.EditProfileActivity$12
- com.cw.playnxt.activity.EditProfileActivity$2
- com.cw.playnxt.activity.EditProfileActivity$3
- com.cw.playnxt.activity.EditProfileActivity$4
- com.cw.playnxt.activity.EditProfileActivity$5
- com.cw.playnxt.activity.EditProfileActivity$6
- com.cw.playnxt.activity.EditProfileActivity$7
- com.cw.playnxt.activity.EditProfileActivity$8
- com.cw.playnxt.activity.EditProfileActivity$9
+com/cw/playnxt/databinding/FragmentFirstBinding.java
+ com.cw.playnxt.databinding.FragmentFirstBinding
 com/cw/playnxt/model/AddFriendGame/AddFriendGameParaRes.java
  com.cw.playnxt.model.AddFriendGame.AddFriendGameParaRes
-com/cw/playnxt/activity/FriendsProfileActivity.java
- com.cw.playnxt.activity.FriendsProfileActivity
- com.cw.playnxt.activity.FriendsProfileActivity$1
- com.cw.playnxt.activity.FriendsProfileActivity$2
- com.cw.playnxt.activity.FriendsProfileActivity$2$1
- com.cw.playnxt.activity.FriendsProfileActivity$3
+com/cw/playnxt/model/EditGameNote/EditGameNoteParaRes.java
+ com.cw.playnxt.model.EditGameNote.EditGameNoteParaRes
 com/cw/playnxt/model/GetPlatformGenre/GetPlatformGenredata.java
  com.cw.playnxt.model.GetPlatformGenre.GetPlatformGenredata
 com/cw/playnxt/databinding/ListItemSettingLayoutBinding.java
@@ -372,15 +306,15 @@ com/cw/playnxt/model/GetMyFriendProfile/MyFriendProfile.java
  com.cw.playnxt.model.GetMyFriendProfile.MyFriendProfile
 com/cw/playnxt/server/AddHeaderInterceptor.java
  com.cw.playnxt.server.AddHeaderInterceptor
-com/cw/playnxt/fragment/MyProfileFollowersFragment.java
- com.cw.playnxt.fragment.MyProfileFollowersFragment
- com.cw.playnxt.fragment.MyProfileFollowersFragment$1
- com.cw.playnxt.fragment.MyProfileFollowersFragment$2
- com.cw.playnxt.fragment.MyProfileFollowersFragment$3
- com.cw.playnxt.fragment.MyProfileFollowersFragment$4
-com/cw/playnxt/activity/YourStatsActivity.java
- com.cw.playnxt.activity.YourStatsActivity
- com.cw.playnxt.activity.YourStatsActivity$1
+com/cw/playnxt/model/EditBacklogList/EditBacklogListParaRes.java
+ com.cw.playnxt.model.EditBacklogList.EditBacklogListParaRes
+com/cw/playnxt/adapter/MyProfileAdapters/MyProfileTabFollowersAdapter.java
+ com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter
+ com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$1
+ com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$2
+ com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$3
+ com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$4
+ com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$RecyclerViewHolder
 com/cw/playnxt/databinding/ActivityXboxGamesBinding.java
  com.cw.playnxt.databinding.ActivityXboxGamesBinding
 com/cw/playnxt/model/StaticModel/AnnualPlanDataModel.java
@@ -389,32 +323,8 @@ com/cw/playnxt/model/CalenderDataModel/GetEvent/GetEventParaRes.java
  com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventParaRes
 com/cw/playnxt/model/GetMyFriendProfile/MyFriendProfileFollowing.java
  com.cw.playnxt.model.GetMyFriendProfile.MyFriendProfileFollowing
-com/cw/playnxt/activity/AddGameActivity.java
- com.cw.playnxt.activity.AddGameActivity
- com.cw.playnxt.activity.AddGameActivity$1
- com.cw.playnxt.activity.AddGameActivity$10
- com.cw.playnxt.activity.AddGameActivity$11
- com.cw.playnxt.activity.AddGameActivity$12
- com.cw.playnxt.activity.AddGameActivity$13
- com.cw.playnxt.activity.AddGameActivity$14
- com.cw.playnxt.activity.AddGameActivity$15
- com.cw.playnxt.activity.AddGameActivity$16
- com.cw.playnxt.activity.AddGameActivity$17
- com.cw.playnxt.activity.AddGameActivity$18
- com.cw.playnxt.activity.AddGameActivity$19
- com.cw.playnxt.activity.AddGameActivity$2
- com.cw.playnxt.activity.AddGameActivity$20
- com.cw.playnxt.activity.AddGameActivity$21
- com.cw.playnxt.activity.AddGameActivity$22
- com.cw.playnxt.activity.AddGameActivity$23
- com.cw.playnxt.activity.AddGameActivity$24
- com.cw.playnxt.activity.AddGameActivity$3
- com.cw.playnxt.activity.AddGameActivity$4
- com.cw.playnxt.activity.AddGameActivity$5
- com.cw.playnxt.activity.AddGameActivity$6
- com.cw.playnxt.activity.AddGameActivity$7
- com.cw.playnxt.activity.AddGameActivity$8
- com.cw.playnxt.activity.AddGameActivity$9
+com/cw/playnxt/activity/LoginSignupButtonActivity.java
+ com.cw.playnxt.activity.LoginSignupButtonActivity
 com/cw/playnxt/model/ViewMyBacklogGame/Game.java
  com.cw.playnxt.model.ViewMyBacklogGame.Game
 com/cw/playnxt/adapter/GameAdapters/GameFragmentTopListAdapter.java
@@ -425,42 +335,34 @@ com/cw/playnxt/databinding/ActivitySubscriptionCouponBinding.java
  com.cw.playnxt.databinding.ActivitySubscriptionCouponBinding
 com/cw/playnxt/model/GetMyFriendList/GetMyFriendListData.java
  com.cw.playnxt.model.GetMyFriendList.GetMyFriendListData
-com/cw/playnxt/databinding/ActivityAddCardBinding.java
- com.cw.playnxt.databinding.ActivityAddCardBinding
+com/cw/playnxt/model/GetGameNote/Capsul.java
+ com.cw.playnxt.model.GetGameNote.Capsul
 com/cw/playnxt/model/LoginSignup/SignupParaRes.java
  com.cw.playnxt.model.LoginSignup.SignupParaRes
 com/cw/playnxt/databinding/FragmentMyProfileFollowersBinding.java
  com.cw.playnxt.databinding.FragmentMyProfileFollowersBinding
 com/cw/playnxt/databinding/ItemListSubscriptionPlanInsideListLayoutBinding.java
  com.cw.playnxt.databinding.ItemListSubscriptionPlanInsideListLayoutBinding
-com/cw/playnxt/activity/LoginSignupButtonActivity.java
- com.cw.playnxt.activity.LoginSignupButtonActivity
+com/cw/playnxt/activity/TermsAndConditionActivity.java
+ com.cw.playnxt.activity.TermsAndConditionActivity
+ com.cw.playnxt.activity.TermsAndConditionActivity$1
 com/cw/playnxt/databinding/ItemListXboxGameInfoBinding.java
  com.cw.playnxt.databinding.ItemListXboxGameInfoBinding
 com/cw/playnxt/databinding/ActivitySettingBinding.java
  com.cw.playnxt.databinding.ActivitySettingBinding
-com/cw/playnxt/server/MyRetrofit.java
- com.cw.playnxt.server.MyRetrofit
-com/cw/playnxt/activity/WelcomeActivity.java
- com.cw.playnxt.activity.WelcomeActivity
- com.cw.playnxt.activity.WelcomeActivity$1
- com.cw.playnxt.activity.WelcomeActivity$2
- com.cw.playnxt.activity.WelcomeActivity$MyPagerAdapter
-com/cw/playnxt/fragment/TabCommunityFragment.java
- com.cw.playnxt.fragment.TabCommunityFragment
- com.cw.playnxt.fragment.TabCommunityFragment$1
- com.cw.playnxt.fragment.TabCommunityFragment$2
- com.cw.playnxt.fragment.TabCommunityFragment$3
- com.cw.playnxt.fragment.TabCommunityFragment$4
- com.cw.playnxt.fragment.TabCommunityFragment$5
+com/cw/playnxt/model/PurchasePlan/Plan.java
+ com.cw.playnxt.model.PurchasePlan.Plan
+com/cw/playnxt/activity/PrivacyPolicyActivity.java
+ com.cw.playnxt.activity.PrivacyPolicyActivity
+ com.cw.playnxt.activity.PrivacyPolicyActivity$1
+com/cw/playnxt/databinding/HeaderLayoutBinding.java
+ com.cw.playnxt.databinding.HeaderLayoutBinding
 com/cw/playnxt/adapter/HomeAdapters/FriendsListAdapter.java
  com.cw.playnxt.adapter.HomeAdapters.FriendsListAdapter
  com.cw.playnxt.adapter.HomeAdapters.FriendsListAdapter$1
  com.cw.playnxt.adapter.HomeAdapters.FriendsListAdapter$RecyclerViewHolder
-com/cw/playnxt/activity/SuggestNewFeatureActivity.java
- com.cw.playnxt.activity.SuggestNewFeatureActivity
- com.cw.playnxt.activity.SuggestNewFeatureActivity$1
- com.cw.playnxt.activity.SuggestNewFeatureActivity$2
+com/cw/playnxt/databinding/DialogLoginBinding.java
+ com.cw.playnxt.databinding.DialogLoginBinding
 com/cw/playnxt/model/GetCategoryListName/GetCategoryBacklogListNameParaRes.java
  com.cw.playnxt.model.GetCategoryListName.GetCategoryBacklogListNameParaRes
 com/cw/playnxt/model/GetRecentGame/GetRecentGameDataCapsul.java
@@ -488,10 +390,8 @@ com/cw/playnxt/model/StatsData/staticStatDataModel.java
  com.cw.playnxt.model.StatsData.staticStatDataModel
 com/cw/playnxt/databinding/ActivityForgotPasswordBinding.java
  com.cw.playnxt.databinding.ActivityForgotPasswordBinding
-com/cw/playnxt/activity/StaffPicksDetailActivity.java
- com.cw.playnxt.activity.StaffPicksDetailActivity
- com.cw.playnxt.activity.StaffPicksDetailActivity$1
- com.cw.playnxt.activity.StaffPicksDetailActivity$2
+com/cw/playnxt/model/ViewMyWishlistGame/Game.java
+ com.cw.playnxt.model.ViewMyWishlistGame.Game
 com/cw/playnxt/databinding/ItemListYourStatsBinding.java
  com.cw.playnxt.databinding.ItemListYourStatsBinding
 com/cw/playnxt/databinding/FragmentAnuualBinding.java
@@ -532,14 +432,8 @@ com/cw/playnxt/model/CommunityData/GetCommunityListResponse.java
  com.cw.playnxt.model.CommunityData.GetCommunityListResponse
 com/cw/playnxt/model/GetWishlist/Count.java
  com.cw.playnxt.model.GetWishlist.Count
-com/cw/playnxt/activity/SignupActivity.java
- com.cw.playnxt.activity.SignupActivity
- com.cw.playnxt.activity.SignupActivity$1
- com.cw.playnxt.activity.SignupActivity$2
- com.cw.playnxt.activity.SignupActivity$3
- com.cw.playnxt.activity.SignupActivity$4
- com.cw.playnxt.activity.SignupActivity$5
- com.cw.playnxt.activity.SignupActivity$6
+com/cw/playnxt/model/DeleteCalenderEvent/DeleteCalenderEventParaRes.java
+ com.cw.playnxt.model.DeleteCalenderEvent.DeleteCalenderEventParaRes
 com/cw/playnxt/model/GetWishlist/GetMyWishlistResponse.java
  com.cw.playnxt.model.GetWishlist.GetMyWishlistResponse
 com/cw/playnxt/databinding/FragmentGameBinding.java
@@ -554,12 +448,8 @@ com/cw/playnxt/databinding/ActivityWishlistXboxGameBinding.java
  com.cw.playnxt.databinding.ActivityWishlistXboxGameBinding
 com/cw/playnxt/Interface/ItemClickId.java
  com.cw.playnxt.Interface.ItemClickId
-com/cw/playnxt/activity/AddEventActivity.java
- com.cw.playnxt.activity.AddEventActivity
- com.cw.playnxt.activity.AddEventActivity$1
- com.cw.playnxt.activity.AddEventActivity$2
- com.cw.playnxt.activity.AddEventActivity$3
- com.cw.playnxt.activity.AddEventActivity$4
+com/cw/playnxt/model/StaticModel/GameFragmentModel.java
+ com.cw.playnxt.model.StaticModel.GameFragmentModel
 com/cw/playnxt/model/HomeButton/HomeButtonResponse.java
  com.cw.playnxt.model.HomeButton.HomeButtonResponse
 com/cw/playnxt/adapter/MyProfileAdapters/SettingsAdapter.java
@@ -598,8 +488,8 @@ com/cw/playnxt/databinding/ItemListRecentGamesBinding.java
  com.cw.playnxt.databinding.ItemListRecentGamesBinding
 com/cw/playnxt/databinding/ItemListCalenderEventsLayoutBinding.java
  com.cw.playnxt.databinding.ItemListCalenderEventsLayoutBinding
-com/cw/playnxt/server/JsonPlaceHolderApi.java
- com.cw.playnxt.server.JsonPlaceHolderApi
+com/cw/playnxt/model/HomeSearch/BacklogSearch/SearchBacklogData.java
+ com.cw.playnxt.model.HomeSearch.BacklogSearch.SearchBacklogData
 com/cw/playnxt/utils/OpenSubscriptionDialogClass.java
  com.cw.playnxt.utils.OpenSubscriptionDialogClass
  com.cw.playnxt.utils.OpenSubscriptionDialogClass$1
@@ -611,20 +501,10 @@ com/cw/playnxt/model/FollowFriend/FollowFriendParaRes.java
  com.cw.playnxt.model.FollowFriend.FollowFriendParaRes
 com/cw/playnxt/model/GetBacklogList/Count.java
  com.cw.playnxt.model.GetBacklogList.Count
-com/cw/playnxt/activity/WishlistActivity.java
- com.cw.playnxt.activity.WishlistActivity
- com.cw.playnxt.activity.WishlistActivity$1
- com.cw.playnxt.activity.WishlistActivity$10
- com.cw.playnxt.activity.WishlistActivity$11
- com.cw.playnxt.activity.WishlistActivity$12
- com.cw.playnxt.activity.WishlistActivity$2
- com.cw.playnxt.activity.WishlistActivity$3
- com.cw.playnxt.activity.WishlistActivity$4
- com.cw.playnxt.activity.WishlistActivity$5
- com.cw.playnxt.activity.WishlistActivity$6
- com.cw.playnxt.activity.WishlistActivity$7
- com.cw.playnxt.activity.WishlistActivity$8
- com.cw.playnxt.activity.WishlistActivity$9
+com/cw/playnxt/activity/HomeActivity.java
+ com.cw.playnxt.activity.HomeActivity
+ com.cw.playnxt.activity.HomeActivity$1
+ com.cw.playnxt.activity.HomeActivity$2
 com/cw/playnxt/databinding/FragmentDiscoverBinding.java
  com.cw.playnxt.databinding.FragmentDiscoverBinding
 com/cw/playnxt/Interface/ItemClickGameInfoWishlist.java
@@ -635,9 +515,8 @@ com/cw/playnxt/databinding/ActivityHomeBinding.java
  com.cw.playnxt.databinding.ActivityHomeBinding
 com/cw/playnxt/model/CalenderDataModel/GetEvent/GetEventResponse.java
  com.cw.playnxt.model.CalenderDataModel.GetEvent.GetEventResponse
-com/cw/playnxt/activity/AboutUsActivity.java
- com.cw.playnxt.activity.AboutUsActivity
- com.cw.playnxt.activity.AboutUsActivity$1
+com/cw/playnxt/model/DeleteGameNote/DeleteGameNoteParaRes.java
+ com.cw.playnxt.model.DeleteGameNote.DeleteGameNoteParaRes
 com/cw/playnxt/databinding/ActivityFriendsProfileBinding.java
  com.cw.playnxt.databinding.ActivityFriendsProfileBinding
 com/cw/playnxt/model/AddGameStatus/AddGameStatusParaRes.java
@@ -686,48 +565,14 @@ com/cw/playnxt/databinding/FragmentTabCommunityBinding.java
  com.cw.playnxt.databinding.FragmentTabCommunityBinding
 com/cw/playnxt/model/GetRecentGame/GetRecentGameData.java
  com.cw.playnxt.model.GetRecentGame.GetRecentGameData
-com/cw/playnxt/activity/WishlistXboxGameActivity.java
- com.cw.playnxt.activity.WishlistXboxGameActivity
- com.cw.playnxt.activity.WishlistXboxGameActivity$1
- com.cw.playnxt.activity.WishlistXboxGameActivity$2
+com/cw/playnxt/model/CommunityData/CapsulCommunityData.java
+ com.cw.playnxt.model.CommunityData.CapsulCommunityData
 com/cw/playnxt/databinding/DialogSubscriptionBinding.java
  com.cw.playnxt.databinding.DialogSubscriptionBinding
-com/cw/playnxt/fragment/AnnualFragment.java
- com.cw.playnxt.fragment.AnnualFragment
- com.cw.playnxt.fragment.AnnualFragment$1
-com/cw/playnxt/activity/MainGameInfoActivity.java
- com.cw.playnxt.activity.MainGameInfoActivity
- com.cw.playnxt.activity.MainGameInfoActivity$1
- com.cw.playnxt.activity.MainGameInfoActivity$10
- com.cw.playnxt.activity.MainGameInfoActivity$11
- com.cw.playnxt.activity.MainGameInfoActivity$12
- com.cw.playnxt.activity.MainGameInfoActivity$13
- com.cw.playnxt.activity.MainGameInfoActivity$14
- com.cw.playnxt.activity.MainGameInfoActivity$15
- com.cw.playnxt.activity.MainGameInfoActivity$16
- com.cw.playnxt.activity.MainGameInfoActivity$17
- com.cw.playnxt.activity.MainGameInfoActivity$18
- com.cw.playnxt.activity.MainGameInfoActivity$19
- com.cw.playnxt.activity.MainGameInfoActivity$2
- com.cw.playnxt.activity.MainGameInfoActivity$20
- com.cw.playnxt.activity.MainGameInfoActivity$21
- com.cw.playnxt.activity.MainGameInfoActivity$22
- com.cw.playnxt.activity.MainGameInfoActivity$23
- com.cw.playnxt.activity.MainGameInfoActivity$24
- com.cw.playnxt.activity.MainGameInfoActivity$25
- com.cw.playnxt.activity.MainGameInfoActivity$26
- com.cw.playnxt.activity.MainGameInfoActivity$27
- com.cw.playnxt.activity.MainGameInfoActivity$28
- com.cw.playnxt.activity.MainGameInfoActivity$29
- com.cw.playnxt.activity.MainGameInfoActivity$3
- com.cw.playnxt.activity.MainGameInfoActivity$30
- com.cw.playnxt.activity.MainGameInfoActivity$31
- com.cw.playnxt.activity.MainGameInfoActivity$4
- com.cw.playnxt.activity.MainGameInfoActivity$5
- com.cw.playnxt.activity.MainGameInfoActivity$6
- com.cw.playnxt.activity.MainGameInfoActivity$7
- com.cw.playnxt.activity.MainGameInfoActivity$8
- com.cw.playnxt.activity.MainGameInfoActivity$9
+com/cw/playnxt/model/GetBacklogList/GetMyBacklogListResponse.java
+ com.cw.playnxt.model.GetBacklogList.GetMyBacklogListResponse
+com/cw/playnxt/model/GetMyProfile/Follower.java
+ com.cw.playnxt.model.GetMyProfile.Follower
 com/cw/playnxt/adapter/GameAdapters/YourStatAapter.java
  com.cw.playnxt.adapter.GameAdapters.YourStatAapter
  com.cw.playnxt.adapter.GameAdapters.YourStatAapter$1
@@ -769,23 +614,12 @@ com/cw/playnxt/model/GetPlatformGenre/PlatformList.java
  com.cw.playnxt.model.GetPlatformGenre.PlatformList
 com/cw/playnxt/databinding/FragmentHomeBinding.java
  com.cw.playnxt.databinding.FragmentHomeBinding
-com/cw/playnxt/activity/AddGameFromBacklogListActivity.java
- com.cw.playnxt.activity.AddGameFromBacklogListActivity
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$1
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$10
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$11
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$2
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$3
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$4
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$5
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$6
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$7
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$8
- com.cw.playnxt.activity.AddGameFromBacklogListActivity$9
+com/cw/playnxt/databinding/ItemListYourStatsInsideListBinding.java
+ com.cw.playnxt.databinding.ItemListYourStatsInsideListBinding
 com/cw/playnxt/adapter/MyProfileAdapters/MyProfileTabLayoutAdapter.java
  com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabLayoutAdapter
-com/cw/playnxt/model/GetMyProfile/Follower.java
- com.cw.playnxt.model.GetMyProfile.Follower
+com/cw/playnxt/model/CheckSubscriptionFinal/Subscription.java
+ com.cw.playnxt.model.CheckSubscriptionFinal.Subscription
 com/cw/playnxt/databinding/ActivityMainGameInfoBinding.java
  com.cw.playnxt.databinding.ActivityMainGameInfoBinding
 com/cw/playnxt/databinding/PopupProgressbarBinding.java
@@ -794,9 +628,8 @@ com/cw/playnxt/model/GetPlatformGenre/GenreList.java
  com.cw.playnxt.model.GetPlatformGenre.GenreList
 com/cw/playnxt/model/CancelSubscription/CancelSubscriptionResponse.java
  com.cw.playnxt.model.CancelSubscription.CancelSubscriptionResponse
-com/cw/playnxt/activity/PrivacyPolicyActivity.java
- com.cw.playnxt.activity.PrivacyPolicyActivity
- com.cw.playnxt.activity.PrivacyPolicyActivity$1
+com/cw/playnxt/model/ContactUs/ContactUsData.java
+ com.cw.playnxt.model.ContactUs.ContactUsData
 com/cw/playnxt/databinding/ActivityAddGameFromBacklogListBinding.java
  com.cw.playnxt.databinding.ActivityAddGameFromBacklogListBinding
 com/cw/playnxt/databinding/FragmentSecondBinding.java
@@ -846,24 +679,16 @@ com/cw/playnxt/utils/GpsTracker.java
  com.cw.playnxt.utils.GpsTracker$2
 com/cw/playnxt/model/GetMyFriendList/GetMyFriendListResponse.java
  com.cw.playnxt.model.GetMyFriendList.GetMyFriendListResponse
-com/cw/playnxt/fragment/MyProfileFollowingFragment.java
- com.cw.playnxt.fragment.MyProfileFollowingFragment
- com.cw.playnxt.fragment.MyProfileFollowingFragment$1
- com.cw.playnxt.fragment.MyProfileFollowingFragment$2
- com.cw.playnxt.fragment.MyProfileFollowingFragment$3
+com/cw/playnxt/Interface/ItemClickLikeUnlikeFriend.java
+ com.cw.playnxt.Interface.ItemClickLikeUnlikeFriend
 com/cw/playnxt/model/SubscriptionPlan/StatisSubscriptionPlansListWithSymbol.java
  com.cw.playnxt.model.SubscriptionPlan.StatisSubscriptionPlansListWithSymbol
 com/cw/playnxt/fragment/FourthFragment.java
  com.cw.playnxt.fragment.FourthFragment
-com/cw/playnxt/fragment/TabFriendsFragment.java
- com.cw.playnxt.fragment.TabFriendsFragment
- com.cw.playnxt.fragment.TabFriendsFragment$1
- com.cw.playnxt.fragment.TabFriendsFragment$2
- com.cw.playnxt.fragment.TabFriendsFragment$3
- com.cw.playnxt.fragment.TabFriendsFragment$4
- com.cw.playnxt.fragment.TabFriendsFragment$5
-com/cw/playnxt/model/GetBacklogList/GetMyBacklogListResponse.java
- com.cw.playnxt.model.GetBacklogList.GetMyBacklogListResponse
+com/cw/playnxt/databinding/ItemListSubscriptionPlanListMainLayoutBinding.java
+ com.cw.playnxt.databinding.ItemListSubscriptionPlanListMainLayoutBinding
+com/cw/playnxt/model/LoginSignup/SignupResponse.java
+ com.cw.playnxt.model.LoginSignup.SignupResponse
 com/cw/playnxt/databinding/ItemListSearchUsersBinding.java
  com.cw.playnxt.databinding.ItemListSearchUsersBinding
 com/cw/playnxt/databinding/DialogGameBacklogWishlistTypeListBinding.java
@@ -885,22 +710,15 @@ com/cw/playnxt/adapter/FriendsAdapters/TabActivityAdapter.java
  com.cw.playnxt.adapter.FriendsAdapters.TabActivityAdapter
  com.cw.playnxt.adapter.FriendsAdapters.TabActivityAdapter$1
  com.cw.playnxt.adapter.FriendsAdapters.TabActivityAdapter$RecyclerViewHolder
-com/cw/playnxt/activity/MyProfileActivity.java
- com.cw.playnxt.activity.MyProfileActivity
- com.cw.playnxt.activity.MyProfileActivity$1
- com.cw.playnxt.activity.MyProfileActivity$2
- com.cw.playnxt.activity.MyProfileActivity$3
- com.cw.playnxt.activity.MyProfileActivity$3$1
- com.cw.playnxt.activity.MyProfileActivity$4
- com.cw.playnxt.activity.MyProfileActivity$5
+com/cw/playnxt/databinding/ActivityAboutUsBinding.java
+ com.cw.playnxt.databinding.ActivityAboutUsBinding
 com/cw/playnxt/model/GetMyProfile/Profile.java
  com.cw.playnxt.model.GetMyProfile.Profile
-com/cw/playnxt/activity/XboxGamesActivity.java
- com.cw.playnxt.activity.XboxGamesActivity
- com.cw.playnxt.activity.XboxGamesActivity$1
- com.cw.playnxt.activity.XboxGamesActivity$2
- com.cw.playnxt.activity.XboxGamesActivity$3
- com.cw.playnxt.activity.XboxGamesActivity$4
+com/cw/playnxt/activity/WelcomeActivity.java
+ com.cw.playnxt.activity.WelcomeActivity
+ com.cw.playnxt.activity.WelcomeActivity$1
+ com.cw.playnxt.activity.WelcomeActivity$2
+ com.cw.playnxt.activity.WelcomeActivity$MyPagerAdapter
 com/cw/playnxt/model/GetMyFriendProfile/GetMyFriendProfileResponse.java
  com.cw.playnxt.model.GetMyFriendProfile.GetMyFriendProfileResponse
 com/cw/playnxt/databinding/ItemListSubscriptionPlanAccessExtraFeaturesLayoutBinding.java
@@ -948,25 +766,17 @@ com/cw/playnxt/databinding/ActivityHomeSearchBinding.java
  com.cw.playnxt.databinding.ActivityHomeSearchBinding
 com/cw/playnxt/model/AboutUs/AboutUsData.java
  com.cw.playnxt.model.AboutUs.AboutUsData
-com/cw/playnxt/activity/PlaynxtPremiumActivity.java
- com.cw.playnxt.activity.PlaynxtPremiumActivity
- com.cw.playnxt.activity.PlaynxtPremiumActivity$1
- com.cw.playnxt.activity.PlaynxtPremiumActivity$2
- com.cw.playnxt.activity.PlaynxtPremiumActivity$3
- com.cw.playnxt.activity.PlaynxtPremiumActivity$4
- com.cw.playnxt.activity.PlaynxtPremiumActivity$5
+com/cw/playnxt/fragment/AnnualFragment.java
+ com.cw.playnxt.fragment.AnnualFragment
+ com.cw.playnxt.fragment.AnnualFragment$1
 com/cw/playnxt/utils/PrefManager.java
  com.cw.playnxt.utils.PrefManager
 com/cw/playnxt/model/DeleteBacklogList/DeleteBacklogListParaRes.java
  com.cw.playnxt.model.DeleteBacklogList.DeleteBacklogListParaRes
 com/cw/playnxt/model/PurchaseFreePlan/PurchaseFreePlanResponse.java
  com.cw.playnxt.model.PurchaseFreePlan.PurchaseFreePlanResponse
-com/cw/playnxt/fragment/TabFollowersFragment.java
- com.cw.playnxt.fragment.TabFollowersFragment
- com.cw.playnxt.fragment.TabFollowersFragment$1
- com.cw.playnxt.fragment.TabFollowersFragment$2
- com.cw.playnxt.fragment.TabFollowersFragment$3
- com.cw.playnxt.fragment.TabFollowersFragment$4
+com/cw/playnxt/model/GetMyProfile/Following.java
+ com.cw.playnxt.model.GetMyProfile.Following
 com/cw/playnxt/model/SuggestionData/SuggestionResponse.java
  com.cw.playnxt.model.SuggestionData.SuggestionResponse
 com/cw/playnxt/model/GetMyFriendProfile/MyFriendProfileGame.java
@@ -979,6 +789,371 @@ com/cw/playnxt/adapter/SubscriptionPlanInsideListAdapter.java
  com.cw.playnxt.adapter.SubscriptionPlanInsideListAdapter$RecyclerViewHolder
 com/cw/playnxt/databinding/ActivityChatBinding.java
  com.cw.playnxt.databinding.ActivityChatBinding
+com/cw/playnxt/databinding/BottomSheetEditCurrentStatusBinding.java
+ com.cw.playnxt.databinding.BottomSheetEditCurrentStatusBinding
+com/cw/playnxt/databinding/ActivityStaffPicksDetailBinding.java
+ com.cw.playnxt.databinding.ActivityStaffPicksDetailBinding
+com/cw/playnxt/model/PurchasePlan/PurchasePlanParaRes.java
+ com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes
+com/cw/playnxt/adapter/GameAdapters/XboxGamesAdapter.java
+ com.cw.playnxt.adapter.GameAdapters.XboxGamesAdapter
+ com.cw.playnxt.adapter.GameAdapters.XboxGamesAdapter$1
+ com.cw.playnxt.adapter.GameAdapters.XboxGamesAdapter$RecyclerViewHolder
+com/cw/playnxt/activity/BacklogActivity.java
+ com.cw.playnxt.activity.BacklogActivity
+ com.cw.playnxt.activity.BacklogActivity$1
+ com.cw.playnxt.activity.BacklogActivity$10
+ com.cw.playnxt.activity.BacklogActivity$11
+ com.cw.playnxt.activity.BacklogActivity$12
+ com.cw.playnxt.activity.BacklogActivity$13
+ com.cw.playnxt.activity.BacklogActivity$14
+ com.cw.playnxt.activity.BacklogActivity$2
+ com.cw.playnxt.activity.BacklogActivity$3
+ com.cw.playnxt.activity.BacklogActivity$4
+ com.cw.playnxt.activity.BacklogActivity$5
+ com.cw.playnxt.activity.BacklogActivity$6
+ com.cw.playnxt.activity.BacklogActivity$7
+ com.cw.playnxt.activity.BacklogActivity$8
+ com.cw.playnxt.activity.BacklogActivity$9
+com/cw/playnxt/activity/SuggestNewFeatureActivity.java
+ com.cw.playnxt.activity.SuggestNewFeatureActivity
+ com.cw.playnxt.activity.SuggestNewFeatureActivity$1
+ com.cw.playnxt.activity.SuggestNewFeatureActivity$2
+com/cw/playnxt/fragment/HomeFragment.java
+ com.cw.playnxt.fragment.HomeFragment
+ com.cw.playnxt.fragment.HomeFragment$1
+ com.cw.playnxt.fragment.HomeFragment$2
+ com.cw.playnxt.fragment.HomeFragment$3
+ com.cw.playnxt.fragment.HomeFragment$4
+ com.cw.playnxt.fragment.HomeFragment$5
+ com.cw.playnxt.fragment.HomeFragment$6
+ com.cw.playnxt.fragment.HomeFragment$7
+com/cw/playnxt/server/ApiUtils.java
+ com.cw.playnxt.server.ApiUtils
+com/cw/playnxt/server/JsonPlaceHolderApi.java
+ com.cw.playnxt.server.JsonPlaceHolderApi
+com/cw/playnxt/activity/GameInfoActivity.java
+ com.cw.playnxt.activity.GameInfoActivity
+ com.cw.playnxt.activity.GameInfoActivity$1
+ com.cw.playnxt.activity.GameInfoActivity$2
+com/cw/playnxt/activity/SubscriptionActivityCoupon.java
+ com.cw.playnxt.activity.SubscriptionActivityCoupon
+ com.cw.playnxt.activity.SubscriptionActivityCoupon$1
+ com.cw.playnxt.activity.SubscriptionActivityCoupon$2
+com/cw/playnxt/activity/MyProfileActivity.java
+ com.cw.playnxt.activity.MyProfileActivity
+ com.cw.playnxt.activity.MyProfileActivity$1
+ com.cw.playnxt.activity.MyProfileActivity$2
+ com.cw.playnxt.activity.MyProfileActivity$3
+ com.cw.playnxt.activity.MyProfileActivity$3$1
+ com.cw.playnxt.activity.MyProfileActivity$4
+ com.cw.playnxt.activity.MyProfileActivity$5
+com/cw/playnxt/activity/WishlistActivity.java
+ com.cw.playnxt.activity.WishlistActivity
+ com.cw.playnxt.activity.WishlistActivity$1
+ com.cw.playnxt.activity.WishlistActivity$10
+ com.cw.playnxt.activity.WishlistActivity$11
+ com.cw.playnxt.activity.WishlistActivity$12
+ com.cw.playnxt.activity.WishlistActivity$2
+ com.cw.playnxt.activity.WishlistActivity$3
+ com.cw.playnxt.activity.WishlistActivity$4
+ com.cw.playnxt.activity.WishlistActivity$5
+ com.cw.playnxt.activity.WishlistActivity$6
+ com.cw.playnxt.activity.WishlistActivity$7
+ com.cw.playnxt.activity.WishlistActivity$8
+ com.cw.playnxt.activity.WishlistActivity$9
+com/cw/playnxt/activity/AddGameFromBacklogListActivity.java
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$1
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$10
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$11
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$2
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$3
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$4
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$5
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$6
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$7
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$8
+ com.cw.playnxt.activity.AddGameFromBacklogListActivity$9
+com/cw/playnxt/activity/EditProfileActivity.java
+ com.cw.playnxt.activity.EditProfileActivity
+ com.cw.playnxt.activity.EditProfileActivity$1
+ com.cw.playnxt.activity.EditProfileActivity$10
+ com.cw.playnxt.activity.EditProfileActivity$11
+ com.cw.playnxt.activity.EditProfileActivity$12
+ com.cw.playnxt.activity.EditProfileActivity$2
+ com.cw.playnxt.activity.EditProfileActivity$3
+ com.cw.playnxt.activity.EditProfileActivity$4
+ com.cw.playnxt.activity.EditProfileActivity$5
+ com.cw.playnxt.activity.EditProfileActivity$6
+ com.cw.playnxt.activity.EditProfileActivity$7
+ com.cw.playnxt.activity.EditProfileActivity$8
+ com.cw.playnxt.activity.EditProfileActivity$9
+com/cw/playnxt/fragment/MyProfileGamesFragment.java
+ com.cw.playnxt.fragment.MyProfileGamesFragment
+ com.cw.playnxt.fragment.MyProfileGamesFragment$1
+ com.cw.playnxt.fragment.MyProfileGamesFragment$2
+com/cw/playnxt/activity/AboutUsActivity.java
+ com.cw.playnxt.activity.AboutUsActivity
+ com.cw.playnxt.activity.AboutUsActivity$1
+com/cw/playnxt/activity/StaffPicksDetailActivity.java
+ com.cw.playnxt.activity.StaffPicksDetailActivity
+ com.cw.playnxt.activity.StaffPicksDetailActivity$1
+ com.cw.playnxt.activity.StaffPicksDetailActivity$2
+com/cw/playnxt/fragment/TabActivityFragment.java
+ com.cw.playnxt.fragment.TabActivityFragment
+ com.cw.playnxt.fragment.TabActivityFragment$1
+ com.cw.playnxt.fragment.TabActivityFragment$2
+com/cw/playnxt/activity/FriendsProfileActivity.java
+ com.cw.playnxt.activity.FriendsProfileActivity
+ com.cw.playnxt.activity.FriendsProfileActivity$1
+ com.cw.playnxt.activity.FriendsProfileActivity$2
+ com.cw.playnxt.activity.FriendsProfileActivity$2$1
+ com.cw.playnxt.activity.FriendsProfileActivity$3
+com/cw/playnxt/activity/XboxGamesActivity.java
+ com.cw.playnxt.activity.XboxGamesActivity
+ com.cw.playnxt.activity.XboxGamesActivity$1
+ com.cw.playnxt.activity.XboxGamesActivity$2
+ com.cw.playnxt.activity.XboxGamesActivity$3
+ com.cw.playnxt.activity.XboxGamesActivity$4
+com/cw/playnxt/fragment/DiscoverFragment.java
+ com.cw.playnxt.fragment.DiscoverFragment
+ com.cw.playnxt.fragment.DiscoverFragment$1
+ com.cw.playnxt.fragment.DiscoverFragment$2
+ com.cw.playnxt.fragment.DiscoverFragment$3
+ com.cw.playnxt.fragment.DiscoverFragment$4
+ com.cw.playnxt.fragment.DiscoverFragment$5
+com/cw/playnxt/model/AddDownload/AddDownloadReq.java
+ com.cw.playnxt.model.AddDownload.AddDownloadReq
+com/cw/playnxt/activity/LoginActivity.java
+ com.cw.playnxt.activity.LoginActivity
+ com.cw.playnxt.activity.LoginActivity$1
+ com.cw.playnxt.activity.LoginActivity$2
+ com.cw.playnxt.activity.LoginActivity$3
+ com.cw.playnxt.activity.LoginActivity$4
+ com.cw.playnxt.activity.LoginActivity$5
+ com.cw.playnxt.activity.LoginActivity$6
+com/cw/playnxt/activity/ContactUsActivity.java
+ com.cw.playnxt.activity.ContactUsActivity
+ com.cw.playnxt.activity.ContactUsActivity$1
+com/cw/playnxt/activity/WishlistGameInfoActivity.java
+ com.cw.playnxt.activity.WishlistGameInfoActivity
+ com.cw.playnxt.activity.WishlistGameInfoActivity$1
+ com.cw.playnxt.activity.WishlistGameInfoActivity$10
+ com.cw.playnxt.activity.WishlistGameInfoActivity$11
+ com.cw.playnxt.activity.WishlistGameInfoActivity$12
+ com.cw.playnxt.activity.WishlistGameInfoActivity$13
+ com.cw.playnxt.activity.WishlistGameInfoActivity$14
+ com.cw.playnxt.activity.WishlistGameInfoActivity$15
+ com.cw.playnxt.activity.WishlistGameInfoActivity$16
+ com.cw.playnxt.activity.WishlistGameInfoActivity$2
+ com.cw.playnxt.activity.WishlistGameInfoActivity$3
+ com.cw.playnxt.activity.WishlistGameInfoActivity$4
+ com.cw.playnxt.activity.WishlistGameInfoActivity$5
+ com.cw.playnxt.activity.WishlistGameInfoActivity$6
+ com.cw.playnxt.activity.WishlistGameInfoActivity$7
+ com.cw.playnxt.activity.WishlistGameInfoActivity$8
+ com.cw.playnxt.activity.WishlistGameInfoActivity$9
+com/cw/playnxt/activity/AddGameFromWishlistActivity.java
+ com.cw.playnxt.activity.AddGameFromWishlistActivity
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$1
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$10
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$2
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$3
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$4
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$5
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$6
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$7
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$8
+ com.cw.playnxt.activity.AddGameFromWishlistActivity$9
+com/cw/playnxt/activity/SettingActivity.java
+ com.cw.playnxt.activity.SettingActivity
+ com.cw.playnxt.activity.SettingActivity$1
+ com.cw.playnxt.activity.SettingActivity$2
+ com.cw.playnxt.activity.SettingActivity$3
+ com.cw.playnxt.activity.SettingActivity$4
+ com.cw.playnxt.activity.SettingActivity$5
+com/cw/playnxt/fragment/MyProfileFollowersFragment.java
+ com.cw.playnxt.fragment.MyProfileFollowersFragment
+ com.cw.playnxt.fragment.MyProfileFollowersFragment$1
+ com.cw.playnxt.fragment.MyProfileFollowersFragment$2
+ com.cw.playnxt.fragment.MyProfileFollowersFragment$3
+ com.cw.playnxt.fragment.MyProfileFollowersFragment$4
+com/cw/playnxt/activity/WishlistXboxGameActivity.java
+ com.cw.playnxt.activity.WishlistXboxGameActivity
+ com.cw.playnxt.activity.WishlistXboxGameActivity$1
+ com.cw.playnxt.activity.WishlistXboxGameActivity$2
+com/cw/playnxt/activity/SignupActivity.java
+ com.cw.playnxt.activity.SignupActivity
+ com.cw.playnxt.activity.SignupActivity$1
+ com.cw.playnxt.activity.SignupActivity$2
+ com.cw.playnxt.activity.SignupActivity$3
+ com.cw.playnxt.activity.SignupActivity$4
+ com.cw.playnxt.activity.SignupActivity$5
+ com.cw.playnxt.activity.SignupActivity$6
+com/cw/playnxt/activity/ForgotPasswordActivity.java
+ com.cw.playnxt.activity.ForgotPasswordActivity
+ com.cw.playnxt.activity.ForgotPasswordActivity$1
+ com.cw.playnxt.activity.ForgotPasswordActivity$2
+com/cw/playnxt/model/AddDownload/AddDownloadResponse.java
+ com.cw.playnxt.model.AddDownload.AddDownloadResponse
+com/cw/playnxt/activity/YourStatsActivity.java
+ com.cw.playnxt.activity.YourStatsActivity
+ com.cw.playnxt.activity.YourStatsActivity$1
+com/cw/playnxt/activity/CalenderActivity.java
+ com.cw.playnxt.activity.CalenderActivity
+ com.cw.playnxt.activity.CalenderActivity$1
+ com.cw.playnxt.activity.CalenderActivity$2
+ com.cw.playnxt.activity.CalenderActivity$3
+ com.cw.playnxt.activity.CalenderActivity$4
+ com.cw.playnxt.activity.CalenderActivity$5
+ com.cw.playnxt.activity.CalenderActivity$6
+ com.cw.playnxt.activity.CalenderActivity$7
+ com.cw.playnxt.activity.CalenderActivity$8
+com/cw/playnxt/activity/MainGameInfoActivity.java
+ com.cw.playnxt.activity.MainGameInfoActivity
+ com.cw.playnxt.activity.MainGameInfoActivity$1
+ com.cw.playnxt.activity.MainGameInfoActivity$10
+ com.cw.playnxt.activity.MainGameInfoActivity$11
+ com.cw.playnxt.activity.MainGameInfoActivity$12
+ com.cw.playnxt.activity.MainGameInfoActivity$13
+ com.cw.playnxt.activity.MainGameInfoActivity$14
+ com.cw.playnxt.activity.MainGameInfoActivity$15
+ com.cw.playnxt.activity.MainGameInfoActivity$16
+ com.cw.playnxt.activity.MainGameInfoActivity$17
+ com.cw.playnxt.activity.MainGameInfoActivity$18
+ com.cw.playnxt.activity.MainGameInfoActivity$19
+ com.cw.playnxt.activity.MainGameInfoActivity$2
+ com.cw.playnxt.activity.MainGameInfoActivity$20
+ com.cw.playnxt.activity.MainGameInfoActivity$21
+ com.cw.playnxt.activity.MainGameInfoActivity$22
+ com.cw.playnxt.activity.MainGameInfoActivity$23
+ com.cw.playnxt.activity.MainGameInfoActivity$24
+ com.cw.playnxt.activity.MainGameInfoActivity$25
+ com.cw.playnxt.activity.MainGameInfoActivity$26
+ com.cw.playnxt.activity.MainGameInfoActivity$27
+ com.cw.playnxt.activity.MainGameInfoActivity$28
+ com.cw.playnxt.activity.MainGameInfoActivity$29
+ com.cw.playnxt.activity.MainGameInfoActivity$3
+ com.cw.playnxt.activity.MainGameInfoActivity$30
+ com.cw.playnxt.activity.MainGameInfoActivity$31
+ com.cw.playnxt.activity.MainGameInfoActivity$4
+ com.cw.playnxt.activity.MainGameInfoActivity$5
+ com.cw.playnxt.activity.MainGameInfoActivity$6
+ com.cw.playnxt.activity.MainGameInfoActivity$7
+ com.cw.playnxt.activity.MainGameInfoActivity$8
+ com.cw.playnxt.activity.MainGameInfoActivity$9
+com/cw/playnxt/activity/AddGameActivity.java
+ com.cw.playnxt.activity.AddGameActivity
+ com.cw.playnxt.activity.AddGameActivity$1
+ com.cw.playnxt.activity.AddGameActivity$10
+ com.cw.playnxt.activity.AddGameActivity$11
+ com.cw.playnxt.activity.AddGameActivity$12
+ com.cw.playnxt.activity.AddGameActivity$13
+ com.cw.playnxt.activity.AddGameActivity$14
+ com.cw.playnxt.activity.AddGameActivity$15
+ com.cw.playnxt.activity.AddGameActivity$16
+ com.cw.playnxt.activity.AddGameActivity$17
+ com.cw.playnxt.activity.AddGameActivity$18
+ com.cw.playnxt.activity.AddGameActivity$19
+ com.cw.playnxt.activity.AddGameActivity$2
+ com.cw.playnxt.activity.AddGameActivity$20
+ com.cw.playnxt.activity.AddGameActivity$21
+ com.cw.playnxt.activity.AddGameActivity$22
+ com.cw.playnxt.activity.AddGameActivity$23
+ com.cw.playnxt.activity.AddGameActivity$24
+ com.cw.playnxt.activity.AddGameActivity$3
+ com.cw.playnxt.activity.AddGameActivity$4
+ com.cw.playnxt.activity.AddGameActivity$5
+ com.cw.playnxt.activity.AddGameActivity$6
+ com.cw.playnxt.activity.AddGameActivity$7
+ com.cw.playnxt.activity.AddGameActivity$8
+ com.cw.playnxt.activity.AddGameActivity$9
+com/cw/playnxt/activity/AddEventActivity.java
+ com.cw.playnxt.activity.AddEventActivity
+ com.cw.playnxt.activity.AddEventActivity$1
+ com.cw.playnxt.activity.AddEventActivity$2
+ com.cw.playnxt.activity.AddEventActivity$3
+ com.cw.playnxt.activity.AddEventActivity$4
+com/cw/playnxt/activity/SubscriptionActivityFinal.java
+ com.cw.playnxt.activity.SubscriptionActivityFinal
+ com.cw.playnxt.activity.SubscriptionActivityFinal$1
+ com.cw.playnxt.activity.SubscriptionActivityFinal$2
+com/cw/playnxt/fragment/TabCommunityFragment.java
+ com.cw.playnxt.fragment.TabCommunityFragment
+ com.cw.playnxt.fragment.TabCommunityFragment$1
+ com.cw.playnxt.fragment.TabCommunityFragment$2
+ com.cw.playnxt.fragment.TabCommunityFragment$3
+ com.cw.playnxt.fragment.TabCommunityFragment$4
+ com.cw.playnxt.fragment.TabCommunityFragment$5
+com/cw/playnxt/activity/PlaynxtPremiumActivity.java
+ com.cw.playnxt.activity.PlaynxtPremiumActivity
+ com.cw.playnxt.activity.PlaynxtPremiumActivity$1
+ com.cw.playnxt.activity.PlaynxtPremiumActivity$2
+ com.cw.playnxt.activity.PlaynxtPremiumActivity$3
+ com.cw.playnxt.activity.PlaynxtPremiumActivity$4
+ com.cw.playnxt.activity.PlaynxtPremiumActivity$5
+com/cw/playnxt/fragment/TabFollowersFragment.java
+ com.cw.playnxt.fragment.TabFollowersFragment
+ com.cw.playnxt.fragment.TabFollowersFragment$1
+ com.cw.playnxt.fragment.TabFollowersFragment$2
+ com.cw.playnxt.fragment.TabFollowersFragment$3
+ com.cw.playnxt.fragment.TabFollowersFragment$4
+com/cw/playnxt/fragment/TabFollowingFragment.java
+ com.cw.playnxt.fragment.TabFollowingFragment
+ com.cw.playnxt.fragment.TabFollowingFragment$1
+ com.cw.playnxt.fragment.TabFollowingFragment$2
+ com.cw.playnxt.fragment.TabFollowingFragment$3
+com/cw/playnxt/fragment/MyProfileFollowingFragment.java
+ com.cw.playnxt.fragment.MyProfileFollowingFragment
+ com.cw.playnxt.fragment.MyProfileFollowingFragment$1
+ com.cw.playnxt.fragment.MyProfileFollowingFragment$2
+ com.cw.playnxt.fragment.MyProfileFollowingFragment$3
+com/cw/playnxt/fragment/TabFriendsFragment.java
+ com.cw.playnxt.fragment.TabFriendsFragment
+ com.cw.playnxt.fragment.TabFriendsFragment$1
+ com.cw.playnxt.fragment.TabFriendsFragment$2
+ com.cw.playnxt.fragment.TabFriendsFragment$3
+ com.cw.playnxt.fragment.TabFriendsFragment$4
+ com.cw.playnxt.fragment.TabFriendsFragment$5
+com/cw/playnxt/fragment/InboxFragment.java
+ com.cw.playnxt.fragment.InboxFragment
+ com.cw.playnxt.fragment.InboxFragment$1
+ com.cw.playnxt.fragment.InboxFragment$2
+ com.cw.playnxt.fragment.InboxFragment$3
+ com.cw.playnxt.fragment.InboxFragment$4
+ com.cw.playnxt.fragment.InboxFragment$5
+ com.cw.playnxt.fragment.InboxFragment$6
+ com.cw.playnxt.fragment.InboxFragment$7
+com/cw/playnxt/fragment/NewFriendsFragment.java
+ com.cw.playnxt.fragment.NewFriendsFragment
+ com.cw.playnxt.fragment.NewFriendsFragment$1
+ com.cw.playnxt.fragment.NewFriendsFragment$2
+ com.cw.playnxt.fragment.NewFriendsFragment$3
+ com.cw.playnxt.fragment.NewFriendsFragment$4
+com/cw/playnxt/fragment/GameFragment.java
+ com.cw.playnxt.fragment.GameFragment
+ com.cw.playnxt.fragment.GameFragment$1
+ com.cw.playnxt.fragment.GameFragment$2
+ com.cw.playnxt.fragment.GameFragment$3
+ com.cw.playnxt.fragment.GameFragment$4
+ com.cw.playnxt.fragment.GameFragment$5
+ com.cw.playnxt.fragment.GameFragment$6
+com/cw/playnxt/activity/HomeSearchActivity.java
+ com.cw.playnxt.activity.HomeSearchActivity
+ com.cw.playnxt.activity.HomeSearchActivity$1
+ com.cw.playnxt.activity.HomeSearchActivity$10
+ com.cw.playnxt.activity.HomeSearchActivity$11
+ com.cw.playnxt.activity.HomeSearchActivity$12
+ com.cw.playnxt.activity.HomeSearchActivity$13
+ com.cw.playnxt.activity.HomeSearchActivity$2
+ com.cw.playnxt.activity.HomeSearchActivity$3
+ com.cw.playnxt.activity.HomeSearchActivity$4
+ com.cw.playnxt.activity.HomeSearchActivity$5
+ com.cw.playnxt.activity.HomeSearchActivity$6
+ com.cw.playnxt.activity.HomeSearchActivity$7
+ com.cw.playnxt.activity.HomeSearchActivity$8
+ com.cw.playnxt.activity.HomeSearchActivity$9
 com/cw/playnxt/activity/XboxGameInfoActivity.java
  com.cw.playnxt.activity.XboxGameInfoActivity
  com.cw.playnxt.activity.XboxGameInfoActivity$1
@@ -999,188 +1174,23 @@ com/cw/playnxt/activity/XboxGameInfoActivity.java
  com.cw.playnxt.activity.XboxGameInfoActivity$7
  com.cw.playnxt.activity.XboxGameInfoActivity$8
  com.cw.playnxt.activity.XboxGameInfoActivity$9
-com/cw/playnxt/databinding/ActivityStaffPicksDetailBinding.java
- com.cw.playnxt.databinding.ActivityStaffPicksDetailBinding
-com/cw/playnxt/model/PurchasePlan/PurchasePlanParaRes.java
- com.cw.playnxt.model.PurchasePlan.PurchasePlanParaRes
-com/cw/playnxt/adapter/GameAdapters/XboxGamesAdapter.java
- com.cw.playnxt.adapter.GameAdapters.XboxGamesAdapter
- com.cw.playnxt.adapter.GameAdapters.XboxGamesAdapter$1
- com.cw.playnxt.adapter.GameAdapters.XboxGamesAdapter$RecyclerViewHolder
-com/cw/playnxt/databinding/HeaderLayoutBinding.java
- com.cw.playnxt.databinding.HeaderLayoutBinding
-com/cw/playnxt/model/GetGameNote/Capsul.java
- com.cw.playnxt.model.GetGameNote.Capsul
-com/cw/playnxt/model/PurchasePlan/Plan.java
- com.cw.playnxt.model.PurchasePlan.Plan
-com/cw/playnxt/model/AddGameNote/AddGameNoteParaRes.java
- com.cw.playnxt.model.AddGameNote.AddGameNoteParaRes
-com/cw/playnxt/databinding/BottomSheetEditCurrentStatusBinding.java
- com.cw.playnxt.databinding.BottomSheetEditCurrentStatusBinding
-com/cw/playnxt/adapter/GameAdapters/WishlistXboxGamesListAdapter.java
- com.cw.playnxt.adapter.GameAdapters.WishlistXboxGamesListAdapter
- com.cw.playnxt.adapter.GameAdapters.WishlistXboxGamesListAdapter$1
- com.cw.playnxt.adapter.GameAdapters.WishlistXboxGamesListAdapter$RecyclerViewHolder
-com/cw/playnxt/databinding/ActivitySplashBinding.java
- com.cw.playnxt.databinding.ActivitySplashBinding
-com/cw/playnxt/fragment/MyProfileGamesFragment.java
- com.cw.playnxt.fragment.MyProfileGamesFragment
- com.cw.playnxt.fragment.MyProfileGamesFragment$1
- com.cw.playnxt.fragment.MyProfileGamesFragment$2
-com/cw/playnxt/server/Allurls.java
- com.cw.playnxt.server.Allurls
-com/cw/playnxt/databinding/ItemListSubscriptionPlanListMainLayoutBinding.java
- com.cw.playnxt.databinding.ItemListSubscriptionPlanListMainLayoutBinding
-com/cw/playnxt/activity/ContactUsActivity.java
- com.cw.playnxt.activity.ContactUsActivity
- com.cw.playnxt.activity.ContactUsActivity$1
-com/cw/playnxt/model/DeleteGameNote/DeleteGameNoteParaRes.java
- com.cw.playnxt.model.DeleteGameNote.DeleteGameNoteParaRes
-com/cw/playnxt/model/GetMyProfile/Following.java
- com.cw.playnxt.model.GetMyProfile.Following
-com/cw/playnxt/activity/WishlistGameInfoActivity.java
- com.cw.playnxt.activity.WishlistGameInfoActivity
- com.cw.playnxt.activity.WishlistGameInfoActivity$1
- com.cw.playnxt.activity.WishlistGameInfoActivity$10
- com.cw.playnxt.activity.WishlistGameInfoActivity$11
- com.cw.playnxt.activity.WishlistGameInfoActivity$12
- com.cw.playnxt.activity.WishlistGameInfoActivity$13
- com.cw.playnxt.activity.WishlistGameInfoActivity$14
- com.cw.playnxt.activity.WishlistGameInfoActivity$15
- com.cw.playnxt.activity.WishlistGameInfoActivity$16
- com.cw.playnxt.activity.WishlistGameInfoActivity$2
- com.cw.playnxt.activity.WishlistGameInfoActivity$3
- com.cw.playnxt.activity.WishlistGameInfoActivity$4
- com.cw.playnxt.activity.WishlistGameInfoActivity$5
- com.cw.playnxt.activity.WishlistGameInfoActivity$6
- com.cw.playnxt.activity.WishlistGameInfoActivity$7
- com.cw.playnxt.activity.WishlistGameInfoActivity$8
- com.cw.playnxt.activity.WishlistGameInfoActivity$9
-com/cw/playnxt/databinding/ActivityAboutUsBinding.java
- com.cw.playnxt.databinding.ActivityAboutUsBinding
-com/cw/playnxt/model/StatsData/Data.java
- com.cw.playnxt.model.StatsData.Data
-com/cw/playnxt/activity/AddGameFromWishlistActivity.java
- com.cw.playnxt.activity.AddGameFromWishlistActivity
- com.cw.playnxt.activity.AddGameFromWishlistActivity$1
- com.cw.playnxt.activity.AddGameFromWishlistActivity$10
- com.cw.playnxt.activity.AddGameFromWishlistActivity$2
- com.cw.playnxt.activity.AddGameFromWishlistActivity$3
- com.cw.playnxt.activity.AddGameFromWishlistActivity$4
- com.cw.playnxt.activity.AddGameFromWishlistActivity$5
- com.cw.playnxt.activity.AddGameFromWishlistActivity$6
- com.cw.playnxt.activity.AddGameFromWishlistActivity$7
- com.cw.playnxt.activity.AddGameFromWishlistActivity$8
- com.cw.playnxt.activity.AddGameFromWishlistActivity$9
-com/cw/playnxt/model/GetCategoryListName/GetCategoryWishListNameData.java
- com.cw.playnxt.model.GetCategoryListName.GetCategoryWishListNameData
-com/cw/playnxt/activity/SettingActivity.java
- com.cw.playnxt.activity.SettingActivity
- com.cw.playnxt.activity.SettingActivity$1
- com.cw.playnxt.activity.SettingActivity$2
- com.cw.playnxt.activity.SettingActivity$3
- com.cw.playnxt.activity.SettingActivity$4
- com.cw.playnxt.activity.SettingActivity$5
-com/cw/playnxt/databinding/FragmentTabFriendsBinding.java
- com.cw.playnxt.databinding.FragmentTabFriendsBinding
-com/cw/playnxt/adapter/MyProfileAdapters/MyProfileTabFollowersAdapter.java
- com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter
- com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$1
- com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$2
- com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$3
- com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$4
- com.cw.playnxt.adapter.MyProfileAdapters.MyProfileTabFollowersAdapter$RecyclerViewHolder
-com/cw/playnxt/Interface/ItemClickLikeUnlikeFriend.java
- com.cw.playnxt.Interface.ItemClickLikeUnlikeFriend
-com/cw/playnxt/databinding/ItemListYourStatsInsideListBinding.java
- com.cw.playnxt.databinding.ItemListYourStatsInsideListBinding
-com/cw/playnxt/model/CommunityData/CapsulCommunityData.java
- com.cw.playnxt.model.CommunityData.CapsulCommunityData
-com/cw/playnxt/model/EditBacklogList/EditBacklogListParaRes.java
- com.cw.playnxt.model.EditBacklogList.EditBacklogListParaRes
-com/cw/playnxt/model/ContactUs/ContactUsData.java
- com.cw.playnxt.model.ContactUs.ContactUsData
-com/cw/playnxt/model/StaticModel/GameFragmentModel.java
- com.cw.playnxt.model.StaticModel.GameFragmentModel
-com/cw/playnxt/model/DeleteCalenderEvent/DeleteCalenderEventParaRes.java
- com.cw.playnxt.model.DeleteCalenderEvent.DeleteCalenderEventParaRes
-com/cw/playnxt/activity/ForgotPasswordActivity.java
- com.cw.playnxt.activity.ForgotPasswordActivity
- com.cw.playnxt.activity.ForgotPasswordActivity$1
- com.cw.playnxt.activity.ForgotPasswordActivity$2
-com/cw/playnxt/model/LoginSignup/SignupResponse.java
- com.cw.playnxt.model.LoginSignup.SignupResponse
-com/cw/playnxt/model/CheckSubscriptionFinal/Subscription.java
- com.cw.playnxt.model.CheckSubscriptionFinal.Subscription
-com/cw/playnxt/databinding/DialogLoginBinding.java
- com.cw.playnxt.databinding.DialogLoginBinding
-com/cw/playnxt/model/EditGameNote/EditGameNoteParaRes.java
- com.cw.playnxt.model.EditGameNote.EditGameNoteParaRes
-com/cw/playnxt/model/GetMyProfile/GetMyProfileResponse.java
- com.cw.playnxt.model.GetMyProfile.GetMyProfileResponse
-com/cw/playnxt/model/ViewMyWishlistGame/Game.java
- com.cw.playnxt.model.ViewMyWishlistGame.Game
-com/cw/playnxt/fragment/TabFollowingFragment.java
- com.cw.playnxt.fragment.TabFollowingFragment
- com.cw.playnxt.fragment.TabFollowingFragment$1
- com.cw.playnxt.fragment.TabFollowingFragment$2
- com.cw.playnxt.fragment.TabFollowingFragment$3
-com/cw/playnxt/databinding/ActivityBacklogBinding.java
- com.cw.playnxt.databinding.ActivityBacklogBinding
-com/cw/playnxt/databinding/FragmentFirstBinding.java
- com.cw.playnxt.databinding.FragmentFirstBinding
-com/cw/playnxt/fragment/NewFriendsFragment.java
- com.cw.playnxt.fragment.NewFriendsFragment
- com.cw.playnxt.fragment.NewFriendsFragment$1
- com.cw.playnxt.fragment.NewFriendsFragment$2
- com.cw.playnxt.fragment.NewFriendsFragment$3
- com.cw.playnxt.fragment.NewFriendsFragment$4
-com/cw/playnxt/activity/LoginActivity.java
- com.cw.playnxt.activity.LoginActivity
- com.cw.playnxt.activity.LoginActivity$1
- com.cw.playnxt.activity.LoginActivity$2
- com.cw.playnxt.activity.LoginActivity$3
- com.cw.playnxt.activity.LoginActivity$4
- com.cw.playnxt.activity.LoginActivity$5
- com.cw.playnxt.activity.LoginActivity$6
-com/cw/playnxt/fragment/HomeFragment.java
- com.cw.playnxt.fragment.HomeFragment
- com.cw.playnxt.fragment.HomeFragment$1
- com.cw.playnxt.fragment.HomeFragment$2
- com.cw.playnxt.fragment.HomeFragment$3
- com.cw.playnxt.fragment.HomeFragment$4
- com.cw.playnxt.fragment.HomeFragment$5
- com.cw.playnxt.fragment.HomeFragment$6
- com.cw.playnxt.fragment.HomeFragment$7
-com/cw/playnxt/fragment/GameFragment.java
- com.cw.playnxt.fragment.GameFragment
- com.cw.playnxt.fragment.GameFragment$1
- com.cw.playnxt.fragment.GameFragment$2
- com.cw.playnxt.fragment.GameFragment$3
- com.cw.playnxt.fragment.GameFragment$4
- com.cw.playnxt.fragment.GameFragment$5
- com.cw.playnxt.fragment.GameFragment$6
-com/cw/playnxt/activity/ConfirmationActivity.java
- com.cw.playnxt.activity.ConfirmationActivity
-com/cw/playnxt/activity/HomeActivity.java
- com.cw.playnxt.activity.HomeActivity
- com.cw.playnxt.activity.HomeActivity$1
- com.cw.playnxt.activity.HomeActivity$2
+com/cw/playnxt/activity/SubscriptionActivity.java
+ com.cw.playnxt.activity.SubscriptionActivity
+ com.cw.playnxt.activity.SubscriptionActivity$1
+ com.cw.playnxt.activity.SubscriptionActivity$2
+ com.cw.playnxt.activity.SubscriptionActivity$3
+com/cw/playnxt/server/MyRetrofit.java
+ com.cw.playnxt.server.MyRetrofit
+com/cw/playnxt/activity/AddCardActivity.java
+ com.cw.playnxt.activity.AddCardActivity
+ com.cw.playnxt.activity.AddCardActivity$1
+ com.cw.playnxt.activity.AddCardActivity$2
+ com.cw.playnxt.activity.AddCardActivity$3
+ com.cw.playnxt.activity.AddCardActivity$4
+ com.cw.playnxt.activity.AddCardActivity$5
+ com.cw.playnxt.activity.AddCardActivity$6
+ com.cw.playnxt.activity.AddCardActivity$7
+ com.cw.playnxt.activity.AddCardActivity$8
 com/cw/playnxt/activity/SplashActivity.java
  com.cw.playnxt.activity.SplashActivity
-com/cw/playnxt/fragment/DiscoverFragment.java
- com.cw.playnxt.fragment.DiscoverFragment
- com.cw.playnxt.fragment.DiscoverFragment$1
- com.cw.playnxt.fragment.DiscoverFragment$2
- com.cw.playnxt.fragment.DiscoverFragment$3
- com.cw.playnxt.fragment.DiscoverFragment$4
- com.cw.playnxt.fragment.DiscoverFragment$5
-com/cw/playnxt/fragment/InboxFragment.java
- com.cw.playnxt.fragment.InboxFragment
- com.cw.playnxt.fragment.InboxFragment$1
- com.cw.playnxt.fragment.InboxFragment$2
- com.cw.playnxt.fragment.InboxFragment$3
- com.cw.playnxt.fragment.InboxFragment$4
- com.cw.playnxt.fragment.InboxFragment$5
- com.cw.playnxt.fragment.InboxFragment$6
- com.cw.playnxt.fragment.InboxFragment$7
+ com.cw.playnxt.activity.SplashActivity$1

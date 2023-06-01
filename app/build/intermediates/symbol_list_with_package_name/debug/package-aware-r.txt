@@ -3752,6 +3752,7 @@ id tvPlanTitle
 id tvPlannedEnd
 id tvPlannedStart
 id tvPlatform
+id tvPlatformType
 id tvPremiumUser
 id tvPrice
 id tvPurchaseDate

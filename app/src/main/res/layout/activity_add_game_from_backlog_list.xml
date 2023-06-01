@@ -160,7 +160,7 @@
                             android:background="@drawable/bg_edit_text"
                             android:orientation="horizontal">
 
-                            <TextView
+                            <EditText
                                 android:id="@+id/autoCompleteGameTitle"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -174,7 +174,10 @@
                                 android:paddingEnd="8dp"
                                 android:textColor="@color/white"
                                 android:textColorHint="@color/edt_text"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                />
                         </LinearLayout>
 
                         <RelativeLayout
@@ -466,7 +469,8 @@
                             android:textColor="@color/white"
                             android:textColorHint="@color/edt_text"
                             android:textSize="14sp"
-                            android:imeOptions="actionDone"/>
+                            android:inputType="text"
+                            android:imeOptions="actionSearch"/>
 
                         <LinearLayout
                             android:id="@+id/btnGo"

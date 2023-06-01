@@ -3,6 +3,8 @@ package com.cw.playnxt.server;
 
 import com.cw.playnxt.model.AboutUs.AboutUsResponse;
 import com.cw.playnxt.model.AddBacklogList.AddBacklogListParaRes;
+import com.cw.playnxt.model.AddDownload.AddDownloadReq;
+import com.cw.playnxt.model.AddDownload.AddDownloadResponse;
 import com.cw.playnxt.model.AddFriendGame.AddFriendGameParaRes;
 import com.cw.playnxt.model.AddFriendGame.AddFriendGameResponse;
 import com.cw.playnxt.model.AddGameNote.AddGameNoteParaRes;
@@ -380,4 +382,8 @@ public interface JsonPlaceHolderApi {
     @POST("users/get-payment-summery")
     Call<GetPaymentResponse> getpaymentsummary(@Header("Content-Type") String content_type, @Header("Authorization") String token,
                                          @Body GetPaymentSummaryREq paymentSummaryREq);
+
+    @POST("users/add-download")
+    Call<AddDownloadResponse> adddownload(@Header("Content-Type") String content_type, @Header("Authorization") String token,
+                                          @Body AddDownloadReq addDownloadReq);
 }

@@ -91,22 +91,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         mySharedPref = new MySharedPref(context);
         firebaseData();
 
-        String text1 = "By signup you agree to our Condition and Privacy policy.";
+        String text1 = "By joining you are confirming to receive email updates, promotions, and offers from Playnxt, and agree to Playnxt’s Privacy Policy and Terms & Conditions.";
         SpannableString spannableString1 = new SpannableString(text1);
         ClickableSpan clickableSpan11 = new ClickableSpan() {
-            @Override
-            public void onClick(View widget) {
-               /* Intent intent11 = new Intent(context, TermsAndConditionActivity.class);
-                startActivity(intent11);*/
-            }
-
-            @Override
-            public void updateDrawState(@NonNull TextPaint ds) {
-                super.updateDrawState(ds);
-                ds.setUnderlineText(true);
-            }
-        };
-        ClickableSpan clickableSpan12 = new ClickableSpan() {
             @Override
             public void onClick(View widget) {
                 Intent intent11 = new Intent(context, PrivacyPolicyActivity.class);
@@ -119,9 +106,25 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 ds.setUnderlineText(true);
             }
         };
-        spannableString1.setSpan(clickableSpan11, 27, 36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableString1.setSpan(clickableSpan12, 41, 55, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ClickableSpan clickableSpan12 = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                Intent intent11 = new Intent(context, TermsAndConditionActivity.class);
+                startActivity(intent11);
+
+            }
+
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(true);
+            }
+        };
+        spannableString1.setSpan(clickableSpan11, 115, 130, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(clickableSpan12, 135, 153, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannableString1.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, text1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.app_theme)), 115, 130, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.app_theme)), 135, 153, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         binding.tvCheck.setText(spannableString1);
         binding.tvCheck.setMovementMethod(LinkMovementMethod.getInstance());
     }

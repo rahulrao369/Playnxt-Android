@@ -35,11 +35,15 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.Playnxt"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize" >
         <activity
             android:name="com.cw.playnxt.activity.PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.cw.playnxt.activity.TermsAndConditionActivity"
             android:exported="false" />
         <activity
             android:name="com.cw.playnxt.activity.StaffPicksDetailActivity"

@@ -52,6 +52,8 @@ public class SearchGamesAdapter extends RecyclerView.Adapter<SearchGamesAdapter.
         }
 
         holder.binding.tvName.setText(list.get(position).getTitle());
+        holder.binding.tvPlatformType.setVisibility(View.VISIBLE);
+        holder.binding.tvPlatformType.setText("Platform Type : "+list.get(position).getPlatform());
 
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override

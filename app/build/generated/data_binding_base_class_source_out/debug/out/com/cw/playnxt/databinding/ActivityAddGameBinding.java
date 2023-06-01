@@ -32,7 +32,7 @@ public final class ActivityAddGameBinding implements ViewBinding {
   public final AdView adView;
 
   @NonNull
-  public final TextView autoCompleteGameTitle;
+  public final EditText autoCompleteGameTitle;
 
   @NonNull
   public final HeaderLayoutBinding bindingHeader;
@@ -116,7 +116,7 @@ public final class ActivityAddGameBinding implements ViewBinding {
   public final TextView tvUploadGameImg;
 
   private ActivityAddGameBinding(@NonNull RelativeLayout rootView, @NonNull AdView adView,
-      @NonNull TextView autoCompleteGameTitle, @NonNull HeaderLayoutBinding bindingHeader,
+      @NonNull EditText autoCompleteGameTitle, @NonNull HeaderLayoutBinding bindingHeader,
       @NonNull LinearLayout btnAddToBacklog, @NonNull LinearLayout btnAddToWishList,
       @NonNull RelativeLayout btnAdsShow, @NonNull LinearLayout btnGo,
       @NonNull CircleImageView cvImage, @NonNull EditText etGameDescription,
@@ -195,7 +195,7 @@ public final class ActivityAddGameBinding implements ViewBinding {
       }
 
       id = R.id.autoCompleteGameTitle;
-      TextView autoCompleteGameTitle = ViewBindings.findChildViewById(rootView, id);
+      EditText autoCompleteGameTitle = ViewBindings.findChildViewById(rootView, id);
       if (autoCompleteGameTitle == null) {
         break missingId;
       }

@@ -30,13 +30,17 @@ public final class ItemListSearchGamesBinding implements ViewBinding {
   @NonNull
   public final TextView tvName;
 
+  @NonNull
+  public final TextView tvPlatformType;
+
   private ItemListSearchGamesBinding(@NonNull RelativeLayout rootView,
-      @NonNull CircleImageView ivImage, @NonNull LinearLayout layoutMain,
-      @NonNull TextView tvName) {
+      @NonNull CircleImageView ivImage, @NonNull LinearLayout layoutMain, @NonNull TextView tvName,
+      @NonNull TextView tvPlatformType) {
     this.rootView = rootView;
     this.ivImage = ivImage;
     this.layoutMain = layoutMain;
     this.tvName = tvName;
+    this.tvPlatformType = tvPlatformType;
   }
 
   @Override
@@ -84,7 +88,14 @@ public final class ItemListSearchGamesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemListSearchGamesBinding((RelativeLayout) rootView, ivImage, layoutMain, tvName);
+      id = R.id.tvPlatformType;
+      TextView tvPlatformType = ViewBindings.findChildViewById(rootView, id);
+      if (tvPlatformType == null) {
+        break missingId;
+      }
+
+      return new ItemListSearchGamesBinding((RelativeLayout) rootView, ivImage, layoutMain, tvName,
+          tvPlatformType);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

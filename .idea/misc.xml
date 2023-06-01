@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../../layout/custom_preview.xml" value="0.151378896882494" />
         <entry key="../../../../../../home/cw/Android/Sdk/platforms/android-32/data/res/drawable/list_selector_background.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable-v24/bg_edit_text.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bg_app_rounded_corners.xml" value="0.2140625" />
@@ -35,6 +36,8 @@
         <entry key="app/src/main/res/drawable/ic_check.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/ic_check_new.xml" value="0.18888888888888888" />
         <entry key="app/src/main/res/drawable/ic_checked.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/ic_discover.xml" value="0.2525" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2525" />
         <entry key="app/src/main/res/drawable/ic_home_icon_small.xml" value="0.2037037037037037" />
         <entry key="app/src/main/res/drawable/ic_indicator_one.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/ic_playnxrbtn.xml" value="0.2140625" />

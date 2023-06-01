@@ -105,17 +105,17 @@ public class SubscriptionActivityFinal extends AppCompatActivity implements View
                 break;
 
             case R.id.btnMonth:
-//                startActivity(new Intent(context,AddCardActivity.class)
-//                        .putExtra("plan_ID",plan_ID_MONTHLY.toString()));
-                startActivity(new Intent(context,SubscriptionActivityCoupon.class)
+                startActivity(new Intent(context,AddCardActivity.class)
                         .putExtra("plan_ID",plan_ID_MONTHLY.toString()));
+//                startActivity(new Intent(context,SubscriptionActivityCoupon.class)
+//                        .putExtra("plan_ID",plan_ID_MONTHLY.toString()));
                 break;
 
             case R.id.btnYear:
-//                startActivity(new Intent(context,AddCardActivity.class)
-//                        .putExtra("plan_ID",plan_ID_YEARLY.toString()));
-                startActivity(new Intent(context,SubscriptionActivityCoupon.class)
+                startActivity(new Intent(context,AddCardActivity.class)
                         .putExtra("plan_ID",plan_ID_YEARLY.toString()));
+//                startActivity(new Intent(context,SubscriptionActivityCoupon.class)
+//                        .putExtra("plan_ID",plan_ID_YEARLY.toString()));
                 break;
         }
     }

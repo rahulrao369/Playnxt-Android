@@ -25,9 +25,9 @@
         app:cnb_addBottomInset="true"
         app:cnb_addLeftInset="true"
         app:cnb_addRightInset="true"
+        app:cnb_animationDuration="1"
         app:cnb_menuResource="@menu/bottom_menu"
         app:cnb_orientationMode="horizontal"
         app:cnb_radius="12dp"
-        app:cnb_unselectedColor="@color/white"
-        app:cnb_animationDuration="1"/>
+        app:cnb_unselectedColor="@color/white" />
 </RelativeLayout>

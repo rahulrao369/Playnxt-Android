@@ -216,24 +216,25 @@ public class MainGameInfoActivity extends AppCompatActivity implements View.OnCl
                 category_type = CATEGORY_BACKLOG;
                 Log.d("TAG", "category_type>>" + category_type);
 
-                if(free_backlog == 1){
-                    if (Constants.isInternetConnected(context)) {
-                        GetCategoryBacklogListNameAPI(category_type);
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                    }
-                }else{
-                        if(subscribed.equals(Constants.YES)){
-                            if (Constants.isInternetConnected(context)) {
-                                GetCategoryBacklogListNameAPI(category_type);
-                            } else {
-                                Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                            }
-                        }else{
-                            startActivity(new Intent(context, SubscriptionActivityFinal.class));
-                        }
-
-                }
+//                if(free_backlog == 1){
+//                    if (Constants.isInternetConnected(context)) {
+//                        GetCategoryBacklogListNameAPI(category_type);
+//                    } else {
+//                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+//                    }
+//                }else{
+//                        if(subscribed.equals(Constants.YES)){
+//                            if (Constants.isInternetConnected(context)) {
+//                                GetCategoryBacklogListNameAPI(category_type);
+//                            } else {
+//                                Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+//                            }
+//                        }else{
+//                            startActivity(new Intent(context, SubscriptionActivityFinal.class));
+//                        }
+//
+//                }
+                GetCategoryBacklogListNameAPI(category_type);
 
                 break;
 

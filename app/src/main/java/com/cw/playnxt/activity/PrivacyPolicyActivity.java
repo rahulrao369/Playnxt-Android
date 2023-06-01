@@ -54,7 +54,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
 
             }
         });
-        binding.webView.loadUrl("https://playnxt.app/privacy-policy");
+        binding.webView.loadUrl("https://www.trblclef.com/privacy-policy");
 //        binding.webView.loadDataWithBaseURL(null, "https://playnxt.app/privacy-policy", "text/html", "UTF-8", null);
     }
 }

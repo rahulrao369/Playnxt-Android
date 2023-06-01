@@ -51,6 +51,7 @@ public class FilterGameTitleAdapter extends RecyclerView.Adapter<FilterGameTitle
             Picasso.get().load(Allurls.IMAGEURL+list.get(position).getImage()).error(R.drawable.app_logo).placeholder(R.drawable.app_logo).into(holder.binding.ivImage);
         }
         holder.binding.tvName.setText(list.get(position).getTitle());
+//        holder.binding.tvPlatformType.setText("Platform Type : "+list.get(position).getPlatform());
 
         holder.binding.layoutMain.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -29,6 +29,9 @@
             android:name=".activity.PrivacyPolicyActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.TermsAndConditionActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.StaffPicksDetailActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

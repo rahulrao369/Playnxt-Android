@@ -28,11 +28,15 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cw.playnxt.Interface.ItemClick;
@@ -132,6 +136,12 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
         headerBinding.btnShare.setVisibility(View.GONE);
         headerBinding.btnEdit.setVisibility(View.GONE);
 
+        //Disable-------------
+        binding.autoCompleteGameTitle.setFocusableInTouchMode(false);
+        binding.autoCompleteGameTitle.setFocusable(false);
+        binding.autoCompleteGameTitle.requestFocus();
+        //--------------------
+
         MobileAds.initialize(context, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -167,32 +177,45 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
             }
         });
 
-        binding.etSearch.addTextChangedListener(new TextWatcher() {
+
+        binding.etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (count == 0) {
-                    binding.rvGameTitle.setVisibility(View.GONE);
-                    Log.d("TAG","count>>>>>>"+count);
-                } else {
-                    if (Constants.isInternetConnected(context)) {
-                        getGameByFilterAPI();
-                    } else {
-                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
-                    }
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    HideKeyboard();
+                    getGameByFilterAPI();
+                    return true;
                 }
-
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
+                return false;
             }
         });
+
+//        binding.etSearch.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                if (count == 0) {
+//                    binding.rvGameTitle.setVisibility(View.GONE);
+//                    Log.d("TAG","count>>>>>>"+count);
+//                } else {
+//                    if (Constants.isInternetConnected(context)) {
+//                        getGameByFilterAPI();
+//                    } else {
+//                        Toast.makeText(context, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
     }
 
     public void onclicks() {
@@ -220,11 +243,21 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
                 break;
 
             case R.id.btnGo:
-                if(!binding.etSearch.getText().toString().equals("")){
-                    binding.autoCompleteGameTitle.setText(binding.etSearch.getText().toString().trim());
-                    binding.llMain.setVisibility(View.VISIBLE);
-                    binding.llSearch.setVisibility(View.GONE);
-                }
+//                if(!binding.etSearch.getText().toString().equals("")){
+//                    binding.autoCompleteGameTitle.setText(binding.etSearch.getText().toString().trim());
+//                    binding.llMain.setVisibility(View.VISIBLE);
+//                    binding.llSearch.setVisibility(View.GONE);
+//                }
+                //Enable---------------
+                binding.autoCompleteGameTitle.setFocusableInTouchMode(true);
+                binding.autoCompleteGameTitle.setFocusable(true);
+                binding.autoCompleteGameTitle.requestFocus();
+               showKeyBoard();
+               //----------------------
+
+                binding.autoCompleteGameTitle.setText(binding.etSearch.getText().toString().trim());
+                binding.llMain.setVisibility(View.VISIBLE);
+                binding.llSearch.setVisibility(View.GONE);
 
                 break;
 
@@ -232,6 +265,7 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
                 binding.etSearch.setText("");
                 binding.llMain.setVisibility(View.GONE);
                 binding.llSearch.setVisibility(View.VISIBLE);
+                HideKeyboard();
                 break;
 
             case R.id.tvUploadGameImg:
@@ -283,6 +317,14 @@ public class AddGameFromBacklogListActivity extends AppCompatActivity implements
 
 
 
+    void showKeyBoard(){
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(binding.autoCompleteGameTitle, InputMethodManager.SHOW_IMPLICIT);
+    }
+    void HideKeyboard(){
+        InputMethodManager immmm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        immmm.hideSoftInputFromWindow(binding.etSearch.getWindowToken(), 0);
+    }
 
     private Boolean isValidate() {
         if (binding.autoCompleteGameTitle.getText().toString().trim().isEmpty()) {

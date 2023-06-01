@@ -4,9 +4,11 @@ package com.cw.playnxt.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,6 +29,9 @@ public final class ActivityAddCardBinding implements ViewBinding {
   public final HeaderLayoutBinding bindingHeader;
 
   @NonNull
+  public final Button btnApply;
+
+  @NonNull
   public final LinearLayout btnPayNow;
 
   @NonNull
@@ -45,7 +50,31 @@ public final class ActivityAddCardBinding implements ViewBinding {
   public final EditText etCVV;
 
   @NonNull
+  public final EditText etEmail;
+
+  @NonNull
   public final EditText etExpringDate;
+
+  @NonNull
+  public final LinearLayout llMain;
+
+  @NonNull
+  public final LinearLayout llNext;
+
+  @NonNull
+  public final ProgressBar progressBar1;
+
+  @NonNull
+  public final RelativeLayout rlProgressBar;
+
+  @NonNull
+  public final TextView tvActualAmt;
+
+  @NonNull
+  public final TextView tvDiscount;
+
+  @NonNull
+  public final TextView tvTotal;
 
   @NonNull
   public final TextView tvrecurring;
@@ -54,19 +83,32 @@ public final class ActivityAddCardBinding implements ViewBinding {
   public final TextView txtBtn;
 
   private ActivityAddCardBinding(@NonNull RelativeLayout rootView,
-      @NonNull HeaderLayoutBinding bindingHeader, @NonNull LinearLayout btnPayNow,
-      @NonNull CheckBox cbrecurring, @NonNull CreditCardView creditCardView,
-      @NonNull EditText etAccountHolderName, @NonNull EditText etAccountNo, @NonNull EditText etCVV,
-      @NonNull EditText etExpringDate, @NonNull TextView tvrecurring, @NonNull TextView txtBtn) {
+      @NonNull HeaderLayoutBinding bindingHeader, @NonNull Button btnApply,
+      @NonNull LinearLayout btnPayNow, @NonNull CheckBox cbrecurring,
+      @NonNull CreditCardView creditCardView, @NonNull EditText etAccountHolderName,
+      @NonNull EditText etAccountNo, @NonNull EditText etCVV, @NonNull EditText etEmail,
+      @NonNull EditText etExpringDate, @NonNull LinearLayout llMain, @NonNull LinearLayout llNext,
+      @NonNull ProgressBar progressBar1, @NonNull RelativeLayout rlProgressBar,
+      @NonNull TextView tvActualAmt, @NonNull TextView tvDiscount, @NonNull TextView tvTotal,
+      @NonNull TextView tvrecurring, @NonNull TextView txtBtn) {
     this.rootView = rootView;
     this.bindingHeader = bindingHeader;
+    this.btnApply = btnApply;
     this.btnPayNow = btnPayNow;
     this.cbrecurring = cbrecurring;
     this.creditCardView = creditCardView;
     this.etAccountHolderName = etAccountHolderName;
     this.etAccountNo = etAccountNo;
     this.etCVV = etCVV;
+    this.etEmail = etEmail;
     this.etExpringDate = etExpringDate;
+    this.llMain = llMain;
+    this.llNext = llNext;
+    this.progressBar1 = progressBar1;
+    this.rlProgressBar = rlProgressBar;
+    this.tvActualAmt = tvActualAmt;
+    this.tvDiscount = tvDiscount;
+    this.tvTotal = tvTotal;
     this.tvrecurring = tvrecurring;
     this.txtBtn = txtBtn;
   }
@@ -105,6 +147,12 @@ public final class ActivityAddCardBinding implements ViewBinding {
       }
       HeaderLayoutBinding binding_bindingHeader = HeaderLayoutBinding.bind(bindingHeader);
 
+      id = R.id.btnApply;
+      Button btnApply = ViewBindings.findChildViewById(rootView, id);
+      if (btnApply == null) {
+        break missingId;
+      }
+
       id = R.id.btnPayNow;
       LinearLayout btnPayNow = ViewBindings.findChildViewById(rootView, id);
       if (btnPayNow == null) {
@@ -141,9 +189,57 @@ public final class ActivityAddCardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.etEmail;
+      EditText etEmail = ViewBindings.findChildViewById(rootView, id);
+      if (etEmail == null) {
+        break missingId;
+      }
+
       id = R.id.etExpringDate;
       EditText etExpringDate = ViewBindings.findChildViewById(rootView, id);
       if (etExpringDate == null) {
+        break missingId;
+      }
+
+      id = R.id.llMain;
+      LinearLayout llMain = ViewBindings.findChildViewById(rootView, id);
+      if (llMain == null) {
+        break missingId;
+      }
+
+      id = R.id.llNext;
+      LinearLayout llNext = ViewBindings.findChildViewById(rootView, id);
+      if (llNext == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar1;
+      ProgressBar progressBar1 = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar1 == null) {
+        break missingId;
+      }
+
+      id = R.id.rlProgressBar;
+      RelativeLayout rlProgressBar = ViewBindings.findChildViewById(rootView, id);
+      if (rlProgressBar == null) {
+        break missingId;
+      }
+
+      id = R.id.tvActualAmt;
+      TextView tvActualAmt = ViewBindings.findChildViewById(rootView, id);
+      if (tvActualAmt == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDiscount;
+      TextView tvDiscount = ViewBindings.findChildViewById(rootView, id);
+      if (tvDiscount == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTotal;
+      TextView tvTotal = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotal == null) {
         break missingId;
       }
 
@@ -159,9 +255,10 @@ public final class ActivityAddCardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddCardBinding((RelativeLayout) rootView, binding_bindingHeader, btnPayNow,
-          cbrecurring, creditCardView, etAccountHolderName, etAccountNo, etCVV, etExpringDate,
-          tvrecurring, txtBtn);
+      return new ActivityAddCardBinding((RelativeLayout) rootView, binding_bindingHeader, btnApply,
+          btnPayNow, cbrecurring, creditCardView, etAccountHolderName, etAccountNo, etCVV, etEmail,
+          etExpringDate, llMain, llNext, progressBar1, rlProgressBar, tvActualAmt, tvDiscount,
+          tvTotal, tvrecurring, txtBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
