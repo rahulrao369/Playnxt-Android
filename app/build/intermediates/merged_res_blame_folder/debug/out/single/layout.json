@@ -4,12 +4,12 @@
         "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/fragment_my_profile_followers.xml"
     },
     {
-        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_thankyou.xml",
-        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_thankyou.xml"
-    },
-    {
         "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/bottom_sheet_add_new_note.xml",
         "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/bottom_sheet_add_new_note.xml"
+    },
+    {
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_thankyou.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/dialog_thankyou.xml"
     },
     {
         "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_subscription_plan_inside_list_layout.xml",
@@ -20,12 +20,12 @@
         "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_edit_profile.xml"
     },
     {
-        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_event.xml",
-        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_event.xml"
-    },
-    {
         "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_game_from_backlog_list.xml",
         "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_game_from_backlog_list.xml"
+    },
+    {
+        "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_add_event.xml",
+        "source": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/src/main/res/layout/activity_add_event.xml"
     },
     {
         "merged": "/Users/cwpl/Documents/Punit/Rahul Sir/Playnxt/Playnxt-Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_subscription.xml",
